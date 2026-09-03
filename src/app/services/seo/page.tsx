@@ -6,7 +6,6 @@ import Image from "next/image";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
-import ConsultationModal from "@/components/common/ConsultationModal";
 import {
   Search,
   Sparkles,
@@ -29,8 +28,6 @@ import {
 } from "lucide-react";
 
 export default function SeoServicePage() {
-  const [modalOpen, setModalOpen] = useState(false);
-
   const seoFaqs = [
     {
       q: "How is GEO search optimization different from traditional SEO?",
@@ -122,7 +119,7 @@ export default function SeoServicePage() {
       <section className="bg-[#0B192C] text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-3xl space-y-6">
-            <div className="inline-block pb-1.5 border-b-2 border-[#D32F2F]">
+            <div className="inline-block pb-1.5 border-b-2 border-[#E11D48]">
               <span className="text-xs font-extrabold uppercase tracking-widest text-slate-100">
                 Next-Gen Search Architecture
               </span>
@@ -142,8 +139,8 @@ export default function SeoServicePage() {
 
             <div className="pt-4 flex flex-wrap gap-3.5">
               <button
-                onClick={() => setModalOpen(true)}
-                className="px-6 py-3.5 rounded-lg bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm flex items-center gap-2"
+                onClick={() => window.location.href = "/contact#get-in-touch"}
+                className="px-6 py-3.5 rounded-lg bg-[#E11D48] hover:bg-[#BE123C] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm flex items-center gap-2"
               >
                 <span>Request Free SEO/AI Audit</span>
                 <ArrowRight className="w-4 h-4" />
@@ -209,7 +206,7 @@ export default function SeoServicePage() {
                   </div>
 
                   <button
-                    onClick={() => setModalOpen(true)}
+                    onClick={() => window.location.href = "/contact#get-in-touch"}
                     className="w-full py-2.5 rounded-lg bg-white border border-slate-200 hover:border-[#16325B] text-slate-800 hover:text-[#16325B] text-xs font-bold transition-all text-center flex items-center justify-center gap-1.5"
                   >
                     <span>Deploy {pillar.title.split(" ")[1]} for Your Business</span>
@@ -615,8 +612,8 @@ export default function SeoServicePage() {
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto flex-shrink-0">
                 <button
-                  onClick={() => setModalOpen(true)}
-                  className="px-7 py-3.5 rounded-xl bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-red-900/40 hover:shadow-red-900/60 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group cursor-pointer"
+                  onClick={() => window.location.href = "/contact#get-in-touch"}
+                  className="px-7 py-3.5 rounded-xl bg-[#E11D48] hover:bg-[#BE123C] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-red-900/40 hover:shadow-red-900/60 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   <span>Request SEO and AI Audit</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -635,11 +632,6 @@ export default function SeoServicePage() {
         </div>
       </section>
 
-      <ConsultationModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        initialService="SEO and AI Search Optimization"
-      />
-    </main>
+          </main>
   );
 }

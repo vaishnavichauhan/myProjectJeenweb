@@ -39,6 +39,7 @@ export interface EmailSolutionItem {
   desc: string;
   features: string[];
   icon: string;
+  platform?: string;
 }
 
 export interface FaqItem {
@@ -274,7 +275,7 @@ export const EMAIL_SOLUTIONS_PART2: EmailSolutionItem[] = [
     id: "m365",
     title: "Microsoft 365",
     badge: "Official Enterprise Setup",
-    desc: "Full setup with Outlook, Teams, OneDrive, and SharePoint so your organization can collaborate and communicate without friction.",
+    desc: "Complete enterprise setup with Outlook, Microsoft Teams, OneDrive cloud sync, and seamless Exchange data migration with zero downtime.",
     features: ["Custom Domain Integration", "Teams & SharePoint Provisioning", "Exchange Online Migration", "Admin Security Policies"],
     icon: "Mail"
   },
@@ -282,39 +283,39 @@ export const EMAIL_SOLUTIONS_PART2: EmailSolutionItem[] = [
     id: "gworkspace",
     title: "Google Workspace",
     badge: "Authorized Partner Channel",
-    desc: "Business Gmail, Drive, Meet, and enterprise admin security controls configured properly for your entire workforce.",
+    desc: "Official Google business suite deployment featuring custom domain Gmail, Google Meet, Drive storage, and enterprise admin security controls.",
     features: ["Gmail on Custom Domain", "30GB - Unlimited Cloud Storage", "Meet & Docs Real-Time Collab", "Zero-Loss Data Migration"],
     icon: "ShieldCheck"
+  },
+  {
+    id: "zoho",
+    title: "Zoho Workplace Mail",
+    badge: "Connected Workplace",
+    desc: "Secure, ad-free corporate business email with native Zoho CRM sync, encrypted inboxes, multi-device access, and centralized admin panel.",
+    features: ["Ad-Free Privacy Guarantee", "Zoho Suite Deep Integration", "Email Retention & eDiscovery", "Dedicated Control Panel"],
+    icon: "Layers"
   },
   {
     id: "rediff",
     title: "Rediff Business Mail",
     badge: "Cost-Effective B2B",
-    desc: "Straightforward corporate business email with your own domain, set up cleanly and ready to use immediately.",
+    desc: "High-volume corporate email hosting with Indian data residency, enterprise spam/virus filters, and dedicated webmail & IMAP support.",
     features: ["Reliable Webmail & POP/IMAP", "Indian Server Data Residency", "Spam & Virus Filters", "Simple Corporate Management"],
     icon: "Send"
   },
   {
-    id: "zoho",
-    title: "Zoho Mail",
-    badge: "Connected Workplace",
-    desc: "Clean, ad-free business email that connects seamlessly with Zoho CRM, Projects, and accounting tools.",
-    features: ["Ad-Free Privacy Guarantee", "Zoho Suite Deep Integration", "Email Retention & eDiscovery", "Dedicated Control Panel"],
-    icon: "Layers"
-  },
-  {
     id: "titan",
-    title: "Titan Email",
+    title: "Titan Business Email",
     badge: "Modern & Intuitive",
-    desc: "Simple, ultra-fast, and professional email hosting that works exceptionally well for small and growing businesses.",
+    desc: "Modern, ultra-fast business email equipped with read receipts, scheduled sending, integrated calendar, and cross-platform mobile apps.",
     features: ["Read Receipts & Send Later", "Integrated Calendar & Contacts", "Rich Web & Mobile Apps", "Smart Follow-Up Reminders"],
     icon: "Zap"
   },
   {
     id: "enterprise-mail",
-    title: "Enterprise Dedicated Mail Server",
+    title: "Dedicated Mail Server",
     badge: "Full Custom Control",
-    desc: "For companies needing total control over their mail environment—dedicated IP addresses, custom quotas, and high deliverability.",
+    desc: "Fully managed private mail infrastructure with dedicated clean IP reputation, customized storage quotas, strict SPF/DKIM, and daily backups.",
     features: ["Dedicated Clean IP Addresses", "Custom Storage Allocation", "Strict SPF / DKIM / DMARC", "Automated Daily Mail Backups"],
     icon: "Server"
   }
@@ -532,13 +533,7 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
 
 export const TESTIMONIALS = [
   {
-    quote: "Jeenweb completely modernized our manufacturing ERP without a single hour of operational downtime. Their team came to our factory, understood our inventory flow, and delivered a rock-solid system.",
-    author: "Industrial Manufacturing Client",
-    location: "Vadodara, Gujarat",
-    industry: "Heavy Engineering",
-    rating: 5
-  },
-  {
+    id: "review-2",
     quote: "Moving our 150+ user mailboxes to Google Workspace and Microsoft 365 with Jeenweb was the smoothest IT transition we've ever experienced. Their DNS and deliverability setup is top tier.",
     author: "Commercial Logistics Director",
     location: "Ahmedabad, Gujarat",
@@ -546,11 +541,28 @@ export const TESTIMONIALS = [
     rating: 5
   },
   {
+    id: "review-3",
     quote: "Exita and the SEO team transformed our search presence. We are now cited directly in Google AI Overviews and ChatGPT queries for our B2B products. Highly recommended!",
     author: "B2B Export Enterprise",
     location: "Surat, Gujarat",
     industry: "Global Exports",
+    rating: 4
+  },
+  {
+    id: "review-5",
+    quote: "Jeenweb built a secure visitor management and appointment booking platform tailored specifically to our multi-campus workflow. Clean licensed code and zero ongoing per-user license taxes.",
+    author: "Healthcare Network Administrator",
+    location: "Vadodara, Gujarat",
+    industry: "Healthcare & Clinics",
     rating: 5
+  },
+  {
+    id: "review-6",
+    quote: "From domain renewals to private email servers, having one accountable team right here in Vadodara has simplified our technical operations for over a decade. Reliable and genuine.",
+    author: "Higher Education Director",
+    location: "Gujarat, India",
+    industry: "Education & Academics",
+    rating: 4
   }
 ];
 

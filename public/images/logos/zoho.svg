@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 60" fill="none">
+  <!-- Zoho iconic 4-color blocks -->
+  <g transform="translate(10, 12)">
+    <!-- Red block with Z -->
+    <rect x="0" y="2" width="30" height="30" rx="6" fill="#E42528"/>
+    <path d="M9 11h12l-7.5 10H21v2.5H8.5l7.5-10H9V11z" fill="#FFFFFF"/>
+
+    <!-- Green block with O -->
+    <rect x="34" y="2" width="30" height="30" rx="6" fill="#008C44"/>
+    <ellipse cx="49" cy="17" rx="6.5" ry="7.5" fill="none" stroke="#FFFFFF" stroke-width="2.6"/>
+
+    <!-- Blue block with H -->
+    <rect x="68" y="2" width="30" height="30" rx="6" fill="#185FA5"/>
+    <path d="M76 10.5h3v5h8v-5h3v13.5h-3v-6h-8v6h-3V10.5z" fill="#FFFFFF"/>
+
+    <!-- Yellow block with O -->
+    <rect x="102" y="2" width="30" height="30" rx="6" fill="#F8B12C"/>
+    <ellipse cx="117" cy="17" rx="6.5" ry="7.5" fill="none" stroke="#FFFFFF" stroke-width="2.6"/>
+  </g>
+  <!-- Text: Workplace -->
+  <text x="152" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#0D233A" letter-spacing="-0.2px">Workplace</text>
+  <text x="152" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" fill="#64748B" letter-spacing="1px">MAIL & CLOUD</text>
+</svg>

@@ -1,12 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
-import ConsultationModal from "@/components/common/ConsultationModal";
+import TailoredSolutionsStackingCards from "@/components/services/TailoredSolutionsStackingCards";
 import {
   Cpu,
   Layers,
@@ -22,13 +21,20 @@ import {
   Code2,
   Lock,
   Workflow,
-  PhoneCall,
-  Sparkles
+  Sparkles,
+  Search,
+  PenTool,
+  ThumbsUp,
+  RotateCw
 } from "lucide-react";
 
-export default function CustomSoftwarePage() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedSolution, setSelectedSolution] = useState("Custom Manufacturing ERP");
+export default function CustomSoftwarePage() {  const [selectedSolution, setSelectedSolution] = useState("Custom ERP");
+  const [activeProcessStep, setActiveProcessStep] = useState(1);
+  const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
+
+  const toggleCardFlip = (idx: number) => {
+    setFlippedCards((prev) => ({ ...prev, [idx]: !prev[idx] }));
+  };
 
   const softwareFaqs = [
     {
@@ -53,113 +59,22 @@ export default function CustomSoftwarePage() {
     }
   ];
 
-  const solutions = [
-    {
-      title: "Custom ERP — Enterprise Resource Planning Systems",
-      icon: Layers,
-      badge: "Manufacturing & Distribution",
-      paragraphs: [
-        "Running a manufacturing or commercial operation across multiple locations in Gujarat means managing procurement, inventory, accounts, production, and supply chain all at once. When that data lives in spreadsheets and separate tools, things fall through the gaps.",
-        "We build custom ERP software from scratch—consolidating procurement, multi-warehouse inventory management, accounting, supply chain tracking, and reporting into one unified system built specifically for how your operation runs. As an experienced ERP software company in Gujarat, we have built ERP platforms for manufacturers, distributors, and commercial enterprises — each one different because each business operates differently.",
-        "No per-user monthly fees. No modules you do not need. No adapting your process to fit the software."
-      ],
-      features: [
-        "Consolidated procurement & warehouse inventory",
-        "Multi-location production & supply chain tracking",
-        "GST-compliant accounting & custom reporting",
-        "Zero per-user monthly licensing fees"
-      ]
-    },
-    {
-      title: "Custom CRM — Customer Relationship Management Platforms",
-      icon: Users,
-      badge: "Sales Pipeline & Leads",
-      paragraphs: [
-        "Your sales team has a specific way they work leads—specific stages, specific follow-up habits, and specific reporting needs. A generic CRM forces them to change all of that. Our custom CRM software in Vadodara is built around how your team actually sells.",
-        "We build custom CRM platforms that manage your full lead pipeline, record every interaction, track individual and team performance, and automate follow-up communications—all configured to your exact sales process. No per-seat licensing fees that grow every time you hire someone. You own the software outright."
-      ],
-      features: [
-        "Custom lead stages & pipeline automation",
-        "Complete customer interaction logs & history",
-        "Sales executive performance tracking",
-        "100% full software ownership without per-seat fees"
-      ]
-    },
-    {
-      title: "Visitor Management Software",
-      icon: Building,
-      badge: "Digital Front Desk & Gates",
-      paragraphs: [
-        "Paper visitor registers at the front desk create security gaps, lost records, and no way to track who is in the building at any given moment.",
-        "Our visitor management system software replaces paper with a proper digital system — automated digital gate passes, OTP-based badge generation, instant host phone alerts when a visitor arrives, digital visitor logging, and complete searchable records. Designed for corporate offices, manufacturing plants, and institutional campuses across Gujarat."
-      ],
-      features: [
-        "Automated digital gate pass generation",
-        "OTP-based visitor badge printing",
-        "Instant host phone & WhatsApp arrival alerts",
-        "Digital logging & instant searchable history"
-      ]
-    },
-    {
-      title: "School Management Software",
-      icon: GraduationCap,
-      badge: "Educational Institutions",
-      paragraphs: [
-        "Managing a school or educational institution involves student records, fee collection, attendance, report cards, staff communication, and parent engagement — all running at the same time across different departments.",
-        "Our school management software in Gujarat centralizes everything into one platform — student administrative records, fee collection gateways, digital report cards, timetable management, and staff-parent communication portals. Built specifically for the way your institution operates — not a generic academic template."
-      ],
-      features: [
-        "Centralized student administrative records",
-        "Automated online fee collection gateways",
-        "Digital report cards & timetable management",
-        "Staff-parent communication & notification portal"
-      ]
-    },
-    {
-      title: "Attendance Management Systems",
-      icon: Clock,
-      badge: "Biometric & Payroll Sync",
-      paragraphs: [
-        "Manual attendance registers and basic punch-card systems create payroll errors, leave disputes, and hours of administrative work every month.",
-        "We build attendance management systems that connect directly to your existing biometric devices, RFID readers, and mobile GPS check-in applications—feeding attendance data straight into your payroll processor. Shift tracking, leave approvals, overtime calculations, and monthly reports all run automatically. Your HR team stops doing manual calculations and starts managing people instead."
-      ],
-      features: [
-        "Direct connection to existing biometric & RFID devices",
-        "Mobile GPS check-in for field employees",
-        "Automated shift, overtime & leave calculations",
-        "Direct export & sync with payroll processors"
-      ]
-    },
-    {
-      title: "Business Automation Software",
-      icon: Zap,
-      badge: "Workflow Efficiency",
-      paragraphs: [
-        "If your team is spending hours every day on repetitive manual tasks—data entry, approval routing, report generation, or notification sending—that time and money are being wasted unnecessarily.",
-        "We build business automation software that handles those repetitive tasks automatically. Approvals get routed to the right person, reports get generated on schedule, and notifications go out without anyone pressing a button. Your team focuses on work that actually needs human attention. Particularly valuable for SMEs and growing businesses in Gujarat that need to operate efficiently without adding headcount."
-      ],
-      features: [
-        "Automated multi-level approval routing",
-        "Scheduled custom report generation & dispatch",
-        "Triggered email & WhatsApp notifications",
-        "Eliminates repetitive data entry across departments"
-      ]
-    },
-    {
-      title: "Ticket Booking and Event Management Platforms",
-      icon: Ticket,
-      badge: "Event Portals & Venues",
-      paragraphs: [
-        "For businesses running corporate events, venues, or ticketed experiences, managing bookings manually creates errors, double-bookings, and a poor experience for customers.",
-        "We build secure online ticket booking platforms with real-time seat mapping, payment gateway integration, automated QR code ticket generation, and booking management dashboards. Whether you are running a single event or a regular ticketed venue operation, the system handles the complexity so your team does not have to."
-      ],
-      features: [
-        "Real-time visual seat mapping & selection",
-        "Secure payment gateway integrations",
-        "Automated QR code e-ticket generation",
-        "On-ground QR check-in & box office dashboard"
-      ]
-    }
+  const partnerLogosRow1 = [
+    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Healthcare Infrastructure" },
+    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Employment Portal Ecosystem" },
+    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Enterprise Hospital ERP" },
+    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Statewide Recruitment Platform" },
+    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Clinical Workflow Systems" },
+    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Enterprise Cloud Engine" }
+  ];
+
+  const partnerLogosRow2 = [
+    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Career & Candidate Database" },
+    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Multi-Specialty Network" },
+    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "High-Volume Job Platform" },
+    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Patient & Admin Infrastructure" },
+    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Custom Recruitment Engine" },
+    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "OPD & Digital Gate Passes" }
   ];
 
   return (
@@ -175,509 +90,767 @@ export default function CustomSoftwarePage() {
         </div>
       </div>
 
-      {/* Hero Banner */}
-      <section className="bg-[#0B192C] text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-block pb-1.5 border-b-2 border-[#D32F2F]">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-slate-100">
-                Tailor-Made Enterprise Software
-              </span>
-            </div>
+      {/* Hero Banner (Full-Bleed Gradient Blended Image like Reference with Vibrant Sapphire Gradient) */}
+      <section className="bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center border-b border-slate-700/60">
+        
+        {/* Right-Side Full-Bleed Background Image with Seamless Left Fade */}
+        <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[62%] z-0 pointer-events-none overflow-hidden">
+          <div className="relative w-full h-full">
+            <Image
+              src="/images/custom-software-hero.jpg"
+              alt="Custom Software Development Engineering"
+              fill
+              priority
+              className="object-cover object-right lg:object-center opacity-95 lg:opacity-100"
+              sizes="(max-width: 1024px) 100vw, 65vw"
+            />
+            {/* Smooth Left Fade Gradient to Dark Background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0A2647] via-[#0A2647]/80 via-35% to-transparent hidden lg:block" />
+            {/* Mobile Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A2647] via-[#0A2647]/70 to-[#0A2647]/30 lg:hidden" />
+            {/* Soft Ambient Contrast Vignette */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0A2647]/40 via-transparent to-[#0A2647]/60" />
+          </div>
+        </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+        {/* Subtle Cyber Grid Accent (64px by 64px) */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-5">
+            
+            {/* H1 Heading */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
               Engineering Tailor-Made Software Systems Designed Around Your Physical Business Workflows
             </h1>
 
-            <p className="text-base sm:text-lg text-indigo-300 font-semibold">
+            {/* Subheading */}
+            <p className="text-base sm:text-lg text-indigo-200 font-semibold leading-snug">
               Enterprise software development, custom ERPs, and automated management portals built in Vadodara.
             </p>
 
-            <p className="text-slate-300 text-sm sm:text-[15px] leading-relaxed">
+            {/* Body Paragraph */}
+            <p className="text-slate-300 text-sm sm:text-[15px] leading-relaxed max-w-2xl">
               Most businesses in Gujarat buy software and then spend months trying to make their team work around it. Processes get adjusted, workarounds get created, and half the features never get used. At Jeenweb Technologists, we do it the other way around. We come to your workplace, watch how your team operates, and build software that mirrors those exact physical routines.
             </p>
 
-            <div className="pt-4 flex flex-wrap gap-3.5">
+            {/* CTAs */}
+            <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
-                onClick={() => setModalOpen(true)}
-                className="px-6 py-3.5 rounded-lg bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm flex items-center gap-2"
+                onClick={() => window.location.href = "/contact#get-in-touch"}
+                className="px-6 py-3.5 rounded-xl bg-[#E11D48] hover:bg-[#BE123C] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-red-900/30 hover:shadow-red-900/50 hover:scale-[1.02] active:scale-95 flex items-center gap-2.5"
               >
                 <span>Consult Our Software Engineers</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
-              <a
-                href="#solutions"
-                className="px-6 py-3.5 rounded-lg bg-white/10 hover:bg-white/15 text-white font-semibold text-xs uppercase tracking-wider transition-all border border-white/15"
-              >
-                View 7 Software Systems
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 2: Software Solutions We Build */}
-      <section className="py-20 lg:py-24 bg-white" id="solutions">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="Solutions Catalog"
-            title="Tailored Software Solutions Built for Operational Efficiency"
-            subtitle="Explore our battle-tested enterprise architectures deployed across manufacturing, corporate offices, institutions, and service sectors."
-            centered={true}
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {solutions.map((sol, index) => {
-              const Icon = sol.icon;
-              const isWide = index === 0; // Custom ERP card gets double width on desktop for emphasis
-              return (
-                <div
-                  key={sol.title}
-                  className={`p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group ${
-                    isWide ? "md:col-span-2 lg:col-span-2 bg-gradient-to-br from-slate-50 via-white to-slate-50 border-slate-300" : ""
-                  }`}
-                >
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="p-3.5 rounded-2xl bg-[#16325B] text-white group-hover:scale-105 transition-transform">
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <span className="text-[11px] font-bold text-indigo-800 bg-indigo-50 px-3 py-1 rounded-full uppercase tracking-wider border border-indigo-200/60">
-                        {sol.badge}
-                      </span>
-                    </div>
-
-                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#16325B] transition-colors leading-snug">
-                      {sol.title}
-                    </h3>
-
-                    <div className="space-y-3">
-                      {sol.paragraphs.map((p, pIdx) => (
-                        <p key={pIdx} className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                          {p}
-                        </p>
-                      ))}
-                    </div>
-
-                    <div className="space-y-2 pt-4 border-t border-slate-200/80">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block mb-1">
-                        System Highlights:
-                      </span>
-                      {sol.features.map((f, i) => (
-                        <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                          <span>{f}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mt-8 pt-4 border-t border-slate-200">
-                    <button
-                      onClick={() => {
-                        setSelectedSolution(sol.title);
-                        setModalOpen(true);
-                      }}
-                      className="w-full py-3 rounded-xl bg-white border border-slate-300 hover:border-[#16325B] text-slate-800 hover:text-[#16325B] text-xs font-bold transition-all text-center flex items-center justify-center gap-2 group-hover:bg-[#16325B] group-hover:text-white group-hover:border-[#16325B]"
-                    >
-                      <span>Request Scope & Consultation</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Section 3: How We Build Software That Actually Gets Used */}
-      <section className="py-20 lg:py-24 bg-[#0B192C] text-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <SectionHeader
-            badge="How We Build Software That Actually Gets Used"
-            title="Process-Driven Engineering: How We Build Software That Works"
-            subtitle="Most software projects fail not because of bad code but because the software never matched how the team actually worked. Our three-part process fixes that before a single line of code gets written."
-            centered={true}
-            theme="dark"
-          />
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
-            {/* Part 1 */}
-            <div className="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-xl flex flex-col justify-between hover:border-slate-700 transition-all group">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-[#D32F2F] text-white flex items-center justify-center font-extrabold text-lg shadow-md group-hover:scale-105 transition-transform">
-                    01
-                  </div>
-                  <span className="text-[11px] font-bold text-red-400 bg-red-950/60 border border-red-800/60 px-3 py-1 rounded-full uppercase tracking-wider">
-                    On-Site Field Study
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-bold text-white group-hover:text-red-400 transition-colors leading-snug">
-                  Part 1 — Dedicated Expert Allocation and In-Depth Workflow Study
-                </h3>
-
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                  Before we open a code editor, we assign a dedicated team of software architects to your workplace in Vadodara. We spend time watching how your administrators, field managers, and department heads actually work—not how the process is documented, but how it really happens every day.
-                </p>
-
-                <p className="text-slate-400 text-xs leading-relaxed">
-                  We map every manual step, every communication gap, every workaround your team has created to deal with missing tools. We identify exactly where the friction is and what the software needs to solve. This field study is what makes the difference between software your team uses naturally and software that collects dust.
-                </p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-1.5 text-xs text-red-400 font-semibold font-mono">
-                <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>Zero Assumption • Physical Mapping</span>
-              </div>
             </div>
 
-            {/* Part 2 */}
-            <div className="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-xl flex flex-col justify-between hover:border-slate-700 transition-all group">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-[#16325B] text-white flex items-center justify-center font-extrabold text-lg shadow-md group-hover:scale-105 transition-transform">
-                    02
-                  </div>
-                  <span className="text-[11px] font-bold text-blue-400 bg-blue-950/60 border border-blue-800/60 px-3 py-1 rounded-full uppercase tracking-wider">
-                    Clean Architecture
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors leading-snug">
-                  Part 2 — Blueprinted Architecture Design and System Development
-                </h3>
-
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                  Using everything we learned in the field study, our engineering team designs the database structure and interface layout to match your actual physical routines—not a generic business model.
-                </p>
-
-                <p className="text-slate-400 text-xs leading-relaxed">
-                  We write clean, modular backend code using proven web and database technologies. We build user roles and administrative permission controls that mirror your actual organizational hierarchy. Every screen, every workflow, and every data field is placed where your team expects it—because we designed it around how they work, not how we assumed they work.
-                </p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-1.5 text-xs text-blue-400 font-semibold font-mono">
-                <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>Modular Code • Role-Based Security</span>
-              </div>
-            </div>
-
-            {/* Part 3 */}
-            <div className="p-8 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-xl flex flex-col justify-between hover:border-slate-700 transition-all group">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-extrabold text-lg shadow-md group-hover:scale-105 transition-transform">
-                    03
-                  </div>
-                  <span className="text-[11px] font-bold text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-3 py-1 rounded-full uppercase tracking-wider">
-                    Live User Testing
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors leading-snug">
-                  Part 3 — Controlled Implementation and Real-World User Testing
-                </h3>
-
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                  Handing over software and walking away is not how we operate. We implement the build inside your active work environment and observe how your employees interact with it in real conditions.
-                </p>
-
-                <p className="text-slate-400 text-xs leading-relaxed">
-                  We run stress tests, track live usage patterns, watch for friction points where users hesitate or work around the system, and fix them before they become habits. We keep refining until the software feels natural to use—not like something the team has to learn to tolerate. Only then do we call the project complete.
-                </p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-800 flex items-center gap-1.5 text-xs text-emerald-400 font-semibold font-mono">
-                <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>On-Ground Training • Zero Friction</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Section 4: Who We Build Software For */}
-      <section className="py-20 lg:py-24 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="Who We Build Software For"
-            title="Software Development for Businesses of Every Size Across Gujarat"
-            subtitle="Scalable, custom-tailored software engineering engineered for fast adoption, lean operational overhead, and long-term expandability."
-            centered={true}
-          />
+      <section className="py-20 lg:py-28 bg-white relative overflow-hidden border-b border-slate-200/80" id="who-we-build-for">
+        {/* Soft Ambient Background Glows */}
+        <div className="absolute top-1/3 right-10 w-96 h-96 bg-blue-100/30 rounded-full blur-[140px] pointer-events-none -z-10" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-red-100/25 rounded-full blur-[140px] pointer-events-none -z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(#00000008_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none -z-10" />
 
-          <div className="max-w-4xl mx-auto space-y-6 text-slate-700 text-sm sm:text-base leading-relaxed mt-10">
-            <p className="font-semibold text-slate-900 text-base sm:text-lg">
-              We are not just an enterprise software development company. We work with businesses of all sizes — from large industrial corporations needing full ERP implementations to small and medium businesses needing their first proper management system.
-            </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          {/* Section Header */}
+          <div className="text-left max-w-4xl mb-12 lg:mb-16 space-y-3">
+            <div>
+              <div className="inline-block border-b-2 border-[#C11E23] pb-1">
+                <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+                  Who We Build Software For
+                </span>
+              </div>
+            </div>
 
-            <p>
-              As a software development company for SMEs across Gujarat and India, we understand that smaller businesses have tighter budgets, leaner teams, and less tolerance for software that does not work properly from day one. We build scalable software solutions that start lean and grow with your business — so you are not paying for complexity you do not need right now, but the system can handle it when you do.
-            </p>
-
-            <p>
-              Whether you are a manufacturer in Vadodara, a distributor running multiple branches across Gujarat, a school managing hundreds of students, or a growing SME trying to replace manual processes with proper business automation software — we build the right system for where your business is today and where it is going.
-            </p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-slate-900 leading-tight">
+              Software Development for Businesses of <br className="hidden sm:inline" />
+              <span className="text-[#1A3B71]">Every Size Across Gujarat</span>
+            </h2>
           </div>
 
-          {/* Sector Archetypes Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
-              <div className="p-3 rounded-xl bg-[#0B1E38] text-white w-fit">
-                <Building className="w-5 h-5 text-red-400" />
-              </div>
-              <h4 className="text-base font-bold text-slate-900">Manufacturing & Industry</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Bill of materials, shop-floor batch logs, raw materials inventory, gate passes, and GST dispatch.
+          {/* 2-Column Editorial & Commercial Framework */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+            
+            {/* Left Column: Authoritative Editorial Copy */}
+            <div className="lg:col-span-6 space-y-6">
+              <p className="text-base sm:text-lg font-medium text-slate-800 leading-relaxed font-sans">
+                We are not just an enterprise software development company. We work with businesses of all sizes — from large industrial corporations needing full ERP implementations to small and medium businesses needing their first proper management system.
               </p>
+
+              {/* SME Focus Highlight Box */}
+              <div className="p-6 sm:p-7 rounded-2xl bg-slate-50 border-l-4 border-[#C11E23] shadow-xs space-y-3">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-[#C11E23]" />
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#C11E23]">
+                    Built for Gujarat SMEs
+                  </span>
+                </div>
+                <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-sans">
+                  As a software development company for SMEs across Gujarat and India, we understand that smaller businesses have tighter budgets, leaner teams, and less tolerance for software that does not work properly from day one. We build scalable software solutions that start lean and grow with your business — so you are not paying for complexity you do not need right now, but the system can handle it when you do.
+                </p>
+              </div>
+
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-sans">
+                Whether you are a manufacturer in Vadodara, a distributor running multiple branches across Gujarat, a school managing hundreds of students, or a growing SME trying to replace manual processes with proper business automation software — we build the right system for where your business is today and where it is going.
+              </p>
+
+              <div className="pt-2">
+                <button
+                  onClick={() => {
+                    setSelectedSolution("Custom Software for Gujarat Businesses");
+                    window.location.href = "/contact#get-in-touch";
+                  }}
+                  className="px-7 py-4 rounded-xl bg-[#1A3B71] hover:bg-[#132c54] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md shadow-blue-950/20 hover:shadow-lg hover:scale-[1.02] flex items-center gap-3"
+                >
+                  <span>Consult Our Vadodara Engineering Team</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
-              <div className="p-3 rounded-xl bg-[#0B1E38] text-white w-fit">
-                <Users className="w-5 h-5 text-blue-400" />
+            {/* Right Column: 4 Archetype Business Cards with 3D Flip Effect */}
+            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              
+              {/* Card 1: Industrial Manufacturers */}
+              <div
+                className="group [perspective:1000px] min-h-[310px] cursor-pointer"
+                onClick={() => toggleCardFlip(0)}
+              >
+                <div
+                  className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
+                    flippedCards[0] ? "[transform:rotateY(180deg)]" : "group-hover:[transform:rotateY(180deg)]"
+                  }`}
+                >
+                  {/* Front Face */}
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] p-6 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className="w-10 h-10 rounded-xl bg-red-50 text-[#C11E23] flex items-center justify-center font-bold">
+                          <Building className="w-5 h-5" />
+                        </div>
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono text-slate-400 group-hover:text-[#C11E23] transition-colors">
+                          <RotateCw className="w-3 h-3" /> Flip
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#C11E23] bg-red-50 px-2 py-0.5 rounded">
+                          Industrial Corridors
+                        </span>
+                        <h3 className="text-base font-bold text-slate-900 mt-2 group-hover:text-[#1A3B71] transition-colors">
+                          Vadodara Manufacturers
+                        </h3>
+                      </div>
+                      <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                        Makarpura, Savli, Halol GIDC plants needing full production ERP, automated gate passes, machine logs, and offline-resilient local sync.
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-mono font-semibold text-slate-700">
+                      <div className="flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#C11E23]" />
+                        <span>Shop-Floor Automation</span>
+                      </div>
+                      <span className="text-[10px] text-slate-400">↻ Details</span>
+                    </div>
+                  </div>
+
+                  {/* Back Face */}
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] p-6 rounded-2xl bg-gradient-to-br from-[#0B1E38] via-[#102A4C] to-[#0B1E38] text-white border border-slate-700/80 shadow-xl flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-red-400 bg-red-950/60 px-2 py-0.5 rounded border border-red-800/40">
+                          Core Deliverables
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono text-slate-400">
+                          <RotateCw className="w-3 h-3" /> Back
+                        </span>
+                      </div>
+                      <h4 className="text-sm font-bold text-white">
+                        Factory Operations Scope:
+                      </h4>
+                      <div className="space-y-2 pt-1 text-xs text-slate-300 font-sans">
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-red-400 mt-0.5 flex-shrink-0" />
+                          <span>BOM batch tracking & machine logs</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-red-400 mt-0.5 flex-shrink-0" />
+                          <span>Local offline DB (zero factory freeze)</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-red-400 mt-0.5 flex-shrink-0" />
+                          <span>GST E-Way bill & barcode gate pass</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between">
+                      <span className="text-[10px] font-mono text-red-300 font-bold">Makarpura / Savli</span>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedSolution("Vadodara Manufacturers");
+                          window.location.href = "/contact#get-in-touch";
+                        }}
+                        className="px-3 py-1.5 rounded-lg bg-[#C11E23] hover:bg-red-700 text-white text-[11px] font-bold tracking-wider uppercase transition-colors"
+                      >
+                        Scope →
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h4 className="text-base font-bold text-slate-900">Growing SMEs & Trading</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Custom billing, multi-tier approval chains, quotation pipelines, and WhatsApp customer notifications.
-              </p>
+
+              {/* Card 2: Growing SMEs & Trading */}
+              <div
+                className="group [perspective:1000px] min-h-[310px] cursor-pointer"
+                onClick={() => toggleCardFlip(1)}
+              >
+                <div
+                  className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
+                    flippedCards[1] ? "[transform:rotateY(180deg)]" : "group-hover:[transform:rotateY(180deg)]"
+                  }`}
+                >
+                  {/* Front Face */}
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] p-6 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#1A3B71] flex items-center justify-center font-bold">
+                          <Users className="w-5 h-5" />
+                        </div>
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono text-slate-400 group-hover:text-[#1A3B71] transition-colors">
+                          <RotateCw className="w-3 h-3" /> Flip
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#1A3B71] bg-blue-50 px-2 py-0.5 rounded">
+                          Commercial Trading
+                        </span>
+                        <h3 className="text-base font-bold text-slate-900 mt-2 group-hover:text-[#1A3B71] transition-colors">
+                          Growing SMEs & Trading
+                        </h3>
+                      </div>
+                      <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                        Businesses replacing spreadsheets with automated order management, multi-tier approvals, and zero recurring per-seat SaaS taxes.
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-mono font-semibold text-slate-700">
+                      <div className="flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1A3B71]" />
+                        <span>Zero Per-Seat Taxes</span>
+                      </div>
+                      <span className="text-[10px] text-slate-400">↻ Details</span>
+                    </div>
+                  </div>
+
+                  {/* Back Face */}
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] p-6 rounded-2xl bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white border border-slate-700/80 shadow-xl flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">
+                          SME Deliverables
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono text-slate-400">
+                          <RotateCw className="w-3 h-3" /> Back
+                        </span>
+                      </div>
+                      <h4 className="text-sm font-bold text-white">
+                        Commercial Workflow Scope:
+                      </h4>
+                      <div className="space-y-2 pt-1 text-xs text-slate-300 font-sans">
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                          <span>Multi-tier quotation approval chains</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                          <span>Automated WhatsApp payment alerts</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                          <span>Unlimited team users with zero SaaS tax</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between">
+                      <span className="text-[10px] font-mono text-cyan-300 font-bold">100% Code Ownership</span>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedSolution("Growing SMEs & Trading");
+                          window.location.href = "/contact#get-in-touch";
+                        }}
+                        className="px-3 py-1.5 rounded-lg bg-[#1A3B71] hover:bg-blue-800 text-white text-[11px] font-bold tracking-wider uppercase transition-colors"
+                      >
+                        Scope →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3: Multi-Branch Distributors */}
+              <div
+                className="group [perspective:1000px] min-h-[310px] cursor-pointer"
+                onClick={() => toggleCardFlip(2)}
+              >
+                <div
+                  className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
+                    flippedCards[2] ? "[transform:rotateY(180deg)]" : "group-hover:[transform:rotateY(180deg)]"
+                  }`}
+                >
+                  {/* Front Face */}
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] p-6 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className="w-10 h-10 rounded-xl bg-red-50 text-[#C11E23] flex items-center justify-center font-bold">
+                          <Layers className="w-5 h-5" />
+                        </div>
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono text-slate-400 group-hover:text-[#C11E23] transition-colors">
+                          <RotateCw className="w-3 h-3" /> Flip
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#C11E23] bg-red-50 px-2 py-0.5 rounded">
+                          Statewide Distribution
+                        </span>
+                        <h3 className="text-base font-bold text-slate-900 mt-2 group-hover:text-[#1A3B71] transition-colors">
+                          Multi-Branch Distributors
+                        </h3>
+                      </div>
+                      <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                        Synchronize depots and field sales across Ahmedabad, Surat, Rajkot, and Vadodara into one single real-time stock ledger.
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-mono font-semibold text-slate-700">
+                      <div className="flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#C11E23]" />
+                        <span>Multi-Depot Stock Sync</span>
+                      </div>
+                      <span className="text-[10px] text-slate-400">↻ Details</span>
+                    </div>
+                  </div>
+
+                  {/* Back Face */}
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] p-6 rounded-2xl bg-gradient-to-br from-[#0B1E38] via-[#102A4C] to-[#0B1E38] text-white border border-slate-700/80 shadow-xl flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-red-400 bg-red-950/60 px-2 py-0.5 rounded border border-red-800/40">
+                          Logistics Scope
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono text-slate-400">
+                          <RotateCw className="w-3 h-3" /> Back
+                        </span>
+                      </div>
+                      <h4 className="text-sm font-bold text-white">
+                        Supply Chain Deliverables:
+                      </h4>
+                      <div className="space-y-2 pt-1 text-xs text-slate-300 font-sans">
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-red-400 mt-0.5 flex-shrink-0" />
+                          <span>Central warehouse & depot stock sync</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-red-400 mt-0.5 flex-shrink-0" />
+                          <span>Field sales mobile order booking app</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-red-400 mt-0.5 flex-shrink-0" />
+                          <span>Real-time credit limit & dispatch holds</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between">
+                      <span className="text-[10px] font-mono text-red-300 font-bold">Statewide Network</span>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedSolution("Multi-Branch Distributors");
+                          window.location.href = "/contact#get-in-touch";
+                        }}
+                        className="px-3 py-1.5 rounded-lg bg-[#C11E23] hover:bg-red-700 text-white text-[11px] font-bold tracking-wider uppercase transition-colors"
+                      >
+                        Scope →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4: Schools & Institutions */}
+              <div
+                className="group [perspective:1000px] min-h-[310px] cursor-pointer"
+                onClick={() => toggleCardFlip(3)}
+              >
+                <div
+                  className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
+                    flippedCards[3] ? "[transform:rotateY(180deg)]" : "group-hover:[transform:rotateY(180deg)]"
+                  }`}
+                >
+                  {/* Front Face */}
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] p-6 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#1A3B71] flex items-center justify-center font-bold">
+                          <GraduationCap className="w-5 h-5" />
+                        </div>
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono text-slate-400 group-hover:text-[#1A3B71] transition-colors">
+                          <RotateCw className="w-3 h-3" /> Flip
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#1A3B71] bg-blue-50 px-2 py-0.5 rounded">
+                          Educational Campuses
+                        </span>
+                        <h3 className="text-base font-bold text-slate-900 mt-2 group-hover:text-[#1A3B71] transition-colors">
+                          Schools & Institutions
+                        </h3>
+                      </div>
+                      <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                        Managing student administrative archives, biometric staff rosters, online payment gateways, and staff-parent communication feeds.
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-mono font-semibold text-slate-700">
+                      <div className="flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1A3B71]" />
+                        <span>Institutional Portals</span>
+                      </div>
+                      <span className="text-[10px] text-slate-400">↻ Details</span>
+                    </div>
+                  </div>
+
+                  {/* Back Face */}
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] p-6 rounded-2xl bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white border border-slate-700/80 shadow-xl flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">
+                          Campus Scope
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono text-slate-400">
+                          <RotateCw className="w-3 h-3" /> Back
+                        </span>
+                      </div>
+                      <h4 className="text-sm font-bold text-white">
+                        Institutional Systems Scope:
+                      </h4>
+                      <div className="space-y-2 pt-1 text-xs text-slate-300 font-sans">
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                          <span>Online fee collection & instant SMS receipts</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                          <span>Biometric terminal sync & staff payroll</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                          <span>Granular role permissions & audit compliance</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between">
+                      <span className="text-[10px] font-mono text-cyan-300 font-bold">Campus ERP</span>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedSolution("Schools & Institutions");
+                          window.location.href = "/contact#get-in-touch";
+                        }}
+                        className="px-3 py-1.5 rounded-lg bg-[#1A3B71] hover:bg-blue-800 text-white text-[11px] font-bold tracking-wider uppercase transition-colors"
+                      >
+                        Scope →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
-              <div className="p-3 rounded-xl bg-[#0B1E38] text-white w-fit">
-                <Layers className="w-5 h-5 text-purple-400" />
-              </div>
-              <h4 className="text-base font-bold text-slate-900">Multi-Branch Distributors</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Centralized warehouse inventory synchronization, regional stock routing, and field staff sales tracking.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
-              <div className="p-3 rounded-xl bg-[#0B1E38] text-white w-fit">
-                <GraduationCap className="w-5 h-5 text-emerald-400" />
-              </div>
-              <h4 className="text-base font-bold text-slate-900">Educational Institutions</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Online fee collection, student attendance rosters, grade cards, parent portals, and bus fleet GPS tracking.
-              </p>
-            </div>
           </div>
+
         </div>
       </section>
 
-      {/* Section 5: Clients' Logos */}
-      <section className="py-20 lg:py-24 bg-slate-50 relative overflow-hidden border-t border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="Section 5: Clients' Logos"
-            title="Trusted Software & ERP Partner for Leading Brands"
-            subtitle="From healthcare institutions and educational universities to manufacturing leaders, explore the organizations running on Jeenweb software systems."
-            centered={true}
-          />
+      {/* Section 3: STEPS - HOW WE WORK (Wavy Curved Path Flow Matching Reference) */}
+      <section className="py-20 lg:py-28 bg-[#FAF9F6] relative overflow-hidden border-b border-slate-200/80" id="how-we-work">
+        {/* Soft Ambient Background Glows */}
+        <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-blue-100/35 rounded-full blur-[140px] pointer-events-none -z-10" />
+        <div className="absolute bottom-10 right-1/4 w-[450px] h-[450px] bg-cyan-100/25 rounded-full blur-[130px] pointer-events-none -z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(#00000008_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none -z-10" />
 
-          {/* Client Logo Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {/* Client Card 1: CARE Hospitals */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-center p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4 group-hover:scale-105 transition-transform">
-                  <Image
-                    src="/images/partners/care-hospitals.svg"
-                    alt="CARE Hospitals Logo"
-                    width={180}
-                    height={50}
-                    className="h-10 w-auto object-contain"
-                  />
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  CARE Hospitals
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Healthcare Network & Multi-Specialty Infrastructure
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-emerald-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Enterprise Portal Systems</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20 space-y-3">
+            <div>
+              <div className="inline-block border-b-2 border-[#C11E23] pb-1">
+                <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+                  Steps & Methodology
+                </span>
               </div>
             </div>
 
-            {/* Client Card 2: JITO JOBS */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-center p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4 group-hover:scale-105 transition-transform">
-                  <Image
-                    src="/images/partners/jito-jobs.svg"
-                    alt="JITO JOBS Logo"
-                    width={180}
-                    height={50}
-                    className="h-10 w-auto object-contain"
-                  />
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  JITO JOBS
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Career & Recruitment Ecosystem Platform
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-emerald-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Custom Recruitment Engine</span>
-              </div>
-            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-slate-900 leading-tight">
+              HOW WE <span className="text-[#1A3B71]">WORK</span>
+            </h2>
 
-            {/* Client Card 3: Google Cloud / Workspace */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
-                    <Code2 className="w-6 h-6 text-blue-400" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-800 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
-                    Cloud Partner
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  Google Cloud Infrastructure
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Cloud Backend & Database Stacks
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-blue-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" />
-                <span>Authorized Cloud Partner</span>
-              </div>
-            </div>
-
-            {/* Client Card 4: Microsoft Azure / 365 */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
-                    <ShieldCheck className="w-6 h-6 text-emerald-400" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                    Solutions Partner
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  Microsoft Azure / 365
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Enterprise .NET & Azure Cloud Integrations
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-emerald-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Official Partner</span>
-              </div>
-            </div>
-
-            {/* Client Card 5: Parul University */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#16325B] text-white group-hover:scale-105 transition-transform">
-                    <GraduationCap className="w-6 h-6 text-amber-400" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
-                    Academic Partner
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  Parul University
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Wall of Fame & Engineering Portal Systems
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-amber-800">
-                <CheckCircle2 className="w-3.5 h-3.5 text-amber-600" />
-                <span>Custom Portal Deployment</span>
-              </div>
-            </div>
-
-            {/* Client Card 6: Gujarat Industrial Consortium */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
-                    <Building className="w-6 h-6 text-red-400" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-red-800 bg-red-50 px-2 py-0.5 rounded border border-red-200">
-                    Manufacturing
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  Gujarat Industrial Leaders
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Manufacturing, Chemical & Supply Chain Brands
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-slate-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Custom ERP & Gate Passes</span>
-              </div>
-            </div>
-
-            {/* Client Card 7: Global B2B Export Trade */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#16325B] text-white group-hover:scale-105 transition-transform">
-                    <Layers className="w-6 h-6 text-emerald-400" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                    International
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  International Export Houses
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Custom Order Booking & Shipment Tracking
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-emerald-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Global Multi-Currency Engine</span>
-              </div>
-            </div>
-
-            {/* Client Card 8: High-Availability Cloud Server */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
-                    <Lock className="w-6 h-6 text-purple-400" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-800 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
-                    Enterprise Security
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  Enterprise Security & Databases
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Encrypted Relational SQL & Redundant Backups
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-purple-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-purple-600" />
-                <span>100% IP & Source Code Ownership</span>
-              </div>
-            </div>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-sans">
+              Most software projects fail not because of bad code but because the software never matched how the team actually worked. Our five-stage process fixes that before a single line of code gets written.
+            </p>
           </div>
+
+          {/* 5-Step Wavy Process Grid with Connecting Sine Wave */}
+          <div className="relative">
+            
+            {/* Desktop Connecting Curved Wavy Dashed SVG Line */}
+            <div className="hidden md:block absolute top-[50px] left-0 right-0 h-28 pointer-events-none z-0">
+              <svg
+                viewBox="0 0 1200 120"
+                fill="none"
+                preserveAspectRatio="none"
+                className="w-full h-full"
+              >
+                <path
+                  d="M 60,60 C 180,20 220,95 300,60 C 380,25 420,95 540,60 C 660,25 700,95 840,60 C 960,25 1020,95 1120,60 L 1155,60"
+                  stroke="#94A3B8"
+                  strokeWidth="2.5"
+                  strokeDasharray="6 6"
+                  className="opacity-60"
+                />
+                {/* Arrow indicator at the end */}
+                <path
+                  d="M 1150,53 L 1165,60 L 1150,67"
+                  stroke="#94A3B8"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="opacity-75"
+                />
+              </svg>
+            </div>
+
+            {/* 5 Process Step Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-6 relative z-10">
+              {[
+                {
+                  number: "01",
+                  title: "Research",
+                  tag: "Requirement Mapping",
+                  desc: "We work with you to identify the project details and determine the features, functions, content categories, aesthetic requirements, technical implications, timeline and other specifications.",
+                  icon: Search,
+                  accent: "#00A8FF"
+                },
+                {
+                  number: "02",
+                  title: "Strategy",
+                  tag: "Workflow Architecture",
+                  desc: "This includes client goals, target audience, detailed feature requests and as much relevant information as you can possibly gather.",
+                  icon: Workflow,
+                  accent: "#1A3B71"
+                },
+                {
+                  number: "03",
+                  title: "Design",
+                  tag: "Wireframing & UX",
+                  desc: "This is where the visual layout of the website begins to take shape. Using information gathered from the you in the planning phase, begin designing the layout using a wireframe.",
+                  icon: PenTool,
+                  accent: "#00A8FF"
+                },
+                {
+                  number: "04",
+                  title: "Development",
+                  tag: "Modular Clean Code",
+                  desc: "Upon approval of the design, we move on to the meat and potatoes of your website. We write code using the best industry practices to produce a clean, search engine...",
+                  icon: Code2,
+                  accent: "#1A3B71"
+                },
+                {
+                  number: "05",
+                  title: "Final Result",
+                  tag: "Launch & Support",
+                  desc: "Once everything's working beautifully, it's time to plan and execute your site launch! This should include planning both launch timing and communication strategies...",
+                  icon: ThumbsUp,
+                  accent: "#00A8FF"
+                }
+              ].map((step, idx) => {
+                const Icon = step.icon;
+                const isActive = activeProcessStep === idx;
+
+                // Subtle alternating vertical offset for genuine wavy rhythm
+                const waveOffsetClass =
+                  idx % 2 === 1
+                    ? "md:-translate-y-3"
+                    : "md:translate-y-2";
+
+                return (
+                  <div
+                    key={step.number}
+                    onMouseEnter={() => setActiveProcessStep(idx)}
+                    onClick={() => setActiveProcessStep(idx)}
+                    className={`flex flex-col items-center text-center group cursor-pointer transition-all duration-500 ${waveOffsetClass}`}
+                  >
+                    {/* Circle Node Stage with Faint Watermark Number Behind */}
+                    <div className="relative mb-6 flex items-center justify-center">
+                      
+                      {/* Giant Outline Watermark Number */}
+                      <span className="absolute -top-10 sm:-top-14 left-1/2 -translate-x-1/2 text-7xl sm:text-8xl font-mono font-black text-slate-200/60 select-none pointer-events-none transition-all duration-300 group-hover:text-slate-300/80 group-hover:scale-105">
+                        {step.number}
+                      </span>
+
+                      {/* Circular Action Node */}
+                      <div
+                        className={`relative w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center transition-all duration-500 z-10 ${
+                          isActive
+                            ? "bg-gradient-to-br from-[#C11E23] via-[#991B1B] to-[#DC2626] text-white shadow-2xl scale-110 ring-4 ring-[#C11E23] ring-offset-4 ring-offset-white"
+                            : "bg-white text-slate-700 shadow-lg border-2 border-slate-200/90 group-hover:border-[#C11E23]/60 group-hover:text-[#C11E23] group-hover:shadow-xl group-hover:scale-105"
+                        }`}
+                      >
+                        <Icon
+                          className={`w-9 h-9 sm:w-11 sm:h-11 transition-transform duration-500 ${
+                            isActive
+                              ? "stroke-[2.2] scale-105 text-white"
+                              : "stroke-[1.8] text-slate-700 group-hover:text-[#C11E23] group-hover:scale-110"
+                          }`}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Step Title */}
+                    <h3
+                      className={`text-xl sm:text-[22px] font-black tracking-tight transition-colors duration-300 ${
+                        isActive
+                          ? "text-[#C11E23]"
+                          : "text-slate-900 group-hover:text-[#C11E23]"
+                      }`}
+                    >
+                      {step.title}
+                    </h3>
+
+                    {/* Description (Exact Content From Screenshot) */}
+                    <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed font-sans mt-3 max-w-xs">
+                      {step.desc}
+                    </p>
+
+                    {/* Interactive Active Highlight Pill */}
+                    <div className="mt-4">
+                      <span
+                        className={`inline-block px-3 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider transition-all duration-300 ${
+                          isActive
+                            ? "bg-[#C11E23] text-white shadow-xs"
+                            : "bg-slate-100 text-slate-500 border border-slate-200 group-hover:bg-red-50 group-hover:text-[#C11E23]"
+                        }`}
+                      >
+                        {step.tag}
+                      </span>
+                    </div>
+
+                  </div>
+                );
+              })}
+            </div>
+
+          </div>
+
         </div>
       </section>
 
-      {/* Section 6: Frequently Asked Questions */}
+      
+      {/* Section 2: Tailored Software Solutions Built for Operational Efficiency (Stacking Cards UI) */}
+      <TailoredSolutionsStackingCards />
+
+      {/* Client Logo Auto-Marquee Section (2-Line Infinite Scroll) */}
+      <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden border-b border-slate-200/80" id="client-partners">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
+          <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-3">
+            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              Trusted Partnerships
+            </span>
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-slate-900 leading-tight">
+            Trusted Software & ERP Partner for <br className="hidden sm:inline" />
+            <span className="text-[#1A3B71]">Leading Healthcare & Enterprise Brands</span>
+          </h2>
+
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans leading-relaxed">
+            Powering mission-critical hospital networks, job portals, and enterprise workflow infrastructure across Gujarat and India.
+          </p>
+        </div>
+
+        {/* 2-Line Infinite Auto-Marquee Track */}
+        <div className="w-full relative overflow-hidden py-2 space-y-4 sm:space-y-6">
+          
+          {/* Gradient edge masks for smooth seamless fade */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-44 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-44 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent z-10" />
+
+          {/* Line 1: Infinite Marquee (Left Scroll) */}
+          <div className="flex animate-marquee items-center gap-5 sm:gap-6">
+            {[...partnerLogosRow1, ...partnerLogosRow1].map((partner, idx) => (
+              <div
+                key={`row1-${idx}`}
+                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#1A3B71]/40 hover:shadow-md transition-all duration-300 group cursor-default"
+              >
+                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
+                  <Image
+                    src={partner.logo}
+                    alt={`${partner.name} Logo`}
+                    width={150}
+                    height={45}
+                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
+                <div className="hidden sm:block text-left">
+                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#1A3B71] transition-colors whitespace-nowrap">
+                    {partner.name}
+                  </div>
+                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
+                    {partner.tag}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Line 2: Infinite Marquee Reverse (Right Scroll) */}
+          <div className="flex animate-marquee-reverse items-center gap-5 sm:gap-6">
+            {[...partnerLogosRow2, ...partnerLogosRow2].map((partner, idx) => (
+              <div
+                key={`row2-${idx}`}
+                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#C11E23]/40 hover:shadow-md transition-all duration-300 group cursor-default"
+              >
+                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
+                  <Image
+                    src={partner.logo}
+                    alt={`${partner.name} Logo`}
+                    width={150}
+                    height={45}
+                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
+                <div className="hidden sm:block text-left">
+                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#C11E23] transition-colors whitespace-nowrap">
+                    {partner.name}
+                  </div>
+                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
+                    {partner.tag}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions */}
       <FaqSection
         customFaqs={softwareFaqs}
         badge="Frequently Asked Questions"
@@ -685,58 +858,53 @@ export default function CustomSoftwarePage() {
         subtitle="Key explanations on SaaS vs custom builds, biometric hardware integrations, historical spreadsheet migrations, deployment timelines, and on-site staff training."
       />
 
-      {/* Section 7: Action Call */}
-      <section className="relative z-20 -mb-20 sm:-mb-24 lg:-mb-28" id="action-call">
+      {/* Consultation CTA Banner (Matching Home Page Style) */}
+      <section className="py-12 lg:py-16 bg-white relative overflow-hidden border-b border-slate-200/80" id="consultation-cta">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-[#0B192C] via-[#11253E] to-[#0B192C] border border-slate-700/70 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl shadow-slate-950/40 relative overflow-hidden backdrop-blur-sm">
-            {/* Ambient glows inside card */}
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-red-600/15 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+          
+          {/* Executive Sapphire Gradient Container with Checkered Grid */}
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#0A2647] via-[#134B70] to-[#07192F] text-white border border-slate-700/60 shadow-2xl p-8 sm:p-10 lg:p-14 group">
+            
+            {/* Subtle Checkered Grid Accent (32px by 32px) */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
-              <div className="text-center lg:text-left space-y-2.5 max-w-3xl">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-[11px] font-bold uppercase tracking-wider">
-                  <Sparkles className="w-3 h-3 text-red-400" />
-                  <span>Action Call • Vadodara Engineering Desk</span>
-                </div>
+            {/* Ambient Background Lighting */}
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#C11E23]/20 rounded-full blur-[90px] pointer-events-none" />
+            <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-[#00E5FF]/15 rounded-full blur-[90px] pointer-events-none" />
 
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight leading-tight">
-                  Build Software That Fits Your Real Workplace Operations
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-14">
+              
+              {/* Left Column: Headline & Narrative */}
+              <div className="space-y-4 max-w-2xl">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white leading-tight">
+                  Build Software That Fits Your <br />
+                  <span className="text-[#00E5FF]">
+                    Real Workplace Operations.
+                  </span>
                 </h2>
 
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl">
-                  Stop adjusting your business processes to fit generic software. Talk to our senior software architects in Vadodara—we will assess your current workflows, identify where the gaps are, and blueprint a custom software solution built around how your organization actually operates.
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans max-w-xl">
+                  You don&apos;t have to figure out your software architecture alone. Reach out and talk directly with our engineering desk—we&apos;ll evaluate your current workflows, identify where the gaps are, and blueprint a custom software solution built around how your organization actually operates.
                 </p>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto flex-shrink-0">
+              {/* Right Column: High-Impact Action Button */}
+              <div className="flex flex-col items-stretch flex-shrink-0 w-full sm:w-auto lg:w-80">
                 <button
-                  onClick={() => setModalOpen(true)}
-                  className="px-7 py-3.5 rounded-xl bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-red-900/40 hover:shadow-red-900/60 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group cursor-pointer"
+                  onClick={() => window.location.href = "/contact#get-in-touch"}
+                  className="px-8 py-4 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xl shadow-red-950/40 hover:scale-[1.02] flex items-center justify-center gap-2.5 group cursor-pointer active:scale-98"
                 >
-                  <span>Schedule Workflow Assessment</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  <span>Schedule Consultation</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
-
-                <Link
-                  href="/contact"
-                  className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs uppercase tracking-wider transition-all border border-white/15 hover:border-white/30 text-center flex items-center justify-center gap-2"
-                >
-                  <PhoneCall className="w-3 h-3 text-slate-300" />
-                  <span>Speak with Solutions Architect</span>
-                </Link>
               </div>
+
             </div>
+
           </div>
         </div>
       </section>
 
-      <ConsultationModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        initialService={`Custom Software: ${selectedSolution}`}
-      />
-    </main>
+          </main>
   );
 }

@@ -102,7 +102,7 @@ export default function DomainSearchBar({
         <button
           type="submit"
           disabled={isSearching}
-          className="w-full md:w-auto px-7 py-3.5 bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-semibold rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2 flex-shrink-0"
+          className="w-full md:w-auto px-7 py-3.5 bg-[#E11D48] hover:bg-[#BE123C] text-white font-semibold rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2 flex-shrink-0"
         >
           {isSearching ? (
             <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>

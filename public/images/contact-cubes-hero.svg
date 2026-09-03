@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 540" fill="none">
+  <defs>
+    <!-- Ambient Blue Glow -->
+    <radialGradient id="ambientGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Floor soft shadow -->
+    <radialGradient id="floorShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#020817" stop-opacity="0.75" />
+      <stop offset="60%" stop-color="#020817" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#020817" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Wood Cube Gradients: Top Faces (Sunlit) -->
+    <linearGradient id="topFaceGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ECD2A8" />
+      <stop offset="50%" stop-color="#F7E6CA" />
+      <stop offset="100%" stop-color="#EED6B0" />
+    </linearGradient>
+
+    <!-- Wood Cube Gradients: Front Faces (Diffused Midtone) -->
+    <linearGradient id="frontFaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C99B" />
+      <stop offset="40%" stop-color="#DFBC8A" />
+      <stop offset="100%" stop-color="#CAA26E" />
+    </linearGradient>
+
+    <!-- Wood Cube Gradients: Right Faces (Shaded) -->
+    <linearGradient id="rightFaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BA905E" />
+      <stop offset="60%" stop-color="#A47B49" />
+      <stop offset="100%" stop-color="#8B6334" />
+    </linearGradient>
+
+    <!-- Icon Inlay / Wood Engraving Gradient -->
+    <linearGradient id="engraveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3E210D" />
+      <stop offset="100%" stop-color="#5C3417" />
+    </linearGradient>
+
+    <!-- Subtle bevel highlights -->
+    <linearGradient id="bevelLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.08" />
+    </linearGradient>
+
+    <!-- Shadows -->
+    <filter id="cubeBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7" />
+    </filter>
+    <filter id="softContactShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" />
+    </filter>
+    <filter id="inlayGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="1" dy="1.5" stdDeviation="0.7" flood-color="#FFF3DF" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Backdrop Aura -->
+  <circle cx="340" cy="270" r="240" fill="url(#ambientGlow)" />
+
+  <!-- Floor Contact Shadows -->
+  <ellipse cx="340" cy="465" rx="170" ry="24" fill="url(#floorShadow)" filter="url(#softContactShadow)" />
+  <ellipse cx="330" cy="460" rx="110" ry="14" fill="#071120" opacity="0.45" filter="url(#cubeBlur)" />
+
+  <!-- ========================================== -->
+  <!-- 1. BOTTOM CUBE: MAIL ENVELOPE              -->
+  <!-- ========================================== -->
+  <g id="bottomCube">
+    <!-- Right Face -->
+    <polygon points="380,330 422,300 422,420 380,450" fill="url(#rightFaceGrad)" />
+    <!-- Top Face -->
+    <polygon points="260,330 302,300 422,300 380,330" fill="url(#topFaceGrad)" />
+    <!-- Front Face -->
+    <rect x="260" y="330" width="120" height="120" rx="10" fill="url(#frontFaceGrad)" />
+    <!-- Front Bevel Top Highlight -->
+    <line x1="265" y1="331" x2="375" y2="331" stroke="url(#bevelLight)" stroke-width="2" />
+    <line x1="261" y1="335" x2="261" y2="445" stroke="url(#bevelLight)" stroke-width="1.5" />
+
+    <!-- Icon: Mail Envelope (Centered on Front Face at 320, 390) -->
+    <g transform="translate(288, 366)" filter="url(#inlayGlow)">
+      <!-- Outer Outline Envelope -->
+      <rect x="0" y="2" width="64" height="44" rx="5" stroke="url(#engraveGrad)" stroke-width="5" fill="none" stroke-linejoin="round" />
+      <!-- Envelope Flap -->
+      <path d="M2 7 L32 30 L62 7" stroke="url(#engraveGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <!-- Inner Corner Creases -->
+      <line x1="2" y1="44" x2="23" y2="25" stroke="url(#engraveGrad)" stroke-width="4.5" stroke-linecap="round" />
+      <line x1="62" y1="44" x2="41" y2="25" stroke="url(#engraveGrad)" stroke-width="4.5" stroke-linecap="round" />
+    </g>
+  </g>
+
+  <!-- Shadow cast by Middle Cube onto Bottom Cube -->
+  <polygon points="310,330 380,330 415,310 350,310" fill="#000000" opacity="0.28" filter="url(#cubeBlur)" />
+
+  <!-- ========================================== -->
+  <!-- 2. MIDDLE CUBE: @ SYMBOL                   -->
+  <!-- ========================================== -->
+  <g id="middleCube">
+    <!-- Right Face -->
+    <polygon points="425,190 467,160 467,280 425,310" fill="url(#rightFaceGrad)" />
+    <!-- Top Face -->
+    <polygon points="305,190 347,160 467,160 425,190" fill="url(#topFaceGrad)" />
+    <!-- Front Face -->
+    <rect x="305" y="190" width="120" height="120" rx="10" fill="url(#frontFaceGrad)" />
+    <!-- Front Bevel Top Highlight -->
+    <line x1="310" y1="191" x2="420" y2="191" stroke="url(#bevelLight)" stroke-width="2" />
+    <line x1="306" y1="195" x2="306" y2="305" stroke="url(#bevelLight)" stroke-width="1.5" />
+
+    <!-- Icon: Clear, Perfect @ Symbol (Centered at 365, 250) -->
+    <g filter="url(#inlayGlow)">
+      <text 
+        x="365" 
+        y="278" 
+        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="82" 
+        font-weight="900" 
+        fill="url(#engraveGrad)" 
+        stroke="url(#engraveGrad)"
+        stroke-width="1.5"
+        text-anchor="middle"
+      >@</text>
+    </g>
+  </g>
+
+  <!-- Shadow cast by Top Cube onto Middle Cube -->
+  <polygon points="265,190 340,190 380,170 305,170" fill="#000000" opacity="0.3" filter="url(#cubeBlur)" />
+
+  <!-- ========================================== -->
+  <!-- 3. TOP CUBE: PHONE RECEIVER                -->
+  <!-- ========================================== -->
+  <g id="topCube">
+    <!-- Right Face -->
+    <polygon points="370,55 412,25 412,145 370,175" fill="url(#rightFaceGrad)" />
+    <!-- Top Face -->
+    <polygon points="250,55 292,25 412,25 370,55" fill="url(#topFaceGrad)" />
+    <!-- Front Face -->
+    <rect x="250" y="55" width="120" height="120" rx="10" fill="url(#frontFaceGrad)" />
+    <!-- Front Bevel Top Highlight -->
+    <line x1="255" y1="56" x2="365" y2="56" stroke="url(#bevelLight)" stroke-width="2" />
+    <line x1="251" y1="60" x2="251" y2="170" stroke="url(#bevelLight)" stroke-width="1.5" />
+
+    <!-- Icon: Crisp Phone Receiver with Acoustic Waves (Centered at 310, 115) -->
+    <g transform="translate(278, 80) scale(2.6)" filter="url(#inlayGlow)">
+      <!-- Classic Phone Handset with Smooth Contours -->
+      <path 
+        d="M17.5 13.8v2.4a1.6 1.6 0 0 1-1.7 1.6 15.5 15.5 0 0 1-6.8-2.4 15.2 15.2 0 0 1-4.7-4.7A15.5 15.5 0 0 1 1.9 4a1.6 1.6 0 0 1 1.6-1.7h2.4a1.6 1.6 0 0 1 1.6 1.3c.2.9.5 1.9 1 2.8a1.6 1.6 0 0 1-.3 1.7L7.1 9.2a12.6 12.6 0 0 0 4.7 4.7l1.1-1.1a1.6 1.6 0 0 1 1.7-.3c.9.4 1.9.8 2.8 1a1.6 1.6 0 0 1 1.3 1.5z" 
+        fill="url(#engraveGrad)" 
+        stroke="url(#engraveGrad)" 
+        stroke-width="0.8" 
+        stroke-linejoin="round" 
+      />
+      <!-- Sound Wave 1 (Inner Arc) -->
+      <path 
+        d="M15.5 3.5 A 6 6 0 0 1 19.5 7.5" 
+        fill="none" 
+        stroke="url(#engraveGrad)" 
+        stroke-width="1.8" 
+        stroke-linecap="round" 
+      />
+      <!-- Sound Wave 2 (Outer Arc) -->
+      <path 
+        d="M17.5 1 A 9.5 9.5 0 0 1 23 6.5" 
+        fill="none" 
+        stroke="url(#engraveGrad)" 
+        stroke-width="1.8" 
+        stroke-linecap="round" 
+      />
+    </g>
+  </g>
+
+  <!-- Ambient Light Sparks / Floating Dots -->
+  <circle cx="210" cy="180" r="3" fill="#60A5FA" opacity="0.6" />
+  <circle cx="490" cy="220" r="4" fill="#60A5FA" opacity="0.4" />
+  <circle cx="440" cy="90" r="2.5" fill="#FBBF24" opacity="0.5" />
+  <circle cx="230" cy="380" r="3" fill="#60A5FA" opacity="0.3" />
+</svg>

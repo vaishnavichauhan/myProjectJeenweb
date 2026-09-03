@@ -6,7 +6,6 @@ import Image from "next/image";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
-import ConsultationModal from "@/components/common/ConsultationModal";
 import {
   TrendingUp,
   Share2,
@@ -26,8 +25,6 @@ import {
 } from "lucide-react";
 
 export default function SocialMediaServicePage() {
-  const [modalOpen, setModalOpen] = useState(false);
-
   const smmFaqs = [
     {
       q: "Which social media platforms work best for B2B industrial businesses in Gujarat?",
@@ -64,38 +61,41 @@ export default function SocialMediaServicePage() {
         </div>
       </div>
 
-      {/* Hero Banner */}
-      <section className="bg-[#0B192C] text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Hero Banner: Headline Positioned Above On Illustration */}
+      <section className="bg-gradient-to-b from-[#06152B] via-[#0B1E38] to-[#0F294D] text-white pt-12 sm:pt-16 pb-0 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-700/60">
+        
+        {/* Ambient Glows & Background Grid */}
+        <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-rose-500/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 w-[450px] h-[450px] bg-blue-500/15 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
+
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-block pb-1.5 border-b-2 border-[#D32F2F]">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-slate-100">
-                Performance Growth Engine
-              </span>
+          
+          {/* Unified Container: Headline Seamlessly Above On Image */}
+          <div className="relative max-w-5xl mx-auto flex flex-col items-center">
+            
+            {/* Headline Text Placed Above On Image */}
+            <div className="relative z-20 max-w-4xl mx-auto text-center px-4 mb-2 sm:-mb-6 lg:-mb-12">
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.18] drop-shadow-md">
+                Transform Social Channels into Revenue Engines Through Strategic Management and Paid Media
+              </h1>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Transform Social Channels into Revenue Engines Through Strategic Management and Paid Media
-            </h1>
-
-            <p className="text-base sm:text-lg text-rose-300 font-semibold">
-              Data-backed content creation, high-conversion performance marketing, and localized influencer campaigns managed from Vadodara.
-            </p>
-
-            <p className="text-slate-300 text-sm sm:text-[15px] leading-relaxed">
-              Most businesses in Gujarat have social media pages. Very few are actually making money from them. Posting regularly is not enough. What moves the needle is a clear strategy, content that speaks directly to buyers, paid campaigns built around conversion data, and strict ROAS accountability.
-            </p>
-
-            <div className="pt-4 flex flex-wrap gap-3.5">
-              <button
-                onClick={() => setModalOpen(true)}
-                className="px-6 py-3.5 rounded-lg bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm flex items-center gap-2"
-              >
-                <span>Launch Your Social Campaign</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            {/* Illustration Image Directly Beneath Headline */}
+            <div className="relative w-full max-w-4xl flex justify-center -mb-1">
+              <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent rounded-t-3xl blur-sm pointer-events-none" />
+              <Image
+                src="/images/social-media-marketing-hero.png"
+                alt="Social Media and Performance Marketing Illustration"
+                width={1024}
+                height={484}
+                priority
+                className="w-full h-auto object-contain relative z-10 drop-shadow-[0_15px_25px_rgba(0,0,0,0.35)]"
+              />
             </div>
+
           </div>
+
         </div>
       </section>
 
@@ -432,7 +432,7 @@ export default function SocialMediaServicePage() {
             <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-[#D32F2F] text-white flex items-center justify-center font-extrabold text-lg group-hover:scale-105 transition-transform">
+                  <div className="w-12 h-12 rounded-2xl bg-[#E11D48] text-white flex items-center justify-center font-extrabold text-lg group-hover:scale-105 transition-transform">
                     03
                   </div>
                   <span className="text-[11px] font-bold text-red-800 bg-red-50 px-3 py-1 rounded-full uppercase tracking-wider border border-red-200/60">
@@ -803,8 +803,8 @@ export default function SocialMediaServicePage() {
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto flex-shrink-0">
                 <button
-                  onClick={() => setModalOpen(true)}
-                  className="px-7 py-3.5 rounded-xl bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-red-900/40 hover:shadow-red-900/60 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group cursor-pointer"
+                  onClick={() => window.location.href = "/contact#get-in-touch"}
+                  className="px-7 py-3.5 rounded-xl bg-[#E11D48] hover:bg-[#BE123C] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-red-900/40 hover:shadow-red-900/60 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   <span>Schedule Your Growth Strategy Call</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -823,11 +823,6 @@ export default function SocialMediaServicePage() {
         </div>
       </section>
 
-      <ConsultationModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        initialService="Social Media and Performance Marketing"
-      />
-    </main>
+          </main>
   );
 }

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none">
+  <!-- Google 4-color icon -->
+  <g transform="translate(10, 10)">
+    <path d="M19.6 20.4v-4.8h9.2c.2.8.3 1.7.3 2.7 0 5.4-3.6 9.3-9.5 9.3C13.9 27.6 9.3 23 9.3 17.4S13.9 7.2 19.6 7.2c2.8 0 5.1 1 6.9 2.7l3.7-3.7C27.6 3.8 23.9 2 19.6 2 11.1 2 4.2 8.9 4.2 17.4s6.9 15.4 15.4 15.4c8.9 0 14.8-6.2 14.8-15 0-1-.1-1.8-.3-2.5l-14.5.1z" fill="#4285F4"/>
+    <path d="M19.6 2v5.2c-2.8 0-5.1 1-6.9 2.7l-3.7-3.7C11.6 3.8 15.3 2 19.6 2z" fill="#EA4335"/>
+    <path d="M9 13.7c-.5 1.1-.8 2.4-.8 3.7s.3 2.6.8 3.7l-3.8 3C4.3 22.2 3.7 19.9 3.7 17.4s.6-4.8 1.5-6.7l3.8 3z" fill="#FBBC05"/>
+    <path d="M19.6 27.6c4.1 0 7.5-1.4 10-3.8l-3.7-3.7c-1.4.9-3.2 1.5-6.3 1.5-3.8 0-7.1-2.6-8.2-6.1l-3.8 3c2.3 4.8 7.3 9.1 12 9.1z" fill="#34A853"/>
+  </g>
+  <!-- Text: Google Workspace -->
+  <text x="56" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#3C4043" letter-spacing="-0.2px">Google</text>
+  <text x="114" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#5F6368" letter-spacing="-0.2px">Workspace</text>
+  <!-- Product icons pill badges underneath or beside -->
+  <g transform="translate(56, 34)">
+    <!-- Gmail -->
+    <rect x="0" y="0" width="14" height="11" rx="2" fill="#EA4335" opacity="0.9"/>
+    <!-- Drive -->
+    <rect x="18" y="0" width="14" height="11" rx="2" fill="#34A853" opacity="0.9"/>
+    <!-- Meet -->
+    <rect x="36" y="0" width="14" height="11" rx="2" fill="#4285F4" opacity="0.9"/>
+    <!-- Calendar -->
+    <rect x="54" y="0" width="14" height="11" rx="2" fill="#1A73E8" opacity="0.9"/>
+    <!-- Docs -->
+    <rect x="72" y="0" width="14" height="11" rx="2" fill="#4285F4" opacity="0.9"/>
+  </g>
+</svg>

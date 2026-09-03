@@ -7,7 +7,6 @@ import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
 import DomainSearchBar from "@/components/common/DomainSearchBar";
-import ConsultationModal from "@/components/common/ConsultationModal";
 import {
   Globe,
   ShieldCheck,
@@ -24,8 +23,6 @@ import {
 } from "lucide-react";
 
 export default function DomainServicePage() {
-  const [modalOpen, setModalOpen] = useState(false);
-
   const domainFaqs = [
     {
       q: "How do I transfer my existing domain to Jeenweb?",
@@ -66,7 +63,7 @@ export default function DomainServicePage() {
       <section className="bg-[#0B192C] text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-3xl space-y-6">
-            <div className="inline-block pb-1.5 border-b-2 border-[#D32F2F]">
+            <div className="inline-block pb-1.5 border-b-2 border-[#E11D48]">
               <span className="text-xs font-extrabold uppercase tracking-widest text-slate-100">
                 Enterprise Domain Registration
               </span>
@@ -86,7 +83,7 @@ export default function DomainServicePage() {
 
             {/* Live Search Tool */}
             <div className="pt-4">
-              <DomainSearchBar onOpenModal={() => setModalOpen(true)} />
+              <DomainSearchBar onOpenModal={() => window.location.href = '/contact#get-in-touch'} />
             </div>
           </div>
         </div>
@@ -238,7 +235,7 @@ export default function DomainServicePage() {
                   <div className="p-3.5 rounded-2xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
                     <ShieldCheck className="w-6 h-6 text-red-400" />
                   </div>
-                  <span className="text-[11px] font-bold text-[#D32F2F] bg-red-50 px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span className="text-[11px] font-bold text-[#E11D48] bg-red-50 px-3 py-1 rounded-full uppercase tracking-wider">
                     Asset Protection
                   </span>
                 </div>
@@ -438,7 +435,7 @@ export default function DomainServicePage() {
             </div>
 
             <button
-              onClick={() => setModalOpen(true)}
+              onClick={() => window.location.href = "/contact#get-in-touch"}
               className="px-6 py-3 rounded-xl bg-[#16325B] hover:bg-[#0F223D] text-white text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap shadow-sm"
             >
               Get Expert Extension Advice
@@ -663,8 +660,8 @@ export default function DomainServicePage() {
               </p>
             </div>
             <button
-              onClick={() => setModalOpen(true)}
-              className="px-6 py-2.5 rounded-lg bg-[#D32F2F] hover:bg-[#B71C1C] text-white text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap"
+              onClick={() => window.location.href = "/contact#get-in-touch"}
+              className="px-6 py-2.5 rounded-lg bg-[#E11D48] hover:bg-[#BE123C] text-white text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap"
             >
               Consult Our Domain Desk
             </button>
@@ -707,8 +704,8 @@ export default function DomainServicePage() {
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto flex-shrink-0">
                 <button
-                  onClick={() => setModalOpen(true)}
-                  className="px-7 py-3.5 rounded-xl bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-red-900/40 hover:shadow-red-900/60 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group cursor-pointer"
+                  onClick={() => window.location.href = "/contact#get-in-touch"}
+                  className="px-7 py-3.5 rounded-xl bg-[#E11D48] hover:bg-[#BE123C] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-red-900/40 hover:shadow-red-900/60 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   <span>Register Your Domain</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -727,11 +724,6 @@ export default function DomainServicePage() {
         </div>
       </section>
 
-      <ConsultationModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        initialService="Domain Registration & Management"
-      />
-    </main>
+          </main>
   );
 }

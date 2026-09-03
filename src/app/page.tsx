@@ -29,41 +29,41 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#F8FAFC]">
-      {/* Section 1: Hero Banner (4 Switchable Interactive Banners) */}
+    <main className="min-h-screen bg-[#F5F4F0] text-slate-900 selection:bg-[#E11D48] selection:text-white">
+      {/* 1. Hero Banner with Switchable Interactive Banners */}
       <HeroSlider />
 
-      {/* Section 2: Core Growth Metrics */}
+      {/* 2. Core Growth Metrics */}
       <MetricsSection />
 
-      {/* Section 3: What We Do (Part 1 Core Services + Part 2 Business Email Solutions) */}
+      {/* 3. What We Do: Core Services (Accordion) + Business Email Solutions */}
       <ServicesGrid />
 
-      {/* Section 4: About Jeenweb Technologists Overview */}
+      {/* 4. About Jeenweb Technologists Overview */}
       <AboutSnippet />
 
-      {/* Section 5: Why Choose Us (6 Corporate Pillars) */}
+      {/* 5. Why Choose Us (6 Corporate Pillars) */}
       <WhyChooseUs />
 
-      {/* Section 6: Tools and Technologies We Use */}
+      {/* 6. Tools and Technologies We Use */}
       <TechStack />
 
-      {/* Section 7: Strategic Partnerships & Authorizations */}
+      {/* 7. Strategic Partnerships & Authorizations */}
       <PartnersMarquee />
 
-      {/* Section 9: Geographic Footprint (12 Countries) */}
-      <GlobalFootprint />
-
-      {/* Section 10: Client Experiences */}
+      {/* 8. Client Experiences (Direct Feedback From Our Long-Term Partners) */}
       <Testimonials />
 
-      {/* Section 11: Frequently Asked Questions */}
+      {/* 9. Corporate Operations Across The World (Geographic Footprint) */}
+      <GlobalFootprint />
+
+      {/* 10. Frequently Asked Questions */}
       <FaqSection />
 
-      {/* Section 12: Knowledge Base (Blog) */}
+      {/* 11. Knowledge Base (Blog) */}
       <BlogSection />
 
-      {/* Section 13: CTA */}
+      {/* 12. High-Voltage Acid Yellow Ribbon CTA Banner */}
       <CtaSection />
     </main>
   );

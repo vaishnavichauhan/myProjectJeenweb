@@ -2,65 +2,65 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, PhoneCall, Sparkles } from "lucide-react";
-import ConsultationModal from "../common/ConsultationModal";
+import { ArrowRight, PhoneCall, ShieldCheck, Sparkles } from "lucide-react";
 
 export default function CtaSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <>
-      <section className="relative z-20 -mb-20 sm:-mb-24 lg:-mb-28" id="consultation-cta">
+      <section className="py-12 lg:py-16 bg-white relative overflow-hidden border-b border-slate-200/80" id="consultation-cta">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-[#0B192C] via-[#11253E] to-[#0B192C] border border-slate-700/70 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl shadow-slate-950/40 relative overflow-hidden backdrop-blur-sm">
-            {/* Subtle ambient glow inside card */}
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-red-600/15 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+          
+          {/* Executive Sapphire Gradient Container with Checkered Grid */}
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#0A2647] via-[#134B70] to-[#07192F] text-white border border-slate-700/60 shadow-2xl p-8 sm:p-10 lg:p-14 group">
+            
+            {/* Subtle Checkered Grid Accent (32px by 32px) */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
-              <div className="text-center lg:text-left space-y-2.5 max-w-3xl">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-[11px] font-bold uppercase tracking-wider">
-                  <Sparkles className="w-3 h-3 text-red-400" />
-                  <span>Direct Engineering Advisory • Vadodara</span>
-                </div>
+            {/* Ambient Background Lighting */}
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#C11E23]/20 rounded-full blur-[90px] pointer-events-none" />
+            <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-[#00E5FF]/15 rounded-full blur-[90px] pointer-events-none" />
 
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight leading-tight">
-                  Secure Your Infrastructure. Optimize Your Growth.
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-14">
+              
+              {/* Left Column: Headline & Narrative */}
+              <div className="space-y-4 max-w-2xl">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+                  Secure Your Infrastructure. <br />
+                  <span className="text-[#00E5FF]">
+                    Optimize Your Growth.
+                  </span>
                 </h2>
 
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl">
-                  You don&apos;t have to figure out your IT gaps alone. Reach out and talk directly with our team — we&apos;ll look at where your current web setup stands, what your application needs are, and whether your cloud and mail tools are actually working the way they should be.
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans max-w-xl">
+                  You don&apos;t have to figure out your IT gaps alone. Reach out and talk directly with our engineering desk—we&apos;ll evaluate your current servers, ERP systems, and cloud platforms with complete technical transparency.
                 </p>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto flex-shrink-0">
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="px-7 py-3.5 rounded-xl bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-red-900/40 hover:shadow-red-900/60 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group cursor-pointer"
+              {/* Right Column: High-Impact Action Buttons */}
+              <div className="flex flex-col sm:flex-row lg:flex-col items-stretch gap-3.5 flex-shrink-0 w-full sm:w-auto lg:w-80">
+                <Link
+                  href="/contact#get-in-touch"
+                  className="px-8 py-4 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xl shadow-red-950/40 hover:scale-[1.02] flex items-center justify-center gap-2.5 group cursor-pointer active:scale-98"
                 >
-                  <span>Talk to Us</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                </button>
+                  <span>Schedule Consultation</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
 
                 <Link
                   href="/contact"
-                  className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs uppercase tracking-wider transition-all border border-white/15 hover:border-white/30 text-center flex items-center justify-center gap-2"
+                  className="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all border border-white/25 text-center flex items-center justify-center gap-2.5 backdrop-blur-md hover:scale-[1.01] active:scale-98"
                 >
-                  <PhoneCall className="w-3 h-3 text-slate-300" />
-                  <span>Contact Corporate Desk</span>
+                  <PhoneCall className="w-4 h-4 text-[#00E5FF]" />
+                  <span>Contact Technical Desk</span>
                 </Link>
               </div>
+
             </div>
+
           </div>
         </div>
       </section>
 
-      <ConsultationModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        initialService="Infrastructure & Growth Advisory"
-      />
-    </>
+          </>
   );
 }

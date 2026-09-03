@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import BackToTopButton from "../components/common/BackToTopButton";
 
-const jakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-jakarta-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap"
 });
 
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     "Google Workspace Microsoft 365 Partner"
   ],
   icons: {
-    icon: "/images/logo.jpg"
+    icon: "/images/logo.png"
   }
 };
 
@@ -47,12 +48,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jakartaSans.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
+      className={`${outfit.variable} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col font-sans bg-[#F8FAFC] text-slate-900 selection:bg-[#16325B] selection:text-white">
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />
+        <BackToTopButton />
       </body>
     </html>
   );
