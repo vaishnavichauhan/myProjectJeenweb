@@ -116,16 +116,39 @@ export default function Testimonials() {
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
               
-              {/* Left Section of Merged Card (Flush Left Edge Image with Parallax Scale) */}
-              <div className="lg:col-span-5 relative min-h-[280px] sm:min-h-[340px] lg:min-h-full">
-                <div className="relative w-full h-full min-h-[300px] sm:min-h-[360px] lg:min-h-[420px] overflow-hidden group/img">
+              {/* Left Section of Merged Card (Large Centered Client Avatar on Soft Background Image) */}
+              <div className="lg:col-span-5 relative min-h-[280px] sm:min-h-[340px] lg:min-h-full bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#0A2647] flex items-center justify-center overflow-hidden">
+                {/* Background Image with Light Opacity */}
+                <div className="absolute inset-0 overflow-hidden group/img">
                   <Image
                     src="/images/corporate-purpose-puzzle.jpg"
                     alt="Strategic Client Partnership"
                     fill
-                    className="object-cover object-center group-hover/img:scale-105 transition-transform duration-700"
+                    className="object-cover object-center opacity-20 group-hover/img:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-slate-950/40" />
+                </div>
+
+                {/* Centered Large Client Avatar (Changes dynamically with active testimonial) */}
+                <div
+                  key={activeTestimonial.id}
+                  className="relative z-20 flex flex-col items-center justify-center p-6 text-center animate-fadeIn"
+                >
+                  <div className="relative w-28 h-28 sm:w-36 sm:h-36 lg:w-44 lg:h-44 rounded-full p-2 bg-white/95 backdrop-blur-md shadow-2xl shadow-black/30 ring-4 ring-white/60">
+                    <div className="relative w-full h-full rounded-full overflow-hidden shadow-inner">
+                      <Image
+                        src={activeTestimonial.avatar}
+                        alt={activeTestimonial.author}
+                        fill
+                        className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                        sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 176px"
+                      />
+                    </div>
+                    {/* Active Verified Badge */}
+                    <span className="absolute bottom-1 right-1 sm:bottom-2 sm:right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-500 border-3 sm:border-4 border-white flex items-center justify-center shadow-md">
+                      <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -171,7 +194,7 @@ export default function Testimonials() {
                   </p>
                 </div>
 
-                {/* Author Footer with Star Rating on Bottom Right */}
+                {/* Author Footer with Star Rating on Bottom Right (Avatar Removed on Right) */}
                 <div className="pt-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                   <div>
                     <h4 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight">

@@ -195,7 +195,7 @@ export const CORE_SERVICES_PART1: ServiceItem[] = [
   },
   {
     id: "hosting",
-    title: "Web Hosting Services",
+    title: "Web Hosting",
     shortDesc: "Fast, stable, and secure hosting with on-demand manual backups and isolated CageFS containers.",
     fullDesc: "Your website needs a home that stays up, loads fast, and keeps your data safe. We offer shared, VPS, dedicated, and cloud hosting options—and we configure the one that best fits your traffic, budget, and security needs. No overselling, no hidden limits.",
     iconName: "Server",
@@ -210,7 +210,7 @@ export const CORE_SERVICES_PART1: ServiceItem[] = [
   },
   {
     id: "web-dev",
-    title: "Modern Web Development",
+    title: "Web Development",
     shortDesc: "Websites coded clean from scratch, responsive, mobile-first, and engineered for high business conversion.",
     fullDesc: "We build websites that actually do something for your business. Every site we deliver is coded clean, mobile-friendly, and secure — no stolen themes, no sketchy plugins. Just a properly built web presence that works the way it should and holds up over time.",
     iconName: "Layout",
@@ -225,7 +225,7 @@ export const CORE_SERVICES_PART1: ServiceItem[] = [
   },
   {
     id: "custom-software",
-    title: "Customized Software & ERP",
+    title: "Customized Software",
     shortDesc: "Custom ERPs, CRMs, Visitor & School Management platforms built around your physical workplace workflows.",
     fullDesc: "When standard software doesn't fit the way your business runs, we build something that does. From custom CRMs and ERP systems to internal tools your team uses every day, we design and develop software around your actual workflow, not a generic template of what a business is supposed to look like.",
     iconName: "Cpu",
@@ -240,7 +240,7 @@ export const CORE_SERVICES_PART1: ServiceItem[] = [
   },
   {
     id: "seo",
-    title: "SEO & AI Search (AEO/GEO/AIO)",
+    title: "SEO",
     shortDesc: "Dominate Google, Google AI Overviews, ChatGPT, Gemini, and Claude with 4-pillar modern search optimization.",
     fullDesc: "We help your business show up where your customers are searching—on Google, on AI platforms like Gemini and ChatGPT, and anywhere else people go to find answers. We handle the technical side, the content structure, and the long-term strategy to keep your rankings moving in the right direction.",
     iconName: "Search",
@@ -355,18 +355,16 @@ export const WHY_CHOOSE_US = [
 ];
 
 export const TECH_STACK = [
-  { name: "Laravel", category: "Backend & ERP", logoText: "Laravel", color: "#FF2D20", iconPath: "/images/tech/laravel.svg" },
+  { name: "React", category: "Frontend", logoText: "React", color: "#61DAFB", iconPath: "/images/tech/react.svg" },
+  { name: "React Native", category: "Mobile Apps", logoText: "React Native", color: "#61DAFB", iconPath: "/images/tech/react-native.svg" },
+  { name: "Next.js", category: "SSR & Enterprise Web", logoText: "Next.js", color: "#000000", iconPath: "/images/tech/nextjs.svg" },
   { name: "PHP", category: "Core Engine", logoText: "PHP 8.x", color: "#777BB4", iconPath: "/images/tech/php.svg" },
   { name: "Node.js", category: "High Concurrency", logoText: "Node.js", color: "#339933", iconPath: "/images/tech/nodejs.svg" },
-  { name: "React", category: "Frontend", logoText: "React", color: "#61DAFB", iconPath: "/images/tech/react.svg" },
-  { name: "Next.js", category: "SSR & Enterprise Web", logoText: "Next.js", color: "#000000", iconPath: "/images/tech/nextjs.svg" },
-  { name: "AWS", category: "Cloud & Infrastructure", logoText: "AWS Cloud", color: "#FF9900", iconPath: "/images/tech/aws.svg" },
-  { name: "Microsoft Azure", category: "Enterprise Cloud", logoText: "MS Azure", color: "#0078D4", iconPath: "/images/tech/azure.svg" },
-  { name: "Google Cloud", category: "Cloud & AI", logoText: "GCP", color: "#4285F4", iconPath: "/images/tech/gcp.svg" },
-  { name: "WordPress", category: "CMS", logoText: "WordPress", color: "#21759B", iconPath: "/images/tech/wordpress.svg" },
+  { name: "Java", category: "Enterprise Backend", logoText: "Java", color: "#E76F00", iconPath: "/images/tech/java.svg" },
   { name: "MySQL", category: "Relational DB", logoText: "MySQL", color: "#4479A1", iconPath: "/images/tech/mysql.svg" },
-  { name: "Redis", category: "In-Memory Cache", logoText: "Redis", color: "#DC382D", iconPath: "/images/tech/redis.svg" },
-  { name: "Docker", category: "Containerization", logoText: "Docker", color: "#2496ED", iconPath: "/images/tech/docker.svg" }
+  { name: "PostgreSQL", category: "Relational DB", logoText: "PostgreSQL", color: "#336791", iconPath: "/images/tech/postgresql.svg" },
+  { name: "MongoDB", category: "NoSQL DB", logoText: "MongoDB", color: "#47A248", iconPath: "/images/tech/mongodb.svg" },
+  { name: "WordPress", category: "CMS", logoText: "WordPress", color: "#21759B", iconPath: "/images/tech/wordpress.svg" }
 ];
 
 export const GLOBAL_COUNTRIES = [
@@ -538,7 +536,8 @@ export const TESTIMONIALS = [
     author: "Commercial Logistics Director",
     location: "Ahmedabad, Gujarat",
     industry: "Supply Chain & Logistics",
-    rating: 5
+    rating: 5,
+    avatar: "/images/testimonials/client-avatar-1.jpg"
   },
   {
     id: "review-3",
@@ -546,7 +545,8 @@ export const TESTIMONIALS = [
     author: "B2B Export Enterprise",
     location: "Surat, Gujarat",
     industry: "Global Exports",
-    rating: 4
+    rating: 4,
+    avatar: "/images/testimonials/client-avatar-2.jpg"
   },
   {
     id: "review-5",
@@ -554,7 +554,8 @@ export const TESTIMONIALS = [
     author: "Healthcare Network Administrator",
     location: "Vadodara, Gujarat",
     industry: "Healthcare & Clinics",
-    rating: 5
+    rating: 5,
+    avatar: "/images/testimonials/client-avatar-3.jpg"
   },
   {
     id: "review-6",
@@ -562,7 +563,8 @@ export const TESTIMONIALS = [
     author: "Higher Education Director",
     location: "Gujarat, India",
     industry: "Education & Academics",
-    rating: 4
+    rating: 4,
+    avatar: "/images/testimonials/client-avatar-4.jpg"
   }
 ];
 

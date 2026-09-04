@@ -39,6 +39,19 @@ const TECH_CATALOG: TechItem[] = [
     )
   },
   {
+    name: "React Native",
+    category: "frontend",
+    categoryLabel: "Front-End",
+    iconSvg: (
+      <svg viewBox="0 0 115.3 100" className="w-10 h-10">
+        <ellipse cx="57.65" cy="50" rx="55.5" ry="21.5" fill="none" stroke="#61DAFB" strokeWidth="4.5" transform="rotate(30 57.65 50)" />
+        <ellipse cx="57.65" cy="50" rx="55.5" ry="21.5" fill="none" stroke="#61DAFB" strokeWidth="4.5" transform="rotate(90 57.65 50)" />
+        <ellipse cx="57.65" cy="50" rx="55.5" ry="21.5" fill="none" stroke="#61DAFB" strokeWidth="4.5" transform="rotate(150 57.65 50)" />
+        <circle cx="57.65" cy="50" r="9.5" fill="#61DAFB" />
+      </svg>
+    )
+  },
+  {
     name: "TypeScript",
     category: "frontend",
     categoryLabel: "Front-End",
@@ -86,12 +99,17 @@ const TECH_CATALOG: TechItem[] = [
 
   // Back-End
   {
-    name: "Laravel",
+    name: "Java",
     category: "backend",
     categoryLabel: "Back-End",
     iconSvg: (
       <svg viewBox="0 0 128 128" className="w-10 h-10">
-        <path fill="#FF2D20" d="M110.8 28.5L78.6 9.9c-2.3-1.3-5.2-1.3-7.5 0L6.7 47.1C4.4 48.4 3 50.9 3 53.5v39.4c0 2.6 1.4 5.1 3.7 6.4l20.4 11.8c2.3 1.3 5.2 1.3 7.5 0l57.9-33.4c2.3-1.3 3.7-3.8 3.7-6.4V53.5l14.6-8.4v42.9h11.9V43.5c0-2.6-1.4-5.1-3.7-6.4l-10.2-5.9z" />
+        <path fill="#5382A1" d="M42 102c18 8 44 8 62 0-5-6-20-8-31-8-12 0-26 2-31 8z" />
+        <path fill="#5382A1" d="M34 112c27 7 66 7 78 0-9-4-27-6-39-6-13 0-30 2-39 6z" />
+        <path fill="#E76F00" d="M78 50c5 4 9 9 9 15 0 12-13 18-25 22-12 4-23 6-23 13 0 1 0 2 1 3 13-3 29-3 42-1 9-5 17-14 17-25 0-12-8-20-21-27z" />
+        <path fill="#E76F00" d="M69 13c-8 8-6 17 0 25 5 6 9 11 8 18-4 0-8-3-10-5-5-6-8-14-3-23 4-8 5-12 5-15z" />
+        <path fill="#E76F00" d="M86 26c-4 5-6 10-5 17 4 1 8-1 9-4 3-4 3-9-4-13z" />
+        <path fill="#5382A1" d="M102 78c4-3 6-6 6-10 0-6-4-10-10-11 3 6 1 13-4 18 3 1 6 2 8 3z" />
       </svg>
     )
   },
@@ -128,58 +146,11 @@ const TECH_CATALOG: TechItem[] = [
     )
   },
 
-  // Cloud & Infrastructure
-  {
-    name: "AWS Cloud",
-    category: "cloud",
-    categoryLabel: "Cloud & DevOps",
-    iconSvg: (
-      <svg viewBox="0 0 128 128" className="w-10 h-10">
-        <path fill="#232F3E" d="M42.2 46.5l-6.8 23.3h7.6l1.7-6.2h9.2l1.6 6.2h7.6L56.4 46.5h-14.2zm6 11.7l2.8-10.4 2.7 10.4h-5.5z" />
-        <path fill="#FF9900" d="M96.3 84.8C82.1 94.6 62.5 98 44.9 94.2c-15.3-3.3-28.7-12.2-38.4-23.7-.8-.9.2-2.1 1.2-1.4 11.6 8.3 26 13.3 40.8 13.3 16.9 0 34.6-5.7 46.5-15.8 1.4-1.2 3 .5 1.3 2.2z" />
-      </svg>
-    )
-  },
-  {
-    name: "Microsoft Azure",
-    category: "cloud",
-    categoryLabel: "Cloud & DevOps",
-    iconSvg: (
-      <svg viewBox="0 0 128 128" className="w-10 h-10">
-        <path fill="#0089D6" d="M18.5 94.8L61.7 18.2c1.3-2.3 3.7-3.7 6.3-3.7h35.2c4.8 0 7.7 5.3 5.1 9.3L65.5 109.8H23.6c-4.8 0-7.7-5.3-5.1-9.3v-5.7z" />
-      </svg>
-    )
-  },
-  {
-    name: "Google Cloud",
-    category: "cloud",
-    categoryLabel: "Cloud & DevOps",
-    iconSvg: (
-      <svg viewBox="0 0 128 128" className="w-10 h-10">
-        <path fill="#EA4335" d="M64 45.5L81.2 15H46.8L64 45.5z" />
-        <path fill="#4285F4" d="M81.2 15L64 45.5l17.2 30.5h34.4L81.2 15z" />
-        <path fill="#FBBC05" d="M46.8 15L12.4 76h34.4l17.2-30.5L46.8 15z" />
-        <path fill="#34A853" d="M64 76l-17.2 30.5h68.8L98.4 76H64z" />
-      </svg>
-    )
-  },
-  {
-    name: "Docker",
-    category: "cloud",
-    categoryLabel: "Cloud & DevOps",
-    iconSvg: (
-      <svg viewBox="0 0 128 128" className="w-10 h-10">
-        <path fill="#2496ED" d="M120.4 56.7c-2.4-17.8-17.1-23.7-17.1-23.7-3.9 6.8-2 15.3-2 15.3-4.5-3.3-10.4-3.7-15.6-2.5V36.2H71.5v11.3H59.2V36.2H47v11.3H34.7V36.2H22.5v22.7H10.2v11.3h102.3c6.9-4.8 7.9-13.5 7.9-13.5z" />
-        <path fill="#2496ED" d="M10.2 74.8c1.3 22.8 19.3 38.7 44.2 38.7 33.3 0 58.7-17.6 63.8-42.3H10.2v3.6z" />
-      </svg>
-    )
-  },
-
-  // Databases & Cache
+  // Databases
   {
     name: "MySQL",
     category: "database",
-    categoryLabel: "Databases & Cache",
+    categoryLabel: "Databases",
     iconSvg: (
       <svg viewBox="0 0 128 128" className="w-10 h-10">
         <path fill="#00758F" d="M64 12C35.3 12 12 35.3 12 64s23.3 52 52 52 52-23.3 52-52S92.7 12 64 12zm25.8 74.4H77.6l-9.9-16.5-9.9 16.5H45.6V41.6h12.2v25.2l8.8-14.7h8.8l9.4 15.7V41.6h12.2v44.8z" />
@@ -187,12 +158,23 @@ const TECH_CATALOG: TechItem[] = [
     )
   },
   {
-    name: "Redis",
+    name: "PostgreSQL",
     category: "database",
-    categoryLabel: "Databases & Cache",
+    categoryLabel: "Databases",
     iconSvg: (
       <svg viewBox="0 0 128 128" className="w-10 h-10">
-        <path fill="#DC382D" d="M112.5 35.8L66.7 12.3c-1.7-.9-3.7-.9-5.4 0L15.5 35.8c-2.2 1.1-3.5 3.4-3.5 5.8v44.8c0 2.4 1.3 4.7 3.5 5.8l45.8 23.5c1.7.9 3.7.9 5.4 0l45.8-23.5c2.2-1.1 3.5-3.4 3.5-5.8V41.6c0-2.4-1.3-4.7-3.5-5.8z" />
+        <circle cx="64" cy="64" r="60" fill="#336791" />
+        <path fill="#FFFFFF" d="M85 91c-2.7 2.2-7 3.8-11.4 3.8-4.4 0-9.8-2.2-13.6-4.9l-1.6-1.1c-4.4 4.4-9.3 6-14.8 6-1.6 0-3.3 0-4.9-.5-1.1-.5-1.6-1.1-1.6-2.2 0-1.6 1.1-2.7 2.7-3.3 4.4-1.1 7.7-3.3 9.9-6.6-2.7-3.8-4.4-8.8-4.4-14.3 0-6.6 2.2-12.1 6-16.5 2.7-3.3 6.6-5.5 11-6.6-.5-2.2-1.1-4.4-1.1-6.6 0-9.3 7.1-17 16.5-17 4.4 0 8.2 1.6 11 4.4 2.7-1.1 6-1.6 9.3-1.6 1.1 0 2.2.5 2.2 1.6 0 1.1-.5 2.2-1.6 2.2-3.3 1.1-6 2.7-8.2 4.9 1.6 2.7 2.7 6 2.7 9.9 0 5.5-2.7 10.4-7.1 13.2 2.2 3.8 3.8 8.8 3.8 14.3 0 7.7-2.7 14.3-8.2 19.8z" />
+      </svg>
+    )
+  },
+  {
+    name: "MongoDB",
+    category: "database",
+    categoryLabel: "Databases",
+    iconSvg: (
+      <svg viewBox="0 0 128 128" className="w-10 h-10">
+        <path fill="#47A248" d="M66.1 11.7c-1-1-2.7-1-3.7 0C56 18.7 32 45.7 32 74.3c0 22.7 16.7 41.1 32.3 44.3V80c-3.2 0-5.9-2.7-5.9-5.9 0-3.2 2.7-5.9 5.9-5.9V11.7zm-4.2 0v56.5c3.2 0 5.9 2.7 5.9 5.9 0 3.2-2.7 5.9-5.9 5.9v38.6c15.6-3.2 32.3-21.6 32.3-44.3 0-28.6-24-55.6-30.4-62.6-.9-.9-1.9-.9-1.9 0z" />
       </svg>
     )
   },
@@ -218,8 +200,7 @@ export default function TechStack() {
     { id: "all", label: "All Technologies" },
     { id: "frontend", label: "Front-End" },
     { id: "backend", label: "Back-End" },
-    { id: "cloud", label: "Cloud & DevOps" },
-    { id: "database", label: "Databases & Cache" },
+    { id: "database", label: "Databases" },
     { id: "cms", label: "CMS & Platforms" }
   ];
 

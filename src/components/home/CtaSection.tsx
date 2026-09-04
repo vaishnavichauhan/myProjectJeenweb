@@ -26,7 +26,7 @@ export default function CtaSection() {
               <div className="space-y-4 max-w-2xl">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
                   Secure Your Infrastructure. <br />
-                  <span className="text-[#00E5FF]">
+                  <span className="text-blue-400">
                     Optimize Your Growth.
                   </span>
                 </h2>
@@ -36,22 +36,15 @@ export default function CtaSection() {
                 </p>
               </div>
 
-              {/* Right Column: High-Impact Action Buttons */}
-              <div className="flex flex-col sm:flex-row lg:flex-col items-stretch gap-3.5 flex-shrink-0 w-full sm:w-auto lg:w-80">
-                <Link
-                  href="/contact#get-in-touch"
-                  className="px-8 py-4 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xl shadow-red-950/40 hover:scale-[1.02] flex items-center justify-center gap-2.5 group cursor-pointer active:scale-98"
-                >
-                  <span>Schedule Consultation</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-
+              {/* Right Column: High-Impact Action Button */}
+              <div className="flex items-center flex-shrink-0 w-full sm:w-auto">
                 <Link
                   href="/contact"
-                  className="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all border border-white/25 text-center flex items-center justify-center gap-2.5 backdrop-blur-md hover:scale-[1.01] active:scale-98"
+                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xl shadow-red-950/40 hover:scale-[1.02] flex items-center justify-center gap-2.5 group cursor-pointer active:scale-98"
                 >
-                  <PhoneCall className="w-4 h-4 text-[#00E5FF]" />
+                  <PhoneCall className="w-4 h-4 text-white" />
                   <span>Contact Technical Desk</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
 

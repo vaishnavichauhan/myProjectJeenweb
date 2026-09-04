@@ -115,7 +115,7 @@ export default function Navbar() {
     <>
       {/* Main Sticky Header (Clean White Background) */}
       <header
-        className={`sticky top-0 z-40 w-full bg-white transition-all duration-300 ${
+        className={`sticky top-0 z-40 w-full bg-white font-navbar transition-all duration-300 ${
           isScrolled
             ? "shadow-md border-b border-slate-200"
             : "border-b border-slate-200/90"
@@ -126,11 +126,12 @@ export default function Navbar() {
             {/* Authentic Company Logo */}
             <Link href="/" className="flex items-center flex-shrink-0 group py-1">
               <Image
-                src="/images/logo.png"
+                src="/images/jeenweb-logo.png"
                 alt="Jeenweb Technologists Pvt. Ltd."
-                width={320}
-                height={85}
-                className="h-14 sm:h-16 lg:h-[72px] w-auto max-w-[300px] sm:max-w-[380px] object-contain object-left block group-hover:opacity-95 transition-opacity"
+                width={100}
+                height={90}
+                unoptimized
+                className="h-14 sm:h-16 lg:h-[78px] w-auto max-w-[260px] sm:max-w-[320px] lg:max-w-[200px] object-contain object-left block group-hover:opacity-95 transition-opacity"
                 priority
               />
             </Link>

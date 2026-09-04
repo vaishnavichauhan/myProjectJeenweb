@@ -1,175 +1,206 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import Image from "next/image";
 import { GLOBAL_COUNTRIES } from "@/lib/siteData";
+import { Sparkles, MapPin, Building2, CheckCircle2, Globe2 } from "lucide-react";
+
+interface RegionPin {
+  id: string;
+  label: string;
+  coords: { top: string; left: string };
+  isIndia?: boolean;
+  flag: string;
+  country: string;
+  description: string;
+}
+
+const REGION_PINS: RegionPin[] = [
+  {
+    id: "canada",
+    label: "CANADA",
+    coords: { top: "26%", left: "22%" },
+    flag: "🇨🇦",
+    country: "Canada",
+    description: "Cloud ERP & Healthcare Systems Support"
+  },
+  {
+    id: "south-america",
+    label: "SOUTH AMERICA",
+    coords: { top: "58%", left: "27%" },
+    flag: "🌎",
+    country: "South America",
+    description: "Corporate Web Applications & Hosting Solutions"
+  },
+  {
+    id: "europe",
+    label: "EUROPE",
+    coords: { top: "23%", left: "49%" },
+    flag: "🇬🇧",
+    country: "Europe & UK",
+    description: "Enterprise Operations & High-Concurrency Systems"
+  },
+  {
+    id: "south-africa",
+    label: "SOUTH AFRICA",
+    coords: { top: "60%", left: "53%" },
+    flag: "🇿🇦",
+    country: "South Africa & East Africa",
+    description: "Regional IT Infrastructure & Portals"
+  },
+  {
+    id: "uae",
+    label: "UAE",
+    coords: { top: "35%", left: "59%" },
+    flag: "🇦🇪",
+    country: "Dubai (UAE)",
+    description: "Middle East Corporate IT Infrastructure & Email"
+  },
+  {
+    id: "india",
+    label: "INDIA",
+    coords: { top: "38%", left: "69%" },
+    isIndia: true, // HIGHLIGHTED!
+    flag: "🇮🇳",
+    country: "India (Vadodara)",
+    description: "Global Headquarters & Dual Engineering Centers"
+  },
+  {
+    id: "new-zealand",
+    label: "NEW ZEALAND",
+    coords: { top: "54%", left: "84%" },
+    flag: "🇳🇿",
+    country: "New Zealand",
+    description: "Cloud Architecture & Remote Engineering"
+  },
+  {
+    id: "australia",
+    label: "AUSTRALIA",
+    coords: { top: "68%", left: "84%" },
+    flag: "🇦🇺",
+    country: "Australia",
+    description: "Oceania Business Web & Portal Deployments"
+  }
+];
 
 export default function GlobalFootprint() {
+  const [activePin, setActivePin] = useState<string | null>("india");
+
   return (
-    <section className="pt-12 pb-16 lg:pt-16 lg:pb-20 bg-[#F8FAFC] relative overflow-hidden border-b border-slate-200/80" id="global-footprint">
-      
-      {/* 1. Subtle Small Checks / Grid Pattern (24px by 24px) */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1A3B710a_1px,transparent_1px),linear-gradient(to_bottom,#1A3B710a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-
-      {/* 2. Checkered / Dotted World Map Graphic with Highlighted India HQ */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-[0.09] overflow-hidden select-none">
-        <svg
-          viewBox="0 0 1000 480"
-          className="w-[1100px] lg:w-[1300px] h-auto max-w-none text-[#1A3B71]"
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            {/* Fine Checkered Pattern Fill */}
-            <pattern id="mapChecks" width="12" height="12" patternUnits="userSpaceOnUse">
-              <rect width="6" height="6" fill="currentColor" opacity="0.6" />
-              <rect x="6" y="6" width="6" height="6" fill="currentColor" opacity="0.6" />
-            </pattern>
-          </defs>
-
-          {/* Continents with Fine Checkered Texture */}
-          {/* North America */}
-          <g fill="url(#mapChecks)">
-            <path d="M120,60 Q180,40 240,50 Q280,90 260,150 Q220,180 180,190 Q140,160 120,110 Z" />
-            <path d="M180,190 Q220,210 200,260 Q170,240 180,190 Z" />
-            <circle cx="210" cy="120" r="45" />
-            <circle cx="160" cy="100" r="35" />
-            <circle cx="250" cy="150" r="30" />
-          </g>
-
-          {/* Central & South America */}
-          <g fill="url(#mapChecks)">
-            <path d="M240,250 Q290,240 330,280 Q320,380 270,440 Q230,370 240,300 Z" />
-            <circle cx="290" cy="310" r="40" />
-            <circle cx="280" cy="370" r="35" />
-            <circle cx="270" cy="420" r="20" />
-          </g>
-
-          {/* Europe */}
-          <g fill="url(#mapChecks)">
-            <path d="M460,70 Q540,60 560,110 Q520,150 450,130 Q440,90 460,70 Z" />
-            <circle cx="490" cy="100" r="28" />
-            <circle cx="530" cy="95" r="24" />
-            <circle cx="440" cy="95" r="14" /> {/* UK */}
-          </g>
-
-          {/* Africa */}
-          <g fill="url(#mapChecks)">
-            <path d="M460,160 Q550,150 570,230 Q540,330 490,360 Q440,290 430,220 Z" />
-            <circle cx="490" cy="200" r="42" />
-            <circle cx="510" cy="270" r="38" />
-            <circle cx="500" cy="330" r="25" />
-          </g>
-
-          {/* Middle East */}
-          <g fill="url(#mapChecks)">
-            <circle cx="580" cy="170" r="24" />
-            <circle cx="605" cy="190" r="18" />
-          </g>
-
-          {/* Asia / India / China */}
-          <g fill="url(#mapChecks)">
-            <path d="M570,70 Q750,50 840,110 Q800,220 700,230 Q620,190 570,130 Z" />
-            <circle cx="630" cy="100" r="44" />
-            <circle cx="710" cy="110" r="50" />
-            <circle cx="780" cy="130" r="46" />
-            <circle cx="740" cy="180" r="40" /> {/* East Asia */}
-            <circle cx="705" cy="230" r="18" /> {/* Sri Lanka */}
-            <circle cx="770" cy="230" r="16" />
-            <circle cx="800" cy="250" r="18" />
-          </g>
-
-          {/* Highlighted India Beacon on World Map */}
-          <circle cx="675" cy="180" r="38" fill="#C11E23" opacity="0.4" />
-          <circle cx="675" cy="180" r="14" fill="#C11E23" opacity="0.85" />
-          <circle cx="675" cy="180" r="5" fill="#FFFFFF" />
-
-          {/* Australia & New Zealand */}
-          <g fill="url(#mapChecks)">
-            <path d="M780,330 Q870,320 880,380 Q830,420 770,390 Z" />
-            <circle cx="820" cy="360" r="38" />
-            <circle cx="900" cy="400" r="16" />
-          </g>
-
-          {/* Major Meridian and Equator Coordinates */}
-          <line x1="40" y1="240" x2="960" y2="240" stroke="currentColor" strokeWidth="1" strokeDasharray="3 6" opacity="0.35" />
-          <line x1="500" y1="20" x2="500" y2="460" stroke="currentColor" strokeWidth="1" strokeDasharray="3 6" opacity="0.35" />
-        </svg>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-5 sm:py-7 lg:py-8 bg-white relative overflow-hidden border-b border-slate-200/80 w-full" id="global-footprint">
+      <div className="w-full px-3 sm:px-6 lg:px-10 xl:px-14 relative z-10">
         
-        {/* Centered Section Header */}
-        <div className="max-w-3xl mx-auto mb-12 space-y-3 text-center">
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center mb-3 sm:mb-4 space-y-1">
           <div>
-            <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
-                Geographic Reach
-              </span>
-            </div>
+            <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              Our Reach &amp; Clients
+            </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight text-slate-900">
-            Corporate Operations Across The World
+
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            Worked with <span className="font-extrabold text-slate-900">250+ Clients</span>{" "}
+            <span className="text-[#1A3B71] font-black">Across The Globe</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 font-sans leading-relaxed">
-            From our dual engineering hubs in Vadodara, Gujarat, we architect and maintain mission-critical IT infrastructure for corporate clients across 12 countries.
+
+          <p className="text-xs text-slate-500 font-sans leading-relaxed max-w-xl mx-auto">
+            From our dual engineering hubs in Vadodara, Gujarat, we architect and maintain mission-critical IT infrastructure, custom software, and cloud systems for corporate clients worldwide.
           </p>
         </div>
 
-        {/* Global Countries Grid (Highlighted India HQ + Clean Backgroundless Pin Icons) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-7 items-center">
-          {GLOBAL_COUNTRIES.map((country, idx) => {
-            const isIndia = country.name === "India";
-            const isEven = idx % 2 === 0;
+        {/* Dotted World Map Graphic with Locked 1:1 Aspect Ratio */}
+        <div className="relative w-full max-w-[1100px] xl:max-w-[1240px] mx-auto select-none">
+          
+          <div className="relative w-full aspect-[1376/768] flex items-center justify-center">
+            {/* The Perspective Dotted World Map Base Image */}
+            <Image
+              src="/images/dotted-world-map.jpg"
+              alt="Dotted Global World Map - Jeenweb Reach"
+              fill
+              priority
+              className="object-fill pointer-events-none"
+              sizes="(max-width: 1280px) 100vw, 1240px"
+            />
 
-            return (
-              <div
-                key={country.name}
-                className={`flex items-start gap-2.5 transition-all duration-300 hover:translate-x-1 cursor-default group relative rounded-2xl ${
-                  isIndia
-                    ? "p-2.5 -m-2.5 bg-white shadow-md ring-2 ring-[#C11E23]/30 z-10"
-                    : ""
-                }`}
-              >
-                {/* Clean Colorful Pin Icon */}
-                <div className="w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-125 transition-transform relative">
-                  {isIndia && (
-                    <span className="absolute -inset-1 rounded-full bg-[#C11E23]/25 animate-ping pointer-events-none" />
-                  )}
-                  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
-                      fill={isIndia ? "#C11E23" : (isEven ? "#C11E23" : "#1A3B71")}
-                    />
-                    <circle cx="12" cy="9" r="3" fill="#FFFFFF" />
-                    <circle cx="12" cy="9" r="1.6" fill={isIndia ? "#1A3B71" : (isEven ? "#1A3B71" : "#C11E23")} />
-                  </svg>
-                </div>
+            {/* Render Location Badges on Top of the Map */}
+            {REGION_PINS.map((pin) => {
+              const isSelected = activePin === pin.id;
+              const isIndia = pin.isIndia;
 
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-1.5 flex-wrap">
-                    <span className="text-base sm:text-lg leading-none">{country.flag}</span>
-                    <span
-                      className={`text-sm sm:text-base font-bold transition-colors truncate ${
-                        isIndia ? "text-[#C11E23]" : "text-slate-900 group-hover:text-[#1A3B71]"
+              return (
+                <div
+                  key={pin.id}
+                  style={{ top: pin.coords.top, left: pin.coords.left }}
+                  className="absolute -translate-x-1/2 -translate-y-1/2 z-20 group"
+                  onMouseEnter={() => setActivePin(pin.id)}
+                >
+                  {/* Pin Container */}
+                  <div className="relative flex flex-col items-center">
+                    
+                    {/* Badge Pill */}
+                    {isIndia ? (
+                      /* Highlighted India Badge with Crimson/White Glow & Pulse */
+                      <div className="relative cursor-pointer transition-transform duration-300 transform group-hover:scale-110">
+                        {/* Outer Glow & Radar Pulse for India */}
+                        <div className="absolute -inset-1 rounded-2xl bg-[#C11E23]/40 blur-sm animate-pulse" />
+                        <span className="absolute -top-1.5 -right-1.5 flex h-3.5 w-3.5 z-30">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C11E23] opacity-80" />
+                          <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#C11E23] border-2 border-white" />
+                        </span>
+
+                        <div className="relative px-3.5 py-1.5 sm:px-5 sm:py-2 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#C11E23] via-[#D92228] to-[#991B1B] text-white font-black text-[10px] sm:text-xs tracking-wider uppercase shadow-xl shadow-red-900/30 border-2 border-white ring-4 ring-[#C11E23]/25 flex items-center gap-1.5 whitespace-nowrap">
+                          <span className="text-xs sm:text-sm leading-none">🇮🇳</span>
+                          <span className="drop-shadow-xs">INDIA</span>
+                          <span className="bg-white text-[#C11E23] text-[9px] font-mono font-black px-1.5 py-0.5 rounded shadow-2xs">
+                            HQ
+                          </span>
+                        </div>
+                      </div>
+                    ) : (
+                      /* Sapphire Blue Badge */
+                      <div className="relative cursor-pointer transition-transform duration-300 transform group-hover:scale-110">
+                        <div className="px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#1A3B71] hover:bg-[#16325B] text-white font-extrabold text-[9px] sm:text-[11px] tracking-wider uppercase shadow-md shadow-blue-950/20 border border-white/30 flex items-center gap-1 whitespace-nowrap">
+                          <span>{pin.label}</span>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Rich Floating Tooltip on Hover/Active */}
+                    <div
+                      className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-52 sm:w-60 p-3 rounded-xl sm:rounded-2xl bg-slate-900/95 backdrop-blur-md text-white border border-white/15 shadow-2xl z-40 text-left pointer-events-none transition-all duration-200 ${
+                        isSelected
+                          ? "opacity-100 scale-100 translate-y-0"
+                          : "opacity-0 scale-95 translate-y-1 pointer-events-none hidden group-hover:block"
                       }`}
                     >
-                      {country.name}
-                    </span>
-                    {isIndia && (
-                      <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-white bg-[#C11E23] px-1.5 py-0.5 rounded-md shadow-2xs">
-                        HQ
-                      </span>
-                    )}
-                  </div>
-                  <div
-                    className={`text-xs sm:text-[13px] mt-1 truncate font-sans ${
-                      isIndia ? "text-slate-700 font-semibold" : "text-slate-500"
-                    }`}
-                  >
-                    {country.region}
+                      <div className="flex items-center justify-between gap-1 mb-1">
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-sm">{pin.flag}</span>
+                          <span className="text-xs font-bold text-white truncate">{pin.country}</span>
+                        </div>
+                        {isIndia && (
+                          <span className="text-[9px] font-mono uppercase bg-red-600 text-white px-1.5 py-0.5 rounded font-bold">
+                            Headquarters
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-snug font-sans">
+                        {pin.description}
+                      </p>
+                      {isIndia && (
+                        <div className="mt-2 pt-1.5 border-t border-white/10 text-[10px] text-cyan-300 font-mono flex items-center gap-1">
+                          <Sparkles className="w-3 h-3 text-cyan-300" />
+                          <span>Vadodara, Gujarat • Since 2000</span>
+                        </div>
+                      )}
+                    </div>
+
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
         </div>
 
       </div>
