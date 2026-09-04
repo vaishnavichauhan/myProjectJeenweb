@@ -98,33 +98,17 @@ export default function DomainSearchBar({
           </div>
         </div>
 
-        {/* Action Button */}
+        {/* Action Button (Non-touchable as requested) */}
         <button
-          type="submit"
-          disabled={isSearching}
-          className="w-full md:w-auto px-7 py-3.5 bg-[#E11D48] hover:bg-[#BE123C] text-white font-semibold rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2 flex-shrink-0"
+          type="button"
+          tabIndex={-1}
+          aria-disabled="true"
+          className="w-full md:w-auto px-7 py-3.5 bg-[#E11D48] text-white font-semibold rounded-xl text-sm shadow-md flex items-center justify-center gap-2 flex-shrink-0 pointer-events-none cursor-default select-none"
         >
-          {isSearching ? (
-            <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-          ) : (
-            <>
-              <span>Check Availability</span>
-              <ArrowRight className="w-4 h-4" />
-            </>
-          )}
+          <span>Check Availability</span>
+          <ArrowRight className="w-4 h-4" />
         </button>
       </form>
-
-      {/* TLD pricing pills */}
-      <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 mt-3 px-2 text-xs text-slate-600">
-        <span className="font-semibold text-slate-700">Popular TLDs with No Hidden Hikes:</span>
-        {tlds.map((tld) => (
-          <span key={tld.ext} className="inline-flex items-center gap-1">
-            <strong className="text-[#16325B]">{tld.ext}</strong>
-            <span className="text-slate-500">({tld.price})</span>
-          </span>
-        ))}
-      </div>
 
       {/* Result Card Feedback */}
       {searchResult && (

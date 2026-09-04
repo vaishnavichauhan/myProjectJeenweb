@@ -1,26 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 
 export default function TimelineChevronTrack() {
-  // Phase 1 (2000 - 2017) & Phase 2 (2020 - 2026+)
-  const [phase, setPhase] = useState<0 | 1>(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  // Auto-change phase every 6 seconds (pauses when user hovers)
-  useEffect(() => {
-    if (isPaused) return;
-
-    const interval = setInterval(() => {
-      setPhase((prev) => (prev === 0 ? 1 : 0));
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, [isPaused]);
-
   const phase1Top = [
     { year: "2000", desc: "Incorporated as Jeen Info Tech in Vadodara, offering web hosting, domain setups, and foundational web solutions." },
     { year: "2006", desc: "Expanded service coverage from web hosting into custom business software and workflow automation." },
@@ -49,268 +34,337 @@ export default function TimelineChevronTrack() {
     { year: "Future", desc: "Rollout of Project JE—proprietary enterprise business email eliminating multi-vendor complexity." }
   ];
 
-  const topItems = phase === 0 ? phase1Top : phase2Top;
-  const bottomItems = phase === 0 ? phase1Bottom : phase2Bottom;
-
   return (
     <section className="py-16 lg:py-24 bg-[#F0F4F8] relative overflow-hidden text-slate-900" id="timeline">
       
       {/* ========================================================================= */}
-      {/* TOP-LEFT SWEEPING WORKSPACE PHOTO MASK */}
+      {/* TOP-LEFT WORKSPACE PHOTO (Clean Architectural Frame - Not Cut) */}
       {/* ========================================================================= */}
-      <div className="hidden lg:block absolute top-0 left-0 w-[34%] h-[44%] z-0 pointer-events-none">
-        <div
-          className="relative w-full h-full overflow-hidden shadow-md"
-          style={{
-            clipPath: "ellipse(100% 100% at 0% 0%)",
-          }}
-        >
+      <div className="hidden lg:block absolute top-0 left-0 w-[360px] xl:w-[440px] h-[300px] xl:h-[340px] z-0 pointer-events-none">
+        <div className="relative w-full h-full overflow-hidden rounded-br-[80px] shadow-lg border-b-2 border-r-2 border-[#00D2FF]/40 bg-slate-900">
           <Image
             src="/images/timeline-ref-workspace.jpg"
             alt="Jeenweb Historical Engineering Office Workspace"
             fill
-            className="object-cover object-center"
+            className="object-cover object-left-top"
+            priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#073F8A]/10 via-transparent to-[#F0F4F8]/80 pointer-events-none" />
+          {/* Subtle gradient overlays so the image blends smoothly into the section */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#F0F4F8]/20 pointer-events-none" />
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* ========================================================================= */}
-        {/* HEADER: Title & Subtitle (Positioned to right of left-corner photo) */}
+        {/* HEADER: Title & Subtitle (Positioned to the right of the corner photo) */}
         {/* ========================================================================= */}
-        <div className="max-w-2xl lg:ml-auto mb-12 space-y-3">
+        <div className="max-w-2xl lg:ml-auto mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#073F8A]/10 text-[#073F8A] text-xs font-semibold">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Complete 26-Year Corporate Journey</span>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-normal tracking-tight text-slate-900 font-sans leading-tight">
             Company history from 2000 to 2026
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 font-sans leading-relaxed">
-            This timeline illustrates Jeenweb&apos;s growth journey from foundational web hosting to custom software development, corporate mergers, authorized cloud partnerships, and multi-office enterprise operations.
+            This timeline illustrates Jeenweb&apos;s growth across both pivotal phases—from foundational web hosting and custom software development to authorized enterprise cloud partnerships and multi-office operations.
           </p>
+        </div>
 
-          {/* Phase Switcher (Architectural Flat Linear Underline Tabs) */}
-          <div className="pt-4 border-b border-slate-300/70">
-            <div className="flex flex-wrap items-center gap-6 sm:gap-10">
-              
-              {/* Tab 01 */}
-              <button
-                onClick={() => setPhase(0)}
-                className={`pb-3.5 flex items-center gap-2.5 text-left relative transition-colors ${
-                  phase === 0 ? "text-slate-950 font-bold" : "text-slate-500 hover:text-slate-800"
-                }`}
-              >
-                <span
-                  className={`text-xs font-mono font-bold px-2 py-0.5 rounded transition-colors ${
-                    phase === 0 ? "bg-[#073F8A] text-white" : "bg-slate-200/80 text-slate-600"
-                  }`}
-                >
-                  01
-                </span>
-                <div>
-                  <div className="text-sm font-bold tracking-tight">Phase 1: Foundation & Growth</div>
-                  <div className="text-[11px] font-mono text-slate-500">2000 – 2017</div>
-                </div>
-
-                {/* Active Indicator Underline */}
-                {phase === 0 && (
-                  <motion.div
-                    layoutId="activeTabUnderline"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#073F8A]"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </button>
-
-              {/* Divider */}
-              <div className="hidden sm:block w-px h-7 bg-slate-300/80 mb-3" />
-
-              {/* Tab 02 */}
-              <button
-                onClick={() => setPhase(1)}
-                className={`pb-3.5 flex items-center gap-2.5 text-left relative transition-colors ${
-                  phase === 1 ? "text-slate-950 font-bold" : "text-slate-500 hover:text-slate-800"
-                }`}
-              >
-                <span
-                  className={`text-xs font-mono font-bold px-2 py-0.5 rounded transition-colors ${
-                    phase === 1 ? "bg-[#073F8A] text-white" : "bg-slate-200/80 text-slate-600"
-                  }`}
-                >
-                  02
-                </span>
-                <div>
-                  <div className="text-sm font-bold tracking-tight">Phase 2: Enterprise & Cloud</div>
-                  <div className="text-[11px] font-mono text-slate-500">2020 – 2026+</div>
-                </div>
-
-                {/* Active Indicator Underline */}
-                {phase === 1 && (
-                  <motion.div
-                    layoutId="activeTabUnderline"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#073F8A]"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </button>
-
+        {/* ========================================================================= */}
+        {/* PHASE 1 CARD: 2000 – 2017 (REVERSED TRACK: FLOWS RIGHT-TO-LEFT) */}
+        {/* ========================================================================= */}
+        <div className="mb-20">
+          
+          {/* Phase 1 Header Badge in Center */}
+          <div className="flex flex-col items-center text-center justify-center gap-2 mb-10">
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-[#073F8A] text-white shadow-xs">
+                01
+              </span>
+              <h3 className="text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-slate-950 font-sans">
+                Phase 1: Foundation & Growth
+              </h3>
+              <span className="text-xs sm:text-sm font-mono font-semibold px-3 py-0.5 rounded-full bg-slate-200/80 text-slate-700">
+                2000 – 2017
+              </span>
             </div>
+            <p className="text-xs sm:text-sm text-slate-600 font-sans max-w-xl">
+              Web Hosting, Custom Software Mergers & Industrial ERPs
+            </p>
           </div>
-        </div>
 
-        {/* ========================================================================= */}
-        {/* DESKTOP CHEVRON TRACK (Exact Slide Layout from Reference Image) */}
-        {/* ========================================================================= */}
-        <div
-          className="hidden lg:block relative mt-8 mb-4 cursor-pointer px-4 py-2"
-          style={{ perspective: 1200 }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={phase}
-              initial={{ 
-                opacity: 0, 
-                rotateY: phase === 0 ? -90 : 90, 
-                scale: 0.94
-              }}
-              animate={{ 
-                opacity: 1, 
-                rotateY: 0, 
-                scale: 1
-              }}
-              exit={{ 
-                opacity: 0, 
-                rotateY: phase === 0 ? 90 : -90, 
-                scale: 0.94
-              }}
-              transition={{ 
-                duration: 0.6, 
-                ease: [0.25, 1, 0.5, 1] 
-              }}
-              style={{ transformStyle: "preserve-3d" }}
-            >
-              {/* 1. TOP ROW: Years & Connector Dots */}
-              <div className={`grid grid-cols-4 pb-3 ${phase === 0 ? "pl-12 pr-28" : "pl-28 pr-12"}`}>
-                {topItems.map((item) => (
-                  <div key={item.year} className="flex flex-col items-center text-center">
-                    <span className="text-3xl font-bold tracking-tight text-[#00B4D8] font-sans">
-                      {item.year}
-                    </span>
-                    {/* Connector Dot */}
-                    <div className="flex flex-col items-center mt-1">
-                      <div className="w-3 h-3 rounded-full bg-[#00D2FF] ring-4 ring-[#00D2FF]/25" />
-                      <div className="w-0.5 h-3 bg-[#00D2FF]" />
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* 2. MAIN CHEVRON ARROW CONTAINER */}
-              <div className="relative">
-                {/* Phase 0: Right Blue/Cyan Chevron Accent Tip */}
-                {phase === 0 && (
-                  <div
-                    className="absolute -right-4 top-0 bottom-0 w-28 bg-[#00D2FF] rounded-r-xl pointer-events-none z-0"
-                    style={{
-                      clipPath: "polygon(calc(100% - 75px) 0%, calc(100% - 75px) 100%, 100% 50%)",
-                    }}
-                  />
-                )}
-
-                {/* Phase 1: Left Blue/Cyan Chevron Accent Tip */}
-                {phase === 1 && (
-                  <div
-                    className="absolute -left-4 top-0 bottom-0 w-28 bg-[#00D2FF] rounded-l-xl pointer-events-none z-0"
-                    style={{
-                      clipPath: "polygon(75px 0%, 75px 100%, 0% 50%)",
-                    }}
-                  />
-                )}
-
-                {/* Dark Chevron Track Body */}
-                <div
-                  className={`bg-[#0B1E38] shadow-2xl relative overflow-hidden z-10 ${
-                    phase === 0 ? "rounded-l-3xl" : "rounded-r-3xl"
-                  }`}
-                  style={{
-                    clipPath: phase === 0
-                      ? "polygon(0% 0%, calc(100% - 65px) 0%, calc(100% - 8px) 50%, calc(100% - 65px) 100%, 0% 100%)"
-                      : "polygon(65px 0%, 100% 0%, 100% 100%, 65px 100%, 8px 50%)",
-                  }}
-                >
-                  <div className={`py-7 space-y-7 ${phase === 0 ? "pl-10 pr-24" : "pl-24 pr-10"}`}>
-                    {/* Top Half Descriptions */}
-                    <div className="grid grid-cols-4 divide-x divide-dashed divide-white/25">
-                      {topItems.map((item, idx) => (
-                        <div key={idx} className="px-5 text-center flex items-center justify-center min-h-[70px]">
-                          <p className="text-white text-[13px] font-sans leading-relaxed">
-                            {item.desc}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Subtle Horizontal Divider */}
-                    <div className="w-full h-px bg-white/10" />
-
-                    {/* Bottom Half Descriptions */}
-                    <div className="grid grid-cols-4 divide-x divide-dashed divide-white/25">
-                      {bottomItems.map((item, idx) => (
-                        <div key={idx} className="px-5 text-center flex items-center justify-center min-h-[70px]">
-                          <p className="text-white text-[13px] font-sans leading-relaxed">
-                            {item.desc}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
+          {/* Desktop Chevron Track for Phase 1 (Pointing Left ←) with 3D Flip on Scroll & Hover */}
+          <motion.div
+            initial={{ opacity: 0, rotateY: -85, scale: 0.92 }}
+            whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{
+              rotateY: -16,
+              rotateX: 4,
+              scale: 1.02,
+              transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] }
+            }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            style={{ perspective: 1600, transformStyle: "preserve-3d" }}
+            className="hidden lg:block relative px-2 py-2 cursor-pointer group"
+          >
+            {/* 1. TOP ROW: Years & Connector Dots (Reversed padding pl-28 pr-12) */}
+            <div className="grid grid-cols-4 pb-3 pl-28 pr-12">
+              {[...phase1Top].reverse().map((item) => (
+                <div key={item.year} className="flex flex-col items-center text-center">
+                  <span className="text-3xl font-bold tracking-tight text-[#00B4D8] font-sans">
+                    {item.year}
+                  </span>
+                  {/* Connector Dot */}
+                  <div className="flex flex-col items-center mt-1">
+                    <div className="w-3 h-3 rounded-full bg-[#00D2FF] ring-4 ring-[#00D2FF]/25" />
+                    <div className="w-0.5 h-3 bg-[#00D2FF]" />
                   </div>
                 </div>
+              ))}
+            </div>
 
-                {/* Accent Corner Line */}
-                {phase === 0 ? (
-                  <div className="absolute -left-2 bottom-0 w-12 h-6 bg-[#00D2FF] rounded-bl-2xl pointer-events-none -z-10" />
-                ) : (
-                  <div className="absolute -right-2 bottom-0 w-12 h-6 bg-[#00D2FF] rounded-br-2xl pointer-events-none -z-10" />
-                )}
-              </div>
+            {/* 2. MAIN CHEVRON ARROW CONTAINER (Pointing Left) */}
+            <div className="relative">
+              {/* Left Blue/Cyan Chevron Accent Tip */}
+              <div
+                className="absolute -left-4 top-0 bottom-0 w-28 bg-[#00D2FF] rounded-l-xl pointer-events-none z-0"
+                style={{
+                  clipPath: "polygon(75px 0%, 75px 100%, 0% 50%)",
+                }}
+              />
 
-              {/* 3. BOTTOM ROW: Connector Dots & Years */}
-              <div className={`grid grid-cols-4 pt-3 ${phase === 0 ? "pl-12 pr-28" : "pl-28 pr-12"}`}>
-                {bottomItems.map((item) => (
-                  <div key={item.year} className="flex flex-col items-center text-center">
-                    {/* Connector Dot */}
-                    <div className="flex flex-col items-center mb-1">
-                      <div className="w-0.5 h-3 bg-[#00D2FF]" />
-                      <div className="w-3 h-3 rounded-full bg-[#00D2FF] ring-4 ring-[#00D2FF]/25" />
-                    </div>
-                    <span className="text-3xl font-bold tracking-tight text-[#00B4D8] font-sans">
-                      {item.year}
-                    </span>
+              {/* Dark Chevron Track Body */}
+              <div
+                className="bg-[#0B1E38] shadow-2xl relative overflow-hidden z-10 rounded-r-3xl group-hover:shadow-[0_20px_50px_rgba(0,210,255,0.25)] transition-shadow duration-500"
+                style={{
+                  clipPath: "polygon(65px 0%, 100% 0%, 100% 100%, 65px 100%, 8px 50%)",
+                }}
+              >
+                <div className="py-7 space-y-7 pl-24 pr-10">
+                  {/* Top Half Descriptions */}
+                  <div className="grid grid-cols-4 divide-x divide-dashed divide-white/25">
+                    {[...phase1Top].reverse().map((item, idx) => (
+                      <div key={idx} className="px-5 text-center flex items-center justify-center min-h-[70px]">
+                        <p className="text-white text-[13px] font-sans leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+
+                  {/* Subtle Horizontal Divider */}
+                  <div className="w-full h-px bg-white/10" />
+
+                  {/* Bottom Half Descriptions */}
+                  <div className="grid grid-cols-4 divide-x divide-dashed divide-white/25">
+                    {[...phase1Bottom].reverse().map((item, idx) => (
+                      <div key={idx} className="px-5 text-center flex items-center justify-center min-h-[70px]">
+                        <p className="text-white text-[13px] font-sans leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
+
+              {/* Accent Corner Line */}
+              <div className="absolute -right-2 bottom-0 w-12 h-6 bg-[#00D2FF] rounded-br-2xl pointer-events-none -z-10" />
+            </div>
+
+            {/* 3. BOTTOM ROW: Connector Dots & Years (Reversed padding pl-28 pr-12) */}
+            <div className="grid grid-cols-4 pt-3 pl-28 pr-12">
+              {[...phase1Bottom].reverse().map((item) => (
+                <div key={item.year} className="flex flex-col items-center text-center">
+                  <div className="flex flex-col items-center mb-1">
+                    <div className="w-0.5 h-3 bg-[#00D2FF]" />
+                    <div className="w-3 h-3 rounded-full bg-[#00D2FF] ring-4 ring-[#00D2FF]/25" />
+                  </div>
+                  <span className="text-3xl font-bold tracking-tight text-[#00B4D8] font-sans">
+                    {item.year}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Mobile Cards for Phase 1 with 3D Flip Effect */}
+          <motion.div
+            initial={{ opacity: 0, rotateY: -75, scale: 0.94 }}
+            whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            style={{ perspective: 1200, transformStyle: "preserve-3d" }}
+            className="lg:hidden space-y-4"
+          >
+            {[...phase1Top, ...phase1Bottom].map((item, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ rotateY: -8, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className="bg-[#0B1E38] rounded-2xl p-5 text-white border-l-4 border-[#00D2FF] shadow-sm space-y-2 cursor-pointer"
+              >
+                <div className="text-2xl font-bold text-[#00D2FF] font-sans">
+                  {item.year}
+                </div>
+                <p className="text-xs text-slate-200 leading-relaxed font-sans">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+
         </div>
 
         {/* ========================================================================= */}
-        {/* MOBILE RESPONSIVE CARDS */}
+        {/* PHASE 2 CARD: 2020 – 2026+ */}
         {/* ========================================================================= */}
-        <div className="lg:hidden space-y-4 my-8">
-          {[...topItems, ...bottomItems].map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-[#0B1E38] rounded-2xl p-5 text-white border-l-4 border-[#00D2FF] shadow-sm space-y-2"
-            >
-              <div className="text-2xl font-bold text-[#00D2FF] font-sans">
-                {item.year}
-              </div>
-              <p className="text-xs text-slate-200 leading-relaxed font-sans">
-                {item.desc}
-              </p>
+        <div className="mt-8">
+          
+          {/* Phase 2 Header Badge in Center */}
+          <div className="flex flex-col items-center text-center justify-center gap-2 mb-10">
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-[#073F8A] text-white shadow-xs">
+                02
+              </span>
+              <h3 className="text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-slate-950 font-sans">
+                Phase 2: Enterprise & Cloud Innovation
+              </h3>
+              <span className="text-xs sm:text-sm font-mono font-semibold px-3 py-0.5 rounded-full bg-slate-200/80 text-slate-700">
+                2020 – 2026+
+              </span>
             </div>
-          ))}
+            <p className="text-xs sm:text-sm text-slate-600 font-sans max-w-xl">
+              Google Workspace & M365 Deployments, AI Search AEO & Dual Offices
+            </p>
+          </div>
+
+          {/* Desktop Chevron Track for Phase 2 with 3D Flip on Scroll & Hover */}
+          <motion.div
+            initial={{ opacity: 0, rotateY: 85, scale: 0.92 }}
+            whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{
+              rotateY: 16,
+              rotateX: 4,
+              scale: 1.02,
+              transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] }
+            }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            style={{ perspective: 1600, transformStyle: "preserve-3d" }}
+            className="hidden lg:block relative px-2 py-2 cursor-pointer group"
+          >
+            {/* 1. TOP ROW: Years & Connector Dots */}
+            <div className="grid grid-cols-4 pb-3 pl-12 pr-28">
+              {phase2Top.map((item) => (
+                <div key={item.year} className="flex flex-col items-center text-center">
+                  <span className="text-3xl font-bold tracking-tight text-[#00B4D8] font-sans">
+                    {item.year}
+                  </span>
+                  {/* Connector Dot */}
+                  <div className="flex flex-col items-center mt-1">
+                    <div className="w-3 h-3 rounded-full bg-[#00D2FF] ring-4 ring-[#00D2FF]/25" />
+                    <div className="w-0.5 h-3 bg-[#00D2FF]" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* 2. MAIN CHEVRON ARROW CONTAINER */}
+            <div className="relative">
+              {/* Right Blue/Cyan Chevron Accent Tip */}
+              <div
+                className="absolute -right-4 top-0 bottom-0 w-28 bg-[#00D2FF] rounded-r-xl pointer-events-none z-0"
+                style={{
+                  clipPath: "polygon(calc(100% - 75px) 0%, calc(100% - 75px) 100%, 100% 50%)",
+                }}
+              />
+
+              {/* Dark Chevron Track Body */}
+              <div
+                className="bg-[#0B1E38] shadow-2xl relative overflow-hidden z-10 rounded-l-3xl group-hover:shadow-[0_20px_50px_rgba(0,210,255,0.25)] transition-shadow duration-500"
+                style={{
+                  clipPath: "polygon(0% 0%, calc(100% - 65px) 0%, calc(100% - 8px) 50%, calc(100% - 65px) 100%, 0% 100%)",
+                }}
+              >
+                <div className="py-7 space-y-7 pl-10 pr-24">
+                  {/* Top Half Descriptions */}
+                  <div className="grid grid-cols-4 divide-x divide-dashed divide-white/25">
+                    {phase2Top.map((item, idx) => (
+                      <div key={idx} className="px-5 text-center flex items-center justify-center min-h-[70px]">
+                        <p className="text-white text-[13px] font-sans leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Subtle Horizontal Divider */}
+                  <div className="w-full h-px bg-white/10" />
+
+                  {/* Bottom Half Descriptions */}
+                  <div className="grid grid-cols-4 divide-x divide-dashed divide-white/25">
+                    {phase2Bottom.map((item, idx) => (
+                      <div key={idx} className="px-5 text-center flex items-center justify-center min-h-[70px]">
+                        <p className="text-white text-[13px] font-sans leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Accent Corner Line */}
+              <div className="absolute -left-2 bottom-0 w-12 h-6 bg-[#00D2FF] rounded-bl-2xl pointer-events-none -z-10" />
+            </div>
+
+            {/* 3. BOTTOM ROW: Connector Dots & Years */}
+            <div className="grid grid-cols-4 pt-3 pl-12 pr-28">
+              {phase2Bottom.map((item) => (
+                <div key={item.year} className="flex flex-col items-center text-center">
+                  <div className="flex flex-col items-center mb-1">
+                    <div className="w-0.5 h-3 bg-[#00D2FF]" />
+                    <div className="w-3 h-3 rounded-full bg-[#00D2FF] ring-4 ring-[#00D2FF]/25" />
+                  </div>
+                  <span className="text-3xl font-bold tracking-tight text-[#00B4D8] font-sans">
+                    {item.year}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Mobile Cards for Phase 2 with 3D Flip Effect */}
+          <motion.div
+            initial={{ opacity: 0, rotateY: 75, scale: 0.94 }}
+            whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            style={{ perspective: 1200, transformStyle: "preserve-3d" }}
+            className="lg:hidden space-y-4"
+          >
+            {[...phase2Top, ...phase2Bottom].map((item, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ rotateY: 8, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className="bg-[#0B1E38] rounded-2xl p-5 text-white border-l-4 border-[#00D2FF] shadow-sm space-y-2 cursor-pointer"
+              >
+                <div className="text-2xl font-bold text-[#00D2FF] font-sans">
+                  {item.year}
+                </div>
+                <p className="text-xs text-slate-200 leading-relaxed font-sans">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+
         </div>
 
       </div>

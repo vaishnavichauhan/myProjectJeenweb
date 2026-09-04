@@ -7,6 +7,7 @@ import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
 import DomainSearchBar from "@/components/common/DomainSearchBar";
+import CommonCta from "@/components/common/CommonCta";
 import {
   Globe,
   ShieldCheck,
@@ -16,13 +17,28 @@ import {
   Server,
   ArrowRight,
   CheckCircle2,
-  PhoneCall,
-  Building2,
-  Sparkles,
-  Award
+  PhoneCall
 } from "lucide-react";
 
 export default function DomainServicePage() {
+  const domainPartnerLogosRow1 = [
+    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Enterprise Hospital Domain & Portal DNS" },
+    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "High-Volume Portal Subdomain Routing" },
+    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Secure MX & SPF/DKIM Authentication" },
+    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Multi-Domain Career Network" },
+    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "WHOIS Privacy & Identity Protection" },
+    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "24/7 Anycast DNS Failover Resolution" }
+  ];
+
+  const domainPartnerLogosRow2 = [
+    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Enterprise Domain Portfolio Security" },
+    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Zero-Downtime DNS Migration & SSL" },
+    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Fast DNS Propagation Across India" },
+    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Corporate Email & DMARC Enforcement" },
+    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Automated Renewal & Anti-Hijacking" },
+    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Critical Healthcare Web Identity" }
+  ];
+
   const domainFaqs = [
     {
       q: "How do I transfer my existing domain to Jeenweb?",
@@ -59,105 +75,207 @@ export default function DomainServicePage() {
         </div>
       </div>
 
-      {/* Hero Banner */}
-      <section className="bg-[#0B192C] text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-block pb-1.5 border-b-2 border-[#E11D48]">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-slate-100">
-                Enterprise Domain Registration
-              </span>
-            </div>
+      {/* Hero Banner: Domain Registration & Management with Full-Bleed 3D TLD Background */}
+      <section className="bg-gradient-to-b from-[#06152B] via-[#0B1E38] to-[#0F294D] text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-700/60 flex items-center min-h-[560px] lg:min-h-[620px]">
+        
+        {/* Right-Side Hero Background Image with Seamless Left Fade */}
+        <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[58%] z-0 pointer-events-none overflow-hidden">
+          <div className="relative w-full h-full">
+            <Image
+              src="/images/domain-hero-bg.jpg"
+              alt="Domain Extension Boxes: .com, .in, .net, .org, .info"
+              fill
+              priority
+              className="object-cover object-center lg:object-right opacity-90 lg:opacity-100"
+              sizes="(max-width: 1024px) 100vw, 60vw"
+            />
+            {/* Smooth Left Fade Gradient to preserve high contrast and readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#06152B] via-[#06152B]/85 via-35% to-transparent hidden lg:block" />
+            {/* Mobile Gradient Overlay for text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#06152B] via-[#06152B]/80 to-[#06152B]/40 lg:hidden" />
+            {/* Top & Bottom Vignette Blend */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#06152B]/50 via-transparent to-[#0F294D]/70" />
+          </div>
+        </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Secure Your Digital Address with Enterprise-Grade Domain Registration and DNS Management
+        {/* Ambient Glows & Cyber Grid Accent */}
+        <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <div className="max-w-2xl lg:max-w-3xl space-y-6">
+            
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.16]">
+              Secure Your Digital Address with Enterprise Domain Registration &amp; DNS
             </h1>
 
-            <p className="text-base sm:text-lg text-blue-300 font-semibold">
-              Search, register, and lock your brand identity with fast DNS routing and complete control — all managed from our offices in Vadodara.
+            <p className="text-base sm:text-lg text-sky-200 font-semibold leading-snug">
+              Search, register, and protect your brand identity with lightning-fast DNS routing and complete control — all managed locally in Vadodara.
             </p>
 
-            <p className="text-slate-300 text-sm sm:text-[15px] leading-relaxed">
-              Your domain name is the first thing your customers type to find you online. If it is not registered properly, managed carefully, or renewed on time—you risk losing it entirely. At Jeenweb, we make it simple. You do a domain name search and pick the right name, and we handle everything from there — registration, DNS setup, WHOIS privacy, and renewal monitoring.
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+              Your domain is the foundation of your digital authority. We provide instant domain registration, enterprise Anycast DNS, WHOIS privacy protection, and automated renewal monitoring so your brand is always secured.
             </p>
 
             {/* Live Search Tool */}
-            <div className="pt-4">
+            <div className="pt-2">
               <DomainSearchBar onOpenModal={() => window.location.href = '/contact#get-in-touch'} />
             </div>
+
           </div>
         </div>
       </section>
 
       {/* What We Cover */}
-      <section className="py-20 lg:py-24 bg-white">
+      <section className="py-20 lg:py-24 bg-white relative">
+        {/* Floating Center Transition Badge: Half in Hero Bottom, Half in Next Section */}
+        <div className="absolute -top-10 sm:-top-12 left-1/2 -translate-x-1/2 z-20 group">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white border-2 border-slate-200/90 shadow-2xl shadow-slate-950/25 flex items-center justify-center p-3.5 sm:p-4 hover:scale-110 transition-all duration-300 ring-4 ring-slate-100/90">
+            <Image
+              src="/images/www-globe.png"
+              alt="World Wide Web Domain Network"
+              width={68}
+              height={68}
+              className="object-contain animate-[spin_20s_linear_infinite] group-hover:[animation-duration:6s] select-none pointer-events-none"
+            />
+          </div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             badge="Comprehensive Coverage"
+            badgeStyle="underline"
             title="Complete Domain Registration and Protection"
             subtitle="When you register a domain through Jeenweb, you get more than just a name. We build the full infrastructure around it so your website loads correctly, your business email works properly, and your customers can reach you without confusion."
             centered={true}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
-              <div className="p-3 rounded-xl bg-[#16325B] text-white w-fit">
-                <Zap className="w-6 h-6" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mt-12">
+            {/* Left Side: Domain Related Image Showcase */}
+            <div className="lg:col-span-4 rounded-3xl overflow-hidden bg-gradient-to-b from-[#06152B] via-[#0B1E38] to-[#0F294D] border border-slate-200/80 shadow-md p-6 sm:p-7 flex flex-col justify-between relative group">
+              {/* Subtle Ambient Glow */}
+              <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-red-500/10 rounded-full blur-2xl pointer-events-none" />
+
+              <div className="relative z-10 space-y-3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/15 border border-blue-400/25 text-sky-300 text-[11px] font-mono font-bold uppercase tracking-wider">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Domain Security Core</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug">
+                  Enterprise Domain &amp; DNS Infrastructure
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                  High-availability DNS clusters, WHOIS data redaction, and proactive renewal monitoring to safeguard your corporate brand equity.
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-slate-900">Instant Domain Search & Registration</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Find available names across .com, .in, .co.in, .org, .net, .tech, and industry-specific TLDs with instant registration and active setup.
-              </p>
+
+              {/* Domain Related Image */}
+              <div className="relative z-10 my-5 rounded-2xl overflow-hidden border border-white/10 shadow-2xl aspect-[3/4] w-full max-w-sm mx-auto">
+                <Image
+                  src="/images/domain-coverage-showcase.jpg"
+                  alt="Complete Domain Registration, DNS Security and Brand Protection"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+              </div>
+
+              {/* Bottom Quick Points */}
+              <div className="relative z-10 pt-4 border-t border-white/10 space-y-2.5">
+                <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>100% Legal Ownership in Your Corporate Name</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>Dedicated Domain Specialists in Vadodara</span>
+                </div>
+              </div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
-              <div className="p-3 rounded-xl bg-[#16325B] text-white w-fit">
-                <Globe className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900">DNS Setup & Nameserver Management</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                A, CNAME, MX, TXT, SPF, DKIM, and DMARC records configured accurately for zero deliverability errors.
-              </p>
-            </div>
+            {/* Right Side: Vertical Rectangle Cards */}
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[
+                {
+                  num: "01",
+                  icon: Zap,
+                  title: "Instant Domain Search & Registration",
+                  desc: "Find available names across .com, .in, .co.in, .org, .net, .tech, and industry TLDs with instant registration and active setup.",
+                  tag: "Instant Live Activation"
+                },
+                {
+                  num: "02",
+                  icon: Globe,
+                  title: "DNS Setup & Nameserver Management",
+                  desc: "A, CNAME, MX, TXT, SPF, DKIM, and DMARC records configured accurately for zero deliverability errors.",
+                  tag: "Anycast Routing & DNS"
+                },
+                {
+                  num: "03",
+                  icon: Lock,
+                  title: "WHOIS Privacy Protection",
+                  desc: "Shield your personal and business contact details from public registries and spammers on all supported extensions.",
+                  tag: "100% Identity Shield"
+                },
+                {
+                  num: "04",
+                  icon: RefreshCw,
+                  title: "Renewal Monitoring & Expiry Protection",
+                  desc: "Proactive email and phone alerts from our Vadodara desk ensure your critical business assets never lapse.",
+                  tag: "Automated Expiry Alerts"
+                },
+                {
+                  num: "05",
+                  icon: Server,
+                  title: "Domain Transfers & Consolidations",
+                  desc: "Seamless transfer of domains from third-party registrars without DNS disruption or website downtime.",
+                  tag: "Zero-Downtime Migration"
+                },
+                {
+                  num: "06",
+                  icon: ShieldCheck,
+                  title: "Multi-Domain Brand Defense",
+                  desc: "Secure brand name variants and geographic extensions (.in, .co.in, .com) with automated 301 forwarding.",
+                  tag: "Brand Hijack Defense"
+                }
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={item.num}
+                    className="p-6 sm:p-7 rounded-3xl bg-slate-50/80 hover:bg-white border border-slate-200/90 hover:border-[#16325B]/40 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden min-h-[320px]"
+                  >
+                    {/* Top Accent Line */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C11E23] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
-              <div className="p-3 rounded-xl bg-[#16325B] text-white w-fit">
-                <Lock className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900">WHOIS Privacy Protection</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Shield your personal and business contact details from public registries and spammers on all supported extensions.
-              </p>
-            </div>
+                    <div className="space-y-4">
+                      {/* Top Row: Icon */}
+                      <div className="w-12 h-12 rounded-2xl bg-[#0B1E38] text-blue-500 flex items-center justify-center group-hover:bg-[#16325B] group-hover:scale-105 transition-all shadow-md border border-blue-900/40">
+                        <Icon className="w-6 h-6 text-blue-500 group-hover:text-blue-400 transition-colors" />
+                      </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
-              <div className="p-3 rounded-xl bg-[#16325B] text-white w-fit">
-                <RefreshCw className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900">Renewal Monitoring & Expiry Protection</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Proactive email and phone alerts from our Vadodara desk ensure your critical business assets never lapse.
-              </p>
-            </div>
+                      {/* Title & Desc */}
+                      <div className="space-y-2">
+                        <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors leading-snug">
+                          {item.title}
+                        </h3>
+                        <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
 
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
-              <div className="p-3 rounded-xl bg-[#16325B] text-white w-fit">
-                <Server className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900">Domain Transfers & Consolidations</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Seamless transfer of domains from third-party registrars without DNS disruption or website downtime.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm space-y-3">
-              <div className="p-3 rounded-xl bg-[#16325B] text-white w-fit">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-900">Multi-Domain Brand Defense</h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                Secure brand name variants and geographic extensions (.in, .co.in, .com) with automated 301 forwarding.
-              </p>
+                    {/* Bottom Feature Pill */}
+                    <div className="mt-5 pt-3 border-t border-slate-200/80 flex items-center justify-between text-[11px] font-mono">
+                      <div className="flex items-center gap-1.5 text-blue-700 font-semibold">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
+                        <span>{item.tag}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -168,6 +286,7 @@ export default function DomainServicePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             badge="Why Businesses in Vadodara Choose Jeenweb for Domain Services"
+            badgeStyle="underline"
             title="The Jeenweb Advantage for Domain Management"
             subtitle="Enterprise DNS routing, zero-cost WHOIS privacy defense, and transparent renewal pricing backed by local engineers in Vadodara."
             centered={true}
@@ -175,12 +294,14 @@ export default function DomainServicePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12">
             {/* Advantage 1 */}
-            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div className="space-y-4">
+            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group relative overflow-hidden">
+              {/* Right side top corner background watermark icon */}
+              <div className="absolute -top-3 -right-3 w-32 h-32 pointer-events-none select-none z-0 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <Globe className="w-24 h-24 stroke-[1.2] text-slate-200/50 group-hover:text-blue-300/30 transition-colors" />
+              </div>
+
+              <div className="space-y-4 relative z-10">
                 <div className="flex items-center justify-between">
-                  <div className="p-3.5 rounded-2xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
-                    <Globe className="w-6 h-6 text-blue-400" />
-                  </div>
                   <span className="text-[11px] font-bold text-[#16325B] bg-slate-100 px-3 py-1 rounded-full uppercase tracking-wider">
                     Full Control
                   </span>
@@ -195,19 +316,21 @@ export default function DomainServicePage() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs text-blue-700 font-semibold font-mono">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs text-blue-700 font-semibold font-mono relative z-10">
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>Self-Service & Assisted DNS</span>
+                <span>Self-Service &amp; Assisted DNS</span>
               </div>
             </div>
 
             {/* Advantage 2 */}
-            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div className="space-y-4">
+            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group relative overflow-hidden">
+              {/* Right side top corner background watermark icon */}
+              <div className="absolute -top-3 -right-3 w-32 h-32 pointer-events-none select-none z-0 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <Lock className="w-24 h-24 stroke-[1.2] text-slate-200/50 group-hover:text-emerald-300/30 transition-colors" />
+              </div>
+
+              <div className="space-y-4 relative z-10">
                 <div className="flex items-center justify-between">
-                  <div className="p-3.5 rounded-2xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
-                    <Lock className="w-6 h-6 text-emerald-400" />
-                  </div>
                   <span className="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider">
                     Free Privacy
                   </span>
@@ -222,19 +345,21 @@ export default function DomainServicePage() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs text-emerald-700 font-semibold font-mono">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs text-emerald-700 font-semibold font-mono relative z-10">
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>Spam & Scraper Defense Included</span>
+                <span>Spam &amp; Scraper Defense Included</span>
               </div>
             </div>
 
             {/* Advantage 3 */}
-            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div className="space-y-4">
+            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group relative overflow-hidden">
+              {/* Right side top corner background watermark icon */}
+              <div className="absolute -top-3 -right-3 w-32 h-32 pointer-events-none select-none z-0 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <ShieldCheck className="w-24 h-24 stroke-[1.2] text-slate-200/50 group-hover:text-red-300/30 transition-colors" />
+              </div>
+
+              <div className="space-y-4 relative z-10">
                 <div className="flex items-center justify-between">
-                  <div className="p-3.5 rounded-2xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
-                    <ShieldCheck className="w-6 h-6 text-red-400" />
-                  </div>
                   <span className="text-[11px] font-bold text-[#E11D48] bg-red-50 px-3 py-1 rounded-full uppercase tracking-wider">
                     Asset Protection
                   </span>
@@ -249,19 +374,21 @@ export default function DomainServicePage() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs text-red-700 font-semibold font-mono">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs text-red-700 font-semibold font-mono relative z-10">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 <span>Anti-Theft Transfer Locks</span>
               </div>
             </div>
 
             {/* Advantage 4 */}
-            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group md:col-span-2 lg:col-span-2">
-              <div className="space-y-4">
+            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group relative overflow-hidden md:col-span-2 lg:col-span-2">
+              {/* Right side top corner background watermark icon */}
+              <div className="absolute -top-3 -right-3 w-36 h-36 pointer-events-none select-none z-0 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <Zap className="w-28 h-28 stroke-[1.2] text-slate-200/50 group-hover:text-amber-300/30 transition-colors" />
+              </div>
+
+              <div className="space-y-4 relative z-10">
                 <div className="flex items-center justify-between">
-                  <div className="p-3.5 rounded-2xl bg-[#16325B] text-white group-hover:scale-105 transition-transform">
-                    <Zap className="w-6 h-6 text-amber-400" />
-                  </div>
                   <span className="text-[11px] font-bold text-amber-800 bg-amber-50 px-3 py-1 rounded-full uppercase tracking-wider">
                     Transparent Pricing
                   </span>
@@ -276,19 +403,21 @@ export default function DomainServicePage() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs text-emerald-700 font-semibold font-mono">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs text-emerald-700 font-semibold font-mono relative z-10">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 <span>Zero Hidden Renewal Price Markups</span>
               </div>
             </div>
 
             {/* Advantage 5 */}
-            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div className="space-y-4">
+            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group relative overflow-hidden">
+              {/* Right side top corner background watermark icon */}
+              <div className="absolute -top-3 -right-3 w-32 h-32 pointer-events-none select-none z-0 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <Server className="w-24 h-24 stroke-[1.2] text-slate-200/50 group-hover:text-purple-300/30 transition-colors" />
+              </div>
+
+              <div className="space-y-4 relative z-10">
                 <div className="flex items-center justify-between">
-                  <div className="p-3.5 rounded-2xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
-                    <Server className="w-6 h-6 text-purple-400" />
-                  </div>
                   <span className="text-[11px] font-bold text-purple-800 bg-purple-50 px-3 py-1 rounded-full uppercase tracking-wider">
                     Brand Defense
                   </span>
@@ -303,7 +432,7 @@ export default function DomainServicePage() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs text-purple-700 font-semibold font-mono">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs text-purple-700 font-semibold font-mono relative z-10">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 <span>Single-Click Multi-Extension Checkout</span>
               </div>
@@ -317,6 +446,7 @@ export default function DomainServicePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             badge="Domain Extension Guide"
+            badgeStyle="underline"
             title="Domain Extensions and What Each One Is Used For"
             subtitle="Not all domain extensions work the same way. Here is a simple, structured breakdown of global, regional, and architecture extensions."
             centered={true}
@@ -418,254 +548,94 @@ export default function DomainServicePage() {
             </div>
           </div>
 
-          {/* Guidance Banner */}
-          <div className="mt-8 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-4 text-center sm:text-left">
-              <div className="p-3 rounded-2xl bg-[#0B1E38] text-white flex-shrink-0">
-                <CheckCircle2 className="w-6 h-6 text-emerald-400" />
-              </div>
-              <div>
-                <h4 className="text-base font-bold text-slate-900">
-                  Not sure which combination suits your business?
-                </h4>
-                <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
-                  We help you figure that out during the setup process with zero guesswork.
-                </p>
-              </div>
-            </div>
 
-            <button
-              onClick={() => window.location.href = "/contact#get-in-touch"}
-              className="px-6 py-3 rounded-xl bg-[#16325B] hover:bg-[#0F223D] text-white text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap shadow-sm"
-            >
-              Get Expert Extension Advice
-            </button>
-          </div>
         </div>
       </section>
 
-      {/* Section 5: Clients Who Trust Jeenweb for Domain Management */}
-      <section className="py-20 lg:py-24 bg-slate-50 relative overflow-hidden border-t border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            badge="Clients Who Trust Jeenweb for Domain Management"
-            title="Trusted Domain Partner for Brands Across World"
-            subtitle="From healthcare institutions and regional recruitment giants to international export corporations, see the brands that rely on our secure DNS infrastructure."
-            centered={true}
-          />
-
-          {/* Client Logo Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {/* Client Card 1: CARE Hospitals */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-center p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4 group-hover:scale-105 transition-transform">
-                  <Image
-                    src="/images/partners/care-hospitals.svg"
-                    alt="CARE Hospitals Logo"
-                    width={180}
-                    height={50}
-                    className="h-10 w-auto object-contain"
-                  />
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  CARE Hospitals
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Healthcare Network & Multi-Specialty Infrastructure
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-emerald-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>DNS & Web Portal Security</span>
-              </div>
-            </div>
-
-            {/* Client Card 2: JITO JOBS */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-center p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4 group-hover:scale-105 transition-transform">
-                  <Image
-                    src="/images/partners/jito-jobs.svg"
-                    alt="JITO JOBS Logo"
-                    width={180}
-                    height={50}
-                    className="h-10 w-auto object-contain"
-                  />
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  JITO JOBS
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Career & Recruitment Ecosystem Platform
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-emerald-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Multi-Domain Routing & DNS</span>
-              </div>
-            </div>
-
-            {/* Client Card 3: Google Cloud / Workspace */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
-                    <Globe className="w-6 h-6 text-blue-400" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-800 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
-                    Cloud Partner
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  Google Workspace
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Enterprise MX, SPF & DKIM Email Verification
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-blue-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" />
-                <span>Authorized Implementation</span>
-              </div>
-            </div>
-
-            {/* Client Card 4: Microsoft 365 */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
-                    <ShieldCheck className="w-6 h-6 text-emerald-400" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                    Solutions Partner
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  Microsoft 365
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Tenant DNS Routing & Autodiscover Setup
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-emerald-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Enterprise Tenant Security</span>
-              </div>
-            </div>
-
-            {/* Client Card 5: Parul University */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#16325B] text-white group-hover:scale-105 transition-transform">
-                    <Award className="w-6 h-6 text-amber-400" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
-                    Academic Partner
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  Parul University
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Wall of Fame Engineering & Innovation Ecosystem
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-amber-800">
-                <CheckCircle2 className="w-3.5 h-3.5 text-amber-600" />
-                <span>Campus & Portal Deployments</span>
-              </div>
-            </div>
-
-            {/* Client Card 6: Gujarat Industrial Consortium */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
-                    <Building2 className="w-6 h-6 text-red-400" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-red-800 bg-red-50 px-2 py-0.5 rounded border border-red-200">
-                    Manufacturing
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  Gujarat Industrial Leaders
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Manufacturing, Chemical & Supply Chain Brands
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-slate-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>80+ Industrial Deployments</span>
-              </div>
-            </div>
-
-            {/* Client Card 7: Global B2B Export Trade */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#16325B] text-white group-hover:scale-105 transition-transform">
-                    <Globe className="w-6 h-6 text-emerald-400" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                    International
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  International Export Houses
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Multi-Country .com, .in & .co.uk Trade Portals
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-emerald-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>12+ Global Country TLDs</span>
-              </div>
-            </div>
-
-            {/* Client Card 8: High-Availability AWS DNS */}
-            <div className="p-7 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-16 flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#0B1E38] text-white group-hover:scale-105 transition-transform">
-                    <Server className="w-6 h-6 text-purple-400" />
-                  </div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-800 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
-                    DNS Routing
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                  High-Availability Cloud DNS
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  Anycast Low-Latency Global Name Servers
-                </p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono font-semibold text-purple-700">
-                <CheckCircle2 className="w-3.5 h-3.5 text-purple-600" />
-                <span>99.9% Uptime Guarantee</span>
-              </div>
-            </div>
+      {/* Section 5: Client Logo Auto-Marquee Section (Matching Social Media UI) */}
+      <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden border-t border-slate-200/80" id="domain-partners">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
+          <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-3">
+            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              Trusted Partnerships
+            </span>
           </div>
 
-          {/* Bottom Trust Highlight Banner */}
-          <div className="mt-12 p-6 rounded-2xl bg-[#0F223D] text-white border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-            <div className="flex items-center gap-3">
-              <Sparkles className="w-5 h-5 text-red-400 flex-shrink-0" />
-              <p className="text-xs sm:text-sm text-slate-300">
-                <strong className="text-white">Full Domain Ownership Guarantee:</strong> All domains are registered 100% in your corporate legal name with full administrative control.
-              </p>
-            </div>
-            <button
-              onClick={() => window.location.href = "/contact#get-in-touch"}
-              className="px-6 py-2.5 rounded-lg bg-[#E11D48] hover:bg-[#BE123C] text-white text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap"
-            >
-              Consult Our Domain Desk
-            </button>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-slate-900 leading-tight">
+            Trusted Domain Partner <br className="hidden sm:inline" />
+            <span className="text-[#1A3B71]">for Brands Across World</span>
+          </h2>
+
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans leading-relaxed">
+            From healthcare institutions and regional recruitment giants to international export corporations, see the brands that rely on our secure DNS infrastructure.
+          </p>
+        </div>
+
+        {/* 2-Line Infinite Auto-Marquee Track */}
+        <div className="w-full relative overflow-hidden py-2 space-y-4 sm:space-y-6">
+          
+          {/* Gradient edge masks for smooth seamless fade */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-44 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent z-10" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-44 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent z-10" />
+
+          {/* Line 1: Infinite Marquee (Left Scroll) */}
+          <div className="flex animate-marquee items-center gap-5 sm:gap-6">
+            {[...domainPartnerLogosRow1, ...domainPartnerLogosRow1].map((partner, idx) => (
+              <div
+                key={`row1-${idx}`}
+                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#1A3B71]/40 hover:shadow-md transition-all duration-300 group cursor-default"
+              >
+                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
+                  <Image
+                    src={partner.logo}
+                    alt={`${partner.name} Logo`}
+                    width={150}
+                    height={45}
+                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
+                <div className="hidden sm:block text-left">
+                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#1A3B71] transition-colors whitespace-nowrap">
+                    {partner.name}
+                  </div>
+                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
+                    {partner.tag}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
+
+          {/* Line 2: Infinite Marquee Reverse (Right Scroll) */}
+          <div className="flex animate-marquee-reverse items-center gap-5 sm:gap-6">
+            {[...domainPartnerLogosRow2, ...domainPartnerLogosRow2].map((partner, idx) => (
+              <div
+                key={`row2-${idx}`}
+                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#C11E23]/40 hover:shadow-md transition-all duration-300 group cursor-default"
+              >
+                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
+                  <Image
+                    src={partner.logo}
+                    alt={`${partner.name} Logo`}
+                    width={150}
+                    height={45}
+                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
+                <div className="hidden sm:block text-left">
+                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#C11E23] transition-colors whitespace-nowrap">
+                    {partner.name}
+                  </div>
+                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
+                    {partner.tag}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
 
@@ -677,52 +647,19 @@ export default function DomainServicePage() {
         subtitle="Everything you need to know about domain transfers, pricing integrity, expiry recovery, WHOIS privacy, and SPF/DKIM email delivery."
       />
 
-      {/* Section 7: Get Started */}
-      <section className="relative z-20 -mb-20 sm:-mb-24 lg:-mb-28" id="get-started">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-[#0B192C] via-[#11253E] to-[#0B192C] border border-slate-700/70 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl shadow-slate-950/40 relative overflow-hidden backdrop-blur-sm">
-            {/* Subtle ambient glow inside card */}
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-red-600/15 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
-              <div className="text-center lg:text-left space-y-2.5 max-w-3xl">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-[11px] font-bold uppercase tracking-wider">
-                  <Sparkles className="w-3 h-3 text-red-400" />
-                  <span>Get Started • Vadodara Infrastructure Desk</span>
-                </div>
-
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight leading-tight">
-                  Claim Your Brand&apos;s Online Address Before Someone Else Does
-                </h2>
-
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl">
-                  The domain you want may be available today — but not tomorrow. Whether you need a single domain or bulk domain registration across multiple extensions, we help you search, choose, and lock everything down with full support from Vadodara.
-                </p>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto flex-shrink-0">
-                <button
-                  onClick={() => window.location.href = "/contact#get-in-touch"}
-                  className="px-7 py-3.5 rounded-xl bg-[#E11D48] hover:bg-[#BE123C] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-red-900/40 hover:shadow-red-900/60 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group cursor-pointer"
-                >
-                  <span>Register Your Domain</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                </button>
-
-                <Link
-                  href="/contact"
-                  className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-xs uppercase tracking-wider transition-all border border-white/15 hover:border-white/30 text-center flex items-center justify-center gap-2"
-                >
-                  <PhoneCall className="w-3 h-3 text-slate-300" />
-                  <span>Talk to Domain Specialist</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Section 7: Get Started CTA */}
+      <CommonCta
+        id="get-started"
+        title={
+          <>
+            Claim Your Online Address. <br className="hidden sm:inline" />
+            <span className="text-blue-400">Protect Your Brand Identity.</span>
+          </>
+        }
+        subtitle="The domain you want may be available today — but not tomorrow. Whether you need a single domain or bulk domain registration across multiple extensions, we help you search, choose, and lock everything down with full support from Vadodara."
+        buttonText="Speak with Performance Specialist"
+        buttonHref="/contact"
+      />
 
           </main>
   );

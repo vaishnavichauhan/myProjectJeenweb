@@ -870,7 +870,7 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
 
             {/* Ambient Background Lighting */}
             <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#C11E23]/20 rounded-full blur-[90px] pointer-events-none" />
-            <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-[#00E5FF]/15 rounded-full blur-[90px] pointer-events-none" />
+            <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-500/15 rounded-full blur-[90px] pointer-events-none" />
 
             <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-14">
               
@@ -878,7 +878,7 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
               <div className="space-y-4 max-w-2xl">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white leading-tight">
                   Build Software That Fits Your <br />
-                  <span className="text-[#00E5FF]">
+                  <span className="text-blue-400">
                     Real Workplace Operations.
                   </span>
                 </h2>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { ShieldCheck, Building2, Lock, CheckCircle2, ArrowUpRight, MapPin, Sparkles, ArrowRight } from "lucide-react";
+import { ShieldCheck, Building2, Lock, ArrowUpRight, MapPin, Sparkles, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function HistoryValueProposition() {
@@ -193,9 +193,6 @@ export default function HistoryValueProposition() {
                     : "bg-white/85 hover:bg-white border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1.5"
                 }`}
               >
-                {/* Card Background Checks Texture (20px by 20px Technical Grid Pattern) */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#1A3B710c_1px,transparent_1px),linear-gradient(to_bottom,#1A3B710c_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none z-0" />
-
                 {/* Top Multi-Tone Glowing Accent Line */}
                 <div
                   className={`absolute top-0 left-0 right-0 h-[3.5px] bg-gradient-to-r ${pillar.color} transition-all duration-500 z-10 ${
@@ -258,9 +255,7 @@ export default function HistoryValueProposition() {
                       : "border-slate-100 text-slate-700 group-hover:border-slate-200"
                   }`}
                 >
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                  </div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
                   <span className="line-clamp-1">{pillar.bullet}</span>
                 </div>
 
@@ -277,9 +272,6 @@ export default function HistoryValueProposition() {
 
         {/* Bottom Local Accountability Bar with 3D Depth & Glowing Highlights */}
         <div className="mt-14 rounded-3xl bg-gradient-to-r from-[#0A2647] via-[#134B70] to-[#07192F] p-7 sm:p-9 text-white shadow-2xl border border-slate-700/60 relative overflow-hidden group">
-          {/* Subtle Grid Accent */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0d_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0d_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
-
           {/* Ambient Corner Lighting */}
           <div className="absolute -top-16 -right-16 w-64 h-64 bg-[#00E5FF]/15 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-[#C11E23]/15 rounded-full blur-3xl pointer-events-none" />

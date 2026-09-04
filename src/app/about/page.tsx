@@ -55,24 +55,30 @@ export default function CompanyOverviewPage() {
         {/* Soft Ambient Background Glow */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600/[0.02] rounded-full blur-3xl pointer-events-none" />
 
-        {/* Right Full-Height Sweeping Arc & Skyscraper Image (Flush with Top & Right Edges) */}
+        {/* Right Full-Height Image with Diagonal / Half Cross Line Cut */}
         <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[50%] xl:w-[48%] h-full hidden lg:block overflow-hidden pointer-events-none z-0">
           
-          {/* Sweeping Blue Arc Ribbon Stroke */}
+          {/* Sweeping Blue Diagonal / Half Cross Line Border Stroke */}
           <div className="absolute inset-0 z-20 pointer-events-none">
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full">
-              <path
-                d="M 20,0 C 24,36 50,76 100,88 L 100,95 C 47,82 20,40 16,0 Z"
-                fill="#2B79D8"
+              <line
+                x1="18"
+                y1="0"
+                x2="0"
+                y2="100"
+                stroke="#2B79D8"
+                strokeWidth="5"
+                vectorEffect="non-scaling-stroke"
+                className="drop-shadow-[-4px_0_12px_rgba(43,121,216,0.35)]"
               />
             </svg>
           </div>
 
-          {/* Full-Height Skyscraper Image (Starts at absolute top edge) */}
+          {/* Skyscraper Image with Matching Diagonal Polygon Clip */}
           <div
             className="relative w-full h-full overflow-hidden group pointer-events-auto"
             style={{
-              clipPath: "ellipse(112% 100% at 100% 0%)"
+              clipPath: "polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%)"
             }}
           >
             <Image

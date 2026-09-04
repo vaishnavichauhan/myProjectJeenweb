@@ -75,8 +75,8 @@ export default function TeamCapabilitiesOverview() {
                 key={idx}
                 className={`group relative bg-[#F8FAFC] rounded-3xl p-8 sm:p-9 border border-slate-200/90 shadow-sm hover:shadow-xl hover:bg-white transition-all duration-300 flex flex-col justify-between overflow-hidden ${pod.accentBorder}`}
               >
-                {/* Top Colored Gradient Stripe */}
-                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${pod.topAccent}`} />
+                {/* Top Colored Gradient Stripe with Reduced Depth */}
+                <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${pod.topAccent}`} />
 
                 <div className="space-y-6">
                   {/* Top Bar: Icon + Badge */}

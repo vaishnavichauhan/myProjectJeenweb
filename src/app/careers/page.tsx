@@ -1,5 +1,7 @@
+import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Briefcase, 
   MapPin, 
@@ -138,39 +140,89 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Why Work With Us Section */}
-      <section className="py-20 bg-white">
+      {/* Why Engineers & Leaders Love Working at Jeenweb (Blue Theme matching reference image) */}
+      <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#E11D48] bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
-              Company Culture &amp; Benefits
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-4 tracking-tight">
+          {/* Section Header (No background color) */}
+          <div className="flex flex-col items-center justify-center mb-12 sm:mb-16 text-center">
+            <div className="inline-block border-b-2 border-[#16325B] pb-1 mb-3">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
+                Company Culture &amp; Benefits
+              </span>
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-slate-900 max-w-3xl mx-auto">
               Why Engineers &amp; Leaders Love Working at Jeenweb
             </h2>
-            <p className="text-slate-600 mt-3 text-base">
-              We empower every team member to innovate, take ownership, and build impactful software for domestic and international clients.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {perks.map((perk) => (
-              <div
-                key={perk.title}
-                className="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-[#1A3B71]/40 hover:shadow-xl hover:shadow-slate-900/5 transition-all group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#1A3B71]/10 text-[#1A3B71] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#1A3B71] group-hover:text-white transition-all shadow-xs">
-                  <perk.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">
-                  {perk.title}
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  {perk.desc}
-                </p>
-              </div>
-            ))}
+          {/* All 6 Circles in One Single Line with Smaller Size */}
+          <div className="w-full overflow-x-auto pb-6 scrollbar-none">
+            <div className="flex items-center justify-start lg:justify-center min-w-max mx-auto px-4 gap-2 sm:gap-3 lg:gap-4">
+              {perks.map((perk, index) => {
+                const Icon = perk.icon;
+                return (
+                  <React.Fragment key={perk.title}>
+                    {/* Smaller Circular Card with Arc Brackets */}
+                    <div className="relative flex items-center justify-center shrink-0">
+                      <div className="w-36 h-36 sm:w-40 sm:h-40 lg:w-44 lg:h-44 rounded-full bg-white border border-slate-300 shadow-md flex flex-col items-center justify-center p-3 sm:p-4 text-center relative hover:scale-105 transition-all duration-300 group z-10">
+                        {/* SVG Top & Bottom Arc Brackets in Blue */}
+                        <svg
+                          className="absolute -inset-2.5 sm:-inset-3 w-[calc(100%+20px)] sm:w-[calc(100%+24px)] h-[calc(100%+20px)] sm:h-[calc(100%+24px)] pointer-events-none"
+                          viewBox="0 0 120 120"
+                          fill="none"
+                        >
+                          {/* Top Arc Bracket */}
+                          <path
+                            d="M 20 42 A 45 45 0 0 1 100 42"
+                            stroke="#16325B"
+                            strokeWidth="5"
+                            strokeLinecap="round"
+                            className="group-hover:stroke-[#0284C7] transition-colors duration-300"
+                          />
+                          {/* Bottom Arc Bracket */}
+                          <path
+                            d="M 20 78 A 45 45 0 0 0 100 78"
+                            stroke="#16325B"
+                            strokeWidth="5"
+                            strokeLinecap="round"
+                            className="group-hover:stroke-[#0284C7] transition-colors duration-300"
+                          />
+                        </svg>
+
+                        {/* Inner Icon */}
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-blue-50 text-[#16325B] flex items-center justify-center mb-1.5 sm:mb-2 group-hover:bg-[#16325B] group-hover:text-white group-hover:scale-110 transition-all shadow-xs shrink-0">
+                          <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#16325B] transition-colors leading-snug px-1.5 max-w-[110px] sm:max-w-[130px]">
+                          {perk.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Connecting Block Arrow between circles (Last right arrow removed per user request) */}
+                    {index < perks.length - 2 && (
+                      <div className="flex items-center justify-center shrink-0 w-8 sm:w-10 lg:w-12 -mx-1 sm:-mx-1.5 z-0">
+                        <svg
+                          className="w-7 sm:w-9 h-7 sm:h-9 text-blue-200/90 drop-shadow-xs"
+                          viewBox="0 0 48 48"
+                          fill="none"
+                        >
+                          <path
+                            d="M 2 15 H 22 V 4 L 46 24 L 22 44 V 33 H 2 Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    )}
+                  </React.Fragment>
+                );
+              })}
+            </div>
           </div>
+
         </div>
       </section>
 
