@@ -119,7 +119,7 @@ export default function AboutSnippet() {
                       </div>
                       <div>
                         <div className="text-xs font-bold text-slate-900">Utpal Shah</div>
-                        <div className="text-[11px] text-slate-500">Founder • 26+ Yrs Foundational Integrity</div>
+                        <div className="text-[11px] text-slate-500">Founder Director • 26+ Yrs Foundational Integrity</div>
                       </div>
                     </div>
                   </div>
@@ -131,19 +131,7 @@ export default function AboutSnippet() {
                       </div>
                       <div>
                         <div className="text-xs font-bold text-slate-900">Tatvam Shah</div>
-                        <div className="text-[11px] text-slate-500">Partner • Parul Univ Wall of Fame, JITO IT</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-3 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-[#C11E23] text-white font-black text-xs flex items-center justify-center font-mono">
-                        ES
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-slate-900">Exita Shah</div>
-                        <div className="text-[11px] text-slate-500">Co-Founder • Organic Search &amp; AI Architect</div>
+                        <div className="text-[11px] text-slate-500">Director • Parul Univ Wall of Fame, JITO IT</div>
                       </div>
                     </div>
                   </div>
@@ -223,14 +211,14 @@ export default function AboutSnippet() {
             <div className="pt-2 flex flex-wrap items-center gap-3.5">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#0A2647] via-[#134B70] to-[#07192F] hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer hover:scale-[1.02] active:scale-95 border border-white/10"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#0A2647] via-[#134B70] to-[#07192F] hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer hover:scale-[1.02] active:scale-95 border border-white/10"
               >
                 <span>Read Full Company Overview</span>
                 <ArrowRight className="w-4 h-4 text-[#00E5FF]" />
               </Link>
               <Link
                 href="/about/team"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-[#1A3B71] font-bold text-xs uppercase tracking-wider transition-all border-2 border-[#1A3B71] shadow-xs active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-[#1A3B71] font-bold text-xs uppercase tracking-wider transition-all border-2 border-[#1A3B71] shadow-xs active:scale-95"
               >
                 <span>Meet Leadership Team</span>
                 <ArrowUpRight className="w-4 h-4" />

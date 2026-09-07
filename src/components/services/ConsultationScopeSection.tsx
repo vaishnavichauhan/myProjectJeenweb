@@ -179,12 +179,16 @@ export default function ConsultationScopeSection() {
             <div className="pt-2 flex items-center gap-6 text-xs font-mono text-slate-400">
               <div>
                 <span className="block text-slate-500 text-[10px] uppercase">Corporate Desk</span>
-                <span className="font-bold text-slate-200">+91 99798 88764</span>
+                <a href="tel:+919824466017" className="font-bold text-slate-200 hover:text-blue-400 transition-colors">
+                  +91 98244 66017
+                </a>
               </div>
               <div className="h-6 w-px bg-slate-700" />
               <div>
                 <span className="block text-slate-500 text-[10px] uppercase">Direct Email</span>
-                <span className="font-bold text-slate-200">contact@jeenweb.com</span>
+                <a href="mailto:info@jeenweb.com" className="font-bold text-slate-200 hover:text-blue-400 transition-colors">
+                  info@jeenweb.com
+                </a>
               </div>
             </div>
           </div>

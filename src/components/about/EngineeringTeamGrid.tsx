@@ -17,106 +17,356 @@ import {
 } from "lucide-react";
 
 export default function EngineeringTeamGrid() {
-  const [activeFilter, setActiveFilter] = useState<string>("all");
   const [isPaused, setIsPaused] = useState<boolean>(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const teamMembers = [
     {
-      id: "harsh-patel",
-      name: "Harsh Patel",
-      role: "Lead Full-Stack & ERP Architect",
+      id: 1,
+      name: "Vaishnavi Chauhan",
+      gender: "female",
+      designation: "Full Stack Developer",
+      role: "Full Stack Developer",
       department: "software",
-      experience: "7+ Years Experience",
-      image: "/images/team-harsh-patel.jpg",
-      bio: "Leads backend architecture and custom enterprise ERP pipelines. Specializes in multi-tenant business logic, automated database migration, and high-load APIs.",
-      skills: ["PHP / Laravel", "Node.js", "PostgreSQL", "ERP Architecture"],
-      accentColor: "#073F8A"
+      experience: "Full Stack Specialist",
+      image: "/images/team/team-VaishnaviChauhan.jpeg",
+      bio: "Engineers end-to-end full stack web platforms and cross-platform mobile apps with modern React, Next.js, and Node architectures.",
+      technology: [
+        "React JS",
+        "React Native",
+        "Next.js",
+        "Node.js",
+        "HTML"
+      ],
+      skills: [
+        "React JS",
+        "React Native",
+        "Next.js",
+        "Node.js",
+        "HTML"
+      ]
     },
     {
-      id: "pooja-desai",
-      name: "Pooja Desai",
-      role: "Senior Frontend & Software Engineer",
+      id: 2,
+      name: "Tanamay Dasgupta",
+      gender: "male",
+      designation: "Software Developer Engineer 1",
+      role: "Software Development Engineer 1",
       department: "software",
-      experience: "5+ Years Experience",
-      image: "/images/team-pooja-desai.jpg",
-      bio: "Engineers interactive administrative dashboards, client portals, and responsive web platforms with high-performance Core Web Vitals compliance.",
-      skills: ["React / Next.js", "TypeScript", "Tailwind CSS", "REST APIs"],
-      accentColor: "#00D2FF"
+      experience: "Backend & Cloud Engineer",
+      image: "/images/team/team-TanmayDasgupta.jpeg",
+      bio: "Builds scalable microservices, high-throughput REST APIs, relational and NoSQL database schemas, and automated CI/CD DevOps workflows.",
+      technology: [
+        "React JS",
+        "Node.js",
+        "MongoDB",
+        "SQL",
+        "DevOps",
+        "Next.js",
+        "Express.js"
+      ],
+      skills: [
+        "React JS",
+        "Node.js",
+        "MongoDB",
+        "SQL",
+        "DevOps",
+        "Next.js",
+        "Express.js"
+      ]
     },
     {
-      id: "drashti-shah",
-      name: "Drashti Shah",
-      role: "Technical SEO & AEO/GEO Strategist",
+      id: 3,
+      name: "Tejasvini Kokre",
+      gender: "female",
+      designation: "SEO Executive",
+      role: "SEO Executive",
       department: "marketing",
-      experience: "5+ Years Experience",
-      image: "/images/team-drashti-shah.jpg",
-      bio: "Architects nested JSON-LD schema graphs, Answer Engine Optimization (AEO) for Google AI Overviews, and Generative Engine Optimization for AI citations.",
-      skills: ["Technical SEO", "AEO / GEO Schema", "Core Web Vitals", "B2B Lead Funnels"],
-      accentColor: "#E11D48"
+      experience: "Search & AI Specialist",
+      image: "/images/team/team-Tejasvini kokre.jpeg",
+      bio: "Specializes in modern Answer Engine Optimization (AEO), Generative Engine (GEO) citation modeling, and comprehensive technical SEO indexation.",
+      technology: [
+        "AEO",
+        "GEO",
+        "Technical SEO"
+      ],
+      skills: [
+        "AEO",
+        "GEO",
+        "Technical SEO"
+      ]
     },
     {
-      id: "bhavin-suthar",
-      name: "Bhavin Suthar",
-      role: "Senior Backend & Database Engineer",
+      id: 4,
+      name: "Nisarg Patel",
+      gender: "male",
+      designation: "Frontend Developer",
+      role: "Frontend Developer",
+      department: "frontend",
+      experience: "Frontend Specialist",
+      image: "/images/avatar-placeholder.png",
+      bio: "Develops accessible, responsive CMS and web portal architectures with clean custom theme development and speed optimization.",
+      technology: [
+        "WordPress"
+      ],
+      skills: [
+        "WordPress"
+      ]
+    },
+    {
+      id: 5,
+      name: "Sejal Vataliya",
+      gender: "female",
+      designation: "Frontend Developer",
+      role: "Frontend Developer",
+      department: "frontend",
+      experience: "Frontend Specialist",
+      image: "/images/team/team-Sejal.jpeg",
+      bio: "Focuses on pixel-perfect frontend layouts, custom CMS implementations, and responsive interactive web experiences.",
+      technology: [
+        "WordPress"
+      ],
+      skills: [
+        "WordPress"
+      ]
+    },
+    {
+      id: 6,
+      name: "Nakul Panchal",
+      gender: "male",
+      designation: "Software Developer Engineer 1",
+      role: "Software Development Engineer 1",
       department: "software",
-      experience: "6+ Years Experience",
-      image: "/images/team-harsh-patel.jpg",
-      bio: "Designs normalized relational schemas, background cron processing queues, and custom API gateways for industrial enterprise clients.",
-      skills: ["Laravel Core", "MySQL Indexing", "Redis Cache", "Webhook Queues"],
-      accentColor: "#073F8A"
+      experience: "Systems Engineer",
+      image: "/images/team/team-NakulPanchal.jpeg",
+      bio: "Architects resilient full-stack systems, Express/Node backend microservices, and high-concurrency database queries.",
+      technology: [
+        "Java",
+        "React JS",
+        "Node.js",
+        "MongoDB",
+        "SQL",
+        "DevOps",
+        "Next.js",
+        "Express.js"
+      ],
+      skills: [
+        "Java",
+        "React JS",
+        "Node.js",
+        "MongoDB",
+        "SQL",
+        "DevOps",
+        "Next.js",
+        "Express.js"
+      ]
     },
     {
-      id: "jhanvi-trivedi",
-      name: "Jhanvi Trivedi",
-      role: "Generative AI & Search Performance Specialist",
+      id: 7,
+      name: "Raj Patel",
+      gender: "male",
+      designation: "Full Stack Developer",
+      role: "Full Stack Developer",
+      department: "software",
+      experience: "Full Stack Engineer",
+      image: "/images/team/team-rajPatel.png",
+      bio: "Delivers robust Next.js and Node.js web applications backed by optimized SQL and MongoDB database architectures.",
+      technology: [
+        "Next.js",
+        "React JS",
+        "Node.js",
+        "SQL",
+        "MongoDB"
+      ],
+      skills: [
+        "Next.js",
+        "React JS",
+        "Node.js",
+        "SQL",
+        "MongoDB"
+      ]
+    },
+    {
+      id: 8,
+      name: "Aditya Patel",
+      gender: "male",
+      designation: "Digital Marketing Manager",
+      role: "Digital Marketing Manager",
       department: "marketing",
-      experience: "4+ Years Experience",
-      image: "/images/team-drashti-shah.jpg",
-      bio: "Audits citation footprints across ChatGPT Search, Perplexity, and Gemini, optimizing site entity graph associations.",
-      skills: ["Generative Engine", "Entity SEO", "Schema Graphs", "ROAS Audits"],
-      accentColor: "#E11D48"
+      experience: "Growth & Media Manager",
+      image: "/images/avatar-placeholder.png",
+      bio: "Leads multi-channel performance advertising, high-converting Meta and Google campaigns, and B2B LinkedIn sales pipeline growth.",
+      technology: [
+        "Meta",
+        "Google Ads",
+        "LinkedIn Sales Navigator",
+        "Canva"
+      ],
+      skills: [
+        "Meta",
+        "Google Ads",
+        "LinkedIn Sales Navigator",
+        "Canva"
+      ]
+    },
+    {
+      id: 9,
+      name: "Malay Modha",
+      gender: "male",
+      designation: "Video Editor",
+      role: "Video Editor",
+      department: "marketing",
+      experience: "Media & Motion Specialist",
+      image: "/images/avatar-placeholder.png",
+      bio: "Produces high-retention video creative, commercial motion graphic reels, and brand visual media for multi-platform digital campaigns.",
+      technology: [
+        "Meta",
+        "Google Ads",
+        "LinkedIn Sales Navigator",
+        "Canva"
+      ],
+      skills: [
+        "Meta",
+        "Google Ads",
+        "LinkedIn Sales Navigator",
+        "Canva"
+      ]
+    },
+    {
+      id: 10,
+      name: "Exita Shah",
+      gender: "female",
+      designation: "Head of Digital Marketing",
+      role: "Senior leadership",
+      department: "marketing",
+      experience: "Media & Motion Specialist",
+      image: "/images/avatar-placeholder.png",
+      bio: "Produces high-retention video creative, commercial motion graphic reels, and brand visual media for multi-platform digital campaigns.",
+        technology: [
+        "Meta",
+        "Google Ads",
+        "LinkedIn Sales Navigator",
+        "Canva"
+      ],
+      skills: [
+        "Meta",
+        "Google Ads",
+        "LinkedIn Sales Navigator",
+      ]
     }
   ];
 
-  const filteredMembers = activeFilter === "all" 
-    ? teamMembers 
-    : teamMembers.filter(m => m.department === activeFilter);
+  // Triplicate roster array for infinite seamless looping in clockwise rotation
+  const loopedMembers = [
+    ...teamMembers.map((m) => ({ ...m, uniqueKey: `set1-${m.id}` })),
+    ...teamMembers.map((m) => ({ ...m, uniqueKey: `set2-${m.id}` })),
+    ...teamMembers.map((m) => ({ ...m, uniqueKey: `set3-${m.id}` }))
+  ];
 
-  // Auto-scroll effect with pause on hover
+  const isAdjustingRef = useRef<boolean>(false);
+
+  const getCardMetrics = () => {
+    const el = scrollRef.current;
+    if (!el) return { step: 344, setWidth: 3440 };
+
+    const first = el.children[0] as HTMLElement | null;
+    const second = el.children[1] as HTMLElement | null;
+    const step = first && second ? second.offsetLeft - first.offsetLeft : 344;
+    const setWidth = step * teamMembers.length;
+    return { step, setWidth };
+  };
+
+  const checkLoopBounds = () => {
+    if (!scrollRef.current || isAdjustingRef.current) return;
+    const el = scrollRef.current;
+    const { setWidth } = getCardMetrics();
+    if (setWidth <= 0) return;
+
+    // Scrolled into third set -> seamlessly adjust back to second set
+    if (el.scrollLeft >= setWidth * 2) {
+      isAdjustingRef.current = true;
+      el.style.scrollBehavior = "auto";
+      el.scrollLeft -= setWidth;
+      requestAnimationFrame(() => {
+        el.style.scrollBehavior = "smooth";
+        isAdjustingRef.current = false;
+      });
+    }
+    // Scrolled back into first set -> seamlessly adjust forward to second set
+    else if (el.scrollLeft <= setWidth * 0.2) {
+      isAdjustingRef.current = true;
+      el.style.scrollBehavior = "auto";
+      el.scrollLeft += setWidth;
+      requestAnimationFrame(() => {
+        el.style.scrollBehavior = "smooth";
+        isAdjustingRef.current = false;
+      });
+    }
+  };
+
+  // Center initial view at the middle set (Set 2)
+  useEffect(() => {
+    if (scrollRef.current) {
+      const el = scrollRef.current;
+      const { setWidth } = getCardMetrics();
+      el.style.scrollBehavior = "auto";
+      el.scrollLeft = setWidth;
+      requestAnimationFrame(() => {
+        el.style.scrollBehavior = "smooth";
+      });
+    }
+  }, []);
+
+  // Listen to scroll to silently adjust bounds for infinite clockwise cycling
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleScroll = () => {
+      checkLoopBounds();
+    };
+
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Auto-rotate effect (clockwise continuous cycle, pause on hover)
   useEffect(() => {
     if (isPaused) return;
 
     const interval = setInterval(() => {
-      if (scrollRef.current) {
+      if (scrollRef.current && !isAdjustingRef.current) {
         const el = scrollRef.current;
-        const maxScroll = el.scrollWidth - el.clientWidth;
-        const cardStep = el.clientWidth >= 1024 ? (el.clientWidth - 48) / 3 + 24 : (el.clientWidth >= 768 ? (el.clientWidth - 24) / 2 + 24 : 320);
-
-        if (el.scrollLeft >= maxScroll - 15) {
-          el.scrollTo({ left: 0, behavior: "smooth" });
-        } else {
-          el.scrollBy({ left: cardStep, behavior: "smooth" });
-        }
+        const { step } = getCardMetrics();
+        el.style.scrollBehavior = "smooth";
+        el.scrollBy({ left: step, behavior: "smooth" });
       }
     }, 3200);
 
     return () => clearInterval(interval);
-  }, [isPaused, filteredMembers]);
+  }, [isPaused]);
 
   const handleScrollLeft = () => {
-    if (scrollRef.current) {
+    if (scrollRef.current && !isAdjustingRef.current) {
       const el = scrollRef.current;
-      const cardStep = el.clientWidth >= 1024 ? (el.clientWidth - 48) / 3 + 24 : (el.clientWidth >= 768 ? (el.clientWidth - 24) / 2 + 24 : 320);
-      scrollRef.current.scrollBy({ left: -cardStep, behavior: "smooth" });
+      const { step, setWidth } = getCardMetrics();
+      if (el.scrollLeft <= setWidth * 0.3) {
+        el.style.scrollBehavior = "auto";
+        el.scrollLeft += setWidth;
+      }
+      requestAnimationFrame(() => {
+        el.style.scrollBehavior = "smooth";
+        el.scrollBy({ left: -step, behavior: "smooth" });
+      });
     }
   };
 
   const handleScrollRight = () => {
-    if (scrollRef.current) {
+    if (scrollRef.current && !isAdjustingRef.current) {
       const el = scrollRef.current;
-      const cardStep = el.clientWidth >= 1024 ? (el.clientWidth - 48) / 3 + 24 : (el.clientWidth >= 768 ? (el.clientWidth - 24) / 2 + 24 : 320);
-      scrollRef.current.scrollBy({ left: cardStep, behavior: "smooth" });
+      const { step } = getCardMetrics();
+      el.style.scrollBehavior = "smooth";
+      el.scrollBy({ left: step, behavior: "smooth" });
     }
   };
 
@@ -150,27 +400,6 @@ export default function EngineeringTeamGrid() {
           </p>
         </div>
 
-        {/* Department Filter Tabs (Centered) */}
-        <div className="mb-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-          {[
-            { id: "all", label: "All Specialists (24+ Bench)" },
-            { id: "software", label: "Software & Custom ERP" },
-            { id: "marketing", label: "Technical SEO & AEO" },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveFilter(tab.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all duration-300 ${
-                activeFilter === tab.id
-                  ? "bg-[#073F8A] text-white shadow-md shadow-blue-900/20 scale-[1.02]"
-                  : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
         {/* ========================================================================= */}
         {/* AUTO-SCROLLING HORIZONTAL DEVELOPER ROSTER CAROUSEL (3 CARDS VISIBLE) */}
         {/* ========================================================================= */}
@@ -201,78 +430,91 @@ export default function EngineeringTeamGrid() {
           {/* Scroll Track */}
           <div
             ref={scrollRef}
-            className="flex items-stretch gap-6 overflow-x-auto py-3 px-1 scroll-smooth no-scrollbar"
+            className="flex items-stretch gap-6 overflow-x-auto py-4 px-1 scroll-smooth no-scrollbar"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none"
             }}
           >
-            {filteredMembers.map((member) => (
-              <div
-                key={member.id}
-                className="w-[85vw] sm:w-[320px] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] shrink-0 bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#073F8A]/40 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
-              >
-                
-                {/* Top Section: Photo & Header */}
-                <div>
+            {loopedMembers.map((member) => {
+              const hasRealPhoto = member.image !== "/images/avatar-placeholder.png";
+
+              return (
+                <div
+                  key={member.uniqueKey}
+                  className="w-[85vw] sm:w-[320px] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] shrink-0 bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:border-[#073F8A]/40 transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:-translate-y-1.5 hover:rotate-1 transform-gpu"
+                >
                   
-                  {/* Photo Frame with Overlay Badge */}
-                  <div className="relative w-full h-56 bg-slate-100 overflow-hidden">
-                    <Image
-                      src={member.image}
-                      alt={`${member.name} - ${member.role}`}
-                      fill
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 280px, 320px"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                    
-                    {/* Floating Experience Badge */}
-                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
-                      <span className="px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-[10px] font-mono font-bold text-[#073F8A] shadow-xs">
-                        {member.experience}
-                      </span>
-                      <span className="flex items-center gap-1 text-[10px] font-mono font-semibold text-emerald-300">
+                  {/* Top Banner & Photo Section */}
+                  <div>
+                    {/* Top Solid Blue Banner */}
+                    <div className="relative w-full h-28 bg-[#073F8A] overflow-hidden">
+                      {/* Subtle Tech Mesh */}
+                      <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] opacity-10 pointer-events-none" />
+                      
+                      {/* Top Right: Location Badge */}
+                      <div className="absolute top-3 right-3.5 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-[10px] font-mono font-semibold text-emerald-300">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                         Vadodara HQ
-                      </span>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Info Container */}
-                  <div className="p-5 space-y-2.5">
-                    <div>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#073F8A] transition-colors leading-snug">
+                    {/* Centered Square Profile Image (Overlapping Banner) */}
+                    <div className="-mt-14 relative z-10 flex justify-center">
+                      <div className="relative w-28 h-28 aspect-square rounded-2xl p-1 bg-white shadow-xl shadow-slate-900/10 border border-slate-200/80 group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300">
+                        <div className="w-full h-full rounded-xl overflow-hidden relative bg-slate-50 flex items-center justify-center">
+                          {hasRealPhoto ? (
+                            <Image
+                              src={member.image}
+                              alt={`${member.name} - ${member.role}`}
+                              fill
+                              className="object-cover object-top"
+                              sizes="112px"
+                            />
+                          ) : (
+                            <Image
+                              src={member.image}
+                              alt={`${member.name} - ${member.role}`}
+                              width={56}
+                              height={56}
+                              className="object-contain opacity-75 group-hover:opacity-100 transition-opacity"
+                            />
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Member Info (Centered) */}
+                    <div className="px-5 pt-3 pb-2 text-center">
+                      <h3 className="text-base sm:text-lg font-black text-slate-900 group-hover:text-[#073F8A] transition-colors tracking-tight leading-snug">
                         {member.name}
                       </h3>
-                      <p className="text-[11px] font-semibold text-[#E11D48] mt-0.5">
-                        {member.role}
+                      <p className="text-xs font-bold text-[#E11D48] mt-1 tracking-wide">
+                        {member.designation || member.role}
                       </p>
                     </div>
+                  </div>
 
-                    <p className="text-xs text-slate-600 leading-relaxed font-sans line-clamp-3">
-                      {member.bio}
-                    </p>
+                  {/* Bottom Technologies Tag Cloud */}
+                  <div className="p-5 pt-3 mt-auto border-t border-slate-100">
+                    <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-2 text-center">
+                      Technologies
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-1.5">
+                      {(member.technology || member.skills).map((tech, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="px-2.5 py-0.5 rounded-md bg-slate-100/90 text-slate-700 text-[10px] font-mono font-medium border border-slate-200/70 hover:bg-[#073F8A]/10 hover:text-[#073F8A] transition-colors"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
                 </div>
-
-                {/* Bottom Skills Tag Cloud */}
-                <div className="p-5 pt-0 border-t border-slate-100 mt-2">
-                  <div className="pt-3 flex flex-wrap gap-1.5">
-                    {member.skills.map((skill, sIdx) => (
-                      <span
-                        key={sIdx}
-                        className="px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 text-[10px] font-mono font-medium border border-slate-200/60"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-              </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>

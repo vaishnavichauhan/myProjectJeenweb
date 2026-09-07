@@ -148,10 +148,10 @@ export default function GlobalFootprint() {
                           <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#C11E23] border-2 border-white" />
                         </span>
 
-                        <div className="relative px-3.5 py-1.5 sm:px-5 sm:py-2 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#C11E23] via-[#D92228] to-[#991B1B] text-white font-black text-[10px] sm:text-xs tracking-wider uppercase shadow-xl shadow-red-900/30 border-2 border-white ring-4 ring-[#C11E23]/25 flex items-center gap-1.5 whitespace-nowrap">
-                          <span className="text-xs sm:text-sm leading-none">🇮🇳</span>
+                        <div className="relative px-2.5 py-1 sm:px-5 sm:py-2 rounded-lg sm:rounded-2xl bg-gradient-to-r from-[#C11E23] via-[#D92228] to-[#991B1B] text-white font-black text-[9px] sm:text-xs tracking-wider uppercase shadow-xl shadow-red-900/30 border sm:border-2 border-white ring-2 sm:ring-4 ring-[#C11E23]/25 flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
+                          <span className="text-[10px] sm:text-sm leading-none">🇮🇳</span>
                           <span className="drop-shadow-xs">INDIA</span>
-                          <span className="bg-white text-[#C11E23] text-[9px] font-mono font-black px-1.5 py-0.5 rounded shadow-2xs">
+                          <span className="bg-white text-[#C11E23] text-[8px] sm:text-[9px] font-mono font-black px-1 sm:px-1.5 py-0.5 rounded shadow-2xs">
                             HQ
                           </span>
                         </div>
@@ -159,7 +159,7 @@ export default function GlobalFootprint() {
                     ) : (
                       /* Sapphire Blue Badge */
                       <div className="relative cursor-pointer transition-transform duration-300 transform group-hover:scale-110">
-                        <div className="px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#1A3B71] hover:bg-[#16325B] text-white font-extrabold text-[9px] sm:text-[11px] tracking-wider uppercase shadow-md shadow-blue-950/20 border border-white/30 flex items-center gap-1 whitespace-nowrap">
+                        <div className="px-1.5 py-0.5 sm:px-3.5 sm:py-1.5 rounded-md sm:rounded-xl bg-[#1A3B71] hover:bg-[#16325B] text-white font-extrabold text-[8px] sm:text-[11px] tracking-wider uppercase shadow-md shadow-blue-950/20 border border-white/30 flex items-center gap-1 whitespace-nowrap">
                           <span>{pin.label}</span>
                         </div>
                       </div>

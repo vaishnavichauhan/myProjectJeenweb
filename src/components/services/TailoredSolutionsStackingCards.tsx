@@ -270,7 +270,7 @@ export default function TailoredSolutionsStackingCards() {
           </div>
 
           <p className="text-slate-600 text-sm sm:text-base font-sans leading-relaxed max-w-md">
-            Explore our battle-tested enterprise architectures deployed across manufacturing plants, commercial trading offices, educational institutions, and logistics networks across Gujarat.
+            Explore our battle-tested enterprise architectures deployed across manufacturing plants, commercial trading office, educational institutions, and logistics networks across Gujarat.
           </p>
         </div>
 

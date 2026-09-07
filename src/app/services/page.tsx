@@ -23,7 +23,8 @@ import {
   ShieldCheck,
   CheckCircle2,
   Layers,
-  ArrowUpRight
+  ArrowUpRight,
+  Layout
 } from "lucide-react";
 
 export default function ServicesPage() {  const [selectedService, setSelectedService] = useState("Enterprise Cloud & Software Solutions");
@@ -34,6 +35,8 @@ export default function ServicesPage() {  const [selectedService, setSelectedSer
         return Globe;
       case "Server":
         return Server;
+      case "Layout":
+        return Layout;
       case "Code2":
         return Code2;
       case "Cpu":

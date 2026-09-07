@@ -68,6 +68,7 @@ export default function ServicesGrid() {  const [selectedService, setSelectedSer
         return "bg-[#1A3B71]";
       case "hosting":
         return "bg-[#0284C7]";
+      case "website-development":
       case "web-dev":
         return "bg-[#4F46E5]";
       case "custom-software":
@@ -165,22 +166,11 @@ export default function ServicesGrid() {  const [selectedService, setSelectedSer
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
                 href="#core-services-list"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A2647] via-[#134B70] to-[#07192F] hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer hover:scale-[1.02] active:scale-95 border border-white/10"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#0A2647] via-[#134B70] to-[#07192F] hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer hover:scale-[1.02] active:scale-95 border border-white/10"
               >
                 <span>View Services</span>
                 <ArrowRight className="w-4 h-4 text-[#00E5FF]" />
               </a>
-
-              <button
-                onClick={() => {
-                  setSelectedService("Enterprise IT & Custom Software Advisory");
-                  window.location.href = "/contact#get-in-touch";
-                }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-[#1A3B71] border-2 border-[#1A3B71] font-bold text-xs uppercase tracking-wider transition-all shadow-xs cursor-pointer hover:scale-[1.02] active:scale-95"
-              >
-                <span>Consult Expert</span>
-                <ArrowRight className="w-4 h-4 text-[#C11E23]" />
-              </button>
             </div>
           </div>
 

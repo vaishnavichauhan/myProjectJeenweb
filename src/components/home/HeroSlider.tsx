@@ -47,12 +47,12 @@ export default function HeroSlider() {
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-36 bg-[#00E5FF]/15 blur-3xl rounded-full pointer-events-none ambient-text-glow -z-10" />
 
           {/* Main Headline with Dynamic Iridescent Shimmer */}
-          <h1 className="text-3xl sm:text-5xl lg:text-[50px] font-black uppercase tracking-tight leading-[1.08] drop-shadow-xl text-center animate-text-shimmer select-none">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-[1.12] drop-shadow-xl text-center animate-text-shimmer select-none">
             {activeSlide.h1}
           </h1>
 
           {/* Subtitle in High-Contrast Electric Cyan with Subtle Shimmer */}
-          <h2 className="text-sm sm:text-base lg:text-lg font-bold text-[#00E5FF] text-center drop-shadow-md">
+          <h2 className="text-xs sm:text-base lg:text-lg font-bold text-[#00E5FF] text-center drop-shadow-md">
             <span>{activeSlide.h2}</span>
           </h2>
 
@@ -62,10 +62,10 @@ export default function HeroSlider() {
           </p>
 
           {/* Slide CTA Button (Navigates to Get in Touch section) */}
-          <div className="mt-8 flex items-center justify-center">
+          <div className="mt-6 sm:mt-8 flex items-center justify-center w-full sm:w-auto">
             <Link
               href="/contact#get-in-touch"
-              className="px-8 py-4 rounded-xl bg-white hover:bg-slate-100 text-[#1A3B71] font-extrabold text-xs uppercase tracking-wider transition-all shadow-xl shadow-slate-950/30 hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center gap-2.5 cursor-pointer border border-white/60 active:scale-[0.98]"
+              className="w-full sm:w-auto px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-white hover:bg-slate-100 text-[#1A3B71] font-extrabold text-xs uppercase tracking-wider transition-all shadow-xl shadow-slate-950/30 hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center gap-2.5 cursor-pointer border border-white/60 active:scale-[0.98]"
             >
               <span>{activeSlide.ctaText}</span>
               <ArrowRight className="w-4 h-4 text-[#C11E23]" />

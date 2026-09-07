@@ -103,7 +103,7 @@ export default function DomainSearchBar({
           type="button"
           tabIndex={-1}
           aria-disabled="true"
-          className="w-full md:w-auto px-7 py-3.5 bg-[#E11D48] text-white font-semibold rounded-xl text-sm shadow-md flex items-center justify-center gap-2 flex-shrink-0 pointer-events-none cursor-default select-none"
+          className="w-full md:w-auto px-7 py-3.5 bg-[#C11E23] text-white font-semibold rounded-xl text-sm shadow-md flex items-center justify-center gap-2 flex-shrink-0 pointer-events-none cursor-default select-none"
         >
           <span>Check Availability</span>
           <ArrowRight className="w-4 h-4" />

@@ -35,7 +35,7 @@ export default function LeadershipTeamPage() {
       a: "The entire team — developers, cloud specialists, SEO strategists, and marketing managers — works out of our offices in Vadodara. We do not outsource development work or pass projects to outside contractors. The people you meet when you come to us are the people actually doing the work. That keeps things simple, clear, and accountable."
     },
     {
-      q: "How does Utpal Shah's original approach from 2000 still show up in how the company runs today?",
+      q: "How does 's original approach from 2000 still show up in how the company runs today?",
       a: "The clearest example is our policy on software. We use only genuine, licensed code and tools on every project — no pirated themes, no cracked plugins, no shortcuts that save money today and create security problems next year. That standard came directly from how Utpal built the company from the start. He believed that a technology company either works with integrity or it does not deserve the trust its clients place in it. That belief has not changed in 26 years, and it will not change going forward."
     }
   ];
@@ -57,7 +57,7 @@ export default function LeadershipTeamPage() {
           </h1>
 
           <p className="text-base sm:text-lg text-[#073F8A] font-bold font-sans max-w-2xl mx-auto">
-            26 years of business integrity, modern technical education, and hands-on digital execution — all working together from our offices in Vadodara.
+            26 years of business integrity, modern technical education, and hands-on digital execution — all working together from our office in Vadodara.
           </p>
 
           <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed font-sans max-w-3xl mx-auto">

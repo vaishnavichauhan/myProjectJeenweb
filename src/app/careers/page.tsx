@@ -105,38 +105,12 @@ export default function CareersPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Careers Hero Banner */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-[#0A2647] via-[#134B70] to-[#07192F] text-white py-20 lg:py-28">
+      <section className="relative overflow-hidden bg-gradient-to-r from-[#0A2647] via-[#134B70] to-[#07192F] text-white py-16 lg:py-20">
         <HeroDynamicBg />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-bold uppercase tracking-wider text-[#00E5FF] mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>We are Hiring • Join Jeenweb Technologists</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white max-w-4xl mx-auto leading-tight">
-            Build Your Career with <br />
-            <span className="text-[#00E5FF]">26+ Years of IT Excellence</span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white uppercase">
+            Careers
           </h1>
-
-          <p className="mt-6 text-lg sm:text-xl text-slate-200 max-w-2xl mx-auto font-normal">
-            Join a forward-thinking team of engineers, cloud specialists, and digital marketers delivering world-class software from Vadodara, Gujarat.
-          </p>
-
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              href="#openings"
-              className="px-8 py-3.5 rounded-xl bg-[#E11D48] hover:bg-[#BE123C] text-white font-bold text-sm uppercase tracking-wider shadow-lg shadow-red-950/40 hover:scale-[1.02] transition-all cursor-pointer flex items-center gap-2"
-            >
-              <span>View Open Positions</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <Link
-              href="/about"
-              className="px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm tracking-wider border border-white/20 transition-all"
-            >
-              About Our Culture
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -156,19 +130,19 @@ export default function CareersPage() {
             </h2>
           </div>
 
-          {/* All 6 Circles in One Single Line with Smaller Size */}
+          {/* All 6 Circles in One Single Line with Reduced Card Size */}
           <div className="w-full overflow-x-auto pb-6 scrollbar-none">
-            <div className="flex items-center justify-start lg:justify-center min-w-max mx-auto px-4 gap-2 sm:gap-3 lg:gap-4">
+            <div className="flex items-center justify-start lg:justify-center min-w-max mx-auto px-4 gap-1.5 sm:gap-2 lg:gap-3">
               {perks.map((perk, index) => {
                 const Icon = perk.icon;
                 return (
                   <React.Fragment key={perk.title}>
-                    {/* Smaller Circular Card with Arc Brackets */}
+                    {/* Reduced Circular Card with Arc Brackets */}
                     <div className="relative flex items-center justify-center shrink-0">
-                      <div className="w-36 h-36 sm:w-40 sm:h-40 lg:w-44 lg:h-44 rounded-full bg-white border border-slate-300 shadow-md flex flex-col items-center justify-center p-3 sm:p-4 text-center relative hover:scale-105 transition-all duration-300 group z-10">
+                      <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full bg-white border border-slate-300 hover:border-[#C11E23]/40 shadow-sm hover:shadow-md flex flex-col items-center justify-center p-2 sm:p-3 text-center relative hover:scale-105 transition-all duration-300 group z-10">
                         {/* SVG Top & Bottom Arc Brackets in Blue */}
                         <svg
-                          className="absolute -inset-2.5 sm:-inset-3 w-[calc(100%+20px)] sm:w-[calc(100%+24px)] h-[calc(100%+20px)] sm:h-[calc(100%+24px)] pointer-events-none"
+                          className="absolute -inset-2 sm:-inset-2.5 w-[calc(100%+16px)] sm:w-[calc(100%+20px)] h-[calc(100%+16px)] sm:h-[calc(100%+20px)] pointer-events-none"
                           viewBox="0 0 120 120"
                           fill="none"
                         >
@@ -178,7 +152,7 @@ export default function CareersPage() {
                             stroke="#16325B"
                             strokeWidth="5"
                             strokeLinecap="round"
-                            className="group-hover:stroke-[#0284C7] transition-colors duration-300"
+                            className="group-hover:stroke-[#C11E23] transition-colors duration-300"
                           />
                           {/* Bottom Arc Bracket */}
                           <path
@@ -186,27 +160,27 @@ export default function CareersPage() {
                             stroke="#16325B"
                             strokeWidth="5"
                             strokeLinecap="round"
-                            className="group-hover:stroke-[#0284C7] transition-colors duration-300"
+                            className="group-hover:stroke-[#C11E23] transition-colors duration-300"
                           />
                         </svg>
 
                         {/* Inner Icon */}
-                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-blue-50 text-[#16325B] flex items-center justify-center mb-1.5 sm:mb-2 group-hover:bg-[#16325B] group-hover:text-white group-hover:scale-110 transition-all shadow-xs shrink-0">
-                          <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-blue-50 text-[#16325B] flex items-center justify-center mb-1 sm:mb-1.5 group-hover:bg-[#C11E23] group-hover:text-white group-hover:scale-110 transition-all shadow-2xs shrink-0">
+                          <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#16325B] transition-colors leading-snug px-1.5 max-w-[110px] sm:max-w-[130px]">
+                        <h3 className="text-[11px] sm:text-xs font-bold text-slate-900 group-hover:text-[#C11E23] transition-colors leading-tight px-1 max-w-[85px] sm:max-w-[105px]">
                           {perk.title}
                         </h3>
                       </div>
                     </div>
 
-                    {/* Connecting Block Arrow between circles (Last right arrow removed per user request) */}
-                    {index < perks.length - 2 && (
-                      <div className="flex items-center justify-center shrink-0 w-8 sm:w-10 lg:w-12 -mx-1 sm:-mx-1.5 z-0">
+                    {/* Connecting Block Arrow between circles (Renders between all adjacent circles including after Continuous Learning) */}
+                    {index < perks.length - 1 && (
+                      <div className="flex items-center justify-center shrink-0 w-6 sm:w-8 lg:w-9 -mx-1 sm:-mx-1.5 z-0">
                         <svg
-                          className="w-7 sm:w-9 h-7 sm:h-9 text-blue-200/90 drop-shadow-xs"
+                          className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7 text-blue-200/90 drop-shadow-xs"
                           viewBox="0 0 48 48"
                           fill="none"
                         >
@@ -320,11 +294,11 @@ export default function CareersPage() {
                 <span>Send Resume to careers@jeenweb.com</span>
               </a>
               <a
-                href="tel:+919824030580"
+                href="tel:+919824466017"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider transition-colors"
               >
                 <Phone className="w-4 h-4 text-[#1A3B71]" />
-                <span>Call HR: +91 98240 30580</span>
+                <span>Call HR: +91 98244 66017</span>
               </a>
             </div>
           </div>

@@ -186,45 +186,54 @@ export default function Testimonials() {
                   </div>
                 </div>
 
-                {/* Dynamic Quote */}
-                <div className="relative py-2">
-                  <Quote className="w-10 h-10 text-[#1A3B71]/15 absolute -top-3 -left-2 pointer-events-none" />
-                  <p className="text-base sm:text-lg lg:text-xl text-slate-800 font-medium leading-relaxed italic relative z-10 pl-4 font-sans">
-                    &ldquo;{activeTestimonial.quote}&rdquo;
-                  </p>
-                </div>
-
-                {/* Author Footer with Star Rating on Bottom Right (Avatar Removed on Right) */}
-                <div className="pt-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                  <div>
-                    <h4 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
-                      {activeTestimonial.author}
-                    </h4>
-                    <div className="flex items-center gap-2 mt-1 text-xs text-slate-500 font-sans">
-                      <span className="inline-flex items-center gap-1 text-[#C11E23] font-bold">
-                        <MapPin className="w-3.5 h-3.5" />
-                        {activeTestimonial.location}
-                      </span>
-                      <span>•</span>
-                      <span>Long-Term Client</span>
-                    </div>
+                {/* Dynamic Quote & Author (Animated on Review Change) */}
+                <div key={activeTestimonial.id} className="space-y-6 animate-fadeIn">
+                  {/* Dynamic Quote */}
+                  <div className="relative py-2">
+                    <Quote className="w-10 h-10 text-[#1A3B71]/15 absolute -top-3 -left-2 pointer-events-none" />
+                    <p className="text-base sm:text-lg lg:text-xl text-slate-800 font-medium leading-relaxed italic relative z-10 pl-4 font-sans">
+                      &ldquo;{activeTestimonial.quote}&rdquo;
+                    </p>
                   </div>
 
-                  {/* Bottom Right: Dynamic 5-Star Slot Rating (Progressively Fills One by One) */}
-                  <div className="flex items-center gap-1.5 flex-shrink-0">
-                    {[1, 2, 3, 4, 5].map((starNum) => {
-                      const isFilled = starNum <= filledStars;
-                      return (
-                        <Star
-                          key={`star-${starNum}`}
-                          className={`w-5 h-5 transition-all duration-300 transform-gpu ${
-                            isFilled
-                              ? "fill-amber-400 text-amber-400 scale-110 drop-shadow-[0_2px_8px_rgba(251,191,36,0.45)]"
-                              : "fill-transparent text-slate-300/80 stroke-[1.75] scale-95"
-                          }`}
-                        />
-                      );
-                    })}
+                  {/* Author Footer with Star Rating on Bottom Right */}
+                  <div className="pt-2 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div>
+                      <h4 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
+                        {activeTestimonial.author}
+                      </h4>
+                      <div className="flex flex-wrap items-center gap-2 mt-1 text-xs font-sans">
+                        {activeTestimonial.industry && (
+                          <>
+                            <span className="font-bold text-[#1A3B71]">
+                              {activeTestimonial.industry}
+                            </span>
+                            <span className="text-slate-400">•</span>
+                          </>
+                        )}
+                        <span className="inline-flex items-center gap-1 text-[#C11E23] font-semibold">
+                          <MapPin className="w-3.5 h-3.5" />
+                          {activeTestimonial.location}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Bottom Right: Dynamic 5-Star Slot Rating (Progressively Fills One by One) */}
+                    <div className="flex items-center gap-1.5 flex-shrink-0">
+                      {[1, 2, 3, 4, 5].map((starNum) => {
+                        const isFilled = starNum <= filledStars;
+                        return (
+                          <Star
+                            key={`star-${starNum}`}
+                            className={`w-5 h-5 transition-all duration-300 transform-gpu ${
+                              isFilled
+                                ? "fill-amber-400 text-amber-400 scale-110 drop-shadow-[0_2px_8px_rgba(251,191,36,0.45)]"
+                                : "fill-transparent text-slate-300/80 stroke-[1.75] scale-95"
+                            }`}
+                          />
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
 

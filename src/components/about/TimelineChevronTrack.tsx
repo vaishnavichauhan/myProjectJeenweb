@@ -69,7 +69,7 @@ export default function TimelineChevronTrack() {
             Company history from 2000 to 2026
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 font-sans leading-relaxed">
-            This timeline illustrates Jeenweb&apos;s growth across both pivotal phases—from foundational web hosting and custom software development to authorized enterprise cloud partnerships and multi-office operations.
+            This timeline illustrates Jeenweb&apos;s growth across both pivotal phases—from foundational web hosting and custom software development to authorized enterprise cloud partnerships and office operations.
           </p>
         </div>
 

@@ -40,10 +40,10 @@ export default function HistoryHero() {
             <div className="pt-2 flex items-center">
               <a
                 href="#timeline"
-                className="px-8 py-4 rounded-xl bg-white hover:bg-slate-100 text-[#1A3B71] font-extrabold text-xs uppercase tracking-wider transition-all shadow-xl shadow-slate-950/30 hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center gap-2.5 cursor-pointer border border-white/60 active:scale-[0.98]"
+                className="px-8 py-4 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-xl shadow-red-950/40 hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center gap-2.5 cursor-pointer border border-white/20 active:scale-[0.98]"
               >
                 <span>View our full Timeline</span>
-                <ArrowRight className="w-4 h-4 text-[#C11E23]" />
+                <ArrowRight className="w-4 h-4 text-white" />
               </a>
             </div>
           </motion.div>

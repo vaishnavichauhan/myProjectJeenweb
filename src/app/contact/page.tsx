@@ -169,10 +169,12 @@ export default function ContactPage() {
                 <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1.5 tracking-tight">
                   Address
                 </h3>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                  Jeenweb Technologists Pvt. Ltd.,<br />
-                  Gotri - Sevasi Road, Vadodara, Gujarat - 390001
-                </p>
+                <div className="space-y-2 text-slate-600 text-xs leading-relaxed">
+                  <div>
+                    <span className="font-semibold text-slate-900 block">Office</span>
+                    105, Galaxy Complex, near Ganesh Hall, Darbar Chokdi, Jay Vaikunth Dham Society, Manjalpur, Vadodara, Gujarat 390011
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -191,11 +193,11 @@ export default function ContactPage() {
                   Phone
                 </h3>
                 <div className="space-y-1 text-slate-600 text-xs sm:text-sm font-medium">
-                  <a href="tel:+919825000000" className="block hover:text-[#0041F0] transition-colors">
-                    +91 98250 00000
+                  <a href="tel:+919824466017" className="block hover:text-[#0041F0] transition-colors">
+                    +91 98244 66017
                   </a>
-                  <a href="tel:+9102652345678" className="block hover:text-[#0041F0] transition-colors">
-                    +91 (0265) 234-5678
+                  <a href="tel:+919824061620" className="block hover:text-[#0041F0] transition-colors">
+                    +91 98240 61620
                   </a>
                 </div>
               </div>
@@ -219,9 +221,6 @@ export default function ContactPage() {
                 <div className="space-y-1 text-slate-600 text-xs sm:text-sm font-medium">
                   <a href="mailto:info@jeenweb.com" className="block hover:text-[#0041F0] transition-colors">
                     info@jeenweb.com
-                  </a>
-                  <a href="mailto:support@jeenweb.com" className="block hover:text-[#0041F0] transition-colors">
-                    support@jeenweb.com
                   </a>
                 </div>
               </div>

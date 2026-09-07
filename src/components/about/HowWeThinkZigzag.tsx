@@ -68,8 +68,8 @@ export default function HowWeThinkZigzag() {
       bullet1: "1,500+ Production Deployments",
       bullet2: "Natural Workflow Fit",
       icon: Users,
-      accentColor: "#059669",
-      badgeBg: "bg-emerald-50 text-emerald-700 border-emerald-200"
+      accentColor: "#1A3B71",
+      badgeBg: "bg-blue-50 text-[#1A3B71] border-blue-200"
     },
     {
       id: "values",
@@ -80,8 +80,8 @@ export default function HowWeThinkZigzag() {
       bullet1: "Pure Commercial Integrity",
       bullet2: "2 Dedicated Vadodara Facilities",
       icon: HeartHandshake,
-      accentColor: "#0284C7",
-      badgeBg: "bg-sky-50 text-sky-700 border-sky-200"
+      accentColor: "#C11E23",
+      badgeBg: "bg-red-50 text-[#C11E23] border-red-200"
     }
   ];
 
@@ -164,7 +164,10 @@ export default function HowWeThinkZigzag() {
                 >
                   {/* Step Tag Pill & Category */}
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono font-black text-[#1A3B71] bg-white px-3 py-1 rounded-lg border border-slate-200/80 shadow-2xs">
+                    <span
+                      style={{ color: item.accentColor }}
+                      className="text-xs font-mono font-black bg-white px-3 py-1 rounded-lg border border-slate-200/80 shadow-2xs"
+                    >
                       0{idx + 1}
                     </span>
                     <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-bold uppercase tracking-wider border shadow-2xs ${item.badgeBg}`}>

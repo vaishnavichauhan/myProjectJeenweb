@@ -43,7 +43,7 @@ function AnimatedCounter({ value, inView }: { value: string; inView: boolean }) 
 const METRICS = [
   { value: "26+", label: "Years Experience", subtext: "Anchored in Vadodara since 2000" },
   { value: "1500+", label: "Projects Delivered", subtext: "Web, ERP & Cloud systems" },
-  { value: "200+", label: "Corporate Clients", subtext: "Across Gujarat & Globally" },
+  { value: "300+", label: "Corporate Clients", subtext: "Across Gujarat & Globally" },
   { value: "98%", label: "Retention Rate", subtext: "Long-term client partnerships" },
 ];
 

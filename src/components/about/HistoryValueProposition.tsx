@@ -53,7 +53,7 @@ export default function HistoryValueProposition() {
       tag: "Local Physical Accountability",
       title: "We Are Local, Reachable, and We Are Not Going Anywhere",
       desc: "Both of our corporate facilities are in Vadodara. Our engineers live and work here. When you need urgent migration support, database failover resolution, or strategic technology orientation, we are reachable within minutes. We are a permanent regional institution standing behind our work.",
-      bullet: "2 Dedicated Vadodara offices • Direct in-person engineering access",
+      bullet: "Dedicated Vadodara office• Direct in-person engineering access",
       color: "from-[#C11E23] via-[#A3161A] to-amber-500",
       accentBorder: "border-[#C11E23]"
     },
@@ -283,7 +283,7 @@ export default function HistoryValueProposition() {
               </div>
               <div>
                 <h4 className="text-lg sm:text-xl font-black uppercase tracking-tight text-white leading-tight">
-                  Two Corporate Offices in Vadodara, Gujarat
+                  Corporate Offices in Vadodara, Gujarat
                 </h4>
                 <p className="text-xs sm:text-sm text-slate-300 font-sans mt-1">
                   Ready for on-site architectural audits, server migration reviews, and direct engineering briefings.
@@ -295,7 +295,7 @@ export default function HistoryValueProposition() {
               href="/contact"
               className="px-7 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-[#1A3B71] font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 flex-shrink-0 active:scale-95 group/btn"
             >
-              <span>Visit Our Offices</span>
+              <span>Visit Our Office</span>
               <ArrowRight className="w-4 h-4 text-[#C11E23] transition-transform group-hover/btn:translate-x-1" />
             </Link>
           </div>

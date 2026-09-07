@@ -19,7 +19,7 @@ export default function LeadershipShowcase() {
     {
       id: "utpal-shah",
       name: "Utpal Shah",
-      role: "Managing Director and Founder",
+      role: "Founder Director",
       titleLabel: "Founder & Managing Director",
       experience: "26+ Years Industry Experience",
       image: "/images/leader-utpal-shah.jpg",
@@ -42,7 +42,7 @@ export default function LeadershipShowcase() {
     {
       id: "tatvam-shah",
       name: "Tatvam Shah",
-      role: "Managing Director and Partner",
+      role: "Director",
       titleLabel: "Managing Director & Technical Architect",
       experience: "11+ Years Hands-on Leadership",
       image: "/images/leader-tatvam-shah.jpg",
@@ -63,30 +63,7 @@ export default function LeadershipShowcase() {
       ],
       focus: "Custom Software Architecture, Cloud Infrastructure & JITO Advisory"
     },
-    {
-      id: "exita-shah",
-      name: "Exita Shah",
-      role: "Co-Founder and Head of Digital Marketing & SEO",
-      titleLabel: "Co-Founder & Head of Digital Marketing",
-      experience: "Engineering-Backed Digital Strategy",
-      image: "/images/leader-exita-shah.jpg",
-      accentColor: "#E11D48",
-      tagline: "Technical SEO, AEO, and Generative Engine Optimization for Modern Discovery",
-      bio: "Exita Shah leads search visibility, content strategy, and digital campaigns with an engineering foundation from Parul University. She treats SEO not as a superficial content exercise, but as a systems problem needing technical precision. Her work spans traditional Technical SEO, Answer Engine Optimization (AEO) for Google AI Overviews, and GEO for ChatGPT and Gemini.",
-      competencies: [
-        { label: "Technical SEO", icon: Search, value: "Schema+" },
-        { label: "AEO / GEO", icon: Sparkles, value: "AI-Ready" },
-        { label: "Traction", icon: TrendingUp, value: "+180%" },
-        { label: "Conversion", icon: Award, value: "B2B Lead" }
-      ],
-      highlights: [
-        "Engineering-backed approach to technical SEO, AEO, GEO, and AIO",
-        "Co-Founder with direct leadership over all client digital marketing operations",
-        "Laser-focused on tangible business outcomes: qualified B2B leads & conversions",
-        "Deep technical mastery of schema graphs, Core Web Vitals, and AI answer engines"
-      ],
-      focus: "Technical SEO, Schema Architecture, GEO / AEO & Performance ROAS"
-    }
+    
   ];
 
   return (

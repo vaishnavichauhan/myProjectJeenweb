@@ -7,6 +7,7 @@ import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
 import CommonCta from "@/components/common/CommonCta";
+import TrustedPartnershipsMarquee from "@/components/common/TrustedPartnershipsMarquee";
 import {
   Search,
   Sparkles,
@@ -36,21 +37,29 @@ import {
 
 export default function SeoServicePage() {
   const seoPartnerLogosRow1 = [
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Top Regional Medical Specialty Rankings" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "High-Volume Career Search Engine Indexing" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Google Maps Local 3-Pack Optimization" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Job Posting Schema & Rich Snippets" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Clinical Authority & Technical SEO" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Statewide Organic Candidate Discovery" }
+    { logo: "/images/clientsLogo/seo/72.png" },
+    { logo: "/images/clientsLogo/seo/73.png" },
+    { logo: "/images/clientsLogo/seo/74.png" },
+    { logo: "/images/clientsLogo/seo/75.png" },
+    { logo: "/images/clientsLogo/seo/76.png" },
+    { logo: "/images/clientsLogo/seo/77.png" },
+    { logo: "/images/clientsLogo/seo/78.png" },
+    { logo: "/images/clientsLogo/seo/79.png" },
+    { logo: "/images/clientsLogo/seo/80.png" },
+    { logo: "/images/clientsLogo/seo/81.png" },
   ];
 
   const seoPartnerLogosRow2 = [
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "National Recruitment Keyword Rankings" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Doctor Specialty & OPD Search Authority" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Zero-Position Featured Snippet Capture" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Healthcare GEO & AI Engine Citations" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Core Web Vitals & Fast Indexation" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Gujarat Regional Organic Search Growth" }
+    { logo: "/images/clientsLogo/seo/77.png" },
+    { logo: "/images/clientsLogo/seo/78.png" },
+    { logo: "/images/clientsLogo/seo/79.png" },
+    { logo: "/images/clientsLogo/seo/80.png" },
+    { logo: "/images/clientsLogo/seo/81.png" },
+    { logo: "/images/clientsLogo/seo/72.png" },
+    { logo: "/images/clientsLogo/seo/73.png" },
+    { logo: "/images/clientsLogo/seo/74.png" },
+    { logo: "/images/clientsLogo/seo/75.png" },
+    { logo: "/images/clientsLogo/seo/76.png" },
   ];
 
   const seoFaqs = [
@@ -230,75 +239,72 @@ export default function SeoServicePage() {
         </div>
       </div>
 
-      {/* Hero Banner with User's Uploaded SEO Illustration Background */}
-      <section className="text-slate-900 py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-200/90 flex items-center justify-center min-h-[580px] lg:min-h-[640px]">
-        {/* Background Image with Soft Clean Wash Overlay for High Contrast */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <Image
-            src="/images/seo-hero-bg.jpg"
-            alt="SEO and AI Search Optimization Framework"
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-          {/* Layered white wash to preserve doodle visibility while ensuring crisp typography */}
-          <div className="absolute inset-0 bg-white/80 sm:bg-white/75 backdrop-blur-[0.5px]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/65 to-white/85" />
+      {/* Hero Banner with Home Page Reference Background */}
+      <section className="relative min-h-[520px] lg:min-h-[620px] bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white flex items-center py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-700/60">
+        {/* Clean Cyber Checkered Grid Overlay (64px by 64px) matching Home Page */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
+
+        {/* Ambient Luminous Glow Flares matching Home Page */}
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/15 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[450px] h-[400px] bg-[#2563EB]/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#E11D48]/15 rounded-full blur-[120px] pointer-events-none" />
+
+        {/* Right-Side Full Section Illustration (Desktop Full Bleed) */}
+        <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[50%] xl:w-[52%] pointer-events-none z-0 hidden lg:flex items-center justify-end p-4 lg:p-8 xl:p-12 overflow-hidden">
+          <div className="relative w-full h-full flex items-center justify-end">
+            <Image
+              src="/images/seo-hero-illustration.png"
+              alt="Search Engine Optimization and AI Search Ecosystem"
+              fill
+              priority
+              className="object-contain object-right drop-shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
+              sizes="(max-width: 1024px) 100vw, 52vw"
+            />
+          </div>
         </div>
 
-        {/* Center Hero Content */}
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <div className="max-w-2xl lg:max-w-xl xl:max-w-2xl flex flex-col justify-center text-left space-y-6">
 
-          {/* Editorial Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-slate-900 tracking-tight leading-[1.14]">
-            Visibility Is A Choice. <br />
-            <span className="font-sans font-black text-slate-950">
-              The Top Ranked Brands Already Made Theirs.
-            </span>
-          </h1>
+            {/* Editorial Headline */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white tracking-tight leading-[1.16]">
+              Visibility Is A Choice. <br />
+              <span className="font-sans font-black text-white">
+                The Top Ranked Brands Already Made Theirs.
+              </span>
+            </h1>
 
-          {/* Subtitle */}
-          <p className="mt-5 text-sm sm:text-base lg:text-lg text-slate-700 font-sans max-w-2xl mx-auto leading-relaxed">
-            Dominate traditional search results and generative AI answer engines with technical SEO, Answer Engine Optimization (AEO), and high-authority digital visibility.
-          </p>
+            {/* Subtitle */}
+            <p className="text-sm sm:text-base lg:text-lg text-slate-200 font-sans max-w-xl leading-relaxed">
+              Dominate traditional search results and generative AI answer engines with technical SEO, Answer Engine Optimization (AEO), and high-authority digital visibility.
+            </p>
 
-          {/* Dual Action Buttons Matching Reference UI */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
-            <button
-              onClick={() => window.location.href = "/contact#get-in-touch"}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md shadow-red-950/30 hover:shadow-red-950/50 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group cursor-pointer"
-            >
-              <span>Request Free SEO/AI Audit</span>
-              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-            </button>
+            {/* Action Button */}
+            <div className="pt-2 flex items-center">
+              <a
+                href="#framework"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-red-950/40 hover:scale-[1.02] active:scale-98"
+              >
+                <span>Explore Technical Standards</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
 
-            <a
-              href="#framework"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/90 hover:bg-white text-slate-800 hover:text-slate-950 font-semibold text-xs uppercase tracking-wider transition-all border border-slate-300 hover:border-slate-400 shadow-xs text-center flex items-center justify-center gap-2 backdrop-blur-sm"
-            >
-              <span>Explore Technical Standards</span>
-            </a>
+            {/* Mobile / Tablet View: Inline graphic below text */}
+            <div className="pt-6 lg:hidden flex justify-center items-center">
+              <div className="relative w-full max-w-[460px] aspect-[1024/682]">
+                <Image
+                  src="/images/seo-hero-illustration.png"
+                  alt="Search Engine Optimization and AI Search Ecosystem"
+                  fill
+                  priority
+                  className="object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.35)]"
+                  sizes="100vw"
+                />
+              </div>
+            </div>
+
           </div>
-
-          {/* Bottom Micro Trust Points */}
-          <div className="mt-10 pt-6 border-t border-slate-300/60 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-mono text-slate-600">
-            <span className="inline-flex items-center gap-1.5 font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-              ChatGPT &amp; Gemini Presence
-            </span>
-            <span className="hidden sm:inline text-slate-300">•</span>
-            <span className="inline-flex items-center gap-1.5 font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" />
-              Google AI Overviews Optimization
-            </span>
-            <span className="hidden sm:inline text-slate-300">•</span>
-            <span className="inline-flex items-center gap-1.5 font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#C11E23]" />
-              Zero-Loss Schema Architecture
-            </span>
-          </div>
-
         </div>
       </section>
 
@@ -700,92 +706,20 @@ export default function SeoServicePage() {
         </div>
       </section>
 
-      {/* Section 4: Client Logo Auto-Marquee Section (Matching Social Media UI) */}
-      <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden border-t border-slate-200/80" id="seo-partners">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
-          <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-3">
-            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
-              Trusted Partnerships
-            </span>
-          </div>
-
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-slate-900 leading-tight">
+      {/* Section 4: Client Logo Auto-Marquee Section */}
+      <TrustedPartnershipsMarquee
+        id="seo-partners"
+        badgeText="Trusted Partnerships"
+        title={
+          <>
             Brands Across Gujarat That Trust <br className="hidden sm:inline" />
             <span className="text-[#1A3B71]">Jeenweb for Search Visibility</span>
-          </h2>
-
-          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans leading-relaxed">
-            From multi-specialty healthcare networks and universities to manufacturing exporters, see the organizations ranking with Jeenweb search engineering.
-          </p>
-        </div>
-
-        {/* 2-Line Infinite Auto-Marquee Track */}
-        <div className="w-full relative overflow-hidden py-2 space-y-4 sm:space-y-6">
-          
-          {/* Gradient edge masks for smooth seamless fade */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-44 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-44 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent z-10" />
-
-          {/* Line 1: Infinite Marquee (Left Scroll) */}
-          <div className="flex animate-marquee items-center gap-5 sm:gap-6">
-            {[...seoPartnerLogosRow1, ...seoPartnerLogosRow1].map((partner, idx) => (
-              <div
-                key={`row1-${idx}`}
-                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#1A3B71]/40 hover:shadow-md transition-all duration-300 group cursor-default"
-              >
-                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
-                  <Image
-                    src={partner.logo}
-                    alt={`${partner.name} Logo`}
-                    width={150}
-                    height={45}
-                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
-                <div className="hidden sm:block text-left">
-                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#1A3B71] transition-colors whitespace-nowrap">
-                    {partner.name}
-                  </div>
-                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
-                    {partner.tag}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Line 2: Infinite Marquee Reverse (Right Scroll) */}
-          <div className="flex animate-marquee-reverse items-center gap-5 sm:gap-6">
-            {[...seoPartnerLogosRow2, ...seoPartnerLogosRow2].map((partner, idx) => (
-              <div
-                key={`row2-${idx}`}
-                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#C11E23]/40 hover:shadow-md transition-all duration-300 group cursor-default"
-              >
-                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
-                  <Image
-                    src={partner.logo}
-                    alt={`${partner.name} Logo`}
-                    width={150}
-                    height={45}
-                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
-                <div className="hidden sm:block text-left">
-                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#C11E23] transition-colors whitespace-nowrap">
-                    {partner.name}
-                  </div>
-                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
-                    {partner.tag}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+          </>
+        }
+        description="From multi-specialty healthcare networks and universities to manufacturing exporters, see the organizations ranking with Jeenweb search engineering."
+        row1={seoPartnerLogosRow1}
+        row2={seoPartnerLogosRow2}
+      />
 
       {/* Section 5: SEO and AI Visibility FAQs */}
       <FaqSection

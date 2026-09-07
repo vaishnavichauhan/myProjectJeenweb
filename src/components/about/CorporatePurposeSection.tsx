@@ -26,7 +26,7 @@ export default function CorporatePurposeSection() {
             <span className="text-[#073F8A]">For Businesses Across Gujarat</span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base font-sans leading-relaxed pt-1">
-            Genuine code, licensed tools, and single-roof accountability from our dedicated Vadodara engineering offices.
+            Genuine code, licensed tools, and single-roof accountability from our dedicated Vadodara engineering office.
           </p>
         </div>
 

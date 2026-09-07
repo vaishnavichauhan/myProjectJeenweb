@@ -23,7 +23,7 @@ export default function SectionHeader({
   const isDark = theme === "dark";
 
   return (
-    <div className={`max-w-3xl ${centered ? "mx-auto text-center" : ""} ${className} mb-12`}>
+    <div className={`max-w-3xl ${centered ? "mx-auto text-center" : ""} ${className} mb-12 sm:mb-14 lg:mb-16`}>
       {badge && (
         badgeStyle === "underline" ? (
           <div className={`mb-3 ${centered ? "text-center" : ""}`}>

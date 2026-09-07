@@ -21,22 +21,20 @@ import {
   Phone,
   ArrowRight,
   Sparkles,
-  MapPin
+  MapPin,
+  Layout
 } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);  const pathname = usePathname();
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 15) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -63,6 +61,13 @@ export default function Navbar() {
       href: "/services/hosting",
       icon: Server,
       color: "text-emerald-700 bg-emerald-50"
+    },
+    {
+      title: "Website Development",
+      desc: "High-performance corporate portals, eCommerce & custom React/Next.js",
+      href: "/services/website-development",
+      icon: Layout,
+      color: "text-blue-700 bg-blue-50"
     },
     {
       title: "Custom Software Development",
@@ -97,7 +102,7 @@ export default function Navbar() {
     },
     {
       title: "Company History & Timeline",
-      desc: "From web hosting in 2000 to dual offices & ETS PROP in 2026",
+      desc: "From web hosting in 2000 to dual office & ETS PROP in 2026",
       href: "/about/history",
       icon: History,
       color: "text-amber-700 bg-amber-50"
@@ -313,7 +318,7 @@ export default function Navbar() {
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2.5 rounded-xl text-sm font-bold text-slate-900 hover:bg-slate-100"
+                className="block px-3 py-2.5 rounded-xl text-base font-bold text-slate-900 hover:bg-slate-100"
               >
                 Home
               </Link>
@@ -402,16 +407,16 @@ export default function Navbar() {
             {/* Mobile Bottom Contact Actions */}
             <div className="pt-4 border-t border-slate-200 space-y-2">
               <a
-                href="tel:+919824030580"
+                href="tel:+919824466017"
                 className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-slate-100 text-slate-900 text-xs font-bold uppercase tracking-wider hover:bg-slate-200 transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 text-[#E11D48]" />
-                <span>Call: +91 98240 30580</span>
+                <span>Call: +91 98244 66017</span>
               </a>
               <Link
                 href="/contact#get-in-touch"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3 rounded-lg bg-[#E11D48] hover:bg-[#BE123C] text-white font-bold text-xs uppercase tracking-wider shadow-sm text-center flex items-center justify-center gap-2 transition-all"
+                className="w-full py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-950/20 text-center flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
               >
                 <span>Schedule a Technical Consultation</span>
                 <ArrowRight className="w-4 h-4" />

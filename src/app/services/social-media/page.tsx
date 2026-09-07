@@ -8,6 +8,7 @@ import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
 import CampaignToolsGrid from "@/components/services/CampaignToolsGrid";
 import CommonCta from "@/components/common/CommonCta";
+import TrustedPartnershipsMarquee from "@/components/common/TrustedPartnershipsMarquee";
 import {
   TrendingUp,
   Share2,
@@ -199,21 +200,67 @@ export default function SocialMediaServicePage() {
   ];
 
   const smmPartnerLogosRow1 = [
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Healthcare Lead Gen & Patient Inquiries" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Statewide Recruitment Campaigns" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Multi-Specialty Meta Ad Scaling" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Pan-India Job Fair Reach" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Doctor Brand Authority Reels" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Candidate Engagement & Funnels" }
+    { logo: "/images/clientsLogo/socialmedia/33.png", },
+    { logo: "/images/clientsLogo/socialmedia/34.png", },
+    { logo: "/images/clientsLogo/socialmedia/35.png", },
+    { logo: "/images/clientsLogo/socialmedia/36.png", },
+    { logo: "/images/clientsLogo/socialmedia/37.png", },
+    { logo: "/images/clientsLogo/socialmedia/38.png", },
+    { logo: "/images/clientsLogo/socialmedia/39.png", },
+    { logo: "/images/clientsLogo/socialmedia/40.png", },
+    { logo: "/images/clientsLogo/socialmedia/41.png", },
+    { logo: "/images/clientsLogo/socialmedia/42.png", },
+    { logo: "/images/clientsLogo/socialmedia/43.png", },
+    {logo:"/images/clientsLogo/socialmedia/44.png",},
+    {logo:"/images/clientsLogo/socialmedia/45.png",},
+    {logo:"/images/clientsLogo/socialmedia/46.png",},
+    {logo:"/images/clientsLogo/socialmedia/47.png",},
+    {logo:"/images/clientsLogo/socialmedia/48.png",},
+    {logo:"/images/clientsLogo/socialmedia/49.png",},
+    {logo:"/images/clientsLogo/socialmedia/50.png",},
+    {logo:"/images/clientsLogo/socialmedia/51.png",},
+    {logo:"/images/clientsLogo/socialmedia/52.png",},
+    {logo:"/images/clientsLogo/socialmedia/53.png",},
+    {logo:"/images/clientsLogo/socialmedia/54.png",},
+    {logo:"/images/clientsLogo/socialmedia/55.png",},
+     {logo:"/images/clientsLogo/socialmedia/56.png",},
+     {logo:"/images/clientsLogo/socialmedia/84.png",},
+        {logo:"/images/clientsLogo/socialmedia/85.png",},
+          {logo:"/images/clientsLogo/socialmedia/87.png",},
+            {logo:"/images/clientsLogo/socialmedia/88.png",},
+    
+    
   ];
 
   const smmPartnerLogosRow2 = [
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "LinkedIn B2B Decision-Maker Ads" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "OPD Appointment Conversions" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "High-Volume Application Ads" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Health Awareness Video Pre-Rolls" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Youth & Campus SMM Outreach" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Regional Gujarat Meta Scaling" }
+    { logo: "/images/clientsLogo/socialmedia/33.png", },
+    { logo: "/images/clientsLogo/socialmedia/34.png", },
+    { logo: "/images/clientsLogo/socialmedia/35.png", },
+    { logo: "/images/clientsLogo/socialmedia/36.png", },
+    { logo: "/images/clientsLogo/socialmedia/37.png", },
+    { logo: "/images/clientsLogo/socialmedia/38.png", },
+    { logo: "/images/clientsLogo/socialmedia/39.png", },
+    { logo: "/images/clientsLogo/socialmedia/40.png", },
+    { logo: "/images/clientsLogo/socialmedia/41.png", },
+    { logo: "/images/clientsLogo/socialmedia/42.png", },
+    { logo: "/images/clientsLogo/socialmedia/43.png", },
+    {logo:"/images/clientsLogo/socialmedia/44.png",},
+    {logo:"/images/clientsLogo/socialmedia/45.png",},
+    {logo:"/images/clientsLogo/socialmedia/46.png",},
+    {logo:"/images/clientsLogo/socialmedia/47.png",},
+    {logo:"/images/clientsLogo/socialmedia/48.png",},
+    {logo:"/images/clientsLogo/socialmedia/49.png",},
+    {logo:"/images/clientsLogo/socialmedia/50.png",},
+    {logo:"/images/clientsLogo/socialmedia/51.png",},
+    {logo:"/images/clientsLogo/socialmedia/52.png",},
+    {logo:"/images/clientsLogo/socialmedia/53.png",},
+    {logo:"/images/clientsLogo/socialmedia/54.png",},
+    {logo:"/images/clientsLogo/socialmedia/55.png",},
+     {logo:"/images/clientsLogo/socialmedia/56.png",},
+      {logo:"/images/clientsLogo/socialmedia/84.png",},
+        {logo:"/images/clientsLogo/socialmedia/85.png",},
+          {logo:"/images/clientsLogo/socialmedia/87.png",},
+            {logo:"/images/clientsLogo/socialmedia/88.png",},
   ];
 
   const growthSolutions = [
@@ -350,16 +397,15 @@ export default function SocialMediaServicePage() {
       </div>
 
       {/* Hero Banner: Left Side Image, Right Side Text */}
-      <section className="bg-gradient-to-b from-[#06152B] via-[#0B1E38] to-[#0F294D] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-700/60">
+      <section className="bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-700/60">
         
-        {/* Ambient Polygon & Glow Overlays */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-35 mix-blend-screen pointer-events-none"
-          style={{ backgroundImage: "url('/images/social-media-polygon-bg.jpg')" }}
-        />
-        <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-rose-500/10 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 w-[450px] h-[450px] bg-blue-500/15 rounded-full blur-[130px] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
+        {/* Clean Cyber Checkered Grid Overlay (64px by 64px) matching SEO Hero */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
+
+        {/* Ambient Luminous Glow Flares matching SEO Hero */}
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/15 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[450px] h-[400px] bg-[#2563EB]/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#E11D48]/15 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -398,7 +444,7 @@ export default function SocialMediaServicePage() {
               <div className="pt-2">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-[#C11E23] hover:bg-[#a5181c] shadow-lg shadow-red-900/30 hover:shadow-red-900/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group w-fit cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-[#C11E23] hover:bg-[#a5181c] shadow-lg shadow-red-900/30 hover:shadow-red-900/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group w-full sm:w-fit cursor-pointer"
                 >
                   <span>Launch Your Social Campaign</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -607,91 +653,19 @@ export default function SocialMediaServicePage() {
       </section>
 
       {/* Section 5: Client Logo Auto-Marquee Section (2-Line Infinite Scroll) */}
-      <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden border-t border-slate-200/80" id="client-partners">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
-          <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-3">
-            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
-              Trusted Partnerships
-            </span>
-          </div>
-
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-slate-900 leading-tight">
+      <TrustedPartnershipsMarquee
+        id="client-partners"
+        badgeText="Trusted Partnerships"
+        title={
+          <>
             Brands Across Gujarat Growing With <br className="hidden sm:inline" />
-            <span className="text-[#1A3B71]">Our Social Media &amp; Performance Campaigns</span>
-          </h2>
-
-          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans leading-relaxed">
-            From healthcare chains and recruitment ecosystems to university campuses and export manufacturers, see who grows with Jeenweb performance campaigns.
-          </p>
-        </div>
-
-        {/* 2-Line Infinite Auto-Marquee Track */}
-        <div className="w-full relative overflow-hidden py-2 space-y-4 sm:space-y-6">
-          
-          {/* Gradient edge masks for smooth seamless fade */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-44 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-44 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent z-10" />
-
-          {/* Line 1: Infinite Marquee (Left Scroll) */}
-          <div className="flex animate-marquee items-center gap-5 sm:gap-6">
-            {[...smmPartnerLogosRow1, ...smmPartnerLogosRow1].map((partner, idx) => (
-              <div
-                key={`row1-${idx}`}
-                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#1A3B71]/40 hover:shadow-md transition-all duration-300 group cursor-default"
-              >
-                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
-                  <Image
-                    src={partner.logo}
-                    alt={`${partner.name} Logo`}
-                    width={150}
-                    height={45}
-                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
-                <div className="hidden sm:block text-left">
-                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#1A3B71] transition-colors whitespace-nowrap">
-                    {partner.name}
-                  </div>
-                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
-                    {partner.tag}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Line 2: Infinite Marquee Reverse (Right Scroll) */}
-          <div className="flex animate-marquee-reverse items-center gap-5 sm:gap-6">
-            {[...smmPartnerLogosRow2, ...smmPartnerLogosRow2].map((partner, idx) => (
-              <div
-                key={`row2-${idx}`}
-                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#C11E23]/40 hover:shadow-md transition-all duration-300 group cursor-default"
-              >
-                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
-                  <Image
-                    src={partner.logo}
-                    alt={`${partner.name} Logo`}
-                    width={150}
-                    height={45}
-                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
-                <div className="hidden sm:block text-left">
-                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#C11E23] transition-colors whitespace-nowrap">
-                    {partner.name}
-                  </div>
-                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
-                    {partner.tag}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+            <span className="text-[#1A3B71]">Our Social Media & Performance Campaigns</span>
+          </>
+        }
+        description="From healthcare chains and recruitment ecosystems to university campuses and export manufacturers, see who grows with Jeenweb performance campaigns."
+        row1={smmPartnerLogosRow1}
+        row2={smmPartnerLogosRow2}
+      />
 
       {/* Section 6: Social Media and Performance Marketing FAQs */}
       <FaqSection

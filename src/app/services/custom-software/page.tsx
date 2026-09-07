@@ -6,6 +6,7 @@ import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
 import TailoredSolutionsStackingCards from "@/components/services/TailoredSolutionsStackingCards";
+import TrustedPartnershipsMarquee from "@/components/common/TrustedPartnershipsMarquee";
 import {
   Cpu,
   Layers,
@@ -55,26 +56,34 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
     },
     {
       q: "Do you provide staff training after the software goes live?",
-      a: "Yes. Training is part of every deployment we do. We run hands-on orientation sessions directly at your offices in Vadodara—training your administrators, department heads, and regular users on how to use the system properly. We also provide written user manuals for ongoing reference. If your team is spread across multiple locations in Gujarat, we run dedicated video training sessions for remote staff so nobody gets left behind."
+      a: "Yes. Training is part of every deployment we do. We run hands-on orientation sessions directly at your office in Vadodara—training your administrators, department heads, and regular users on how to use the system properly. We also provide written user manuals for ongoing reference. If your team is spread across multiple locations in Gujarat, we run dedicated video training sessions for remote staff so nobody gets left behind."
     }
   ];
 
   const partnerLogosRow1 = [
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Healthcare Infrastructure" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Employment Portal Ecosystem" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Enterprise Hospital ERP" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Statewide Recruitment Platform" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Clinical Workflow Systems" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Enterprise Cloud Engine" }
+    {logo: "/images/clientsLogo/softwareDev/101.png"},
+      {logo: "/images/clientsLogo/softwareDev/102.png"},
+      {logo:"/images/clientsLogo/softwareDev/103.png"},
+      {logo:"/images/clientsLogo/softwareDev/104.png"},
+       {logo: "/images/clientsLogo/softwareDev/105.png"},
+      {logo:"/images/clientsLogo/softwareDev/106.png"},
+      {logo:"/images/clientsLogo/softwareDev/107.png"},
+      {logo:"/images/clientsLogo/softwareDev/108.png"},
+       {logo: "/images/clientsLogo/softwareDev/109.png"},
+      {logo:"/images/clientsLogo/softwareDev/110.png"},
   ];
 
   const partnerLogosRow2 = [
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Career & Candidate Database" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Multi-Specialty Network" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "High-Volume Job Platform" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Patient & Admin Infrastructure" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Custom Recruitment Engine" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "OPD & Digital Gate Passes" }
+       {logo: "/images/clientsLogo/softwareDev/101.png"},
+      {logo: "/images/clientsLogo/softwareDev/102.png"},
+      {logo:"/images/clientsLogo/softwareDev/103.png"},
+      {logo:"/images/clientsLogo/softwareDev/104.png"},
+       {logo: "/images/clientsLogo/softwareDev/105.png"},
+      {logo:"/images/clientsLogo/softwareDev/106.png"},
+      {logo:"/images/clientsLogo/softwareDev/107.png"},
+      {logo:"/images/clientsLogo/softwareDev/108.png"},
+       {logo: "/images/clientsLogo/softwareDev/109.png"},
+      {logo:"/images/clientsLogo/softwareDev/110.png"},
   ];
 
   return (
@@ -138,7 +147,7 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
                 onClick={() => window.location.href = "/contact#get-in-touch"}
-                className="px-6 py-3.5 rounded-xl bg-[#E11D48] hover:bg-[#BE123C] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-red-900/30 hover:shadow-red-900/50 hover:scale-[1.02] active:scale-95 flex items-center gap-2.5"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl shadow-red-950/40 hover:scale-[1.02] active:scale-95 gap-2.5 cursor-pointer"
               >
                 <span>Consult Our Software Engineers</span>
                 <ArrowRight className="w-4 h-4" />
@@ -206,7 +215,7 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
                     setSelectedSolution("Custom Software for Gujarat Businesses");
                     window.location.href = "/contact#get-in-touch";
                   }}
-                  className="px-7 py-4 rounded-xl bg-[#1A3B71] hover:bg-[#132c54] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md shadow-blue-950/20 hover:shadow-lg hover:scale-[1.02] flex items-center gap-3"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-xl bg-[#1A3B71] hover:bg-[#132c54] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md shadow-blue-950/20 hover:shadow-lg hover:scale-[1.02] gap-3 cursor-pointer"
                 >
                   <span>Consult Our Vadodara Engineering Team</span>
                   <ArrowRight className="w-4 h-4" />
@@ -764,91 +773,19 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
       <TailoredSolutionsStackingCards />
 
       {/* Client Logo Auto-Marquee Section (2-Line Infinite Scroll) */}
-      <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden border-b border-slate-200/80" id="client-partners">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
-          <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-3">
-            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
-              Trusted Partnerships
-            </span>
-          </div>
-
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-slate-900 leading-tight">
+      <TrustedPartnershipsMarquee
+        id="client-partners"
+        badgeText="Trusted Partnerships"
+        title={
+          <>
             Trusted Software & ERP Partner for <br className="hidden sm:inline" />
             <span className="text-[#1A3B71]">Leading Healthcare & Enterprise Brands</span>
-          </h2>
-
-          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans leading-relaxed">
-            Powering mission-critical hospital networks, job portals, and enterprise workflow infrastructure across Gujarat and India.
-          </p>
-        </div>
-
-        {/* 2-Line Infinite Auto-Marquee Track */}
-        <div className="w-full relative overflow-hidden py-2 space-y-4 sm:space-y-6">
-          
-          {/* Gradient edge masks for smooth seamless fade */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-44 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-44 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent z-10" />
-
-          {/* Line 1: Infinite Marquee (Left Scroll) */}
-          <div className="flex animate-marquee items-center gap-5 sm:gap-6">
-            {[...partnerLogosRow1, ...partnerLogosRow1].map((partner, idx) => (
-              <div
-                key={`row1-${idx}`}
-                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#1A3B71]/40 hover:shadow-md transition-all duration-300 group cursor-default"
-              >
-                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
-                  <Image
-                    src={partner.logo}
-                    alt={`${partner.name} Logo`}
-                    width={150}
-                    height={45}
-                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
-                <div className="hidden sm:block text-left">
-                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#1A3B71] transition-colors whitespace-nowrap">
-                    {partner.name}
-                  </div>
-                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
-                    {partner.tag}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Line 2: Infinite Marquee Reverse (Right Scroll) */}
-          <div className="flex animate-marquee-reverse items-center gap-5 sm:gap-6">
-            {[...partnerLogosRow2, ...partnerLogosRow2].map((partner, idx) => (
-              <div
-                key={`row2-${idx}`}
-                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#C11E23]/40 hover:shadow-md transition-all duration-300 group cursor-default"
-              >
-                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
-                  <Image
-                    src={partner.logo}
-                    alt={`${partner.name} Logo`}
-                    width={150}
-                    height={45}
-                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
-                <div className="hidden sm:block text-left">
-                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#C11E23] transition-colors whitespace-nowrap">
-                    {partner.name}
-                  </div>
-                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
-                    {partner.tag}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+          </>
+        }
+        description="Powering mission-critical hospital networks, job portals, and enterprise workflow infrastructure across Gujarat and India."
+        row1={partnerLogosRow1}
+        row2={partnerLogosRow2}
+      />
 
       {/* Frequently Asked Questions */}
       <FaqSection

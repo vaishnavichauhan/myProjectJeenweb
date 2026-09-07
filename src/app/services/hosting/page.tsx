@@ -6,6 +6,7 @@ import Image from "next/image";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
+import TrustedPartnershipsMarquee from "@/components/common/TrustedPartnershipsMarquee";
 import {
   Server,
   Database,
@@ -21,7 +22,10 @@ import {
   Layers,
   Download,
   RefreshCw,
-  Search
+  Search,
+  Cpu,
+  Terminal,
+  Sliders
 } from "lucide-react";
 import { EMAIL_SOLUTIONS_PART2 } from "@/lib/siteData";
 
@@ -186,24 +190,54 @@ export default function HostingServicePage() {
     }
   ];
   const hostingClientLogosRow1 = [
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "NVMe Dedicated Hosting" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "High-Traffic Web Platform" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Multi-Region Cloud Redundancy" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "LiteSpeed Enterprise Server" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Automated Daily Snapshot Backups" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "99.9% Production SLA" }
+  { logo: "/images/clientsLogo/Domain/1.png" },
   ];
 
   const hostingClientLogosRow2 = [
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Fast SQL Database Clusters" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "CageFS Container Isolation" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "DDoS Mitigation & Firewall" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Global Low-Latency CDN" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Zero-Downtime Server Sync" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Enterprise SSL & DNS Security" }
+ { logo: "/images/clientsLogo/Domain/1.png" },
   ];
 
   const [selectedPlan, setSelectedPlan] = useState("Corporate NVMe Hosting");
+
+  const vpsFeatures = [
+    "Dedicated CPU, RAM, and storage resources",
+    "Fast and reliable performance",
+    "Full server-level control",
+    "Scalable resources as your business grows",
+    "Secure isolated environment",
+    "Linux/Windows server options",
+    "Easy deployment and configuration",
+    "Regular backups and monitoring"
+  ];
+
+  const vpsBestFor = [
+    "Business websites",
+    "eCommerce platforms",
+    "Web applications",
+    "APIs",
+    "Databases",
+    "Growing online businesses"
+  ];
+
+  const dedicatedFeatures = [
+    "Entire physical server dedicated to your business",
+    "High-performance CPU, RAM, and storage",
+    "Maximum server resources",
+    "Full root/administrator access",
+    "Advanced security and server configuration",
+    "High availability and reliability",
+    "Custom server configurations",
+    "Suitable for high-traffic applications"
+  ];
+
+  const dedicatedBestFor = [
+    "High-traffic websites",
+    "Enterprise applications",
+    "Large databases",
+    "eCommerce platforms",
+    "ERP systems",
+    "Resource-intensive applications"
+  ];
 
   const hostingFaqs = [
     {
@@ -283,7 +317,7 @@ export default function HostingServicePage() {
                 High-Speed, Ultra-Secure Web Hosting Powered by On-Demand Manual Backup Facilities
               </h1>
 
-              <p className="text-base sm:text-lg text-emerald-300 font-semibold">
+              <p className="text-base sm:text-lg text-sky-300 font-semibold">
                 Enterprise-grade NVMe server infrastructure, 99.9% uptime, and reliable data protection managed from Vadodara.
               </p>
 
@@ -1061,96 +1095,303 @@ export default function HostingServicePage() {
         </div>
       </section>
 
-      {/* Section 5: Clients on Jeenweb Hosting (2-Line Infinite Scroll Marquee) */}
-      <section className="pt-12 pb-16 lg:pt-16 lg:pb-24 bg-slate-50 relative overflow-hidden border-b border-slate-200/80" id="clients">
+      {/* Section 4B: VPS Hosting */}
+      <section className="py-20 lg:py-24 bg-white relative overflow-hidden border-b border-slate-200/80" id="vps-hosting">
+        {/* Subtle Ambient Background Gradients */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
-          {/* Standardized Header */}
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-10 lg:mb-12">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-14 lg:mb-16">
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
               <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
-                Clients on Jeenweb Hosting
+                Virtual Private Server Environment
               </span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-slate-900 leading-tight">
-              Powering Corporate Websites <br className="hidden sm:inline" />
-              <span className="text-[#1A3B71]">Across The World</span>
+              VPS Hosting
             </h2>
 
             <p className="text-sm sm:text-base text-slate-600 font-sans leading-relaxed">
-              From healthcare institutions and regional manufacturing conglomerates to international export networks, see the brands hosted on our high-speed NVMe servers.
+              Get reliable, scalable hosting with dedicated resources in a virtual private server environment. VPS hosting gives your website or application better performance, security, and control than traditional shared hosting.
             </p>
           </div>
-        </div>
 
-        {/* 2-Line Infinite Auto-Marquee Track */}
-        <div className="w-full relative overflow-hidden py-2 space-y-4 sm:space-y-6">
-          
-          {/* Gradient edge masks for smooth seamless fade */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-44 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-44 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent z-10" />
+          {/* 2-Column Showcase */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+            {/* Left Column: Key Features & Best For */}
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-8">
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">
+                  <Zap className="w-5 h-5 text-[#073F8A]" />
+                  <span>Key Features</span>
+                </h3>
 
-          {/* Line 1: Infinite Marquee (Left Scroll) */}
-          <div className="flex animate-marquee items-center gap-5 sm:gap-6">
-            {[...hostingClientLogosRow1, ...hostingClientLogosRow1].map((client, idx) => (
-              <div
-                key={`row1-${idx}`}
-                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#1A3B71]/40 hover:shadow-md transition-all duration-300 group cursor-default"
-              >
-                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
-                  <Image
-                    src={client.logo}
-                    alt={`${client.name} Logo`}
-                    width={150}
-                    height={45}
-                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
-                <div className="hidden sm:block text-left">
-                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#1A3B71] transition-colors whitespace-nowrap">
-                    {client.name}
-                  </div>
-                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
-                    {client.tag}
-                  </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  {vpsFeatures.map((feat, idx) => (
+                    <div
+                      key={idx}
+                      className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-blue-300 hover:bg-blue-50/30 transition-all flex items-start gap-3 group"
+                    >
+                      <div className="w-5 h-5 rounded-md bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                      </div>
+                      <span className="text-xs sm:text-sm font-medium text-slate-800 leading-snug">
+                        {feat}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
 
-          {/* Line 2: Infinite Marquee Reverse (Right Scroll) */}
-          <div className="flex animate-marquee-reverse items-center gap-5 sm:gap-6">
-            {[...hostingClientLogosRow2, ...hostingClientLogosRow2].map((client, idx) => (
-              <div
-                key={`row2-${idx}`}
-                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#C11E23]/40 hover:shadow-md transition-all duration-300 group cursor-default"
-              >
-                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
-                  <Image
-                    src={client.logo}
-                    alt={`${client.name} Logo`}
-                    width={150}
-                    height={45}
-                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
+              {/* Best For Tag Cloud */}
+              <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-blue-50/60 via-slate-50 to-blue-50/40 border border-blue-100">
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#1A3B71] mb-3 flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-blue-600" />
+                  <span>Best For:</span>
                 </div>
-                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
-                <div className="hidden sm:block text-left">
-                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#C11E23] transition-colors whitespace-nowrap">
-                    {client.name}
-                  </div>
-                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
-                    {client.tag}
-                  </div>
+                <div className="flex flex-wrap gap-2">
+                  {vpsBestFor.map((item, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3.5 py-1.5 rounded-xl bg-white border border-blue-200/80 text-xs font-semibold text-slate-700 shadow-2xs"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
 
+            {/* Right Column: High-Spec VPS Control Architecture Card */}
+            <div className="lg:col-span-5 flex flex-col">
+              <div className="rounded-3xl p-7 sm:p-8 bg-gradient-to-b from-[#0A2647] via-[#0F355C] to-[#07192F] text-white border border-slate-700 shadow-xl flex flex-col justify-between h-full relative overflow-hidden group">
+                {/* Subtle Checkered Texture */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-[11px] font-mono font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-800/80 px-3 py-1 rounded-full uppercase tracking-wider">
+                      KVM Virtualization
+                    </span>
+                    <Cpu className="w-5 h-5 text-cyan-400" />
+                  </div>
+
+                  <h3 className="text-2xl font-black uppercase tracking-tight text-white mb-2">
+                    Managed Cloud VPS
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed font-sans mb-6">
+                    Guaranteed CPU cores, dedicated memory slices, and high-speed NVMe storage. No resource starvation from neighbor websites.
+                  </p>
+
+                  {/* Architecture Specs Breakdown */}
+                  <div className="space-y-3 p-4 rounded-2xl bg-white/5 border border-white/10 mb-6 font-mono text-xs">
+                    <div className="flex justify-between items-center pb-2 border-b border-white/10">
+                      <span className="text-slate-400">Hypervisor:</span>
+                      <span className="text-cyan-300 font-bold">KVM Isolated Kernel</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2 border-b border-white/10">
+                      <span className="text-slate-400">Control Level:</span>
+                      <span className="text-white font-bold">Full Root SSH / RDP</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2 border-b border-white/10">
+                      <span className="text-slate-400">Storage Array:</span>
+                      <span className="text-white font-bold">NVMe RAID-10 Protected</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-400">OS Platforms:</span>
+                      <span className="text-emerald-400 font-bold">Linux / Windows Server</span>
+                    </div>
+                  </div>
+
+                  {/* Developer Terminal Mock */}
+                  <div className="p-3.5 rounded-xl bg-black/50 border border-white/10 mb-6 font-mono text-[11px] text-slate-300 space-y-1">
+                    <div className="flex items-center gap-1.5 text-slate-500 pb-1">
+                      <Terminal className="w-3.5 h-3.5 text-cyan-400" />
+                      <span>root@jeenweb-vps:~#</span>
+                    </div>
+                    <div className="text-emerald-400">$ uptime</div>
+                    <div className="text-slate-400">load average: 0.12, 0.08, 0.02 (100% Dedicated)</div>
+                  </div>
+                </div>
+
+                <div className="relative z-10 pt-2">
+                  <button
+                    onClick={() => {
+                      setSelectedPlan("VPS Hosting");
+                      window.location.href = "/contact#get-in-touch";
+                    }}
+                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg active:scale-95 cursor-pointer flex items-center justify-center gap-2"
+                  >
+                    <span>Configure VPS Hosting</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Section 4C: Dedicated Hosting */}
+      <section className="py-20 lg:py-24 bg-gradient-to-b from-[#08182B] via-[#0B1E38] to-[#08182B] text-white relative overflow-hidden border-b border-slate-800" id="dedicated-hosting">
+        {/* Subtle Checkered Grid Accent */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+
+        {/* Ambient Glow Accents */}
+        <div className="absolute top-1/4 -right-24 w-96 h-96 bg-[#C11E23]/15 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-10 -left-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-14 lg:mb-16">
+            <div className="inline-block border-b-2 border-[#C11E23] pb-1">
+              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#00E5FF]">
+                Bare-Metal Enterprise Power
+              </span>
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-white leading-tight">
+              Dedicated Hosting
+            </h2>
+
+            <p className="text-sm sm:text-base text-slate-300 font-sans leading-relaxed">
+              Get an entire physical server dedicated exclusively to your business. Dedicated hosting delivers maximum performance, complete control, and enhanced security for demanding websites and applications.
+            </p>
+          </div>
+
+          {/* 2-Column Showcase */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+            {/* Left Column: Bare-Metal Architecture Blueprint Card */}
+            <div className="lg:col-span-5 flex flex-col">
+              <div className="rounded-3xl p-7 sm:p-8 bg-slate-900/90 border border-slate-700 shadow-2xl flex flex-col justify-between h-full relative overflow-hidden group">
+                {/* Checkered Grid Accent */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-[11px] font-mono font-bold text-amber-300 bg-amber-950/80 border border-amber-800/80 px-3 py-1 rounded-full uppercase tracking-wider">
+                      Single-Tenant Hardware
+                    </span>
+                    <Server className="w-5 h-5 text-amber-400" />
+                  </div>
+
+                  <h3 className="text-2xl font-black uppercase tracking-tight text-white mb-2">
+                    Bare-Metal Server
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed font-sans mb-6">
+                    Zero virtualization overhead. 100% of the raw CPU power, memory bandwidth, and disk I/O are committed solely to your applications.
+                  </p>
+
+                  {/* Hardware Spec Badges */}
+                  <div className="space-y-3 p-4 rounded-2xl bg-white/[0.04] border border-white/10 mb-6 font-mono text-xs">
+                    <div className="flex justify-between items-center pb-2 border-b border-white/10">
+                      <span className="text-slate-400">Processor:</span>
+                      <span className="text-amber-300 font-bold">Intel Xeon / AMD EPYC</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2 border-b border-white/10">
+                      <span className="text-slate-400">Memory:</span>
+                      <span className="text-white font-bold">ECC Registered DDR4/DDR5</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2 border-b border-white/10">
+                      <span className="text-slate-400">Storage Controller:</span>
+                      <span className="text-white font-bold">Hardware RAID-10 Controller</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2 border-b border-white/10">
+                      <span className="text-slate-400">Out-of-Band:</span>
+                      <span className="text-cyan-300 font-bold">Dedicated IPMI / iDRAC Console</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-400">Network Port:</span>
+                      <span className="text-emerald-400 font-bold">1 Gbps - 10 Gbps Unmetered</span>
+                    </div>
+                  </div>
+
+                  {/* Security Clearance Callout */}
+                  <div className="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-800/60 mb-6 font-sans text-xs text-emerald-300 flex items-center gap-2.5">
+                    <ShieldCheck className="w-4 h-4 flex-shrink-0 text-emerald-400" />
+                    <span>Physical isolation satisfies HIPAA, PCI-DSS, and ISO 27001 data compliance.</span>
+                  </div>
+                </div>
+
+                <div className="relative z-10 pt-2">
+                  <button
+                    onClick={() => {
+                      setSelectedPlan("Dedicated Hosting");
+                      window.location.href = "/contact#get-in-touch";
+                    }}
+                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#C11E23] via-red-600 to-orange-600 hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl active:scale-95 cursor-pointer flex items-center justify-center gap-2"
+                  >
+                    <span>Deploy Dedicated Server</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Key Features & Best For */}
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-8">
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-white mb-5 flex items-center gap-2">
+                  <Sliders className="w-5 h-5 text-amber-400" />
+                  <span>Key Features</span>
+                </h3>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  {dedicatedFeatures.map((feat, idx) => (
+                    <div
+                      key={idx}
+                      className="p-4 rounded-2xl bg-white/[0.05] border border-white/10 hover:border-cyan-400/40 hover:bg-white/[0.08] transition-all flex items-start gap-3 group"
+                    >
+                      <div className="w-5 h-5 rounded-md bg-cyan-500/20 text-cyan-400 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-cyan-500 group-hover:text-white transition-colors">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                      </div>
+                      <span className="text-xs sm:text-sm font-medium text-slate-200 leading-snug">
+                        {feat}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Best For Tag Cloud */}
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/[0.04] border border-white/10">
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#00E5FF] mb-3 flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-cyan-400" />
+                  <span>Best For:</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {dedicatedBestFor.map((item, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3.5 py-1.5 rounded-xl bg-slate-800/90 border border-slate-700 text-xs font-semibold text-slate-200 shadow-2xs"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Logo Auto-Marquee Section (Trusted Partnerships) */}
+      <TrustedPartnershipsMarquee
+        id="clients"
+        badgeText="Trusted Partnerships"
+        title={
+          <>
+            Powering Corporate Websites <br className="hidden sm:inline" />
+            <span className="text-[#1A3B71]">Across The World</span>
+          </>
+        }
+        description="From healthcare institutions and regional manufacturing conglomerates to international export networks, see the brands hosted on our high-speed NVMe servers."
+        row1={hostingClientLogosRow1}
+        row2={hostingClientLogosRow2}
+      />
 
       {/* Section 6: Web Hosting FAQs */}
       <FaqSection

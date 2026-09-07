@@ -1,66 +1,217 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { PARTNERSHIPS } from "@/lib/siteData";
 import { ShieldCheck, CheckCircle2 } from "lucide-react";
+import TrustedPartnershipsMarquee from "@/components/common/TrustedPartnershipsMarquee";
 
 const CLIENT_LOGOS_ROW1 = [
-  { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Healthcare Infrastructure Client Partner" },
-  { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Official Recruitment & Placement Partner" },
-  { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Enterprise Hospital ERP & Workflow" },
-  { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Employment Portal Ecosystem" },
-  { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Multi-Specialty Healthcare Network" },
-  { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Statewide Recruitment Platform" }
+  { logo: "/images/clientsLogo/home/1.png" },
+  { logo: "/images/clientsLogo/home/2.png" },
+  { logo: "/images/clientsLogo/home/3.png" },
+  { logo: "/images/clientsLogo/home/4.png" },
+  { logo: "/images/clientsLogo/home/5.png" },
+  { logo: "/images/clientsLogo/home/6.png" },
+  { logo: "/images/clientsLogo/home/7.png" },
+  { logo: "/images/clientsLogo/home/8.png" },
+  { logo: "/images/clientsLogo/home/9.png" },
+  { logo: "/images/clientsLogo/home/10.png" },
+  { logo: "/images/clientsLogo/home/11.png" },
+  { logo: "/images/clientsLogo/home/12.png" },
+  { logo: "/images/clientsLogo/home/13.png" },
+  { logo: "/images/clientsLogo/home/14.png" },
+  { logo: "/images/clientsLogo/home/15.png" },
+  { logo: "/images/clientsLogo/home/16.png" },
+  { logo: "/images/clientsLogo/home/17.png" },
+  { logo: "/images/clientsLogo/home/18.png" },
+  { logo: "/images/clientsLogo/home/19.png" },
+  { logo: "/images/clientsLogo/home/20.png" },
+  { logo: "/images/clientsLogo/home/21.png" },
+  { logo: "/images/clientsLogo/home/22.png" },
+  { logo: "/images/clientsLogo/home/23.png" },
+  { logo: "/images/clientsLogo/home/24.png" },
+  { logo: "/images/clientsLogo/home/25.png" },
+  { logo: "/images/clientsLogo/home/26.png" },
+  { logo: "/images/clientsLogo/home/27.png" },
+  { logo: "/images/clientsLogo/home/28.png" },
+  { logo: "/images/clientsLogo/home/29.png" },
+  { logo: "/images/clientsLogo/home/29.png" },
+{ logo: "/images/clientsLogo/home/33.png" },
+{ logo: "/images/clientsLogo/home/34.png" },
+{ logo: "/images/clientsLogo/home/35.png" },
+{ logo: "/images/clientsLogo/home/36.png" },
+{ logo: "/images/clientsLogo/home/37.png" },
+{ logo: "/images/clientsLogo/home/38.png" },
+{ logo: "/images/clientsLogo/home/39.png" },
+{ logo: "/images/clientsLogo/home/40.png" },
+{ logo: "/images/clientsLogo/home/41.png" },
+{ logo: "/images/clientsLogo/home/42.png" },
+{ logo: "/images/clientsLogo/home/43.png" },
+{ logo: "/images/clientsLogo/home/44.png" },
+{ logo: "/images/clientsLogo/home/45.png" },
+{ logo: "/images/clientsLogo/home/46.png" },
+{ logo: "/images/clientsLogo/home/47.png" },
+{ logo: "/images/clientsLogo/home/48.png" },
+{ logo: "/images/clientsLogo/home/49.png" },
+{ logo: "/images/clientsLogo/home/50.png" },
+{ logo: "/images/clientsLogo/home/51.png" },
+{ logo: "/images/clientsLogo/home/52.png" },
+{ logo: "/images/clientsLogo/home/53.png" },
+{ logo: "/images/clientsLogo/home/54.png" },
+{ logo: "/images/clientsLogo/home/55.png" },
+{ logo: "/images/clientsLogo/home/56.png" },
+{ logo: "/images/clientsLogo/home/72.png" },
+{ logo: "/images/clientsLogo/home/73.png" },
+{ logo: "/images/clientsLogo/home/74.png" },
+{ logo: "/images/clientsLogo/home/75.png" },
+{ logo: "/images/clientsLogo/home/76.png" },
+{ logo: "/images/clientsLogo/home/77.png" },
+{ logo: "/images/clientsLogo/home/78.png" },
+{ logo: "/images/clientsLogo/home/79.png" },
+{ logo: "/images/clientsLogo/home/80.png" },
+{ logo: "/images/clientsLogo/home/81.png" },
+{ logo: "/images/clientsLogo/home/82.png" },
+{ logo: "/images/clientsLogo/home/83.png" },
+{ logo: "/images/clientsLogo/home/84.png" },
+{ logo: "/images/clientsLogo/home/85.png" },
+{ logo: "/images/clientsLogo/home/86.png" },
+{ logo: "/images/clientsLogo/home/87.png" },
+{ logo: "/images/clientsLogo/home/88.png" },
+{ logo: "/images/clientsLogo/home/101.png" },
+{ logo: "/images/clientsLogo/home/102.png" },
+{ logo: "/images/clientsLogo/home/103.png" },
+{ logo: "/images/clientsLogo/home/104.png" },
+{ logo: "/images/clientsLogo/home/105.png" },
+{ logo: "/images/clientsLogo/home/106.png" },
+{ logo: "/images/clientsLogo/home/107.png" },
+{ logo: "/images/clientsLogo/home/108.png" },
+{ logo: "/images/clientsLogo/home/109.png" },
+{ logo: "/images/clientsLogo/home/110.png" },
+  
 ];
 
 const CLIENT_LOGOS_ROW2 = [
-  { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Career & Candidate Database Engine" },
-  { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Clinical Systems & Digital Passes" },
-  { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "High-Volume Job Application Platform" },
-  { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Patient & Admin Infrastructure" },
-  { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Regional Technology Ecosystem" },
-  { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "24/7 Enterprise Portal Architecture" }
+ { logo: "/images/clientsLogo/home/1.png" },
+  { logo: "/images/clientsLogo/home/2.png" },
+  { logo: "/images/clientsLogo/home/3.png" },
+  { logo: "/images/clientsLogo/home/4.png" },
+  { logo: "/images/clientsLogo/home/5.png" },
+  { logo: "/images/clientsLogo/home/6.png" },
+  { logo: "/images/clientsLogo/home/7.png" },
+  { logo: "/images/clientsLogo/home/8.png" },
+  { logo: "/images/clientsLogo/home/9.png" },
+  { logo: "/images/clientsLogo/home/10.png" },
+  { logo: "/images/clientsLogo/home/11.png" },
+  { logo: "/images/clientsLogo/home/12.png" },
+  { logo: "/images/clientsLogo/home/13.png" },
+  { logo: "/images/clientsLogo/home/14.png" },
+  { logo: "/images/clientsLogo/home/15.png" },
+  { logo: "/images/clientsLogo/home/16.png" },
+  { logo: "/images/clientsLogo/home/17.png" },
+  { logo: "/images/clientsLogo/home/18.png" },
+  { logo: "/images/clientsLogo/home/19.png" },
+  { logo: "/images/clientsLogo/home/20.png" },
+  { logo: "/images/clientsLogo/home/21.png" },
+  { logo: "/images/clientsLogo/home/22.png" },
+  { logo: "/images/clientsLogo/home/23.png" },
+  { logo: "/images/clientsLogo/home/24.png" },
+  { logo: "/images/clientsLogo/home/25.png" },
+  { logo: "/images/clientsLogo/home/26.png" },
+  { logo: "/images/clientsLogo/home/27.png" },
+  { logo: "/images/clientsLogo/home/28.png" },
+  { logo: "/images/clientsLogo/home/29.png" },
+  { logo: "/images/clientsLogo/home/29.png" },
+{ logo: "/images/clientsLogo/home/33.png" },
+{ logo: "/images/clientsLogo/home/34.png" },
+{ logo: "/images/clientsLogo/home/35.png" },
+{ logo: "/images/clientsLogo/home/36.png" },
+{ logo: "/images/clientsLogo/home/37.png" },
+{ logo: "/images/clientsLogo/home/38.png" },
+{ logo: "/images/clientsLogo/home/39.png" },
+{ logo: "/images/clientsLogo/home/40.png" },
+{ logo: "/images/clientsLogo/home/41.png" },
+{ logo: "/images/clientsLogo/home/42.png" },
+{ logo: "/images/clientsLogo/home/43.png" },
+{ logo: "/images/clientsLogo/home/44.png" },
+{ logo: "/images/clientsLogo/home/45.png" },
+{ logo: "/images/clientsLogo/home/46.png" },
+{ logo: "/images/clientsLogo/home/47.png" },
+{ logo: "/images/clientsLogo/home/48.png" },
+{ logo: "/images/clientsLogo/home/49.png" },
+{ logo: "/images/clientsLogo/home/50.png" },
+{ logo: "/images/clientsLogo/home/51.png" },
+{ logo: "/images/clientsLogo/home/52.png" },
+{ logo: "/images/clientsLogo/home/53.png" },
+{ logo: "/images/clientsLogo/home/54.png" },
+{ logo: "/images/clientsLogo/home/55.png" },
+{ logo: "/images/clientsLogo/home/56.png" },
+{ logo: "/images/clientsLogo/home/72.png" },
+{ logo: "/images/clientsLogo/home/73.png" },
+{ logo: "/images/clientsLogo/home/74.png" },
+{ logo: "/images/clientsLogo/home/75.png" },
+{ logo: "/images/clientsLogo/home/76.png" },
+{ logo: "/images/clientsLogo/home/77.png" },
+{ logo: "/images/clientsLogo/home/78.png" },
+{ logo: "/images/clientsLogo/home/79.png" },
+{ logo: "/images/clientsLogo/home/80.png" },
+{ logo: "/images/clientsLogo/home/81.png" },
+{ logo: "/images/clientsLogo/home/82.png" },
+{ logo: "/images/clientsLogo/home/83.png" },
+{ logo: "/images/clientsLogo/home/84.png" },
+{ logo: "/images/clientsLogo/home/85.png" },
+{ logo: "/images/clientsLogo/home/86.png" },
+{ logo: "/images/clientsLogo/home/87.png" },
+{ logo: "/images/clientsLogo/home/88.png" },
+{ logo: "/images/clientsLogo/home/101.png" },
+{ logo: "/images/clientsLogo/home/102.png" },
+{ logo: "/images/clientsLogo/home/103.png" },
+{ logo: "/images/clientsLogo/home/104.png" },
+{ logo: "/images/clientsLogo/home/105.png" },
+{ logo: "/images/clientsLogo/home/106.png" },
+{ logo: "/images/clientsLogo/home/107.png" },
+{ logo: "/images/clientsLogo/home/108.png" },
+{ logo: "/images/clientsLogo/home/109.png" },
+{ logo: "/images/clientsLogo/home/110.png" },
+  
 ];
 
 export default function PartnersMarquee() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const index = Math.round(scrollLeft / (clientWidth * 0.85));
+      setActiveIndex(Math.min(index, PARTNERSHIPS.length - 1));
+    }
+  };
+
   const scrollToCard = (index: number) => {
-    if (!scrollRef.current) return;
-    const container = scrollRef.current;
-    const cards = container.children;
-    if (cards[index]) {
-      const card = cards[index] as HTMLElement;
-      container.scrollTo({
-        left: card.offsetLeft - container.offsetLeft,
+    if (scrollRef.current) {
+      const cardWidth = scrollRef.current.clientWidth * 0.85;
+      scrollRef.current.scrollTo({
+        left: index * cardWidth,
         behavior: "smooth",
       });
       setActiveIndex(index);
     }
   };
 
-  const handleScroll = () => {
-    if (!scrollRef.current) return;
-    const container = scrollRef.current;
-    const scrollLeft = container.scrollLeft;
-    const card = container.children[0] as HTMLElement | undefined;
-    if (card) {
-      const cardWidth = card.offsetWidth + 24; // card width + gap
-      const index = Math.round(scrollLeft / cardWidth);
-      setActiveIndex(Math.min(Math.max(0, index), PARTNERSHIPS.length - 1));
-    }
-  };
-
   return (
-    <section className="pt-12 pb-16 lg:pt-16 lg:pb-20 bg-slate-50 relative overflow-hidden" id="partners">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200/80" id="partners">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header with Red Bottom Border Tag & Perfect Alignment */}
-        <div className="max-w-3xl mx-auto text-center mb-10 lg:mb-12 space-y-3">
-          <div>
-            <div className="inline-block border-b-2 border-[#C11E23] pb-1">
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-14">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 shadow-2xs">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#073F8A]"></span>
+            </span>
+            <div className="flex items-center gap-1.5">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#073F8A]" />
               <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
                 Strategic Alliances
               </span>
@@ -74,7 +225,7 @@ export default function PartnersMarquee() {
           </p>
         </div>
 
-        {/* Scrollable Tech Authorization Cards Carousel with 3D Depth */}
+        {/* Scrollable Tech Authorization Cards Carousel */}
         <div
           ref={scrollRef}
           onScroll={handleScroll}
@@ -86,7 +237,6 @@ export default function PartnersMarquee() {
               key={partner.name}
               className="w-[85vw] sm:w-[320px] lg:w-[calc(25%-18px)] flex-shrink-0 snap-start p-7 rounded-3xl bg-white hover:bg-gradient-to-br hover:from-white hover:via-[#F8FAFC] hover:to-[#EEF6FF] border border-slate-200 hover:border-[#073F8A]/40 shadow-xs hover:shadow-2xl hover:shadow-blue-950/15 transition-all duration-500 ease-out flex flex-col justify-between group transform relative overflow-hidden [transform-style:preserve-3d] hover:[transform:rotateX(5deg)_rotateY(-5deg)_translateZ(12px)] hover:-translate-y-1.5"
             >
-              {/* Top Accent Line on Hover */}
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#073F8A] via-[#0B5ED7] to-[#10B981] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div className="[transform-style:preserve-3d]">
@@ -116,7 +266,7 @@ export default function PartnersMarquee() {
           ))}
         </div>
 
-        {/* Bottom Navigation Dots Only (No Arrows) */}
+        {/* Bottom Navigation Dots */}
         <div className="flex items-center justify-center gap-2 mb-16">
           {PARTNERSHIPS.map((_, idx) => (
             <button
@@ -133,69 +283,13 @@ export default function PartnersMarquee() {
         </div>
       </div>
 
-      {/* Full-Screen Dual Client Logo Marquee (2-Line Opposing Infinite Scroll) */}
-      <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] overflow-hidden bg-transparent py-4 sm:py-6 space-y-4 sm:space-y-6">
-        {/* Gradient edge masks for smooth fade */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-44 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-44 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent z-10" />
-
-        {/* Line 1: Infinite Marquee (Left Scroll) */}
-        <div className="flex animate-marquee items-center gap-5 sm:gap-6">
-          {[...CLIENT_LOGOS_ROW1, ...CLIENT_LOGOS_ROW1].map((client, idx) => (
-            <div
-              key={`row1-${idx}`}
-              className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#1A3B71]/40 hover:shadow-md transition-all duration-300 group cursor-default"
-            >
-              <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
-                <Image
-                  src={client.logo}
-                  alt={`${client.name} Logo`}
-                  width={150}
-                  height={45}
-                  className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="h-8 w-px bg-slate-200 hidden sm:block" />
-              <div className="hidden sm:block text-left">
-                <div className="text-xs font-bold text-slate-900 group-hover:text-[#1A3B71] transition-colors whitespace-nowrap">
-                  {client.name}
-                </div>
-                <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
-                  {client.tag}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Line 2: Infinite Marquee Reverse (Right Scroll) */}
-        <div className="flex animate-marquee-reverse items-center gap-5 sm:gap-6">
-          {[...CLIENT_LOGOS_ROW2, ...CLIENT_LOGOS_ROW2].map((client, idx) => (
-            <div
-              key={`row2-${idx}`}
-              className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#C11E23]/40 hover:shadow-md transition-all duration-300 group cursor-default"
-            >
-              <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
-                <Image
-                  src={client.logo}
-                  alt={`${client.name} Logo`}
-                  width={150}
-                  height={45}
-                  className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="h-8 w-px bg-slate-200 hidden sm:block" />
-              <div className="hidden sm:block text-left">
-                <div className="text-xs font-bold text-slate-900 group-hover:text-[#C11E23] transition-colors whitespace-nowrap">
-                  {client.name}
-                </div>
-                <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
-                  {client.tag}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* Full-Screen Dual Client Logo Marquee */}
+      <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] overflow-hidden bg-transparent py-2">
+        <TrustedPartnershipsMarquee
+          onlyMarquee
+          row1={CLIENT_LOGOS_ROW1}
+          row2={CLIENT_LOGOS_ROW2}
+        />
       </div>
     </section>
   );

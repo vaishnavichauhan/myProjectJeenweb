@@ -15,6 +15,7 @@
     --accent-lime: #e8fe26;
   }
 
+  html,
   body {
     background-color: #f5f4f0;
     color: #0f172a;

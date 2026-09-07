@@ -122,7 +122,7 @@ export default function CompanyOverviewPage() {
               <div className="pt-4 flex flex-wrap items-center gap-3.5">
                 <Link
                   href="#purpose"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#073F8A] hover:bg-[#052C61] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-blue-900/20 hover:scale-[1.02]"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-red-950/30 hover:scale-[1.02] active:scale-95"
                 >
                   <span>Learn More About Us</span>
                   <ArrowRight className="w-4 h-4" />

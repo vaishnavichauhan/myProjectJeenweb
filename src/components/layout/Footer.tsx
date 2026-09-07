@@ -79,6 +79,12 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/services/website-development" className="hover:text-white transition-colors flex items-center justify-between group">
+                    <span>Website Development Services</span>
+                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-blue-400" />
+                  </Link>
+                </li>
+                <li>
                   <Link href="/services/custom-software" className="hover:text-white transition-colors flex items-center justify-between group">
                     <span>Custom Software &amp; ERP Development</span>
                     <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-blue-400" />
@@ -155,28 +161,31 @@ export default function Footer() {
               </h4>
               <div className="space-y-3 text-sm text-slate-300">
                 <div>
-                  <strong className="text-white block font-semibold">Corporate Headquarters:</strong>
-                  <span className="text-slate-300 text-xs sm:text-sm">Jeenweb Technologists Pvt. Ltd., Vadodara, Gujarat - 390001</span>
-                </div>
-                <div>
-                  <strong className="text-white block font-semibold">Tech Center:</strong>
-                  <span className="text-slate-300 text-xs sm:text-sm">Alkapuri / Productivity Road Hub, Vadodara</span>
+                  <strong className="text-white block font-semibold text-xs tracking-wide mb-0.5">Office</strong>
+                  <span className="text-slate-300 text-xs leading-relaxed block">
+                    105, Galaxy Complex, near Ganesh Hall, Darbar Chokdi, Jay Vaikunth Dham Society, Manjalpur, Vadodara, Gujarat 390011
+                  </span>
                 </div>
                 <div className="pt-3 border-t border-white/15 flex flex-col gap-2 text-white">
-                  <div className="flex items-center gap-2.5 font-medium">
-                    <Phone className="w-4 h-4 text-blue-400" />
-                    <span className="text-sm sm:text-base">+91 (0265) 234-5678</span>
-                  </div>
-                  <div className="flex items-center gap-2.5 font-medium">
-                    <Mail className="w-4 h-4 text-blue-400" />
-                    <span className="text-sm sm:text-base">info@jeenweb.com</span>
-                  </div>
+                  <a href="tel:+919824466017" className="flex items-center gap-2.5 font-medium hover:text-blue-300 transition-colors">
+                    <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span className="text-sm">+91 98244 66017</span>
+                  </a>
+                  <a href="tel:+919824061620" className="flex items-center gap-2.5 font-medium hover:text-blue-300 transition-colors">
+                    <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span className="text-sm">+91 98240 61620</span>
+                  </a>
+                  <a href="mailto:info@jeenweb.com" className="flex items-center gap-2.5 font-medium hover:text-blue-300 transition-colors">
+                    <Mail className="w-4 h-4 text-blue-400 shrink-0" />
+                    <span className="text-sm">info@jeenweb.com</span>
+                  </a>
                 </div>
+              </div>
 
-                {/* Social Media Links (Right Side Last Column) */}
-                <div className="pt-3 border-t border-white/15 flex items-center gap-3 text-white">
+              {/* Social Media Links (Right Side Last Column) */}
+              <div className="pt-3 border-t border-white/15 flex items-center gap-3 text-white">
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/Jeenweb.official"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
@@ -187,7 +196,7 @@ export default function Footer() {
                     </svg>
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/jeenweb.official/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
@@ -200,7 +209,7 @@ export default function Footer() {
                     </svg>
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/company/jeenweb/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
@@ -213,8 +222,6 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-
-          </div>
 
           {/* Bottom Legal & Copyright Bar */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-xs sm:text-sm font-mono">

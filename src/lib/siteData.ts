@@ -164,7 +164,7 @@ export const CORE_METRICS: MetricItem[] = [
     highlight: "Across 12 Countries"
   },
   {
-    value: "200+",
+    value: "300+",
     label: "Active Enterprise Clients",
     description: "Businesses across industries trust us to handle the IT and digital marketing infrastructure they can't afford to get wrong.",
     highlight: "Manufacturing & B2B"
@@ -209,18 +209,18 @@ export const CORE_SERVICES_PART1: ServiceItem[] = [
     ]
   },
   {
-    id: "web-dev",
-    title: "Web Development",
-    shortDesc: "Websites coded clean from scratch, responsive, mobile-first, and engineered for high business conversion.",
-    fullDesc: "We build websites that actually do something for your business. Every site we deliver is coded clean, mobile-friendly, and secure — no stolen themes, no sketchy plugins. Just a properly built web presence that works the way it should and holds up over time.",
+    id: "website-development",
+    title: "Website Development",
+    shortDesc: "High-performance websites coded clean from scratch, mobile-first, and engineered for brand authority and lead conversion.",
+    fullDesc: "We design and develop custom websites that actively drive business growth. Every site we deliver is coded clean, mobile-first, ultra-fast, and secure — no pirated themes, no bloated plugins. From custom corporate portals and headless web apps to eCommerce stores, we build digital presences that look exceptional and deliver measurable results.",
     iconName: "Layout",
-    href: "/services/custom-software",
-    tags: ["Clean Code", "Next.js/React", "Mobile First", "Zero Bloat"],
+    href: "/services/website-development",
+    tags: ["Next.js / React", "WordPress / WooCommerce", "Mobile First", "Core Web Vitals"],
     features: [
-      "100% licensed code with zero pirated templates",
-      "Ultra-fast Core Web Vitals optimization",
-      "Dynamic responsive layouts across all screen sizes",
-      "Custom CMS and headless architecture options"
+      "100% licensed clean code with zero bloated templates",
+      "Sub-second load times & 90+ Google Core Web Vitals",
+      "Pixel-perfect responsive UX across all screen sizes",
+      "Custom CMS and headless eCommerce architecture options"
     ]
   },
   {
@@ -240,7 +240,7 @@ export const CORE_SERVICES_PART1: ServiceItem[] = [
   },
   {
     id: "seo",
-    title: "SEO",
+    title: "SEO - Search Engine Optimization",
     shortDesc: "Dominate Google, Google AI Overviews, ChatGPT, Gemini, and Claude with 4-pillar modern search optimization.",
     fullDesc: "We help your business show up where your customers are searching—on Google, on AI platforms like Gemini and ChatGPT, and anywhere else people go to find answers. We handle the technical side, the content structure, and the long-term strategy to keep your rankings moving in the right direction.",
     iconName: "Search",
@@ -288,14 +288,6 @@ export const EMAIL_SOLUTIONS_PART2: EmailSolutionItem[] = [
     icon: "ShieldCheck"
   },
   {
-    id: "zoho",
-    title: "Zoho Workplace Mail",
-    badge: "Connected Workplace",
-    desc: "Secure, ad-free corporate business email with native Zoho CRM sync, encrypted inboxes, multi-device access, and centralized admin panel.",
-    features: ["Ad-Free Privacy Guarantee", "Zoho Suite Deep Integration", "Email Retention & eDiscovery", "Dedicated Control Panel"],
-    icon: "Layers"
-  },
-  {
     id: "rediff",
     title: "Rediff Business Mail",
     badge: "Cost-Effective B2B",
@@ -303,6 +295,15 @@ export const EMAIL_SOLUTIONS_PART2: EmailSolutionItem[] = [
     features: ["Reliable Webmail & POP/IMAP", "Indian Server Data Residency", "Spam & Virus Filters", "Simple Corporate Management"],
     icon: "Send"
   },
+  {
+    id: "zoho",
+    title: "Zoho Workplace Mail",
+    badge: "Connected Workplace",
+    desc: "Secure, ad-free corporate business email with native Zoho CRM sync, encrypted inboxes, multi-device access, and centralized admin panel.",
+    features: ["Ad-Free Privacy Guarantee", "Zoho Suite Deep Integration", "Email Retention & eDiscovery", "Dedicated Control Panel"],
+    icon: "Layers"
+  },
+
   {
     id: "titan",
     title: "Titan Business Email",
@@ -413,7 +414,7 @@ export const FAQS: FaqItem[] = [
 export const LEADERSHIP_TEAM: LeadershipMember[] = [
   {
     name: "Utpal Shah",
-    role: "Managing Director and Founder",
+    role: "Founder Director",
     experience: "26+ Years Industry Experience",
     bio: "Utpal Shah started this company in 2000 at a time when most businesses in Vadodara were not online at all. Utpal could see that was going to change—and he wanted to be the person helping local businesses make that shift properly. Over 26 years, Utpal has guided Jeenweb through every major technological transformation—from simple shared hosting to custom enterprise software, cloud systems, and AI-driven marketing with an uncompromising commitment to integrity.",
     highlights: [
@@ -436,22 +437,9 @@ export const LEADERSHIP_TEAM: LeadershipMember[] = [
       "Direct technical oversight on software engineering, ERP, and WordPress builds"
     ],
     specialties: ["Custom Software Architecture", "Cloud Infrastructure", "JITO IT Advisory", "Quality Assurance"],
-    imagePlaceholderText: "Tatvam Shah - Managing Director"
+    imagePlaceholderText: "Tatvam Shah - Director"
   },
-  {
-    name: "Exita Shah",
-    role: "Co-Founder and Head of Digital Marketing & SEO",
-    experience: "Engineering-Backed Digital Strategy",
-    bio: "Exita Shah leads search visibility, content strategy, and digital campaigns with an engineering foundation from Parul University. She treats SEO not as a superficial content exercise, but as a systems problem needing technical precision. Her work spans traditional Technical SEO, Answer Engine Optimization (AEO) for Google AI Overviews, and Generative Engine Optimization (GEO) for ChatGPT and Gemini.",
-    highlights: [
-      "Engineering-backed approach to technical SEO, AEO, GEO, and AIO",
-      "Co-Founder with direct leadership over all client digital marketing operations",
-      "Laser-focused on tangible business outcomes: qualified B2B leads & conversions",
-      "Deep technical mastery of schema graphs, Core Web Vitals, and AI answer engines"
-    ],
-    specialties: ["Technical SEO", "AEO & GEO Optimization", "Schema Architecture", "Performance Media"],
-    imagePlaceholderText: "Exita Shah - Head of Marketing"
-  }
+
 ];
 
 export const TIMELINE_MILESTONES: TimelineMilestone[] = [
@@ -531,41 +519,75 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
 
 export const TESTIMONIALS = [
   {
-    id: "review-2",
-    quote: "Moving our 150+ user mailboxes to Google Workspace and Microsoft 365 with Jeenweb was the smoothest IT transition we've ever experienced. Their DNS and deliverability setup is top tier.",
-    author: "Commercial Logistics Director",
-    location: "Ahmedabad, Gujarat",
-    industry: "Supply Chain & Logistics",
+    id: "review-1",
+    quote:
+      "Working with Jeenweb Technologists has been an absolute pleasure. Their team has provided us with top-notch web development services, ensuring our digital presence is strong and reliable.",
+    author: "Ankur Tailor",
+    location: "Gujarat",
+    industry: "Zydux Industries Pvt Ltd",
     rating: 5,
-    avatar: "/images/testimonials/client-avatar-1.jpg"
+    avatar: "/images/testimonials/client-avatar-1.jpg",
+  },
+  {
+    id: "review-2",
+    quote:
+      "Jeenweb Technologists has played a crucial role in transforming our online presence. Their team was responsive, knowledgeable, and highly skilled.",
+    author: "Yagnesh Goradiya",
+    location: "Gujarat",
+    industry: "Gromax Agri Equipment Ltd",
+    rating: 5,
+    avatar: "/images/testimonials/client-avatar-3.jpg",
   },
   {
     id: "review-3",
-    quote: "Exita and the SEO team transformed our search presence. We are now cited directly in Google AI Overviews and ChatGPT queries for our B2B products. Highly recommended!",
-    author: "B2B Export Enterprise",
-    location: "Surat, Gujarat",
-    industry: "Global Exports",
-    rating: 4,
-    avatar: "/images/testimonials/client-avatar-2.jpg"
+    quote:
+      "We are very pleased with the services provided by Jeenweb Technologists. Their custom software development was tailored perfectly to our needs.",
+    author: "Dhankesh Patel",
+    location: "Gujarat",
+    industry: "Elcen Machine Pvt Ltd",
+    rating: 5,
+    avatar: "/images/testimonials/client-avatar-3.jpg",
+  },
+  {
+    id: "review-4",
+    quote:
+      "Jeenweb Technologists is a name we trust for innovative and reliable web solutions. Their team went above and beyond to meet our expectations.",
+    author: "Kirit Patel",
+    location: "Gujarat",
+    industry: "Epoxy Group of Companies",
+    rating: 5,
+    avatar: "/images/testimonials/client-avatar-4.jpg",
   },
   {
     id: "review-5",
-    quote: "Jeenweb built a secure visitor management and appointment booking platform tailored specifically to our multi-campus workflow. Clean licensed code and zero ongoing per-user license taxes.",
-    author: "Healthcare Network Administrator",
-    location: "Vadodara, Gujarat",
-    industry: "Healthcare & Clinics",
+    quote:
+      "The team has been an incredible asset to our company. Their web development skills and understanding of our business goals helped create the right solution.",
+    author: "Jayanti Vachhani",
+    location: "Gujarat",
+    industry: "Adi Artech Pvt Ltd",
     rating: 5,
-    avatar: "/images/testimonials/client-avatar-3.jpg"
+    avatar: "/images/testimonials/client-avatar-2.jpg",
   },
   {
     id: "review-6",
-    quote: "From domain renewals to private email servers, having one accountable team right here in Vadodara has simplified our technical operations for over a decade. Reliable and genuine.",
-    author: "Higher Education Director",
-    location: "Gujarat, India",
-    industry: "Education & Academics",
-    rating: 4,
-    avatar: "/images/testimonials/client-avatar-4.jpg"
-  }
+    quote:
+      "They helped create an online booking system that is user-friendly and efficient. The website is visually appealing and easy to navigate.",
+    author: "Kinal Pandya",
+    location: "Gujarat",
+    industry: "Orsang Group of Resorts",
+    rating: 5,
+    avatar: "/images/testimonials/client-avatar-1.jpg",
+  },
+  {
+    id: "review-7",
+    quote:
+      "Jeenweb Technologists delivered outstanding results. They understood our requirements and provided a tailored solution that enhanced our online presence.",
+    author: "Tejas Gajjar",
+    location: "Gujarat",
+    industry: "Star Plastic Pvt Ltd",
+    rating: 5,
+    avatar: "/images/testimonials/client-avatar-3.jpg",
+  },
 ];
 
 export const BLOG_POSTS = [
@@ -612,7 +634,7 @@ export const PARTNERSHIPS = [
     description: "Official technology advisory partner guiding Gujarat trade bodies, industrial enterprises, and business leadership."
   },
   {
-    name: "Parul University Wall of Fame Partner",
+    name: "Parul University Wall",
     type: "Academic & Tech Innovation",
     description: "Recognized engineering partner for technological excellence and enterprise software innovation in Gujarat."
   }
@@ -626,4 +648,10 @@ export const CLIENT_SECTORS = [
   { name: "Export & International Trade", count: "50+ Clients" },
   { name: "Retail & Consumer Services", count: "60+ Clients" }
 ];
+
+export const SOCIAL_LINKS = {
+  linkedin: "https://www.linkedin.com/company/jeenweb/",
+  facebook: "https://www.facebook.com/Jeenweb.official",
+  instagram: "https://www.instagram.com/jeenweb.official/"
+};
 

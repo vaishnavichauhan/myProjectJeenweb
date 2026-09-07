@@ -8,6 +8,7 @@ import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
 import DomainSearchBar from "@/components/common/DomainSearchBar";
 import CommonCta from "@/components/common/CommonCta";
+import TrustedPartnershipsMarquee from "@/components/common/TrustedPartnershipsMarquee";
 import {
   Globe,
   ShieldCheck,
@@ -22,21 +23,11 @@ import {
 
 export default function DomainServicePage() {
   const domainPartnerLogosRow1 = [
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Enterprise Hospital Domain & Portal DNS" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "High-Volume Portal Subdomain Routing" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Secure MX & SPF/DKIM Authentication" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Multi-Domain Career Network" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "WHOIS Privacy & Identity Protection" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "24/7 Anycast DNS Failover Resolution" }
+{ logo: "/images/clientsLogo/Domain/1.png" },
   ];
 
   const domainPartnerLogosRow2 = [
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Enterprise Domain Portfolio Security" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Zero-Downtime DNS Migration & SSL" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Fast DNS Propagation Across India" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Corporate Email & DMARC Enforcement" },
-    { name: "JITO JOBS", logo: "/images/partners/jito-jobs.svg", tag: "Automated Renewal & Anti-Hijacking" },
-    { name: "CARE Hospitals", logo: "/images/partners/care-hospitals.svg", tag: "Critical Healthcare Web Identity" }
+   { logo: "/images/clientsLogo/Domain/1.png" },
   ];
 
   const domainFaqs = [
@@ -76,34 +67,31 @@ export default function DomainServicePage() {
       </div>
 
       {/* Hero Banner: Domain Registration & Management with Full-Bleed 3D TLD Background */}
-      <section className="bg-gradient-to-b from-[#06152B] via-[#0B1E38] to-[#0F294D] text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-700/60 flex items-center min-h-[560px] lg:min-h-[620px]">
+      <section className="bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-700/60 flex items-center min-h-[560px] lg:min-h-[620px]">
         
-        {/* Right-Side Hero Background Image with Seamless Left Fade */}
-        <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[58%] z-0 pointer-events-none overflow-hidden">
-          <div className="relative w-full h-full">
+
+        {/* Ambient Glows & Cyber Grid Accent matching Home Page */}
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/15 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[450px] h-[400px] bg-[#2563EB]/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#E11D48]/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
+
+        {/* Right-Side 3D Domain Extension Blocks (Transparent cutout, no half-half background) */}
+        <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[48%] xl:w-[50%] pointer-events-none z-0 hidden lg:flex items-center justify-end p-4 lg:p-8 xl:p-12 overflow-hidden">
+          <div className="relative w-full h-full max-h-[540px] flex items-center justify-end">
             <Image
-              src="/images/domain-hero-bg.jpg"
+              src="/images/domain-tiles-only-transparent.png"
               alt="Domain Extension Boxes: .com, .in, .net, .org, .info"
               fill
               priority
-              className="object-cover object-center lg:object-right opacity-90 lg:opacity-100"
-              sizes="(max-width: 1024px) 100vw, 60vw"
+              className="object-contain object-right drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            {/* Smooth Left Fade Gradient to preserve high contrast and readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#06152B] via-[#06152B]/85 via-35% to-transparent hidden lg:block" />
-            {/* Mobile Gradient Overlay for text contrast */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#06152B] via-[#06152B]/80 to-[#06152B]/40 lg:hidden" />
-            {/* Top & Bottom Vignette Blend */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#06152B]/50 via-transparent to-[#0F294D]/70" />
           </div>
         </div>
 
-        {/* Ambient Glows & Cyber Grid Accent */}
-        <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
-
         <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
+          <div className="max-w-2xl lg:max-w-2xl xl:max-w-3xl space-y-6">
             
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.16]">
               Secure Your Digital Address with Enterprise Domain Registration &amp; DNS
@@ -120,6 +108,20 @@ export default function DomainServicePage() {
             {/* Live Search Tool */}
             <div className="pt-2">
               <DomainSearchBar onOpenModal={() => window.location.href = '/contact#get-in-touch'} />
+            </div>
+
+            {/* Mobile / Tablet View: Inline 3D domain blocks below search tool */}
+            <div className="pt-6 lg:hidden flex justify-center items-center">
+              <div className="relative w-full max-w-[420px] aspect-[1200/896]">
+                <Image
+                  src="/images/domain-tiles-only-transparent.png"
+                  alt="Domain Extension Boxes: .com, .in, .net, .org, .info"
+                  fill
+                  priority
+                  className="object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.4)]"
+                  sizes="100vw"
+                />
+              </div>
             </div>
 
           </div>
@@ -552,92 +554,20 @@ export default function DomainServicePage() {
         </div>
       </section>
 
-      {/* Section 5: Client Logo Auto-Marquee Section (Matching Social Media UI) */}
-      <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden border-t border-slate-200/80" id="domain-partners">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
-          <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-3">
-            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
-              Trusted Partnerships
-            </span>
-          </div>
-
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight text-slate-900 leading-tight">
+      {/* Section 5: Client Logo Auto-Marquee Section */}
+      <TrustedPartnershipsMarquee
+        id="domain-partners"
+        badgeText="Trusted Partnerships"
+        title={
+          <>
             Trusted Domain Partner <br className="hidden sm:inline" />
             <span className="text-[#1A3B71]">for Brands Across World</span>
-          </h2>
-
-          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans leading-relaxed">
-            From healthcare institutions and regional recruitment giants to international export corporations, see the brands that rely on our secure DNS infrastructure.
-          </p>
-        </div>
-
-        {/* 2-Line Infinite Auto-Marquee Track */}
-        <div className="w-full relative overflow-hidden py-2 space-y-4 sm:space-y-6">
-          
-          {/* Gradient edge masks for smooth seamless fade */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-44 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent z-10" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-44 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent z-10" />
-
-          {/* Line 1: Infinite Marquee (Left Scroll) */}
-          <div className="flex animate-marquee items-center gap-5 sm:gap-6">
-            {[...domainPartnerLogosRow1, ...domainPartnerLogosRow1].map((partner, idx) => (
-              <div
-                key={`row1-${idx}`}
-                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#1A3B71]/40 hover:shadow-md transition-all duration-300 group cursor-default"
-              >
-                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
-                  <Image
-                    src={partner.logo}
-                    alt={`${partner.name} Logo`}
-                    width={150}
-                    height={45}
-                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
-                <div className="hidden sm:block text-left">
-                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#1A3B71] transition-colors whitespace-nowrap">
-                    {partner.name}
-                  </div>
-                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
-                    {partner.tag}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Line 2: Infinite Marquee Reverse (Right Scroll) */}
-          <div className="flex animate-marquee-reverse items-center gap-5 sm:gap-6">
-            {[...domainPartnerLogosRow2, ...domainPartnerLogosRow2].map((partner, idx) => (
-              <div
-                key={`row2-${idx}`}
-                className="flex-shrink-0 flex items-center gap-4 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#C11E23]/40 hover:shadow-md transition-all duration-300 group cursor-default"
-              >
-                <div className="h-10 sm:h-11 w-32 sm:w-36 relative flex items-center justify-center">
-                  <Image
-                    src={partner.logo}
-                    alt={`${partner.name} Logo`}
-                    width={150}
-                    height={45}
-                    className="h-8 sm:h-9 w-auto max-w-[130px] object-contain transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="h-8 w-px bg-slate-200 hidden sm:block" />
-                <div className="hidden sm:block text-left">
-                  <div className="text-xs font-bold text-slate-900 group-hover:text-[#C11E23] transition-colors whitespace-nowrap">
-                    {partner.name}
-                  </div>
-                  <div className="text-[10px] font-mono font-medium text-slate-500 whitespace-nowrap">
-                    {partner.tag}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+          </>
+        }
+        description="From healthcare institutions and regional recruitment giants to international export corporations, see the brands that rely on our secure DNS infrastructure."
+        row1={domainPartnerLogosRow1}
+        row2={domainPartnerLogosRow2}
+      />
 
       {/* Section 6: Common Questions About Domain Registration and DNS */}
       <FaqSection
