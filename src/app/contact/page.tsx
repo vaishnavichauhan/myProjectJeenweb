@@ -37,6 +37,7 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Schedule a Call State
   const [callStep, setCallStep] = useState<1 | 2>(1);
@@ -89,13 +90,42 @@ export default function ContactPage() {
     "06:30 PM - 07:00 PM"
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to dispatch consultation request. Please try again.");
+      }
+
       setSubmitted(true);
-    }, 600);
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "Custom Software Development",
+        message: "",
+        acceptance: false
+      });
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      setErrorMessage(msg);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleCallSubmit = (e: React.FormEvent) => {
@@ -368,7 +398,10 @@ export default function ContactPage() {
                         </p>
                         <button
                           type="button"
-                          onClick={() => setSubmitted(false)}
+                          onClick={() => {
+                            setSubmitted(false);
+                            setErrorMessage("");
+                          }}
                           className="px-5 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-white text-xs font-bold tracking-wider uppercase transition-all"
                         >
                           Send Another Inquiry
@@ -376,6 +409,12 @@ export default function ContactPage() {
                       </div>
                     ) : (
                       <form onSubmit={handleSubmit} className="space-y-3">
+                        {errorMessage && (
+                          <div className="p-3 rounded-lg bg-red-950/60 border border-red-500/50 text-red-200 text-xs flex items-center gap-2 animate-in fade-in duration-200">
+                            <span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0" />
+                            <span>{errorMessage}</span>
+                          </div>
+                        )}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           <div>
                             <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 mb-1">

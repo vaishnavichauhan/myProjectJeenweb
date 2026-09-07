@@ -29,7 +29,7 @@ export default function EngineeringTeamGrid() {
       role: "Full Stack Developer",
       department: "software",
       experience: "Full Stack Specialist",
-      image: "/images/team/team-VaishnaviChauhan.jpeg",
+      image: "/images/team/team-vaishnaviChauhan.jpeg",
       bio: "Engineers end-to-end full stack web platforms and cross-platform mobile apps with modern React, Next.js, and Node architectures.",
       technology: [
         "React JS",
@@ -83,7 +83,7 @@ export default function EngineeringTeamGrid() {
       role: "SEO Executive",
       department: "marketing",
       experience: "Search & AI Specialist",
-      image: "/images/team/team-Tejasvini kokre.jpeg",
+      image: "/images/team/team-TejasviniKokre.jpeg",
       bio: "Specializes in modern Answer Engine Optimization (AEO), Generative Engine (GEO) citation modeling, and comprehensive technical SEO indexation.",
       technology: [
         "AEO",
@@ -138,7 +138,7 @@ export default function EngineeringTeamGrid() {
       role: "Software Development Engineer 1",
       department: "software",
       experience: "Systems Engineer",
-      image: "/images/team/team-NakulPanchal.jpeg",
+      image: "/images/team/team-nakulPanchal.jpeg",
       bio: "Architects resilient full-stack systems, Express/Node backend microservices, and high-concurrency database queries.",
       technology: [
         "Java",
@@ -169,7 +169,7 @@ export default function EngineeringTeamGrid() {
       role: "Full Stack Developer",
       department: "software",
       experience: "Full Stack Engineer",
-      image: "/images/team/team-rajPatel.png",
+      image: "/images/team/team-RajPatel.png",
       bio: "Delivers robust Next.js and Node.js web applications backed by optimized SQL and MongoDB database architectures.",
       technology: [
         "Next.js",
