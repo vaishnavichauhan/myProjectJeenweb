@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SEO, GEO & AI Search Optimization Company | Jeenweb",
+  title: "SEO, GEO & AI Search Optimization Company Vadodara | Jeenweb",
   description:
     "Dominate Google, ChatGPT, and Gemini search results with Jeenweb in Vadodara. Enterprise SEO, GEO, AEO, and AIO services built for brands in Gujarat.",
   keywords: [
@@ -11,13 +11,32 @@ export const metadata: Metadata = {
     "AI search optimization Gujarat",
     "technical SEO company"
   ],
+  alternates: {
+    canonical: "/services/seo"
+  },
   openGraph: {
-    title: "SEO, GEO & AI Search Optimization Company | Jeenweb",
+    title: "SEO, GEO & AI Search Optimization Company Vadodara | Jeenweb",
     description:
       "Dominate Google, ChatGPT, and Gemini search results with Jeenweb in Vadodara. Enterprise SEO, GEO, AEO, and AIO services built for brands in Gujarat.",
-    type: "website",
+    url: "https://jeenweb.com/services/seo",
+    siteName: "Jeenweb Technologists",
+    images: [
+      {
+        url: "/images/seo-hero-illustration.png",
+        width: 1024,
+        height: 682,
+        alt: "SEO and AI Search Optimization"
+      }
+    ],
     locale: "en_IN",
-    siteName: "Jeenweb Technologists"
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SEO, GEO & AI Search Optimization Company Vadodara | Jeenweb",
+    description:
+      "Dominate Google, ChatGPT, and Gemini search results with Jeenweb in Vadodara.",
+    images: ["/images/seo-hero-illustration.png"]
   }
 };
 
@@ -72,6 +91,31 @@ export default function SeoLayout({
       "Dominate Google, ChatGPT, and Gemini search results with Jeenweb in Vadodara. Enterprise SEO, GEO, AEO, and AIO services built for brands in Gujarat."
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://jeenweb.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://jeenweb.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "SEO & AI Search",
+        "item": "https://jeenweb.com/services/seo"
+      }
+    ]
+  };
+
   return (
     <>
       <script
@@ -81,6 +125,10 @@ export default function SeoLayout({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {children}
     </>

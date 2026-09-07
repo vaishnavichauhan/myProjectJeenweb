@@ -1,24 +1,42 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Social Media & Performance Marketing | Jeenweb Vadodara",
+  title: "Social Media & Performance Marketing Agency Vadodara | Jeenweb",
   description:
     "Drive real brand growth and sales with Jeenweb in Vadodara. We deliver social media management, content creation, paid ads, and influencer campaigns in Gujarat.",
   keywords: [
     "social media marketing company Vadodara",
     "performance marketing agency Gujarat",
     "SMM services Vadodara",
-    "influencer marketing",
-    "Gujarat",
+    "influencer marketing Gujarat",
     "social media content creation"
   ],
+  alternates: {
+    canonical: "/services/social-media"
+  },
   openGraph: {
-    title: "Social Media & Performance Marketing | Jeenweb Vadodara",
+    title: "Social Media & Performance Marketing Agency Vadodara | Jeenweb",
     description:
-      "Drive real brand growth and sales with Jeenweb in Vadodara. We deliver social media management, content creation, paid ads, and influencer campaigns in Gujarat.",
-    type: "website",
+      "Drive real brand growth and sales with Jeenweb in Vadodara. Full-funnel social media management, content creation, and paid performance campaigns.",
+    url: "https://jeenweb.com/services/social-media",
+    siteName: "Jeenweb Technologists",
+    images: [
+      {
+        url: "/images/socialHero.png",
+        width: 1000,
+        height: 616,
+        alt: "Social Media Marketing"
+      }
+    ],
     locale: "en_IN",
-    siteName: "Jeenweb Technologists"
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Social Media & Performance Marketing Agency Vadodara | Jeenweb",
+    description:
+      "Drive real brand growth and sales with Jeenweb in Vadodara. Full-funnel social media management and paid campaigns.",
+    images: ["/images/socialHero.png"]
   }
 };
 
@@ -73,6 +91,31 @@ export default function SocialMediaLayout({
       "Drive real brand growth and sales with Jeenweb in Vadodara. We deliver social media management, content creation, paid ads, and influencer campaigns in Gujarat."
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://jeenweb.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://jeenweb.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Social Media Marketing",
+        "item": "https://jeenweb.com/services/social-media"
+      }
+    ]
+  };
+
   return (
     <>
       <script
@@ -82,6 +125,10 @@ export default function SocialMediaLayout({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {children}
     </>

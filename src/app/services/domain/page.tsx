@@ -66,14 +66,13 @@ export default function DomainServicePage() {
         </div>
       </div>
 
-      {/* Hero Banner: Domain Registration & Management with Full-Bleed 3D TLD Background */}
-      <section className="bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-700/60 flex items-center min-h-[560px] lg:min-h-[620px]">
+      {/* Hero Header Banner with Standardized Service Hero UI */}
+      <section className="relative min-h-[480px] sm:min-h-[500px] lg:min-h-[560px] bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white flex items-center py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-700/60">
         
-
-        {/* Ambient Glows & Cyber Grid Accent matching Home Page */}
+        {/* Ambient Glows & Cyber Grid Accent */}
         <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/15 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-[450px] h-[400px] bg-[#2563EB]/20 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#E11D48]/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#C11E23]/15 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
 
         {/* Right-Side 3D Domain Extension Blocks (Transparent cutout, no half-half background) */}
@@ -91,17 +90,17 @@ export default function DomainServicePage() {
         </div>
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="max-w-2xl lg:max-w-2xl xl:max-w-3xl space-y-6">
+          <div className="max-w-2xl lg:max-w-2xl xl:max-w-3xl space-y-5 text-left">
             
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.16]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.18] font-sans">
               Secure Your Digital Address with Enterprise Domain Registration &amp; DNS
             </h1>
 
-            <p className="text-base sm:text-lg text-sky-200 font-semibold leading-snug">
+            <p className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug">
               Search, register, and protect your brand identity with lightning-fast DNS routing and complete control — all managed locally in Vadodara.
             </p>
 
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
               Your domain is the foundation of your digital authority. We provide instant domain registration, enterprise Anycast DNS, WHOIS privacy protection, and automated renewal monitoring so your brand is always secured.
             </p>
 

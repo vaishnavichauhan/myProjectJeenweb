@@ -2,8 +2,24 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { FAQS, FaqItem } from "@/lib/siteData";
-import { Plus, Minus, Search, MessageSquare, ArrowRight, ShieldQuestion } from "lucide-react";
+import { FaqItem } from "@/lib/siteData";
+import { ALL_HOME_FAQ_SECTIONS, FaqCategorySection } from "@/lib/faqData";
+import {
+  Plus,
+  Minus,
+  ArrowRight,
+  ShieldCheck,
+  Layout,
+  Cpu,
+  Server,
+  Globe,
+  Search,
+  Share2,
+  Building2,
+  HelpCircle
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FadeIn } from "@/components/animations/MotionPrimitives";
 
 interface FaqSectionProps {
   customFaqs?: FaqItem[];
@@ -18,36 +34,53 @@ export default function FaqSection({
   title = "Clear Answers to Core Inquiries",
   subtitle = "Direct, transparent answers regarding IT migrations, genuine licensed software, AI search ranking, and our Vadodara engineering processes."
 }: FaqSectionProps) {
-  const faqsToDisplay = customFaqs || FAQS;
+  // If customFaqs is provided (e.g. from individual service and about pages), render single-column accordion without filters.
+  // Otherwise, render full two-column layout with all website FAQ sections on the left and dynamic content on the right.
+  const isCategorizedMode = !customFaqs;
+
+  const [activeSectionId, setActiveSectionId] = useState<string>("general");
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState<string>("all");
 
-  const categories = [
-    { id: "all", label: "All Questions" },
-    { id: "general", label: "General & IT Migration" },
-    { id: "software", label: "Custom Software & ERP" },
-    { id: "seo", label: "AI SEO & GEO" }
-  ];
+  const activeSection =
+    ALL_HOME_FAQ_SECTIONS.find((sec) => sec.id === activeSectionId) ||
+    ALL_HOME_FAQ_SECTIONS[0];
 
-  const filteredFaqs = faqsToDisplay.filter((faq) => {
-    const qText = faq.question || faq.q || "";
-    const aText = faq.answer || faq.a || "";
-    const matchesSearch =
-      qText.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      aText.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory =
-      activeCategory === "all" || faq.category === activeCategory;
+  const currentFaqs = isCategorizedMode
+    ? activeSection.faqs
+    : customFaqs || [];
 
-    return matchesSearch && matchesCategory;
-  });
+  const getCategoryIcon = (iconName: string) => {
+    switch (iconName) {
+      case "ShieldCheck":
+        return ShieldCheck;
+      case "Layout":
+        return Layout;
+      case "Cpu":
+        return Cpu;
+      case "Server":
+        return Server;
+      case "Globe":
+        return Globe;
+      case "Search":
+        return Search;
+      case "Share2":
+        return Share2;
+      case "Building2":
+        return Building2;
+      default:
+        return HelpCircle;
+    }
+  };
 
   return (
-    <section className="pt-12 pb-16 lg:pt-16 lg:pb-24 bg-white relative overflow-hidden border-b border-slate-200/80" id="faqs">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      className="pt-12 pb-16 lg:pt-16 lg:pb-24 bg-white relative overflow-hidden border-b border-slate-200/80"
+      id="faqs"
+    >
+      <div className={`mx-auto px-4 sm:px-6 lg:px-8 ${isCategorizedMode ? "max-w-7xl" : "max-w-4xl"}`}>
         
         {/* Section Header with Red Bottom Border Tag */}
-        <div className="max-w-3xl mx-auto text-center mb-10 space-y-3">
+        <FadeIn direction="up" distance={20} className="max-w-3xl mx-auto text-center mb-12 space-y-3">
           <div>
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
@@ -63,138 +96,254 @@ export default function FaqSection({
               {subtitle}
             </p>
           )}
-        </div>
+        </FadeIn>
 
-        {/* Search Bar & Category Filter Controls */}
-        <div className="mb-10 space-y-4 max-w-2xl mx-auto">
-          {/* Search Input */}
-          <div className="relative">
-            <Search className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
-            <input
-              type="text"
-              placeholder="Search questions (e.g. ERP, Migration, Hosting, SEO)..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-[#FAF8F5] border border-slate-200/90 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1A3B71] focus:bg-white focus:ring-2 focus:ring-[#1A3B71]/10 transition-all shadow-xs"
-            />
+        {isCategorizedMode ? (
+          /* ==========================================================
+             Home Page & Hub Mode: Left Side Sections + Right Side FAQs
+             ========================================================== */
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            
+            {/* Mobile / Tablet Horizontal Category Scroll (Hidden on lg screens) */}
+            <div className="lg:hidden col-span-1 overflow-x-auto no-scrollbar -mx-4 px-4 pb-2">
+              <div className="flex items-center gap-2.5 min-w-max">
+                {ALL_HOME_FAQ_SECTIONS.map((section) => {
+                  const isSelected = activeSection.id === section.id;
+                  const Icon = getCategoryIcon(section.iconName);
+
+                  return (
+                    <button
+                      key={section.id}
+                      onClick={() => {
+                        setActiveSectionId(section.id);
+                        setOpenIndex(0);
+                      }}
+                      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+                        isSelected
+                          ? "bg-[#1A3B71] text-white shadow-md shadow-[#1A3B71]/20"
+                          : "bg-[#FAF8F5] text-slate-700 hover:bg-slate-100 border border-slate-200/80"
+                      }`}
+                    >
+                      <Icon className="w-3.5 h-3.5" />
+                      <span>{section.title}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Desktop Left-Side Vertical Sections List (4 columns) */}
+            <div className="hidden lg:block lg:col-span-4 xl:col-span-4 space-y-2.5 sticky top-24">
+              {ALL_HOME_FAQ_SECTIONS.map((section) => {
+                const isSelected = activeSection.id === section.id;
+                const Icon = getCategoryIcon(section.iconName);
+
+                return (
+                  <button
+                    key={section.id}
+                    onClick={() => {
+                      setActiveSectionId(section.id);
+                      setOpenIndex(0);
+                    }}
+                    className={`w-full text-left p-3.5 sm:p-4 rounded-2xl transition-all duration-300 flex items-center justify-between gap-3 group cursor-pointer ${
+                      isSelected
+                        ? "bg-[#1A3B71] text-white shadow-lg shadow-[#1A3B71]/20 -translate-y-0.5"
+                        : "bg-[#FAF8F5] text-slate-800 hover:bg-slate-100/90 border border-slate-200/70"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3.5 min-w-0">
+                      <div
+                        className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${
+                          isSelected
+                            ? "bg-white/15 text-white"
+                            : "bg-white text-[#1A3B71] border border-slate-200/80 group-hover:bg-[#1A3B71] group-hover:text-white"
+                        }`}
+                      >
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div className="min-w-0">
+                        <div
+                          className={`text-xs sm:text-sm font-bold truncate ${
+                            isSelected ? "text-white" : "text-slate-900 group-hover:text-[#1A3B71]"
+                          }`}
+                        >
+                          {section.title}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      className={`w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform ${
+                        isSelected ? "text-white translate-x-0.5" : "text-slate-400 group-hover:text-slate-700"
+                      }`}
+                    >
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Right-Side FAQ Accordion Display (8 columns) */}
+            <div className="lg:col-span-8 xl:col-span-8">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeSection.id}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  className="space-y-4"
+                >
+                  {/* Accordion FAQ Cards List */}
+                  {currentFaqs.map((faq, index) => {
+                    const isOpen = openIndex === index;
+                    const q = faq.question || faq.q;
+                    const a = faq.answer || faq.a;
+
+                    return (
+                      <div
+                        key={index}
+                        className={`rounded-2xl transition-all duration-300 overflow-hidden ${
+                          isOpen
+                            ? "bg-[#FAF8F5] border-l-4 border-l-[#C11E23] shadow-md ring-1 ring-slate-200/90"
+                            : "bg-[#FAF8F5]/80 hover:bg-[#FAF8F5] border border-transparent hover:border-slate-200/80"
+                        }`}
+                      >
+                        <button
+                          onClick={() => setOpenIndex(isOpen ? null : index)}
+                          className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer group"
+                        >
+                          <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
+                            <span
+                              className={`text-xs sm:text-sm font-mono font-bold flex-shrink-0 transition-colors ${
+                                isOpen ? "text-[#C11E23]" : "text-slate-400 group-hover:text-slate-600"
+                              }`}
+                            >
+                              0{index + 1}
+                            </span>
+                            <span
+                              className={`text-sm sm:text-base font-bold transition-colors leading-snug ${
+                                isOpen ? "text-[#1A3B71]" : "text-slate-900 group-hover:text-[#1A3B71]"
+                              }`}
+                            >
+                              {q}
+                            </span>
+                          </div>
+
+                          {/* Toggle Button Badge */}
+                          <motion.div
+                            animate={{ rotate: isOpen ? 180 : 0 }}
+                            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                            className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${
+                              isOpen
+                                ? "bg-[#C11E23] text-white shadow-2xs"
+                                : "bg-white text-slate-600 group-hover:bg-slate-200 border border-slate-200/80"
+                            }`}
+                          >
+                            {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                          </motion.div>
+                        </button>
+
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              key="faq-content"
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                              className="overflow-hidden"
+                            >
+                              <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-700 leading-relaxed font-sans border-t border-slate-200/60">
+                                <p className="pl-7 sm:pl-8">{a}</p>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  })}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
           </div>
+        ) : (
+          /* ==========================================================
+             Service / About Page Mode: Clean Direct Accordion (Filter Removed)
+             ========================================================== */
+          <div className="space-y-4">
+            {currentFaqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+              const q = faq.question || faq.q;
+              const a = faq.answer || faq.a;
 
-          {/* Category Filter Pills */}
-          <div className="flex items-center justify-center flex-wrap gap-2 pt-1">
-            {categories.map((cat) => {
-              const isActive = activeCategory === cat.id;
               return (
-                <button
-                  key={cat.id}
-                  onClick={() => setActiveCategory(cat.id)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                    isActive
-                      ? "bg-[#1A3B71] text-white shadow-xs"
-                      : "bg-[#FAF8F5] text-slate-600 hover:bg-slate-100 hover:text-slate-900 border border-slate-200/60"
+                <div
+                  key={index}
+                  className={`rounded-2xl transition-all duration-300 overflow-hidden ${
+                    isOpen
+                      ? "bg-[#FAF8F5] border-l-4 border-l-[#C11E23] shadow-md ring-1 ring-slate-200/90"
+                      : "bg-[#FAF8F5]/80 hover:bg-[#FAF8F5] border border-transparent hover:border-slate-200/80"
                   }`}
                 >
-                  {cat.label}
-                </button>
+                  <button
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer group"
+                  >
+                    <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
+                      <span
+                        className={`text-xs sm:text-sm font-mono font-bold flex-shrink-0 transition-colors ${
+                          isOpen ? "text-[#C11E23]" : "text-slate-400 group-hover:text-slate-600"
+                        }`}
+                      >
+                        0{index + 1}
+                      </span>
+                      <span
+                        className={`text-sm sm:text-base font-bold transition-colors leading-snug ${
+                          isOpen ? "text-[#1A3B71]" : "text-slate-900 group-hover:text-[#1A3B71]"
+                        }`}
+                      >
+                        {q}
+                      </span>
+                    </div>
+
+                    {/* Toggle Button Badge */}
+                    <motion.div
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                      className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${
+                        isOpen
+                          ? "bg-[#C11E23] text-white shadow-2xs"
+                          : "bg-white text-slate-600 group-hover:bg-slate-200 border border-slate-200/80"
+                      }`}
+                    >
+                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                    </motion.div>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="faq-content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-700 leading-relaxed font-sans border-t border-slate-200/60">
+                          <p className="pl-7 sm:pl-8">{a}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               );
             })}
           </div>
-        </div>
-
-        {/* Accordion FAQ Cards List */}
-        <div className="space-y-4">
-          {filteredFaqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            const q = faq.question || faq.q;
-            const a = faq.answer || faq.a;
-
-            return (
-              <div
-                key={index}
-                className={`rounded-2xl transition-all duration-300 overflow-hidden ${
-                  isOpen
-                    ? "bg-[#FAF8F5] border-l-4 border-l-[#C11E23] shadow-md ring-1 ring-slate-200/90"
-                    : "bg-[#FAF8F5]/80 hover:bg-[#FAF8F5] border border-transparent hover:border-slate-200/80"
-                }`}
-              >
-                <button
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer group"
-                >
-                  <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
-                    <span
-                      className={`text-xs sm:text-sm font-mono font-bold flex-shrink-0 transition-colors ${
-                        isOpen ? "text-[#C11E23]" : "text-slate-400 group-hover:text-slate-600"
-                      }`}
-                    >
-                      0{index + 1}
-                    </span>
-                    <span
-                      className={`text-sm sm:text-base font-bold transition-colors leading-snug ${
-                        isOpen ? "text-[#1A3B71]" : "text-slate-900 group-hover:text-[#1A3B71]"
-                      }`}
-                    >
-                      {q}
-                    </span>
-                  </div>
-
-                  {/* Toggle Button Badge */}
-                  <div
-                    className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 transition-all ${
-                      isOpen
-                        ? "bg-[#C11E23] text-white rotate-180 shadow-2xs"
-                        : "bg-white text-slate-600 group-hover:bg-slate-200 border border-slate-200/80"
-                    }`}
-                  >
-                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                  </div>
-                </button>
-
-                {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-700 leading-relaxed font-sans border-t border-slate-200/60 animate-fadeIn">
-                    <p className="pl-7 sm:pl-8">{a}</p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-
-          {filteredFaqs.length === 0 && (
-            <div className="p-10 text-center bg-[#FAF8F5] rounded-2xl border border-slate-200 text-xs sm:text-sm text-slate-600 space-y-3">
-              <ShieldQuestion className="w-8 h-8 text-slate-400 mx-auto" />
-              <p className="font-semibold">
-                No matching questions found for &ldquo;{searchQuery}&rdquo;.
-              </p>
-              <p className="text-slate-500 text-xs">
-                Need specific technical clarification? Reach out directly to our engineering desk.
-              </p>
-            </div>
-          )}
-        </div>
-
-        {/* Bottom Support Callout Strip */}
-        <div className="mt-12 p-6 sm:p-7 rounded-2xl bg-[#0F223D] text-white flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3.5 text-center sm:text-left">
-            <div className="w-10 h-10 rounded-xl bg-[#1A3B71] flex items-center justify-center flex-shrink-0 text-white shadow-2xs">
-              <MessageSquare className="w-5 h-5 text-[#00E5FF]" />
-            </div>
-            <div>
-              <div className="text-sm sm:text-base font-bold text-white">
-                Have a unique technical inquiry?
-              </div>
-              <div className="text-xs text-slate-300">
-                Speak directly with our Vadodara engineering consultants.
-              </div>
-            </div>
-          </div>
-
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white text-xs sm:text-sm font-bold transition-all shadow-xs flex-shrink-0"
-          >
-            <span>Consult Technical Team</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
+        )}
 
       </div>
     </section>

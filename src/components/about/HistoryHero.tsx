@@ -6,14 +6,14 @@ import { Sparkles, ArrowRight } from "lucide-react";
 
 export default function HistoryHero() {
   return (
-    <section className="bg-gradient-to-br from-[#073F8A] via-[#053270] to-[#042454] text-white py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-blue-900/40">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white min-h-[480px] sm:min-h-[500px] lg:min-h-[560px] flex items-center py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 border-0">
       
       {/* Background ambient lighting */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00D2FF]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-[400px] h-[400px] bg-[#E11D48]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-[400px] h-[400px] bg-[#C11E23]/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Heading & Narrative (7 cols) */}
@@ -58,7 +58,7 @@ export default function HistoryHero() {
             <div className="relative w-full max-w-[420px] aspect-square flex flex-col items-center justify-center select-none">
               
               {/* Background ambient glow behind graphic */}
-              <div className="absolute inset-4 bg-gradient-to-tr from-[#00D2FF]/20 via-[#E11D48]/20 to-[#073F8A]/40 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute inset-4 bg-gradient-to-tr from-[#00D2FF]/20 via-[#C11E23]/20 to-[#0A2647]/40 rounded-full blur-2xl pointer-events-none" />
 
               {/* Main SVG Badge with Stylized 27 */}
               <div className="relative w-full h-full flex items-center justify-center">
@@ -74,7 +74,7 @@ export default function HistoryHero() {
                       <stop offset="0%" stopColor="#00E5FF" />
                       <stop offset="30%" stopColor="#00B4D8" />
                       <stop offset="65%" stopColor="#2B79D8" />
-                      <stop offset="100%" stopColor="#073F8A" />
+                      <stop offset="100%" stopColor="#0A2647" />
                     </linearGradient>
 
                     {/* Circular Path for "CELEBRATING" arc text */}

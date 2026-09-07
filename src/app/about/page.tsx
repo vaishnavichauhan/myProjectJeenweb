@@ -9,11 +9,70 @@ import Image from "next/image";
 import CorporatePurposeSection from "@/components/about/CorporatePurposeSection";
 import AboutMetricsStrip from "@/components/about/AboutMetricsStrip";
 import HowWeThinkZigzag from "@/components/about/HowWeThinkZigzag";
+import JsonLd from "@/components/common/JsonLd";
 
 export const metadata = {
   title: "Company Overview | Jeenweb Technologists Vadodara",
   description:
-    "Empowering modern enterprises with reliable IT systems, custom software, and managed cloud infrastructure from Vadodara, Gujarat.",
+    "Empowering modern enterprises with reliable IT systems, custom software, and managed cloud infrastructure from Vadodara, Gujarat since 2000.",
+  alternates: {
+    canonical: "/about"
+  },
+  openGraph: {
+    title: "Company Overview | Jeenweb Technologists Vadodara",
+    description:
+      "Empowering modern enterprises with reliable IT systems, custom software, and managed cloud infrastructure from Vadodara, Gujarat.",
+    url: "https://jeenweb.com/about",
+    siteName: "Jeenweb Technologists",
+    images: [
+      {
+        url: "/images/company-overview-arch.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Jeenweb Company Overview"
+      }
+    ],
+    locale: "en_IN",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Company Overview | Jeenweb Technologists Vadodara",
+    description:
+      "Empowering modern enterprises with reliable IT systems, custom software, and managed cloud infrastructure from Vadodara.",
+    images: ["/images/company-overview-arch.jpg"]
+  }
+};
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://jeenweb.com/about/#webpage",
+      url: "https://jeenweb.com/about",
+      name: "About Jeenweb Technologists Pvt. Ltd.",
+      description:
+        "Overview of Jeenweb Technologists Pvt. Ltd., an enterprise IT, custom software engineering, and cloud infrastructure company in Vadodara, Gujarat."
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://jeenweb.com"
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About Us",
+          item: "https://jeenweb.com/about"
+        }
+      ]
+    }
+  ]
 };
 
 export default function CompanyOverviewPage() {
@@ -42,6 +101,7 @@ export default function CompanyOverviewPage() {
 
   return (
     <main className="min-h-screen bg-[#F8FAFC]">
+      <JsonLd data={aboutPageSchema} />
       {/* Breadcrumb Bar */}
       <div className="bg-white border-b border-slate-200 py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -49,103 +109,63 @@ export default function CompanyOverviewPage() {
         </div>
       </div>
 
-      {/* Modern Curved Arc Hero Section (Matching Reference Design - Full Height Top-Aligned) */}
-      <section className="relative bg-white text-slate-900 overflow-hidden border-b border-slate-200/80 min-h-[540px] lg:min-h-[580px] flex items-center">
+      {/* Company Overview Hero Section with Highlighted Skyscraper Architecture Background */}
+      <section className="relative bg-white text-slate-900 overflow-hidden border-b border-slate-200 min-h-[480px] sm:min-h-[500px] lg:min-h-[560px] flex items-center">
         
-        {/* Soft Ambient Background Glow */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600/[0.02] rounded-full blur-3xl pointer-events-none" />
+        {/* Full Background Image with Highlight Enhancements */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <Image
+            src="/images/company-overview-arch.jpg"
+            alt="Company Overview Corporate Skyscraper Architecture"
+            fill
+            className="object-cover object-right lg:object-center contrast-[1.08] saturate-[1.2] brightness-[1.03]"
+            priority
+          />
+          {/* Subtle Ambient Sky-Blue Highlights on Architecture */}
+          <div className="absolute top-0 right-10 w-[500px] h-[500px] bg-sky-400/25 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-full lg:w-[60%] h-full bg-gradient-to-b from-sky-300/15 via-transparent to-slate-900/10 pointer-events-none" />
 
-        {/* Right Full-Height Image with Diagonal / Half Cross Line Cut */}
-        <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[50%] xl:w-[48%] h-full hidden lg:block overflow-hidden pointer-events-none z-0">
-          
-          {/* Sweeping Blue Diagonal / Half Cross Line Border Stroke */}
-          <div className="absolute inset-0 z-20 pointer-events-none">
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full">
-              <line
-                x1="18"
-                y1="0"
-                x2="0"
-                y2="100"
-                stroke="#2B79D8"
-                strokeWidth="5"
-                vectorEffect="non-scaling-stroke"
-                className="drop-shadow-[-4px_0_12px_rgba(43,121,216,0.35)]"
-              />
-            </svg>
-          </div>
-
-          {/* Skyscraper Image with Matching Diagonal Polygon Clip */}
-          <div
-            className="relative w-full h-full overflow-hidden group pointer-events-auto"
-            style={{
-              clipPath: "polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%)"
-            }}
-          >
-            <Image
-              src="/images/company-overview-arch.jpg"
-              alt="Company Overview Corporate Skyscraper Architecture"
-              fill
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-              priority
-            />
-
-            {/* Soft Specular Light Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/15 via-transparent to-transparent pointer-events-none" />
-          </div>
+          {/* Smooth White Gradient Fade: Keeps Left Text Readable While Leaving 65%+ of Background Image Fully Highlighted & Visible */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 via-35% to-transparent" />
         </div>
 
-        {/* Left Content Container */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        {/* Content Container */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16 relative z-10 w-full">
+          <div className="max-w-2xl lg:max-w-3xl space-y-7 bg-white/75 sm:bg-transparent backdrop-blur-xs sm:backdrop-blur-none p-6 sm:p-0 rounded-2xl">
             
-            {/* Left Column: Heading, Content & CTA (6 cols on lg) */}
-            <div className="lg:col-span-6 xl:col-span-6 space-y-7 max-w-xl">
-              
-              {/* H1 Tag */}
-              <div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#073F8A] tracking-tight leading-[1.12]">
-                  Empowering Modern Enterprises with Reliable IT Systems
-                </h1>
-              </div>
-
-              {/* Subheading & Body Content */}
-              <div className="space-y-3.5 font-sans">
-                <p className="font-bold text-slate-800 text-base sm:text-lg leading-snug">
-                  Secure operations, managed databases, and strong digital marketing, all from Vadodara.
-                </p>
-                <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed">
-                  Building a strong digital foundation is not just about writing code or putting up a website. It is about understanding how your business actually runs — where things slow down, where data gets mishandled, and where your team wastes time on work that could easily be automated. We build custom software and secure IT systems for businesses that want to run smoother, protect their data, and show up properly online. If your current setup is holding your business back, we are the team that fixes that.
-                </p>
-              </div>
-
-              {/* CTA Action Buttons */}
-              <div className="pt-4 flex flex-wrap items-center gap-3.5">
-                <Link
-                  href="#purpose"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-red-950/30 hover:scale-[1.02] active:scale-95"
-                >
-                  <span>Learn More About Us</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/about/team"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs uppercase tracking-wider transition-all border border-slate-200 shadow-2xs"
-                >
-                  <span>Meet Leadership Team</span>
-                  <ArrowRight className="w-4 h-4 text-slate-400" />
-                </Link>
-              </div>
-
+            {/* H1 Tag */}
+            <div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#073F8A] tracking-tight leading-[1.12]">
+                Empowering Modern Enterprises with Reliable IT Systems
+              </h1>
             </div>
 
-            {/* Mobile-only responsive image showcase */}
-            <div className="lg:hidden relative h-[300px] sm:h-[380px] w-full rounded-2xl overflow-hidden shadow-lg border border-slate-200 mt-4">
-              <Image
-                src="/images/company-overview-arch.jpg"
-                alt="Company Overview Corporate Skyscraper Architecture"
-                fill
-                className="object-cover object-center"
-              />
+            {/* Subheading & Body Content */}
+            <div className="space-y-3.5 font-sans">
+              <p className="font-bold text-slate-800 text-base sm:text-lg leading-snug">
+                Secure operations, managed databases, and strong digital marketing, all from Vadodara.
+              </p>
+              <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed">
+                Building a strong digital foundation is not just about writing code or putting up a website. It is about understanding how your business actually runs — where things slow down, where data gets mishandled, and where your team wastes time on work that could easily be automated. We build custom software and secure IT systems for businesses that want to run smoother, protect their data, and show up properly online. If your current setup is holding your business back, we are the team that fixes that.
+              </p>
+            </div>
+
+            {/* CTA Action Buttons */}
+            <div className="pt-4 flex flex-wrap items-center gap-3.5">
+              <Link
+                href="#purpose"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-red-950/20 hover:scale-[1.02] active:scale-95"
+              >
+                <span>Learn More About Us</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/about/team"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs uppercase tracking-wider transition-all border border-slate-200 shadow-2xs active:scale-95"
+              >
+                <span>Meet Leadership Team</span>
+                <ArrowRight className="w-4 h-4 text-slate-500" />
+              </Link>
             </div>
 
           </div>

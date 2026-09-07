@@ -99,8 +99,8 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
         </div>
       </div>
 
-      {/* Hero Banner (Full-Bleed Gradient Blended Image like Reference with Vibrant Sapphire Gradient) */}
-      <section className="bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center border-b border-slate-700/60">
+      {/* Hero Header Banner with Standardized Service Hero UI */}
+      <section className="relative min-h-[480px] sm:min-h-[500px] lg:min-h-[560px] bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white flex items-center py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-700/60">
         
         {/* Right-Side Full-Bleed Background Image with Seamless Left Fade */}
         <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[62%] z-0 pointer-events-none overflow-hidden">
@@ -122,24 +122,29 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
           </div>
         </div>
 
-        {/* Subtle Cyber Grid Accent (64px by 64px) */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
+        {/* Clean Cyber Checkered Grid Overlay (64px by 64px) */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
+
+        {/* Ambient Luminous Glow Flares */}
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/15 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[450px] h-[400px] bg-[#2563EB]/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#C11E23]/15 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-5">
+          <div className="max-w-2xl lg:max-w-2xl xl:max-w-3xl space-y-5 text-left">
             
             {/* H1 Heading */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.18] font-sans">
               Engineering Tailor-Made Software Systems Designed Around Your Physical Business Workflows
             </h1>
 
             {/* Subheading */}
-            <p className="text-base sm:text-lg text-indigo-200 font-semibold leading-snug">
+            <p className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug">
               Enterprise software development, custom ERPs, and automated management portals built in Vadodara.
             </p>
 
             {/* Body Paragraph */}
-            <p className="text-slate-300 text-sm sm:text-[15px] leading-relaxed max-w-2xl">
+            <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
               Most businesses in Gujarat buy software and then spend months trying to make their team work around it. Processes get adjusted, workarounds get created, and half the features never get used. At Jeenweb Technologists, we do it the other way around. We come to your workplace, watch how your team operates, and build software that mirrors those exact physical routines.
             </p>
 
@@ -147,7 +152,7 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
                 onClick={() => window.location.href = "/contact#get-in-touch"}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl shadow-red-950/40 hover:scale-[1.02] active:scale-95 gap-2.5 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl shadow-red-950/40 hover:scale-[1.02] active:scale-95 cursor-pointer"
               >
                 <span>Consult Our Software Engineers</span>
                 <ArrowRight className="w-4 h-4" />

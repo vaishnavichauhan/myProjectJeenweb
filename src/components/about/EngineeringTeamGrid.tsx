@@ -84,7 +84,7 @@ export default function EngineeringTeamGrid() {
       department: "marketing",
       experience: "Search & AI Specialist",
       image: "/images/team/team-TejasviniKokre.jpeg",
-      bio: "Specializes in modern Answer Engine Optimization (AEO), Generative Engine (GEO) citation modeling, and comprehensive technical SEO indexation.",
+      bio: "Specializes in modern Answer Engine Optimization (AEO), Generative Engine Optimization (GEO) citation modeling, and comprehensive technical SEO indexation.",
       technology: [
         "AEO",
         "GEO",

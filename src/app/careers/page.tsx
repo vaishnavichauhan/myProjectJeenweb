@@ -14,10 +14,58 @@ import {
 import HeroDynamicBg from "@/components/home/HeroDynamicBg";
 import CultureShowcase from "@/components/careers/CultureShowcase";
 import CurrentOpenings from "@/components/careers/CurrentOpenings";
+import JsonLd from "@/components/common/JsonLd";
 
 export const metadata: Metadata = {
   title: "Careers at Jeenweb | Join Our Engineering & Digital Team in Vadodara",
-  description: "Explore rewarding IT career opportunities at Jeenweb Technologists. 26+ years of technology leadership, cutting-edge projects, and exceptional team culture.",
+  description:
+    "Explore rewarding IT career opportunities at Jeenweb Technologists. 26+ years of technology leadership, cutting-edge projects, and exceptional team culture.",
+  alternates: {
+    canonical: "/careers"
+  },
+  openGraph: {
+    title: "Careers at Jeenweb | Join Our Engineering & Digital Team in Vadodara",
+    description:
+      "Explore rewarding IT career opportunities at Jeenweb Technologists. 26+ years of technology leadership and exceptional team culture.",
+    url: "https://jeenweb.com/careers",
+    siteName: "Jeenweb Technologists",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Careers at Jeenweb"
+      }
+    ],
+    locale: "en_IN",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Careers at Jeenweb | Join Our Engineering & Digital Team in Vadodara",
+    description:
+      "Explore rewarding IT career opportunities at Jeenweb Technologists in Vadodara.",
+    images: ["/images/og-image.jpg"]
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://jeenweb.com"
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Careers",
+      item: "https://jeenweb.com/careers"
+    }
+  ]
 };
 
 const perks = [
@@ -56,6 +104,7 @@ const perks = [
 export default function CareersPage() {
   return (
     <div className="min-h-screen bg-slate-50">
+      <JsonLd data={breadcrumbSchema} />
       {/* Careers Hero Banner */}
       <section className="relative overflow-hidden bg-gradient-to-r from-[#0A2647] via-[#134B70] to-[#07192F] text-white py-16 lg:py-20">
         <HeroDynamicBg />

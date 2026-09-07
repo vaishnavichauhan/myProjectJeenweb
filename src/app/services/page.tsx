@@ -64,29 +64,36 @@ export default function ServicesPage() {  const [selectedService, setSelectedSer
         </div>
       </div>
 
-      {/* Hero Header Banner with Vibrant Sapphire Gradient */}
-      <section className="bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white py-16 lg:py-20 relative overflow-hidden border-b border-slate-700/60">
-        {/* Subtle Checkered Grid Accent (64px by 64px) */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
+      {/* Hero Header Banner with Standardized Service Hero UI */}
+      <section className="relative min-h-[480px] sm:min-h-[500px] lg:min-h-[560px] bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white flex items-center py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-700/60">
+        {/* Clean Cyber Checkered Grid Overlay (64px by 64px) */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-4">
+        {/* Ambient Luminous Glow Flares */}
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/15 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[450px] h-[400px] bg-[#2563EB]/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#C11E23]/15 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <div className="max-w-2xl lg:max-w-2xl xl:max-w-3xl space-y-5 text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-[#00E5FF] text-xs font-mono font-bold uppercase tracking-wider border border-[#00E5FF]/30">
               <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
               <span>Full-Spectrum IT &amp; Web Infrastructure</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.18] font-sans">
               Enterprise Digital, Cloud &amp; Engineering Services
             </h1>
+
+            <p className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug">
+              Full-spectrum IT solutions, custom software engineering, and managed cloud infrastructure from Vadodara.
+            </p>
+
             <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
               From licensed domain registries &amp; ultra-fast NVMe servers to custom ERP software, business email suites, and AI-driven organic search dominance.
             </p>
           </div>
         </div>
-
-        {/* Ambient Vibrant Glow Flares */}
-        <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-[#00D2FF]/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -left-20 -top-20 w-80 h-80 bg-[#E11D48]/20 rounded-full blur-3xl pointer-events-none" />
       </section>
 
       {/* Section 1: Core Services Grid */}

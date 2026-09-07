@@ -83,9 +83,6 @@ export default function TimelineChevronTrack() {
           {/* Phase 1 Header Badge in Center */}
           <div className="flex flex-col items-center text-center justify-center gap-2 mb-10">
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-[#073F8A] text-white shadow-xs">
-                01
-              </span>
               <h3 className="text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-slate-950 font-sans">
                 Phase 1: Foundation & Growth
               </h3>
@@ -117,13 +114,13 @@ export default function TimelineChevronTrack() {
             <div className="grid grid-cols-4 pb-3 pl-28 pr-12">
               {[...phase1Top].reverse().map((item) => (
                 <div key={item.year} className="flex flex-col items-center text-center">
-                  <span className="text-3xl font-bold tracking-tight text-[#00B4D8] font-sans">
+                  <span className="text-3xl font-bold tracking-tight text-[#C11E23] font-sans">
                     {item.year}
                   </span>
                   {/* Connector Dot */}
                   <div className="flex flex-col items-center mt-1">
-                    <div className="w-3 h-3 rounded-full bg-[#00D2FF] ring-4 ring-[#00D2FF]/25" />
-                    <div className="w-0.5 h-3 bg-[#00D2FF]" />
+                    <div className="w-3 h-3 rounded-full bg-[#C11E23] ring-4 ring-[#C11E23]/25" />
+                    <div className="w-0.5 h-3 bg-[#C11E23]" />
                   </div>
                 </div>
               ))}
@@ -131,9 +128,9 @@ export default function TimelineChevronTrack() {
 
             {/* 2. MAIN CHEVRON ARROW CONTAINER (Pointing Left) */}
             <div className="relative">
-              {/* Left Blue/Cyan Chevron Accent Tip */}
+              {/* Left Red Chevron Accent Tip */}
               <div
-                className="absolute -left-4 top-0 bottom-0 w-28 bg-[#00D2FF] rounded-l-xl pointer-events-none z-0"
+                className="absolute -left-4 top-0 bottom-0 w-28 bg-[#C11E23] rounded-l-xl pointer-events-none z-0"
                 style={{
                   clipPath: "polygon(75px 0%, 75px 100%, 0% 50%)",
                 }}
@@ -141,7 +138,7 @@ export default function TimelineChevronTrack() {
 
               {/* Dark Chevron Track Body */}
               <div
-                className="bg-[#0B1E38] shadow-2xl relative overflow-hidden z-10 rounded-r-3xl group-hover:shadow-[0_20px_50px_rgba(0,210,255,0.25)] transition-shadow duration-500"
+                className="bg-[#0B1E38] shadow-2xl relative overflow-hidden z-10 rounded-r-3xl group-hover:shadow-[0_20px_50px_rgba(193,30,35,0.25)] transition-shadow duration-500"
                 style={{
                   clipPath: "polygon(65px 0%, 100% 0%, 100% 100%, 65px 100%, 8px 50%)",
                 }}
@@ -175,7 +172,7 @@ export default function TimelineChevronTrack() {
               </div>
 
               {/* Accent Corner Line */}
-              <div className="absolute -right-2 bottom-0 w-12 h-6 bg-[#00D2FF] rounded-br-2xl pointer-events-none -z-10" />
+              <div className="absolute -right-2 bottom-0 w-12 h-6 bg-[#C11E23] rounded-br-2xl pointer-events-none -z-10" />
             </div>
 
             {/* 3. BOTTOM ROW: Connector Dots & Years (Reversed padding pl-28 pr-12) */}
@@ -183,10 +180,10 @@ export default function TimelineChevronTrack() {
               {[...phase1Bottom].reverse().map((item) => (
                 <div key={item.year} className="flex flex-col items-center text-center">
                   <div className="flex flex-col items-center mb-1">
-                    <div className="w-0.5 h-3 bg-[#00D2FF]" />
-                    <div className="w-3 h-3 rounded-full bg-[#00D2FF] ring-4 ring-[#00D2FF]/25" />
+                    <div className="w-0.5 h-3 bg-[#C11E23]" />
+                    <div className="w-3 h-3 rounded-full bg-[#C11E23] ring-4 ring-[#C11E23]/25" />
                   </div>
-                  <span className="text-3xl font-bold tracking-tight text-[#00B4D8] font-sans">
+                  <span className="text-3xl font-bold tracking-tight text-[#C11E23] font-sans">
                     {item.year}
                   </span>
                 </div>
@@ -208,9 +205,9 @@ export default function TimelineChevronTrack() {
                 key={idx}
                 whileHover={{ rotateY: -8, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="bg-[#0B1E38] rounded-2xl p-5 text-white border-l-4 border-[#00D2FF] shadow-sm space-y-2 cursor-pointer"
+                className="bg-[#0B1E38] rounded-2xl p-5 text-white border-l-4 border-[#C11E23] shadow-sm space-y-2 cursor-pointer"
               >
-                <div className="text-2xl font-bold text-[#00D2FF] font-sans">
+                <div className="text-2xl font-bold text-[#C11E23] font-sans">
                   {item.year}
                 </div>
                 <p className="text-xs text-slate-200 leading-relaxed font-sans">
@@ -230,9 +227,6 @@ export default function TimelineChevronTrack() {
           {/* Phase 2 Header Badge in Center */}
           <div className="flex flex-col items-center text-center justify-center gap-2 mb-10">
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-[#073F8A] text-white shadow-xs">
-                02
-              </span>
               <h3 className="text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-slate-950 font-sans">
                 Phase 2: Enterprise & Cloud Innovation
               </h3>
@@ -264,13 +258,13 @@ export default function TimelineChevronTrack() {
             <div className="grid grid-cols-4 pb-3 pl-12 pr-28">
               {phase2Top.map((item) => (
                 <div key={item.year} className="flex flex-col items-center text-center">
-                  <span className="text-3xl font-bold tracking-tight text-[#00B4D8] font-sans">
+                  <span className="text-3xl font-bold tracking-tight text-[#C11E23] font-sans">
                     {item.year}
                   </span>
                   {/* Connector Dot */}
                   <div className="flex flex-col items-center mt-1">
-                    <div className="w-3 h-3 rounded-full bg-[#00D2FF] ring-4 ring-[#00D2FF]/25" />
-                    <div className="w-0.5 h-3 bg-[#00D2FF]" />
+                    <div className="w-3 h-3 rounded-full bg-[#C11E23] ring-4 ring-[#C11E23]/25" />
+                    <div className="w-0.5 h-3 bg-[#C11E23]" />
                   </div>
                 </div>
               ))}
@@ -278,9 +272,9 @@ export default function TimelineChevronTrack() {
 
             {/* 2. MAIN CHEVRON ARROW CONTAINER */}
             <div className="relative">
-              {/* Right Blue/Cyan Chevron Accent Tip */}
+              {/* Right Red Chevron Accent Tip */}
               <div
-                className="absolute -right-4 top-0 bottom-0 w-28 bg-[#00D2FF] rounded-r-xl pointer-events-none z-0"
+                className="absolute -right-4 top-0 bottom-0 w-28 bg-[#C11E23] rounded-r-xl pointer-events-none z-0"
                 style={{
                   clipPath: "polygon(calc(100% - 75px) 0%, calc(100% - 75px) 100%, 100% 50%)",
                 }}
@@ -288,7 +282,7 @@ export default function TimelineChevronTrack() {
 
               {/* Dark Chevron Track Body */}
               <div
-                className="bg-[#0B1E38] shadow-2xl relative overflow-hidden z-10 rounded-l-3xl group-hover:shadow-[0_20px_50px_rgba(0,210,255,0.25)] transition-shadow duration-500"
+                className="bg-[#0B1E38] shadow-2xl relative overflow-hidden z-10 rounded-l-3xl group-hover:shadow-[0_20px_50px_rgba(193,30,35,0.25)] transition-shadow duration-500"
                 style={{
                   clipPath: "polygon(0% 0%, calc(100% - 65px) 0%, calc(100% - 8px) 50%, calc(100% - 65px) 100%, 0% 100%)",
                 }}
@@ -322,7 +316,7 @@ export default function TimelineChevronTrack() {
               </div>
 
               {/* Accent Corner Line */}
-              <div className="absolute -left-2 bottom-0 w-12 h-6 bg-[#00D2FF] rounded-bl-2xl pointer-events-none -z-10" />
+              <div className="absolute -left-2 bottom-0 w-12 h-6 bg-[#C11E23] rounded-bl-2xl pointer-events-none -z-10" />
             </div>
 
             {/* 3. BOTTOM ROW: Connector Dots & Years */}
@@ -330,10 +324,10 @@ export default function TimelineChevronTrack() {
               {phase2Bottom.map((item) => (
                 <div key={item.year} className="flex flex-col items-center text-center">
                   <div className="flex flex-col items-center mb-1">
-                    <div className="w-0.5 h-3 bg-[#00D2FF]" />
-                    <div className="w-3 h-3 rounded-full bg-[#00D2FF] ring-4 ring-[#00D2FF]/25" />
+                    <div className="w-0.5 h-3 bg-[#C11E23]" />
+                    <div className="w-3 h-3 rounded-full bg-[#C11E23] ring-4 ring-[#C11E23]/25" />
                   </div>
-                  <span className="text-3xl font-bold tracking-tight text-[#00B4D8] font-sans">
+                  <span className="text-3xl font-bold tracking-tight text-[#C11E23] font-sans">
                     {item.year}
                   </span>
                 </div>
@@ -355,9 +349,9 @@ export default function TimelineChevronTrack() {
                 key={idx}
                 whileHover={{ rotateY: 8, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="bg-[#0B1E38] rounded-2xl p-5 text-white border-l-4 border-[#00D2FF] shadow-sm space-y-2 cursor-pointer"
+                className="bg-[#0B1E38] rounded-2xl p-5 text-white border-l-4 border-[#C11E23] shadow-sm space-y-2 cursor-pointer"
               >
-                <div className="text-2xl font-bold text-[#00D2FF] font-sans">
+                <div className="text-2xl font-bold text-[#C11E23] font-sans">
                   {item.year}
                 </div>
                 <p className="text-xs text-slate-200 leading-relaxed font-sans">

@@ -13,7 +13,6 @@ import {
   Smartphone,
   Search,
   ShieldCheck,
-  ArrowRight,
   ShoppingBag,
   Globe2,
   Laptop,
@@ -219,10 +218,10 @@ export default function WebsiteDevelopmentPage() {
         </div>
       </div>
 
-      {/* Hero Header Banner (Matching Custom Software Development Background Image & Full-Bleed Setup) */}
-      <section className="bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white py-16 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center border-b border-slate-700/60">
+      {/* Hero Header Banner with Standardized Service Hero UI */}
+      <section className="relative min-h-[480px] sm:min-h-[500px] lg:min-h-[560px] bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white flex items-center py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-700/60">
         
-        {/* Right-Side Full-Bleed Background Image with Seamless Left Fade (Matching Custom Software) */}
+        {/* Right-Side Full-Bleed Background Image with Seamless Left Fade */}
         <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[62%] z-0 pointer-events-none overflow-hidden">
           <div className="relative w-full h-full">
             <Image
@@ -242,29 +241,31 @@ export default function WebsiteDevelopmentPage() {
           </div>
         </div>
 
-        {/* Subtle Cyber Grid Accent (64px by 64px) */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
+        {/* Clean Cyber Checkered Grid Overlay (64px by 64px) */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
+
+        {/* Ambient Luminous Glow Flares */}
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/15 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[450px] h-[400px] bg-[#2563EB]/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#C11E23]/15 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-tight font-sans">
-              High-Performance <br className="hidden sm:inline" />
-              <span className="text-[#00E5FF]">Website Development</span>
+          <div className="max-w-2xl lg:max-w-2xl xl:max-w-3xl space-y-5 text-left">
+            
+            {/* Standardized Headline */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.18] font-sans">
+              High-Performance Website Development &amp; Custom Web Apps
             </h1>
 
-            <p className="text-slate-200 text-sm sm:text-base lg:text-lg leading-relaxed font-sans max-w-2xl">
-              We design and engineer bespoke corporate websites, eCommerce stores, and Next.js web applications that look world-class, load in sub-seconds, and actively generate business opportunities.
+            {/* Standardized Subtitle */}
+            <p className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug">
+              Next.js portals, enterprise eCommerce, and bespoke web platforms engineered in Vadodara.
             </p>
 
-            <div className="pt-2 flex items-center">
-              <a
-                href="#about-web-dev"
-                className="px-8 py-4 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xl shadow-red-950/40 flex items-center gap-2.5 cursor-pointer hover:scale-[1.02] active:scale-98"
-              >
-                <span>Explore Solutions</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
+            {/* Standardized Description */}
+            <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
+              We design and engineer bespoke corporate websites, eCommerce stores, and Next.js web applications that look world-class, load in sub-seconds, and actively generate business opportunities.
+            </p>
           </div>
         </div>
       </section>
@@ -278,38 +279,35 @@ export default function WebsiteDevelopmentPage() {
           
           {/* Row 1: Concept Visual Left + Overview Copy Right */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left Column: Web Development Concept Graphic Frame */}
+            {/* Left Column: Web Development Concept Graphic Frame (No Border) */}
             <div className="lg:col-span-6 relative">
-              <div className="relative rounded-[2rem] p-2 bg-white/80 border border-slate-200/90 shadow-2xl shadow-blue-950/10 backdrop-blur-xs">
-                <div className="relative rounded-[1.6rem] overflow-hidden aspect-[16/10] sm:aspect-[16/9] w-full bg-slate-950 group">
-                  <Image
-                    src="/images/web-dev-tech-stack-1.jpg"
-                    alt="Modern Web Development Technologies - React.js, Next.js, Node.js, HTML5, JavaScript"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
-                </div>
+              <div className="relative rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/9] w-full bg-slate-950 shadow-xl shadow-blue-950/10 group">
+                <Image
+                  src="/images/web-dev-tech-stack-1.jpg"
+                  alt="Modern Web Development Technologies - React.js, Next.js, Node.js, HTML5, JavaScript"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
 
             {/* Right Column: Detailed Overview Copy */}
             <div className="lg:col-span-6 space-y-5">
 
-              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-black tracking-tight text-slate-900 leading-[1.2] font-sans">
-                Engineering Custom &amp; Scalable <br />
+              <h2 className="text-2xl sm:text-[28px] lg:text-[28px] xl:text-[32px] font-black tracking-tight text-slate-900 leading-[1.25] font-sans">
+                Engineering Custom &amp; Scalable <br className="hidden sm:inline" />
                 <span className="text-[#073F8A]">Web Applications for Industry Leaders</span>
               </h2>
 
-              <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed font-sans">
+              <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed font-sans text-left">
                 We are a top-rated web development company in Vadodara, offering custom and scalable web applications built with the latest technologies. Our solutions are designed around your business goals, requirements, and budget. We provide complete web development services, including design, development, testing, support, and maintenance.
               </p>
 
-              <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed font-sans">
+              <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed font-sans text-left">
                 Our experienced developers help you choose the right architecture, technology stack, and tools for your project. We follow a reliable six-stage process—consultation, planning, UI/UX design, development, testing, and deployment—to deliver fast, secure, and scalable web applications that support your business growth.
               </p>
-
 
             </div>
           </div>
@@ -319,35 +317,32 @@ export default function WebsiteDevelopmentPage() {
             {/* Left Column: Commercial Architecture Copy */}
             <div className="lg:col-span-6 space-y-5 order-2 lg:order-1">
 
-              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-black tracking-tight text-slate-900 leading-[1.2] font-sans">
-                Customized Solutions Aligned to <br />
+              <h2 className="text-2xl sm:text-[28px] lg:text-[28px] xl:text-[32px] font-black tracking-tight text-slate-900 leading-[1.25] font-sans">
+                Customized Solutions Aligned to <br className="hidden sm:inline" />
                 <span className="text-[#073F8A]">Your Exact Commercial Demands</span>
               </h2>
 
-              <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed font-sans">
+              <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed font-sans text-left">
                 We offer different types of customized web application development as per your different needs. Whether you want to develop a custom web application, eCommerce platform, or enterprise web portals, we are the best fit for your requirements.
               </p>
 
-              <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed font-sans">
+              <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed font-sans text-left">
                 To provide the best-in-class web app solutions, we create web apps using modern frameworks, architecture patterns, and user-centric UI/UX pages. As a top web application development company in Gujarat for over 26 years, we will help you take your business digital.
               </p>
 
-
             </div>
 
-            {/* Right Column: Web UI/UX Architecture Visual */}
+            {/* Right Column: Web UI/UX Architecture Visual (No Border) */}
             <div className="lg:col-span-6 relative order-1 lg:order-2">
-              <div className="relative rounded-[2rem] p-2 bg-white/80 border border-slate-200/90 shadow-2xl shadow-slate-900/10 backdrop-blur-xs">
-                <div className="relative rounded-[1.6rem] overflow-hidden aspect-[16/10] sm:aspect-[16/9] w-full bg-slate-950 group">
-                  <Image
-                    src="/images/web-dev-tech-stack-2.jpg"
-                    alt="Enterprise CMS and eCommerce Web Technologies - WordPress, TypeScript, MySQL, WooCommerce, PHP"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
-                </div>
+              <div className="relative rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/9] w-full bg-slate-950 shadow-xl shadow-slate-900/10 group border-0">
+                <Image
+                  src="/images/web-dev-tech-stack-2.jpg"
+                  alt="Enterprise CMS and eCommerce Web Technologies - WordPress, TypeScript, MySQL, WooCommerce, PHP"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 border-0"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
           </div>

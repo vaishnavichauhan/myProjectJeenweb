@@ -8,6 +8,7 @@ import {
   Users,
   HeartHandshake
 } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/MotionPrimitives";
 
 // Helper component for animated number counting
 function AnimatedCounter({ value, inView }: { value: string; inView: boolean }) {
@@ -86,7 +87,7 @@ export default function MetricsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <FadeIn direction="up" distance={20} className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div>
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
@@ -103,58 +104,59 @@ export default function MetricsSection() {
           <p className="text-slate-600 text-base sm:text-lg font-normal max-w-2xl mx-auto leading-relaxed">
             Real enterprise numbers backed by reliable software engineering, certified security standards, and enduring 26+ year client partnerships in Gujarat &amp; worldwide.
           </p>
-        </div>
+        </FadeIn>
 
-        {/* 4-Card Modern Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* 4-Card Modern Staggered Grid */}
+        <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {CORE_METRICS.map((metric, idx) => {
             const Icon = metricIcons[idx];
 
             return (
-              <div
-                key={metric.label}
-                className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_36px_-6px_rgba(26,59,113,0.12)] hover:border-[#1A3B71]/40 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden hover:-translate-y-1.5"
-              >
-                {/* Left Half Border Highlight (Logo Red) */}
-                <div className="absolute bottom-0 left-0 w-[3px] h-1/2 bg-[#C11E23] transition-all duration-300 group-hover:h-3/4 rounded-bl-3xl" />
+              <StaggerItem key={metric.label}>
+                <div
+                  className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_36px_-6px_rgba(26,59,113,0.12)] hover:border-[#1A3B71]/40 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden hover:-translate-y-1.5 h-full"
+                >
+                  {/* Left Half Border Highlight (Logo Red) */}
+                  <div className="absolute bottom-0 left-0 w-[3px] h-1/2 bg-[#C11E23] transition-all duration-300 group-hover:h-3/4 rounded-bl-3xl" />
 
-                {/* Bottom Half Border Highlight (Logo Red) */}
-                <div className="absolute bottom-0 left-0 h-[3px] w-1/2 bg-[#C11E23] transition-all duration-300 group-hover:w-3/4 rounded-bl-3xl" />
+                  {/* Bottom Half Border Highlight (Logo Red) */}
+                  <div className="absolute bottom-0 left-0 h-[3px] w-1/2 bg-[#C11E23] transition-all duration-300 group-hover:w-3/4 rounded-bl-3xl" />
 
-                {/* Subtle Background Watermark Icon on Hover */}
-                <div className="absolute -right-4 -top-4 w-28 h-28 text-slate-100/70 group-hover:text-[#1A3B71]/5 transition-colors pointer-events-none flex items-center justify-center">
-                  <Icon className="w-24 h-24 stroke-[1]" />
-                </div>
+                  {/* Subtle Background Watermark Icon on Hover */}
+                  <div className="absolute -right-4 -top-4 w-28 h-28 text-slate-100/70 group-hover:text-[#1A3B71]/5 transition-colors pointer-events-none flex items-center justify-center">
+                    <Icon className="w-24 h-24 stroke-[1]" />
+                  </div>
 
-                <div className="relative z-10">
-                  {/* Top Card Header: Icon */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-13 h-13 rounded-2xl bg-slate-100 text-[#1A3B71] group-hover:bg-[#1A3B71] group-hover:text-white flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-xs">
-                      <Icon className="w-6 h-6" />
+                  <div className="relative z-10">
+                    {/* Top Card Header: Icon */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-13 h-13 rounded-2xl bg-slate-100 text-[#1A3B71] group-hover:bg-[#1A3B71] group-hover:text-white flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-xs">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                    </div>
+
+                    {/* Animated Big Bold Metric Counter */}
+                    <div className="text-5xl sm:text-6xl font-black tracking-tight text-slate-900 group-hover:text-[#1A3B71] transition-colors leading-none">
+                      <AnimatedCounter value={metric.value} inView={inView} />
+                    </div>
+
+                    {/* Metric Title Label */}
+                    <div className="text-sm sm:text-[15px] font-black uppercase tracking-wide text-slate-800 mt-3.5">
+                      {metric.label}
                     </div>
                   </div>
 
-                  {/* Animated Big Bold Metric Counter */}
-                  <div className="text-5xl sm:text-6xl font-black tracking-tight text-slate-900 group-hover:text-[#1A3B71] transition-colors leading-none">
-                    <AnimatedCounter value={metric.value} inView={inView} />
-                  </div>
-
-                  {/* Metric Title Label */}
-                  <div className="text-sm sm:text-[15px] font-black uppercase tracking-wide text-slate-800 mt-3.5">
-                    {metric.label}
+                  {/* Metric Detailed Description */}
+                  <div className="relative z-10 mt-6 pt-5 border-t border-slate-100 group-hover:border-slate-200/90 transition-colors">
+                    <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans">
+                      {metric.description}
+                    </p>
                   </div>
                 </div>
-
-                {/* Metric Detailed Description */}
-                <div className="relative z-10 mt-6 pt-5 border-t border-slate-100 group-hover:border-slate-200/90 transition-colors">
-                  <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans">
-                    {metric.description}
-                  </p>
-                </div>
-              </div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerContainer>
 
       </div>
     </section>

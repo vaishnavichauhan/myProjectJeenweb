@@ -16,7 +16,6 @@ import {
   TrendingUp,
   MapPin,
   CheckCircle2,
-  ArrowRight,
   ShieldCheck,
   Code2,
   FileCode2,
@@ -101,7 +100,7 @@ export default function SeoServicePage() {
     },
     {
       title: "Answer Engine Optimization (AEO)",
-      shortTitle: "Answer Engine (AEO)",
+      shortTitle: "Answer Engine Optimization (AEO)",
       badge: "Position 0 & AI Overviews",
       icon: Sparkles,
       image: "/images/services/seo-pillar-aeo.jpg",
@@ -114,7 +113,7 @@ export default function SeoServicePage() {
     },
     {
       title: "Generative Engine Optimization (GEO)",
-      shortTitle: "Generative Engine (GEO)",
+      shortTitle: "Generative Engine Optimization (GEO)",
       badge: "ChatGPT & Gemini Citations",
       icon: Bot,
       image: "/images/services/seo-pillar-geo.jpg",
@@ -127,7 +126,7 @@ export default function SeoServicePage() {
     },
     {
       title: "Artificial Intelligence Optimization (AIO)",
-      shortTitle: "AI Optimization (AIO)",
+      shortTitle: "Artificial Intelligence Optimization (AIO)",
       badge: "Structured Entity Graphs & Schema",
       icon: Layers,
       image: "/images/services/seo-pillar-aio.jpg",
@@ -239,67 +238,52 @@ export default function SeoServicePage() {
         </div>
       </div>
 
-      {/* Hero Banner with Home Page Reference Background */}
-      <section className="relative min-h-[520px] lg:min-h-[620px] bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white flex items-center py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-700/60">
-        {/* Clean Cyber Checkered Grid Overlay (64px by 64px) matching Home Page */}
+      {/* Hero Header Banner with Standardized Service Hero UI */}
+      <section className="relative min-h-[480px] sm:min-h-[500px] lg:min-h-[560px] bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white flex items-center py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-700/60">
+        {/* Clean Cyber Checkered Grid Overlay (64px by 64px) */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
 
-        {/* Ambient Luminous Glow Flares matching Home Page */}
+        {/* Ambient Luminous Glow Flares */}
         <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/15 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-[450px] h-[400px] bg-[#2563EB]/20 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#E11D48]/15 rounded-full blur-[120px] pointer-events-none" />
-
-        {/* Right-Side Full Section Illustration (Desktop Full Bleed) */}
-        <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[50%] xl:w-[52%] pointer-events-none z-0 hidden lg:flex items-center justify-end p-4 lg:p-8 xl:p-12 overflow-hidden">
-          <div className="relative w-full h-full flex items-center justify-end">
-            <Image
-              src="/images/seo-hero-illustration.png"
-              alt="Search Engine Optimization and AI Search Ecosystem"
-              fill
-              priority
-              className="object-contain object-right drop-shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
-              sizes="(max-width: 1024px) 100vw, 52vw"
-            />
-          </div>
-        </div>
+        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#C11E23]/15 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="max-w-2xl lg:max-w-xl xl:max-w-2xl flex flex-col justify-center text-left space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
-            {/* Editorial Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white tracking-tight leading-[1.16]">
-              Visibility Is A Choice. <br />
-              <span className="font-sans font-black text-white">
-                The Top Ranked Brands Already Made Theirs.
-              </span>
-            </h1>
+            {/* Left Side: Standardized Headline, Subtitle & Description */}
+            <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-5">
 
-            {/* Subtitle */}
-            <p className="text-sm sm:text-base lg:text-lg text-slate-200 font-sans max-w-xl leading-relaxed">
-              Dominate traditional search results and generative AI answer engines with technical SEO, Answer Engine Optimization (AEO), and high-authority digital visibility.
-            </p>
+              {/* Standardized Headline */}
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.18] font-sans">
+                Visibility Is A Choice. The Top Ranked Brands Already Made Theirs.
+              </h1>
 
-            {/* Action Button */}
-            <div className="pt-2 flex items-center">
-              <a
-                href="#framework"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-xl shadow-red-950/40 hover:scale-[1.02] active:scale-98"
-              >
-                <span>Explore Technical Standards</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+              {/* Standardized Subtitle */}
+              <p className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug">
+                Dominate traditional search results and generative AI answer engines with technical SEO &amp; AEO.
+              </p>
+
+              {/* Standardized Description */}
+              <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
+                Structured data schemas, technical performance engineering, entity citation modeling, and comprehensive local Google Maps dominance managed from Vadodara.
+              </p>
+
             </div>
 
-            {/* Mobile / Tablet View: Inline graphic below text */}
-            <div className="pt-6 lg:hidden flex justify-center items-center">
-              <div className="relative w-full max-w-[460px] aspect-[1024/682]">
+            {/* Right Side: SEO & AI Illustration */}
+            <div className="lg:col-span-5 flex justify-center items-center">
+              <div className="relative w-full max-w-[480px] sm:max-w-[540px] lg:max-w-full flex justify-center items-center">
+                {/* Soft ambient glow */}
+                <div className="absolute inset-4 bg-gradient-to-tr from-sky-400/20 via-cyan-400/15 to-transparent rounded-full blur-3xl pointer-events-none" />
+                
                 <Image
                   src="/images/seo-hero-illustration.png"
                   alt="Search Engine Optimization and AI Search Ecosystem"
-                  fill
+                  width={1024}
+                  height={682}
                   priority
-                  className="object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.35)]"
-                  sizes="100vw"
+                  className="w-full h-auto object-contain mx-auto drop-shadow-[0_20px_45px_rgba(0,0,0,0.35)] relative z-10"
                 />
               </div>
             </div>

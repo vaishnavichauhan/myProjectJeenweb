@@ -1,34 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ShieldCheck, Users, Building, ArrowRight, Lock, Award, CheckCircle2, ArrowUpRight } from "lucide-react";
+import { FadeIn, FloatingElement } from "@/components/animations/MotionPrimitives";
 
 export default function AboutSnippet() {
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.15 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       className="pt-10 pb-20 lg:pt-14 lg:pb-24 bg-[#FAF8F5] relative overflow-hidden border-b border-slate-200/80"
       id="about-snippet"
     >
@@ -38,12 +18,8 @@ export default function AboutSnippet() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Centered Section Header (Fades in from Top) */}
-        <div
-          className={`text-center max-w-3xl mx-auto mb-10 lg:mb-12 space-y-3.5 transition-all duration-1000 ease-out transform ${
-            isVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"
-          }`}
-        >
+        {/* Centered Section Header */}
+        <FadeIn direction="up" distance={20} className="text-center max-w-3xl mx-auto mb-10 lg:mb-12 space-y-3.5">
           <div className="inline-block border-b-2 border-[#C11E23] pb-1">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
               Who We Are
@@ -57,17 +33,13 @@ export default function AboutSnippet() {
           <p className="text-slate-600 text-base sm:text-lg font-normal max-w-2xl mx-auto leading-relaxed">
             Founded in Vadodara and trusted across Gujarat &amp; worldwide, Jeenweb Technologists Pvt. Ltd. has delivered engineering-backed IT, custom software, and digital solutions since 2000.
           </p>
-        </div>
+        </FadeIn>
 
-        {/* 2-Column Main Layout: Left Side Slides in from Left, Right Side Slides in from Right */}
+        {/* 2-Column Main Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center overflow-hidden">
           
-          {/* Left Column: Team & Enterprise Image Showcase (Slides in from LEFT) */}
-          <div
-            className={`lg:col-span-5 transition-all duration-1000 ease-out transform ${
-              isVisible ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"
-            }`}
-          >
+          {/* Left Column: Team & Enterprise Image Showcase */}
+          <FadeIn direction="left" distance={24} className="lg:col-span-5">
             <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-500">
               
               {/* Integrated Image Showcase */}
@@ -83,9 +55,11 @@ export default function AboutSnippet() {
                 
                 {/* Floating Badges on Image */}
                 <div className="absolute top-4 left-4">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#C11E23] text-white text-[11px] font-mono font-bold shadow-md">
-                    EST. 2000
-                  </span>
+                  <FloatingElement distance={4} duration={3.5}>
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#C11E23] text-white text-[11px] font-mono font-bold shadow-md">
+                      EST. 2000
+                    </span>
+                  </FloatingElement>
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
@@ -140,14 +114,10 @@ export default function AboutSnippet() {
               </div>
 
             </div>
-          </div>
+          </FadeIn>
 
-          {/* Right Column: Narrative, Philosophy & Checklist (Slides in from RIGHT) */}
-          <div
-            className={`lg:col-span-7 space-y-6 transition-all duration-1000 ease-out delay-150 transform ${
-              isVisible ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
-            }`}
-          >
+          {/* Right Column: Narrative, Philosophy & Checklist */}
+          <FadeIn direction="right" distance={24} delay={0.1} className="lg:col-span-7 space-y-6">
             
             {/* Executive Lead Statement */}
             <div className="p-5 sm:p-6 rounded-2xl bg-white border-l-4 border-[#1A3B71] border-y border-r border-slate-200/80 shadow-xs">
@@ -225,7 +195,7 @@ export default function AboutSnippet() {
               </Link>
             </div>
 
-          </div>
+          </FadeIn>
 
         </div>
       </div>

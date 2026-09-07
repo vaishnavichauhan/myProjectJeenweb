@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { Sparkles } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FadeIn } from "@/components/animations/MotionPrimitives";
 
 interface TechItem {
   name: string;
@@ -215,7 +217,7 @@ export default function TechStack() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header with Red Bottom Border Tag */}
-        <div className="max-w-3xl mx-auto text-center mb-12 space-y-3">
+        <FadeIn direction="up" distance={20} className="max-w-3xl mx-auto text-center mb-12 space-y-3">
           <div>
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
@@ -229,7 +231,7 @@ export default function TechStack() {
           <p className="text-sm sm:text-base text-slate-600 font-sans leading-relaxed">
             We engineer solutions with battle-tested enterprise frameworks and high-security cloud architectures—never vulnerable templates or unverified scripts.
           </p>
-        </div>
+        </FadeIn>
 
         {/* Clean Category Filter Tabs matching Reference Image */}
         <div className="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar gap-2 sm:gap-6 border-b border-slate-200 pb-3 mb-12 px-2 sm:px-0">
@@ -239,7 +241,7 @@ export default function TechStack() {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`relative py-2 px-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
+                className={`relative py-2 px-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors whitespace-nowrap cursor-pointer ${
                   isActive
                     ? "text-[#1A3B71]"
                     : "text-slate-500 hover:text-slate-900"
@@ -247,32 +249,47 @@ export default function TechStack() {
               >
                 <span>{cat.label}</span>
                 {isActive && (
-                  <span className="absolute bottom-[-13px] left-0 right-0 h-[2.5px] bg-[#C11E23] rounded-full" />
+                  <motion.span
+                    layoutId="techTabUnderline"
+                    className="absolute bottom-[-13px] left-0 right-0 h-[2.5px] bg-[#C11E23] rounded-full"
+                    transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                  />
                 )}
               </button>
             );
           })}
         </div>
 
-        {/* Clean Borderless Technology Grid matching Reference Image */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 pt-4">
-          {filteredCatalog.map((tech) => (
-            <div
-              key={tech.name}
-              className="p-3 text-center flex flex-col items-center justify-center group cursor-default transition-transform duration-200 hover:-translate-y-1"
-            >
-              {/* Technology Icon */}
-              <div className="w-14 h-14 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                {tech.iconSvg}
-              </div>
+        {/* Clean Borderless Technology Grid with AnimatePresence */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeCategory}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 pt-4"
+          >
+            {filteredCatalog.map((tech) => (
+              <motion.div
+                key={tech.name}
+                whileHover={{ y: -4, scale: 1.05 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                className="p-3 text-center flex flex-col items-center justify-center group cursor-default"
+              >
+                {/* Technology Icon */}
+                <div className="w-14 h-14 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                  {tech.iconSvg}
+                </div>
 
-              {/* Technology Name */}
-              <div className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
-                {tech.name}
-              </div>
-            </div>
-          ))}
-        </div>
+                {/* Technology Name */}
+                <div className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#16325B] transition-colors">
+                  {tech.name}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
       </div>
     </section>

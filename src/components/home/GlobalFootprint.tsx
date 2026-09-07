@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { GLOBAL_COUNTRIES } from "@/lib/siteData";
 import { Sparkles, MapPin, Building2, CheckCircle2, Globe2 } from "lucide-react";
+import { FadeIn } from "@/components/animations/MotionPrimitives";
 
 interface RegionPin {
   id: string;
@@ -91,7 +92,7 @@ export default function GlobalFootprint() {
       <div className="w-full px-3 sm:px-6 lg:px-10 xl:px-14 relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-3 sm:mb-4 space-y-1">
+        <FadeIn direction="up" distance={20} className="max-w-3xl mx-auto text-center mb-3 sm:mb-4 space-y-1">
           <div>
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
@@ -108,7 +109,7 @@ export default function GlobalFootprint() {
           <p className="text-xs text-slate-500 font-sans leading-relaxed max-w-xl mx-auto">
             From our dual engineering hubs in Vadodara, Gujarat, we architect and maintain mission-critical IT infrastructure, custom software, and cloud systems for corporate clients worldwide.
           </p>
-        </div>
+        </FadeIn>
 
         {/* Dotted World Map Graphic with Locked 1:1 Aspect Ratio */}
         <div className="relative w-full max-w-[1100px] xl:max-w-[1240px] mx-auto select-none">

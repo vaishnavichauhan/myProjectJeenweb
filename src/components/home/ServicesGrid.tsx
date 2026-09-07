@@ -21,6 +21,7 @@ import {
   ArrowRight,
   ArrowUpRight
 } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations/MotionPrimitives";
 
 function HandPointer({ className = "w-5 h-5 text-[#1A3B71]" }: { className?: string }) {
   return (
@@ -145,7 +146,7 @@ export default function ServicesGrid() {  const [selectedService, setSelectedSer
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Featured Service Overview Hero Banner with Datacenter Image (Pure White Background) */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-16 p-0 bg-white">
+        <FadeIn direction="up" distance={24} className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-16 p-0 bg-white">
           <div className="flex-1 space-y-4 max-w-xl">
             <div>
               <div className="inline-block border-b-2 border-[#C11E23] pb-1">
@@ -186,7 +187,7 @@ export default function ServicesGrid() {  const [selectedService, setSelectedSer
               sizes="(max-width: 768px) 100vw, 500px"
             />
           </div>
-        </div>
+        </FadeIn>
 
         {/* 1. Core Engineering & IT Services (Full-Width 3-Column Grid) */}
         <div id="core-services-list" className="mb-20 scroll-mt-24">
@@ -199,116 +200,115 @@ export default function ServicesGrid() {  const [selectedService, setSelectedSer
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <StaggerContainer staggerDelay={0.09} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {CORE_SERVICES_PART1.map((service) => {
               const IconComponent = getServiceIcon(service.iconName);
 
               return (
-                <div
-                  key={service.id}
-                  className="group [perspective:1200px] h-[390px] sm:h-[410px] cursor-pointer"
-                >
-                  {/* 3D Flipping Body */}
-                  <div className="relative w-full h-full duration-700 [transform-style:preserve-3d] transition-transform rounded-3xl shadow-xs group-hover:[transform:rotateY(180deg)] group-hover:shadow-2xl">
-                    
-                    {/* Front Face (0 deg) */}
-                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-3xl p-7 bg-white border border-slate-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.07)] flex flex-col justify-between overflow-hidden">
-                      {/* Top Accent Line (Slim 2px Depth) */}
-                      <div className={`absolute top-0 left-0 right-0 h-[2px] ${getServiceBorderColor(service.id)}`} />
+                <StaggerItem key={service.id}>
+                  <div className="group [perspective:1200px] h-[390px] sm:h-[410px] cursor-pointer">
+                    {/* 3D Flipping Body */}
+                    <div className="relative w-full h-full duration-700 [transform-style:preserve-3d] transition-transform rounded-3xl shadow-xs group-hover:[transform:rotateY(180deg)] group-hover:shadow-2xl">
+                      
+                      {/* Front Face (0 deg) */}
+                      <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-3xl p-7 bg-white border border-slate-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.07)] flex flex-col justify-between overflow-hidden">
+                        {/* Top Accent Line (Slim 2px Depth) */}
+                        <div className={`absolute top-0 left-0 right-0 h-[2px] ${getServiceBorderColor(service.id)}`} />
 
-                      <div className="space-y-3.5">
-                        {/* Header: Icon & Category Tag */}
-                        <div className="flex items-center justify-between">
-                          <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#1A3B71] flex items-center justify-center shadow-2xs">
-                            <IconComponent className="w-6 h-6" />
+                        <div className="space-y-3.5">
+                          {/* Header: Icon & Category Tag */}
+                          <div className="flex items-center justify-between">
+                            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#1A3B71] flex items-center justify-center shadow-2xs">
+                              <IconComponent className="w-6 h-6" />
+                            </div>
+                            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#1A3B71] bg-slate-100 px-3 py-1 rounded-full border border-slate-200/60">
+                              {service.tags[0]}
+                            </span>
                           </div>
-                          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#1A3B71] bg-slate-100 px-3 py-1 rounded-full border border-slate-200/60">
-                            {service.tags[0]}
-                          </span>
+
+                          {/* Title */}
+                          <h4 className="text-xl font-black uppercase tracking-tight text-slate-900 group-hover:text-[#1A3B71] transition-colors leading-snug pt-1">
+                            {service.title}
+                          </h4>
+
+                          {/* Short Description */}
+                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans line-clamp-3">
+                            {service.shortDesc}
+                          </p>
+
+                          {/* Feature Highlights */}
+                          <div className="pt-2.5 space-y-2 border-t border-slate-100">
+                            {service.features.slice(0, 3).map((feat, i) => (
+                              <div key={i} className="flex items-start gap-2 text-xs text-slate-700 font-medium">
+                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                                <span className="line-clamp-1">{feat}</span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
 
-                        {/* Title */}
-                        <h4 className="text-xl font-black uppercase tracking-tight text-slate-900 group-hover:text-[#1A3B71] transition-colors leading-snug pt-1">
-                          {service.title}
-                        </h4>
+                        {/* Front Bottom Interactive Flip Prompt */}
+                        <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#1A3B71]">
+                          <span>Hover to Flip &amp; Deploy</span>
+                          <div className="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                            <ArrowRight className="w-3.5 h-3.5 text-[#1A3B71]" />
+                          </div>
+                        </div>
+                      </div>
 
-                        {/* Short Description */}
-                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans line-clamp-3">
-                          {service.shortDesc}
-                        </p>
+                      {/* Back Face (180 deg - Revealed on 3D Flip) */}
+                      <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl p-7 bg-gradient-to-br from-[#0A2647] via-[#1A3B71] to-[#07192F] text-white border border-[#134B70] flex flex-col justify-between shadow-2xl overflow-hidden">
+                        {/* Ambient Glow */}
+                        <div className="absolute -top-12 -right-12 w-36 h-36 bg-[#00E5FF]/15 rounded-full blur-2xl pointer-events-none" />
 
-                        {/* Feature Highlights */}
-                        <div className="pt-2.5 space-y-2 border-t border-slate-100">
-                          {service.features.slice(0, 3).map((feat, i) => (
-                            <div key={i} className="flex items-start gap-2 text-xs text-slate-700 font-medium">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                              <span className="line-clamp-1">{feat}</span>
-                            </div>
-                          ))}
+                        <div className="relative z-10 space-y-3">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[10px] font-mono uppercase tracking-widest text-[#00E5FF] font-bold">
+                              Enterprise Tier
+                            </span>
+                            <span className="text-[10px] font-mono text-slate-300">
+                              99.9% Uptime SLA
+                            </span>
+                          </div>
+
+                          <h4 className="text-lg sm:text-xl font-black uppercase tracking-tight text-white leading-tight">
+                            {service.title}
+                          </h4>
+
+                          <p className="text-xs text-slate-200 leading-relaxed font-sans line-clamp-3">
+                            {service.fullDesc}
+                          </p>
+
+                          {/* All Features on Back */}
+                          <div className="pt-2 space-y-1.5 border-t border-white/15">
+                            {service.features.map((feat, i) => (
+                              <div key={i} className="flex items-center gap-2 text-[11px] text-slate-200">
+                                <CheckCircle2 className="w-3 h-3 text-[#00E5FF] flex-shrink-0" />
+                                <span className="line-clamp-1">{feat}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Back Action */}
+                        <div className="relative z-10 pt-4 border-t border-white/15">
+                          <Link
+                            href={service.href}
+                            onClick={(e) => e.stopPropagation()}
+                            className="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 text-[#1A3B71] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                          >
+                            <span>Explore Details</span>
+                            <ArrowUpRight className="w-4 h-4 text-[#C11E23]" />
+                          </Link>
                         </div>
                       </div>
 
-                      {/* Front Bottom Interactive Flip Prompt */}
-                      <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#1A3B71]">
-                        <span>Hover to Flip &amp; Deploy</span>
-                        <div className="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                          <ArrowRight className="w-3.5 h-3.5 text-[#1A3B71]" />
-                        </div>
-                      </div>
                     </div>
-
-                    {/* Back Face (180 deg - Revealed on 3D Flip) */}
-                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl p-7 bg-gradient-to-br from-[#0A2647] via-[#1A3B71] to-[#07192F] text-white border border-[#134B70] flex flex-col justify-between shadow-2xl overflow-hidden">
-                      {/* Ambient Glow */}
-                      <div className="absolute -top-12 -right-12 w-36 h-36 bg-[#00E5FF]/15 rounded-full blur-2xl pointer-events-none" />
-
-                      <div className="relative z-10 space-y-3">
-                        <div className="flex items-center justify-between">
-                          <span className="text-[10px] font-mono uppercase tracking-widest text-[#00E5FF] font-bold">
-                            Enterprise Tier
-                          </span>
-                          <span className="text-[10px] font-mono text-slate-300">
-                            99.9% Uptime SLA
-                          </span>
-                        </div>
-
-                        <h4 className="text-lg sm:text-xl font-black uppercase tracking-tight text-white leading-tight">
-                          {service.title}
-                        </h4>
-
-                        <p className="text-xs text-slate-200 leading-relaxed font-sans line-clamp-3">
-                          {service.fullDesc}
-                        </p>
-
-                        {/* All Features on Back */}
-                        <div className="pt-2 space-y-1.5 border-t border-white/15">
-                          {service.features.map((feat, i) => (
-                            <div key={i} className="flex items-center gap-2 text-[11px] text-slate-200">
-                              <CheckCircle2 className="w-3 h-3 text-[#00E5FF] flex-shrink-0" />
-                              <span className="line-clamp-1">{feat}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Back Action */}
-                      <div className="relative z-10 pt-4 border-t border-white/15">
-                        <Link
-                          href={service.href}
-                          onClick={(e) => e.stopPropagation()}
-                          className="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 text-[#1A3B71] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-95"
-                        >
-                          <span>Explore Details</span>
-                          <ArrowUpRight className="w-4 h-4 text-[#C11E23]" />
-                        </Link>
-                      </div>
-                    </div>
-
                   </div>
-                </div>
+                </StaggerItem>
               );
             })}
-          </div>
+          </StaggerContainer>
         </div>
 
         {/* 2. Business Email Solutions (Full-Width 4-Column Grid) */}
@@ -323,86 +323,85 @@ export default function ServicesGrid() {  const [selectedService, setSelectedSer
           </div>
 
           {/* 3 Cards Per Row Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <StaggerContainer staggerDelay={0.08} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {EMAIL_SOLUTIONS_PART2.map((item) => (
-              <div
-                key={item.id}
-                className="group [perspective:1200px] h-[260px] sm:h-[270px] cursor-pointer"
-              >
-                {/* 3D Flipping Body */}
-                <div className="relative w-full h-full duration-700 [transform-style:preserve-3d] transition-transform rounded-3xl shadow-xs group-hover:[transform:rotateY(180deg)] group-hover:shadow-2xl">
-                  
-                  {/* Front Face (0 deg) */}
-                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-3xl p-6 bg-white border border-slate-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.07)] flex flex-col justify-between overflow-hidden">
-                    {/* Top Accent Line (Slim 2px Depth) */}
-                    <div className={`absolute top-0 left-0 right-0 h-[2px] ${getEmailBorderColor(item.id)}`} />
+              <StaggerItem key={item.id}>
+                <div className="group [perspective:1200px] h-[260px] sm:h-[270px] cursor-pointer">
+                  {/* 3D Flipping Body */}
+                  <div className="relative w-full h-full duration-700 [transform-style:preserve-3d] transition-transform rounded-3xl shadow-xs group-hover:[transform:rotateY(180deg)] group-hover:shadow-2xl">
+                    
+                    {/* Front Face (0 deg) */}
+                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-3xl p-6 bg-white border border-slate-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.07)] flex flex-col justify-between overflow-hidden">
+                      {/* Top Accent Line (Slim 2px Depth) */}
+                      <div className={`absolute top-0 left-0 right-0 h-[2px] ${getEmailBorderColor(item.id)}`} />
 
-                    <div className="space-y-3">
-                      {/* Platform Icon & Badge */}
-                      <div className="flex items-center justify-between">
-                        <div className="w-11 h-11 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-2xs flex items-center justify-center">
-                          {renderOfficialEmailLogo(item.id)}
+                      <div className="space-y-3">
+                        {/* Platform Icon & Badge */}
+                        <div className="flex items-center justify-between">
+                          <div className="w-11 h-11 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-2xs flex items-center justify-center">
+                            {renderOfficialEmailLogo(item.id)}
+                          </div>
+                          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#1A3B71] bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">
+                            {item.badge}
+                          </span>
                         </div>
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#1A3B71] bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">
-                          {item.badge}
-                        </span>
+
+                        {/* Title */}
+                        <h4 className="text-lg font-black tracking-tight text-slate-900 group-hover:text-[#1A3B71] transition-colors leading-tight pt-1">
+                          {item.title}
+                        </h4>
+
+                        {/* Description */}
+                        <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans line-clamp-3">
+                          {item.desc}
+                        </p>
                       </div>
 
-                      {/* Title */}
-                      <h4 className="text-lg font-black tracking-tight text-slate-900 group-hover:text-[#1A3B71] transition-colors leading-tight pt-1">
-                        {item.title}
-                      </h4>
-
-                      {/* Description */}
-                      <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-sans line-clamp-3">
-                        {item.desc}
-                      </p>
-                    </div>
-
-                    {/* Front Bottom Action Prompt */}
-                    <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#1A3B71]">
-                      <span>Hover to Flip &amp; Deploy</span>
-                      <div className="w-6 h-6 rounded-lg bg-blue-50 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                        <ArrowRight className="w-3 h-3 text-[#1A3B71]" />
+                      {/* Front Bottom Action Prompt */}
+                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#1A3B71]">
+                        <span>Hover to Flip &amp; Deploy</span>
+                        <div className="w-6 h-6 rounded-lg bg-blue-50 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                          <ArrowRight className="w-3 h-3 text-[#1A3B71]" />
+                        </div>
                       </div>
                     </div>
+
+                    {/* Back Face (180 deg) */}
+                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl p-6 bg-gradient-to-br from-[#0A2647] via-[#1A3B71] to-[#07192F] text-white border border-[#134B70] flex flex-col justify-between shadow-2xl overflow-hidden">
+                      <div className="relative z-10 space-y-3">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[10px] font-mono uppercase tracking-widest text-[#00E5FF] font-bold">
+                            Cloud Tenant Setup
+                          </span>
+                        </div>
+
+                        <h4 className="text-base sm:text-lg font-black tracking-tight text-white leading-tight">
+                          {item.title}
+                        </h4>
+
+                        <p className="text-xs sm:text-[13px] text-slate-200 leading-relaxed font-sans">
+                          Authenticated SPF/DKIM/DMARC records, spam filtering, and zero-downtime cloud mail routing.
+                        </p>
+                      </div>
+
+                      {/* Back Action Button (Navigates to Services) */}
+                      <div className="relative z-10 pt-3 border-t border-white/15">
+                        <Link
+                          href="/services"
+                          onClick={(e) => e.stopPropagation()}
+                          className="w-full py-2.5 px-3 rounded-xl bg-white hover:bg-slate-100 text-[#1A3B71] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer active:scale-95"
+                        >
+                          <span>Deploy {item.title}</span>
+                          <ArrowRight className="w-3.5 h-3.5 text-[#C11E23]" />
+                        </Link>
+                      </div>
+                    </div>
+
                   </div>
-
-                  {/* Back Face (180 deg) */}
-                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl p-6 bg-gradient-to-br from-[#0A2647] via-[#1A3B71] to-[#07192F] text-white border border-[#134B70] flex flex-col justify-between shadow-2xl overflow-hidden">
-                    <div className="relative z-10 space-y-3">
-                      <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#00E5FF] font-bold">
-                          Cloud Tenant Setup
-                        </span>
-                      </div>
-
-                      <h4 className="text-base sm:text-lg font-black tracking-tight text-white leading-tight">
-                        {item.title}
-                      </h4>
-
-                      <p className="text-xs sm:text-[13px] text-slate-200 leading-relaxed font-sans">
-                        Authenticated SPF/DKIM/DMARC records, spam filtering, and zero-downtime cloud mail routing.
-                      </p>
-                    </div>
-
-                    {/* Back Action Button (Navigates to Services) */}
-                    <div className="relative z-10 pt-3 border-t border-white/15">
-                      <Link
-                        href="/services"
-                        onClick={(e) => e.stopPropagation()}
-                        className="w-full py-2.5 px-3 rounded-xl bg-white hover:bg-slate-100 text-[#1A3B71] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer active:scale-95"
-                      >
-                        <span>Deploy {item.title}</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-[#C11E23]" />
-                      </Link>
-                    </div>
-                  </div>
-
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
 
       </div>

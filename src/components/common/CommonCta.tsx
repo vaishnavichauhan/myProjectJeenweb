@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, PhoneCall } from "lucide-react";
+import { FadeIn } from "@/components/animations/MotionPrimitives";
 
 export interface CommonCtaProps {
   title: React.ReactNode;
@@ -30,7 +31,7 @@ export default function CommonCta({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Executive Sapphire Gradient Container with Checkered Grid */}
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#0A2647] via-[#134B70] to-[#07192F] text-white border border-slate-700/60 shadow-2xl p-8 sm:p-10 lg:p-12 group">
+        <FadeIn direction="up" distance={20} className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#0A2647] via-[#134B70] to-[#07192F] text-white border border-slate-700/60 shadow-2xl p-8 sm:p-10 lg:p-12 group">
           {/* Subtle Checkered Grid Accent (32px by 32px) */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
 
@@ -64,7 +65,7 @@ export default function CommonCta({
               </Link>
             </div>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

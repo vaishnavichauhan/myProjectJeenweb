@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   Building
 } from "lucide-react";
+import { FadeIn } from "@/components/animations/MotionPrimitives";
 
 export default function WhyChooseUs() {
   const [activeHighlightIndex, setActiveHighlightIndex] = useState(0);
@@ -68,7 +69,7 @@ export default function WhyChooseUs() {
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         
         {/* Centered Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <FadeIn direction="up" distance={20} className="text-center max-w-3xl mx-auto mb-14 space-y-4">
           <div className="inline-block border-b-2 border-[#C11E23] pb-1">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
               Why Choose Us
@@ -83,7 +84,7 @@ export default function WhyChooseUs() {
           <p className="text-slate-600 text-base sm:text-lg font-normal max-w-2xl mx-auto leading-relaxed">
             We do not take shortcuts that look convenient today but create vulnerabilities tomorrow. Built on genuine licensed code, single-roof accountability, and enduring engineering.
           </p>
-        </div>
+        </FadeIn>
 
         {/* 3-Column Symmetrical Layout with Center Connected Target Bullseye */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">

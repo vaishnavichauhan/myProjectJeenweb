@@ -9,11 +9,64 @@ import { History, CheckCircle2, ArrowRight, ShieldCheck, Sparkles, Building2 } f
 import HistoryHero from "@/components/about/HistoryHero";
 import TimelineChevronTrack from "@/components/about/TimelineChevronTrack";
 import HistoryValueProposition from "@/components/about/HistoryValueProposition";
+import JsonLd from "@/components/common/JsonLd";
 
 export const metadata = {
-  title: "Company History & Growth Timeline | Jeenweb Vadodara",
+  title: "Company History & 27-Year Milestone Timeline | Jeenweb Vadodara",
   description:
-    "Explore the 27-year growth timeline of Jeenweb Technologists, from web services in 2000 to custom software, cloud solutions, and multi-office setups in Vadodara.",
+    "Explore the 27-year growth timeline of Jeenweb Technologists, from foundational web services in 2000 to enterprise software, cloud infrastructure, and multi-office setups in Vadodara.",
+  alternates: {
+    canonical: "/about/history"
+  },
+  openGraph: {
+    title: "Company History & 27-Year Milestone Timeline | Jeenweb Vadodara",
+    description:
+      "Explore the 27-year growth timeline of Jeenweb Technologists from foundational web services in 2000 to enterprise cloud solutions.",
+    url: "https://jeenweb.com/about/history",
+    siteName: "Jeenweb Technologists",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Jeenweb History and Milestones"
+      }
+    ],
+    locale: "en_IN",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Company History & 27-Year Milestone Timeline | Jeenweb Vadodara",
+    description:
+      "Explore the 27-year growth timeline of Jeenweb Technologists in Vadodara, Gujarat.",
+    images: ["/images/og-image.jpg"]
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://jeenweb.com"
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About Us",
+      item: "https://jeenweb.com/about"
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Company History",
+      item: "https://jeenweb.com/about/history"
+    }
+  ]
 };
 
 export default function HistoryPage() {
@@ -42,6 +95,7 @@ export default function HistoryPage() {
 
   return (
     <main className="min-h-screen bg-[#F8FAFC]">
+      <JsonLd data={breadcrumbSchema} />
       <div className="bg-white border-b border-slate-200 py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb items={[{ label: "About Us", href: "/about" }, { label: "Company History & Timeline" }]} />

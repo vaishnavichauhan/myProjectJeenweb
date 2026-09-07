@@ -40,10 +40,6 @@ export default function TeamCapabilitiesOverview() {
 
   return (
     <section className="py-20 lg:py-24 bg-white relative overflow-hidden border-t border-slate-200" id="team-capabilities">
-      
-      {/* Background Ambient Subtle Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-50 pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section 3 Header (Left Title + Right Description) */}

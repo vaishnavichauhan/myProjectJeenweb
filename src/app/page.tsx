@@ -24,7 +24,34 @@ export const metadata = {
     "NVMe Web Hosting Vadodara",
     "SEO GEO AEO AI Search Optimization",
     "Microsoft 365 Google Workspace Setup Vadodara"
-  ]
+  ],
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    title: "Jeenweb Technologists Pvt. Ltd. | Enterprise IT, Custom Software, Hosting & AI SEO",
+    description:
+      "Reliable domain registration, NVMe web hosting, custom software & ERP development, and AI search optimization in Vadodara since 2000.",
+    url: "https://jeenweb.com",
+    siteName: "Jeenweb Technologists",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Jeenweb Technologists Pvt. Ltd."
+      }
+    ],
+    locale: "en_IN",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jeenweb Technologists Pvt. Ltd. | Enterprise IT, Custom Software, Hosting & AI SEO",
+    description:
+      "Reliable domain registration, NVMe web hosting, custom software & ERP development in Vadodara.",
+    images: ["/images/og-image.jpg"]
+  }
 };
 
 export default function HomePage() {

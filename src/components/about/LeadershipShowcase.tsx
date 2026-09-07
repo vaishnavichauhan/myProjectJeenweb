@@ -106,20 +106,14 @@ export default function LeadershipShowcase() {
                   
                   <div className="space-y-4">
                     
-                    {/* Header with Title and Step Numerals */}
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#073F8A] block mb-0.5">
-                          Leadership Profile 0{index + 1}
-                        </span>
-                        <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight font-sans">
-                          Meet the {leader.titleLabel}
-                        </h3>
-                      </div>
-
-                      <span className="text-2xl sm:text-3xl font-mono font-black text-slate-200">
-                        0{index + 1}
+                    {/* Header with Title */}
+                    <div>
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#073F8A] block mb-0.5">
+                        Leadership Profile
                       </span>
+                      <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight font-sans">
+                        Meet the {leader.titleLabel}
+                      </h3>
                     </div>
 
                     {/* Statement Card with Left Accent Stripe & Icon */}

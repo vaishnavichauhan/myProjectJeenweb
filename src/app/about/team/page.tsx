@@ -9,11 +9,64 @@ import { Users, Award, ShieldCheck, CheckCircle2, ArrowRight, Code2, Cloud, Sear
 import LeadershipShowcase from "@/components/about/LeadershipShowcase";
 import TeamCapabilitiesOverview from "@/components/about/TeamCapabilitiesOverview";
 import EngineeringTeamGrid from "@/components/about/EngineeringTeamGrid";
+import JsonLd from "@/components/common/JsonLd";
 
 export const metadata = {
   title: "Leadership Team & Executive Board | Jeenweb Vadodara",
   description:
     "Meet the leadership behind Jeenweb Technologists in Vadodara: Utpal Shah, Tatvam Shah, and Exita Shah driving custom software and B2B growth.",
+  alternates: {
+    canonical: "/about/team"
+  },
+  openGraph: {
+    title: "Leadership Team & Executive Board | Jeenweb Vadodara",
+    description:
+      "Meet the leadership behind Jeenweb Technologists in Vadodara driving enterprise custom software and digital growth.",
+    url: "https://jeenweb.com/about/team",
+    siteName: "Jeenweb Technologists",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Jeenweb Leadership Team"
+      }
+    ],
+    locale: "en_IN",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Leadership Team & Executive Board | Jeenweb Vadodara",
+    description:
+      "Meet the leadership behind Jeenweb Technologists in Vadodara.",
+    images: ["/images/og-image.jpg"]
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://jeenweb.com"
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About Us",
+      item: "https://jeenweb.com/about"
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Leadership & Team",
+      item: "https://jeenweb.com/about/team"
+    }
+  ]
 };
 
 export default function LeadershipTeamPage() {
@@ -42,6 +95,7 @@ export default function LeadershipTeamPage() {
 
   return (
     <main className="min-h-screen bg-[#F8FAFC]">
+      <JsonLd data={breadcrumbSchema} />
       <div className="bg-white border-b border-slate-200 py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb items={[{ label: "About Us", href: "/about" }, { label: "Leadership & Team" }]} />
@@ -49,8 +103,8 @@ export default function LeadershipTeamPage() {
       </div>
 
       {/* Hero Banner (Centered Content, Light Solid Theme Background) */}
-      <section className="bg-[#F0F4F8] py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-200">
-        <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
+      <section className="bg-[#F0F4F8] min-h-[480px] sm:min-h-[500px] lg:min-h-[560px] flex items-center py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-200">
+        <div className="max-w-4xl mx-auto w-full text-center relative z-10 space-y-6">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight font-sans">
             Guided by Experienced Industry Veterans <br className="hidden sm:inline" />
             <span className="text-[#073F8A]">and Visionary Engineering Leaders</span>

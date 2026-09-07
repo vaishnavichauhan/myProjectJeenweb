@@ -7,6 +7,7 @@ import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
 import TrustedPartnershipsMarquee from "@/components/common/TrustedPartnershipsMarquee";
+import HeroDynamicBg from "@/components/home/HeroDynamicBg";
 import {
   Server,
   Database,
@@ -299,41 +300,34 @@ export default function HostingServicePage() {
         </div>
       </div>
 
-      {/* Hero Banner: Half Cross-Section Layout with Distinct Color & Live Search Dropdown */}
-      <section className="bg-gradient-to-br from-[#06152B] via-[#0B1E38] to-[#040C18] text-white py-16 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-700/60">
+      {/* Hero Header Banner with Standardized Service Hero UI */}
+      <section className="relative min-h-[480px] sm:min-h-[500px] lg:min-h-[560px] bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white flex items-center py-12 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-700/60">
         
-        {/* Ambient Glows & Grid Accent */}
-        <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-10 right-1/4 w-[450px] h-[450px] bg-cyan-600/15 rounded-full blur-[130px] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
+        {/* 60FPS Dynamic Interactive Particle, Data Stream & Aurora Mesh Background */}
+        <HeroDynamicBg />
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        {/* Ambient Glows & Grid Accent */}
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/15 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[450px] h-[400px] bg-[#2563EB]/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#C11E23]/15 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             
-            {/* Left Half Cross-Section: Headline & Narrative */}
-            <div className="lg:col-span-6 space-y-6">
+            {/* Left Column: Standardized Headline & Narrative */}
+            <div className="lg:col-span-6 space-y-5 text-left">
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.18] font-sans">
                 High-Speed, Ultra-Secure Web Hosting Powered by On-Demand Manual Backup Facilities
               </h1>
 
-              <p className="text-base sm:text-lg text-sky-300 font-semibold">
+              <p className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug">
                 Enterprise-grade NVMe server infrastructure, 99.9% uptime, and reliable data protection managed from Vadodara.
               </p>
 
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-sans">
+              <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
                 A slow website costs you visitors. An unreliable server costs you customers. And a host without proper backup facilities can cost you everything. Jeenweb is a trusted web hosting company in Vadodara providing fast, secure, and stable hosting for business websites, web applications, e-commerce stores, and corporate portals across Gujarat.
               </p>
-
-              <div className="pt-2 flex flex-wrap gap-4 items-center">
-                <a
-                  href="#plans"
-                  className="px-7 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-red-950/40 hover:scale-[1.02] active:scale-95 flex items-center gap-2.5"
-                >
-                  <span>Explore Hosting Tiers</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
             </div>
 
             {/* Right Half Cross-Section: Contrasting Background + Man Hands Searching Image + Dropdown UI */}

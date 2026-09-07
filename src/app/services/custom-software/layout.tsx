@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Custom Software Development Company Vadodara | Jeenwebinfo",
+  title: "Custom Software Development & Enterprise ERP | Jeenweb Vadodara",
   description:
-    "Build custom ERP, CRM, visitor, and school management software in Vadodara with Jeenweb. Mapped to your actual business workflow across Gujarat.",
+    "Engineering bespoke ERP, CRM, visitor, and school management software in Vadodara with Jeenweb. Mapped to your actual physical business workflows across Gujarat.",
   keywords: [
     "custom software development Vadodara",
     "ERP software company Gujarat",
@@ -11,13 +11,32 @@ export const metadata: Metadata = {
     "school management software Gujarat",
     "enterprise software development"
   ],
+  alternates: {
+    canonical: "/services/custom-software"
+  },
   openGraph: {
-    title: "Custom Software Development Company Vadodara | Jeenwebinfo",
+    title: "Custom Software Development & Enterprise ERP | Jeenweb Vadodara",
     description:
-      "Build custom ERP, CRM, visitor, and school management software in Vadodara with Jeenweb. Mapped to your actual business workflow across Gujarat.",
-    type: "website",
+      "Engineering bespoke ERP, CRM, and management software mapped to your actual physical business workflows across Gujarat.",
+    url: "https://jeenweb.com/services/custom-software",
+    siteName: "Jeenweb Technologists",
+    images: [
+      {
+        url: "/images/custom-software-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Custom Software Development"
+      }
+    ],
     locale: "en_IN",
-    siteName: "Jeenweb Technologists"
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Software Development & Enterprise ERP | Jeenweb Vadodara",
+    description:
+      "Engineering bespoke ERP, CRM, and management software mapped to your actual physical business workflows across Gujarat.",
+    images: ["/images/custom-software-hero.jpg"]
   }
 };
 
@@ -61,6 +80,31 @@ export default function CustomSoftwareLayout({
       "Build custom ERP, CRM, visitor, and school management software in Vadodara with Jeenweb. Mapped to your actual business workflow across Gujarat."
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://jeenweb.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://jeenweb.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Custom Software",
+        "item": "https://jeenweb.com/services/custom-software"
+      }
+    ]
+  };
+
   return (
     <>
       <script
@@ -70,6 +114,10 @@ export default function CustomSoftwareLayout({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {children}
     </>

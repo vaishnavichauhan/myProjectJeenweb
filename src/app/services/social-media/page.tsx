@@ -396,61 +396,66 @@ export default function SocialMediaServicePage() {
         </div>
       </div>
 
-      {/* Hero Banner: Left Side Image, Right Side Text */}
-      <section className="bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white py-14 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-700/60">
+      {/* Hero Header Banner with Standardized Service Hero UI */}
+      <section className="relative min-h-[480px] sm:min-h-[500px] lg:min-h-[560px] bg-gradient-to-br from-[#0A2647] via-[#134B70] to-[#07192F] text-white flex items-center pt-12 sm:pt-14 lg:pt-16 pb-12 sm:pb-14 lg:pb-0 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-700/60">
         
-        {/* Clean Cyber Checkered Grid Overlay (64px by 64px) matching SEO Hero */}
+        {/* Clean Cyber Checkered Grid Overlay (64px by 64px) */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
 
-        {/* Ambient Luminous Glow Flares matching SEO Hero */}
+        {/* Ambient Luminous Glow Flares */}
         <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#00E5FF]/15 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-[450px] h-[400px] bg-[#2563EB]/20 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#E11D48]/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#C11E23]/15 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center lg:items-end">
             
-            {/* Left Side: Transparent Illustration */}
-            <div className="lg:col-span-5 flex justify-center items-center">
-              <div className="relative w-full max-w-[420px] sm:max-w-[480px] lg:max-w-full flex justify-center items-center">
-                {/* Soft ambient glow */}
-                <div className="absolute inset-4 bg-gradient-to-tr from-sky-400/20 via-amber-400/15 to-transparent rounded-full blur-3xl pointer-events-none" />
-                
-                <Image
-                  src="/images/social-media-hero-phone.png"
-                  alt="Social Media and Performance Marketing"
-                  width={800}
-                  height={800}
-                  priority
-                  className="w-full h-auto object-contain mx-auto drop-shadow-[0_20px_45px_rgba(0,0,0,0.5)] relative z-10"
-                />
-              </div>
-            </div>
+            {/* Left Side: Standardized Headline, Subtitle, Description & Button */}
+            <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-4 pb-0 lg:pb-8 xl:pb-10">
 
-            {/* Right Side: Headline, Description & Button */}
-            <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-6">
-
-              {/* Headline */}
-              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.18] drop-shadow-md">
+              {/* Standardized Headline */}
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.18] font-sans">
                 Transform Social Channels into Revenue Engines Through Strategic Management and Paid Media
               </h1>
 
-              {/* Description */}
-              <p className="text-slate-200 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl font-sans">
+              {/* Standardized Subtitle */}
+              <p className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug">
+                Data-driven performance campaigns, creator partnerships, and brand narrative engineering.
+              </p>
+
+              {/* Standardized Description */}
+              <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
                 Coordinated growth across platform management, high-converting visual production, data-driven paid advertising, and targeted influencer campaigns engineered to maximize your verified ROAS.
               </p>
 
-              {/* Added Button: Launch Your Social Campaign */}
-              <div className="pt-2">
+              {/* Standardized Button */}
+              <div className="pt-1">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-[#C11E23] hover:bg-[#a5181c] shadow-lg shadow-red-900/30 hover:shadow-red-900/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group w-full sm:w-fit cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl shadow-red-950/40 hover:scale-[1.02] active:scale-95 cursor-pointer group"
                 >
                   <span>Launch Your Social Campaign</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
 
+            </div>
+
+            {/* Right Side: Transparent Illustration */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end items-end self-end">
+              <div className="relative w-full max-w-[440px] sm:max-w-[480px] lg:max-w-[520px] xl:max-w-[550px] flex justify-center lg:justify-end items-end">
+                {/* Soft ambient glow */}
+                <div className="absolute inset-4 bg-gradient-to-tr from-sky-400/20 via-amber-400/15 to-transparent rounded-full blur-3xl pointer-events-none" />
+                
+                <Image
+                  src="/images/socialHero.png"
+                  alt="Social Media and Performance Marketing"
+                  width={1000}
+                  height={616}
+                  priority
+                  className="w-full h-auto object-contain mx-auto drop-shadow-[0_20px_45px_rgba(0,0,0,0.5)] relative z-10 align-bottom block"
+                />
+              </div>
             </div>
 
           </div>
