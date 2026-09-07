@@ -122,7 +122,7 @@ export default function TrustedPartnershipsMarquee({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
         <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-3">
-          <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
             {badgeText}
           </span>
         </div>

@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 
 export default function TimelineChevronTrack() {
   const phase1Top = [
@@ -61,9 +60,12 @@ export default function TimelineChevronTrack() {
         {/* HEADER: Title & Subtitle (Positioned to the right of the corner photo) */}
         {/* ========================================================================= */}
         <div className="max-w-2xl lg:ml-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#073F8A]/10 text-[#073F8A] text-xs font-semibold">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Complete 26-Year Corporate Journey</span>
+          <div>
+            <div className="inline-block border-b-2 border-[#C11E23] pb-1">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
+                Complete 26-Year Corporate Journey
+              </span>
+            </div>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-normal tracking-tight text-slate-900 font-sans leading-tight">
             Company history from 2000 to 2026

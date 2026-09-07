@@ -93,9 +93,11 @@ export default function GlobalFootprint() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-3 sm:mb-4 space-y-1">
           <div>
-            <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-[#1A3B71]">
-              Our Reach &amp; Clients
-            </span>
+            <div className="inline-block border-b-2 border-[#C11E23] pb-1">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
+                Our Reach &amp; Clients
+              </span>
+            </div>
           </div>
 
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-slate-900 leading-tight">

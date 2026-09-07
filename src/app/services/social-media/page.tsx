@@ -463,7 +463,7 @@ export default function SocialMediaServicePage() {
           {/* Section Header */}
           <div className="max-w-3xl mx-auto text-center mb-12">
             <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-3">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 What We Do for Your Brand
               </span>
             </div>
@@ -607,7 +607,7 @@ export default function SocialMediaServicePage() {
           {/* Section Header */}
           <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
             <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-3">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 Methodology &amp; Framework
               </span>
             </div>

@@ -278,23 +278,23 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Get in Touch Section - Boxed Card Container (Ref Website Architecture - Compact Height) */}
-      <section className="py-8 sm:py-10 lg:py-12 bg-[#F8FAFC]" id="get-in-touch">
+      {/* Get in Touch Section - Boxed Card Container */}
+      <section className="py-8 sm:py-10 lg:py-12 bg-white" id="get-in-touch">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Main Boxed Container (Executive Midnight Sapphire Gradient with Fine Tech Grid) */}
-          <div className="w-full bg-gradient-to-br from-[#0B1728] via-[#0E2038] to-[#071324] border border-[#1E3A5F]/60 rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 lg:p-10 relative overflow-hidden shadow-2xl">
+          {/* Main Boxed Container (Cream Surface without Border) */}
+          <div className="w-full bg-[#FAF7F2] rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 lg:p-10 relative overflow-hidden shadow-lg shadow-stone-200/40">
             
             {/* Subtle Ambient Glows & Fine Grid Texture */}
-            <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#C11E23]/15 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#00E5FF]/10 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:28px_28px] pointer-events-none" />
+            <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#16325B]/5 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#C11E23]/5 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000004_1px,transparent_1px),linear-gradient(to_bottom,#00000004_1px,transparent_1px)] bg-[size:28px_28px] pointer-events-none" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center relative z-10">
               
               {/* Left Column (Ref: footer-section-lt): Tightly sized around circle graphic */}
               <div className="lg:col-span-4 flex flex-col items-center lg:items-start justify-center text-center lg:text-left space-y-4 lg:space-y-6">
-                <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-medium text-white tracking-tight leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-black text-slate-900 tracking-tight leading-tight">
                   Get in Touch
                 </h2>
 
@@ -303,14 +303,14 @@ export default function ContactPage() {
                   <motion.div
                     animate={{
                       scale: [0.95, 1.08, 0.95],
-                      opacity: [0.2, 0.45, 0.2]
+                      opacity: [0.25, 0.5, 0.25]
                     }}
                     transition={{
                       duration: 4,
                       repeat: Infinity,
                       ease: "easeInOut"
                     }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-72 sm:h-72 bg-gradient-to-tr from-[#00E5FF]/20 via-[#1A3B71]/30 to-[#C11E23]/20 rounded-full blur-2xl pointer-events-none"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-72 sm:h-72 bg-gradient-to-tr from-sky-200/40 via-blue-100/40 to-red-100/30 rounded-full blur-2xl pointer-events-none"
                   />
 
                   {/* Outer Expanding Radar Pulse Ring */}
@@ -324,7 +324,7 @@ export default function ContactPage() {
                       repeat: Infinity,
                       ease: "easeOut"
                     }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-60 sm:w-72 sm:h-72 rounded-full border border-cyan-400/35 pointer-events-none"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-60 sm:w-72 sm:h-72 rounded-full border border-blue-400/30 pointer-events-none"
                   />
 
                   {/* Dynamic Floating & Subtle Tilting SVG Graphic */}
@@ -338,7 +338,7 @@ export default function ContactPage() {
                       repeat: Infinity,
                       ease: "easeInOut"
                     }}
-                    className="relative z-10 w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[340px] drop-shadow-[0_12px_24px_rgba(0,0,0,0.5)]"
+                    className="relative z-10 w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[340px] drop-shadow-[0_12px_24px_rgba(0,0,0,0.08)]"
                   >
                     <Image
                       src="/images/get-in-touch-circles.svg"
@@ -353,17 +353,17 @@ export default function ContactPage() {
               </div>
 
               {/* Right Column (Ref: footer-section-rt): Starts immediately next to the circle graphic */}
-              <div className="lg:col-span-8 w-full text-white space-y-4">
+              <div className="lg:col-span-8 w-full text-slate-900 space-y-4">
                 
-                {/* Tabs Wrapper (Ref Website Style) */}
+                {/* Tabs Wrapper */}
                 <div className="grid grid-cols-2 gap-3 w-full">
                   <button
                     type="button"
                     onClick={() => setActiveTab("send-request")}
                     className={`h-[44px] sm:h-[48px] rounded-[10px] font-bold text-sm sm:text-base transition-all flex items-center justify-center cursor-pointer ${
                       activeTab === "send-request"
-                        ? "bg-[#C11E23] hover:bg-[#A3161A] text-white shadow-lg shadow-red-950/50"
-                        : "bg-[#132238] border border-white/5 text-slate-300 hover:text-white hover:bg-[#182C48]"
+                        ? "bg-[#C11E23] hover:bg-[#A3161A] text-white shadow-md shadow-red-950/20"
+                        : "bg-white border border-stone-300/90 text-slate-700 hover:text-slate-950 hover:bg-stone-50"
                     }`}
                   >
                     Send Request
@@ -374,8 +374,8 @@ export default function ContactPage() {
                     onClick={() => setActiveTab("schedule-call")}
                     className={`h-[44px] sm:h-[48px] rounded-[10px] font-bold text-sm sm:text-base transition-all flex items-center justify-center cursor-pointer ${
                       activeTab === "schedule-call"
-                        ? "bg-[#C11E23] hover:bg-[#A3161A] text-white shadow-lg shadow-red-950/50"
-                        : "bg-[#132238] border border-white/5 text-slate-300 hover:text-white hover:bg-[#182C48]"
+                        ? "bg-[#C11E23] hover:bg-[#A3161A] text-white shadow-md shadow-red-950/20"
+                        : "bg-white border border-stone-300/90 text-slate-700 hover:text-slate-950 hover:bg-stone-50"
                     }`}
                   >
                     Schedule a Call
@@ -388,12 +388,12 @@ export default function ContactPage() {
                     
 
                     {submitted ? (
-                      <div className="p-6 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 text-center space-y-3">
-                        <div className="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto">
+                      <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-3">
+                        <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
                           <CheckCircle2 className="w-6 h-6" />
                         </div>
-                        <h4 className="text-lg font-bold text-white">Consultation Request Dispatched</h4>
-                        <p className="text-slate-300 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
+                        <h4 className="text-lg font-bold text-slate-900">Consultation Request Dispatched</h4>
+                        <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
                           Thank you for contacting Jeenweb. A senior systems engineer from our Vadodara headquarters will get in touch with you within 2 business hours.
                         </p>
                         <button
@@ -402,7 +402,7 @@ export default function ContactPage() {
                             setSubmitted(false);
                             setErrorMessage("");
                           }}
-                          className="px-5 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-white text-xs font-bold tracking-wider uppercase transition-all"
+                          className="px-5 py-2 rounded-lg bg-[#16325B] hover:bg-[#0E2038] text-white text-xs font-bold tracking-wider uppercase transition-all"
                         >
                           Send Another Inquiry
                         </button>
@@ -410,14 +410,14 @@ export default function ContactPage() {
                     ) : (
                       <form onSubmit={handleSubmit} className="space-y-3">
                         {errorMessage && (
-                          <div className="p-3 rounded-lg bg-red-950/60 border border-red-500/50 text-red-200 text-xs flex items-center gap-2 animate-in fade-in duration-200">
-                            <span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0" />
+                          <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2 animate-in fade-in duration-200">
+                            <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
                             <span>{errorMessage}</span>
                           </div>
                         )}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           <div>
-                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 mb-1">
+                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
                               Full Name *
                             </label>
                             <input
@@ -426,12 +426,12 @@ export default function ContactPage() {
                               value={formData.fullName}
                               onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                               placeholder="Full Name *"
-                              className="w-full px-3.5 py-2.5 rounded-lg bg-[#0B1524] border border-white/10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#C11E23] focus:ring-1 focus:ring-[#C11E23] transition-all"
+                              className="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/80 hover:bg-white border border-slate-300 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#16325B] focus:ring-1 focus:ring-[#16325B] transition-all"
                             />
                           </div>
 
                           <div>
-                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 mb-1">
+                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
                               Corporate Email *
                             </label>
                             <input
@@ -440,14 +440,14 @@ export default function ContactPage() {
                               value={formData.email}
                               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                               placeholder="Corporate Email *"
-                              className="w-full px-3.5 py-2.5 rounded-lg bg-[#0B1524] border border-white/10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#C11E23] focus:ring-1 focus:ring-[#C11E23] transition-all"
+                              className="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/80 hover:bg-white border border-slate-300 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#16325B] focus:ring-1 focus:ring-[#16325B] transition-all"
                             />
                           </div>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           <div>
-                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 mb-1">
+                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
                               Company
                             </label>
                             <input
@@ -455,12 +455,12 @@ export default function ContactPage() {
                               value={formData.company}
                               onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                               placeholder="Company"
-                              className="w-full px-3.5 py-2.5 rounded-lg bg-[#0B1524] border border-white/10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#C11E23] focus:ring-1 focus:ring-[#C11E23] transition-all"
+                              className="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/80 hover:bg-white border border-slate-300 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#16325B] focus:ring-1 focus:ring-[#16325B] transition-all"
                             />
                           </div>
 
                           <div>
-                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 mb-1">
+                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
                               Phone Number
                             </label>
                             <input
@@ -468,19 +468,19 @@ export default function ContactPage() {
                               value={formData.phone}
                               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                               placeholder="Phone number"
-                              className="w-full px-3.5 py-2.5 rounded-lg bg-[#0B1524] border border-white/10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#C11E23] focus:ring-1 focus:ring-[#C11E23] transition-all"
+                              className="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/80 hover:bg-white border border-slate-300 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#16325B] focus:ring-1 focus:ring-[#16325B] transition-all"
                             />
                           </div>
                         </div>
 
                         <div>
-                          <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 mb-1">
+                          <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
                             Primary Service Focus
                           </label>
                           <select
                             value={formData.service}
                             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                            className="w-full px-3.5 py-2.5 rounded-lg bg-[#0B1524] border border-white/10 text-sm text-white focus:outline-none focus:border-[#C11E23]"
+                            className="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/80 hover:bg-white border border-slate-300 text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-[#16325B] transition-all"
                           >
                             <option value="Custom Software Development">Custom Software Development</option>
                             <option value="Web Hosting Services">Web Hosting Services</option>
@@ -493,7 +493,7 @@ export default function ContactPage() {
                         </div>
 
                         <div>
-                          <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 mb-1">
+                          <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
                             Message
                           </label>
                           <textarea
@@ -501,38 +501,38 @@ export default function ContactPage() {
                             value={formData.message}
                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             placeholder="Message"
-                            className="w-full px-3.5 py-2.5 rounded-lg bg-[#0B1524] border border-white/10 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#C11E23] focus:ring-1 focus:ring-[#C11E23] transition-all resize-none"
+                            className="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/80 hover:bg-white border border-slate-300 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#16325B] focus:ring-1 focus:ring-[#16325B] transition-all resize-none"
                           />
                         </div>
 
-                        {/* Acceptance Policy Checkbox (Exact from Rishabh Soft) */}
+                        {/* Acceptance Policy Checkbox */}
                         <div>
                           <label className="flex items-start gap-2.5 cursor-pointer group">
                             <input
                               type="checkbox"
                               checked={formData.acceptance}
                               onChange={(e) => setFormData({ ...formData, acceptance: e.target.checked })}
-                              className="mt-0.5 w-3.5 h-3.5 rounded border-slate-600 text-[#C11E23] focus:ring-[#C11E23] bg-[#0B1524] accent-[#C11E23]"
+                              className="mt-0.5 w-3.5 h-3.5 rounded border-slate-300 text-[#C11E23] focus:ring-[#C11E23] accent-[#C11E23]"
                             />
-                            <span className="text-[11px] text-slate-400 group-hover:text-slate-300 transition-colors leading-relaxed">
+                            <span className="text-[11px] text-slate-600 group-hover:text-slate-800 transition-colors leading-relaxed">
                               Yes, I am OK to receive further communication over my details shared here.
                             </span>
                           </label>
                         </div>
 
-                        {/* Submit Button (White Background) */}
+                        {/* Submit Button */}
                         <div className="pt-1">
                           <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3 rounded-lg bg-white hover:bg-slate-100 text-[#0B1728] font-bold text-sm sm:text-base transition-all shadow-xl hover:scale-[1.005] active:scale-[0.995] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                            className="w-full py-3 rounded-lg bg-[#16325B] hover:bg-[#0E2038] text-white font-bold text-sm sm:text-base transition-all shadow-lg hover:scale-[1.005] active:scale-[0.995] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                           >
                             {loading ? (
                               <span>Processing Dispatch...</span>
                             ) : (
                               <>
                                 <span>Submit</span>
-                                <ArrowRight className="w-4 h-4 text-[#C11E23]" />
+                                <ArrowRight className="w-4 h-4 text-white" />
                               </>
                             )}
                           </button>
@@ -546,13 +546,13 @@ export default function ContactPage() {
                   {activeTab === "schedule-call" && (
                     <div className="space-y-5 animate-in fade-in duration-300">
                       {callBooked ? (
-                        <div className="p-8 rounded-2xl bg-blue-950/40 border border-blue-500/40 text-center space-y-4">
-                          <div className="w-14 h-14 rounded-full bg-blue-500/20 text-[#00E5FF] flex items-center justify-center mx-auto">
+                        <div className="p-8 rounded-2xl bg-blue-50 border border-blue-200 text-center space-y-4">
+                          <div className="w-14 h-14 rounded-full bg-blue-100 text-[#16325B] flex items-center justify-center mx-auto">
                             <CheckCircle2 className="w-8 h-8" />
                           </div>
-                          <h4 className="text-xl font-bold text-white">30-Min Call Confirmed!</h4>
-                          <p className="text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
-                            Your technical consultation is scheduled for <span className="text-white font-bold">{selectedDate}</span> at <span className="text-[#00E5FF] font-bold">{selectedSlot}</span> ({selectedTimezone}). A calendar invitation has been sent to your email.
+                          <h4 className="text-xl font-bold text-slate-900">30-Min Call Confirmed!</h4>
+                          <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+                            Your technical consultation is scheduled for <span className="text-slate-900 font-bold">{selectedDate}</span> at <span className="text-[#16325B] font-bold">{selectedSlot}</span> ({selectedTimezone}). A calendar invitation has been sent to your email.
                           </p>
                           <button
                             type="button"
@@ -560,7 +560,7 @@ export default function ContactPage() {
                               setCallBooked(false);
                               setCallStep(1);
                             }}
-                            className="px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-bold tracking-wider uppercase transition-all"
+                            className="px-6 py-2.5 rounded-xl bg-[#16325B] hover:bg-[#0E2038] text-white text-xs font-bold tracking-wider uppercase transition-all"
                           >
                             Book Another Slot
                           </button>
@@ -568,21 +568,21 @@ export default function ContactPage() {
                       ) : callStep === 1 ? (
                         <div className="space-y-3.5">
                           {/* Duration Badge */}
-                          <div className="flex flex-wrap items-center gap-3 p-2 rounded-lg bg-[#252525] text-xs font-mono text-slate-300">
-                            <div className="flex items-center gap-1.5 text-emerald-400">
+                          <div className="flex flex-wrap items-center gap-3 p-2 rounded-lg bg-slate-100 border border-slate-200 text-xs font-mono text-slate-700">
+                            <div className="flex items-center gap-1.5 text-emerald-700 font-semibold">
                               <Clock className="w-3.5 h-3.5" />
                               <span>30 Min Discovery</span>
                             </div>
-                            <span className="text-slate-600">•</span>
-                            <div className="flex items-center gap-1.5 text-slate-300">
-                              <Globe className="w-3.5 h-3.5 text-[#00E5FF]" />
+                            <span className="text-slate-400">•</span>
+                            <div className="flex items-center gap-1.5 text-slate-700">
+                              <Globe className="w-3.5 h-3.5 text-[#16325B]" />
                               <span>Google Meet / On-Site Vadodara</span>
                             </div>
                           </div>
 
                           {/* 1. Date Selection (Calendar Picker - No Previous Dates) */}
                           <div className="space-y-1.5">
-                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300">
+                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700">
                               1. Select Preferred Date:
                             </label>
                             <div className="relative">
@@ -594,13 +594,13 @@ export default function ContactPage() {
                                 min={minDate}
                                 value={selectedDate}
                                 onChange={(e) => setSelectedDate(e.target.value)}
-                                className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-[#0B1524] border border-white/10 text-sm text-white font-medium focus:outline-none focus:border-[#C11E23] [color-scheme:dark] cursor-pointer"
+                                className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-sm text-slate-900 font-medium focus:outline-none focus:border-[#16325B] [color-scheme:light] cursor-pointer"
                               />
                             </div>
                             {selectedDate && (
-                              <div className="flex items-center gap-1.5 text-xs text-slate-300 pt-0.5">
-                                <span className="text-[11px] text-slate-400 font-mono">Selected:</span>
-                                <span className="font-semibold text-white">
+                              <div className="flex items-center gap-1.5 text-xs text-slate-700 pt-0.5">
+                                <span className="text-[11px] text-slate-500 font-mono">Selected:</span>
+                                <span className="font-semibold text-slate-900">
                                   {new Date(selectedDate + "T00:00:00").toLocaleDateString("en-US", {
                                     weekday: "short",
                                     month: "short",
@@ -614,13 +614,13 @@ export default function ContactPage() {
 
                           {/* 2. Timezone */}
                           <div className="space-y-1.5">
-                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300">
+                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700">
                               2. Timezone:
                             </label>
                             <select
                               value={selectedTimezone}
                               onChange={(e) => setSelectedTimezone(e.target.value)}
-                              className="w-full px-3.5 py-2.5 rounded-lg bg-[#0B1524] border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-[#C11E23]"
+                              className="w-full px-3.5 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-xs sm:text-sm text-slate-900 focus:outline-none focus:border-[#16325B]"
                             >
                               <option value="India Standard Time (IST)">India Standard Time (IST) — UTC+05:30</option>
                               <option value="Greenwich Mean Time (GMT)">Greenwich Mean Time (GMT) — UTC+00:00</option>
@@ -634,7 +634,7 @@ export default function ContactPage() {
 
                           {/* 3. Slot Selection */}
                           <div className="space-y-1.5">
-                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300">
+                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700">
                               3. Choose 30-Min Slot:
                             </label>
                             <div className="grid grid-cols-2 sm:grid-cols-2 gap-2">
@@ -643,14 +643,14 @@ export default function ContactPage() {
                                   key={slot}
                                   type="button"
                                   onClick={() => setSelectedSlot(slot)}
-                                  className={`py-2 px-3 rounded-lg border text-xs font-mono transition-all flex items-center justify-between ${
+                                  className={`py-2 px-3 rounded-lg border text-xs font-mono transition-all flex items-center justify-between cursor-pointer ${
                                     selectedSlot === slot
-                                      ? "bg-[#C11E23]/30 border-[#C11E23] text-white font-bold"
-                                      : "bg-[#0B1524] border-white/10 text-slate-300 hover:border-slate-500"
+                                      ? "bg-[#C11E23] border-[#C11E23] text-white font-bold shadow-xs"
+                                      : "bg-slate-50 border-slate-300 text-slate-700 hover:bg-slate-100 hover:border-slate-400"
                                   }`}
                                 >
                                   <span>{slot}</span>
-                                  {selectedSlot === slot && <Check className="w-3 h-3 text-[#C11E23]" />}
+                                  {selectedSlot === slot && <Check className="w-3 h-3 text-white" />}
                                 </button>
                               ))}
                             </div>
@@ -661,21 +661,21 @@ export default function ContactPage() {
                             <button
                               type="button"
                               onClick={() => setCallStep(2)}
-                              className="w-full py-3 rounded-lg bg-white hover:bg-slate-100 text-[#0B1728] font-bold text-sm uppercase tracking-wider transition-all shadow-xl hover:scale-[1.005] active:scale-[0.995] flex items-center justify-center gap-2 cursor-pointer"
+                              className="w-full py-3 rounded-lg bg-[#16325B] hover:bg-[#0E2038] text-white font-bold text-sm uppercase tracking-wider transition-all shadow-lg hover:scale-[1.005] active:scale-[0.995] flex items-center justify-center gap-2 cursor-pointer"
                             >
                               <span>Continue with {selectedSlot}</span>
-                              <ArrowRight className="w-4 h-4 text-[#C11E23]" />
+                              <ArrowRight className="w-4 h-4 text-white" />
                             </button>
                           </div>
                         </div>
                       ) : (
                         /* Step 2: Attendee Info */
                         <form onSubmit={handleCallSubmit} className="space-y-3">
-                          <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                          <div className="flex items-center justify-between pb-2 border-b border-slate-200">
                             <button
                               type="button"
                               onClick={() => setCallStep(1)}
-                              className="flex items-center gap-1 text-xs text-slate-400 hover:text-white transition-colors"
+                              className="flex items-center gap-1 text-xs text-slate-600 hover:text-slate-900 transition-colors"
                             >
                               <ChevronLeft className="w-3.5 h-3.5" />
                               <span>Change Time Slot</span>
@@ -687,7 +687,7 @@ export default function ContactPage() {
 
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                              <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 mb-1">
+                              <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
                                 Your Name *
                               </label>
                               <input
@@ -696,12 +696,12 @@ export default function ContactPage() {
                                 value={callForm.name}
                                 onChange={(e) => setCallForm({ ...callForm, name: e.target.value })}
                                 placeholder="Your Name"
-                                className="w-full px-3.5 py-2.5 rounded-lg bg-[#0B1524] border border-white/10 text-sm text-white focus:outline-none focus:border-[#C11E23]"
+                                className="w-full px-3.5 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-[#16325B]"
                               />
                             </div>
 
                             <div>
-                              <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 mb-1">
+                              <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
                                 Phone Number *
                               </label>
                               <input
@@ -710,13 +710,13 @@ export default function ContactPage() {
                                 value={callForm.phone}
                                 onChange={(e) => setCallForm({ ...callForm, phone: e.target.value })}
                                 placeholder="+91 Phone number"
-                                className="w-full px-3.5 py-2.5 rounded-lg bg-[#0B1524] border border-white/10 text-sm text-white focus:outline-none focus:border-[#C11E23]"
+                                className="w-full px-3.5 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-[#16325B]"
                               />
                             </div>
                           </div>
 
                           <div>
-                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 mb-1">
+                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
                               Business Email Address *
                             </label>
                             <input
@@ -725,12 +725,12 @@ export default function ContactPage() {
                               value={callForm.email}
                               onChange={(e) => setCallForm({ ...callForm, email: e.target.value })}
                               placeholder="business@company.com"
-                              className="w-full px-3.5 py-2.5 rounded-lg bg-[#0B1524] border border-white/10 text-sm text-white focus:outline-none focus:border-[#C11E23]"
+                              className="w-full px-3.5 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-[#16325B]"
                             />
                           </div>
 
                           <div>
-                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-300 mb-1">
+                            <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
                               Discussion Topics / Project Scope (Optional)
                             </label>
                             <textarea
@@ -738,7 +738,7 @@ export default function ContactPage() {
                               value={callForm.notes}
                               onChange={(e) => setCallForm({ ...callForm, notes: e.target.value })}
                               placeholder="Briefly describe what your organization aims to build or automate..."
-                              className="w-full px-3.5 py-2.5 rounded-lg bg-[#0B1524] border border-white/10 text-sm text-white focus:outline-none focus:border-[#C11E23] resize-none"
+                              className="w-full px-3.5 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:border-[#16325B] resize-none"
                             />
                           </div>
 
@@ -746,14 +746,14 @@ export default function ContactPage() {
                             <button
                               type="submit"
                               disabled={loading}
-                              className="w-full py-3 rounded-lg bg-white hover:bg-slate-100 text-[#0B1728] font-bold text-sm sm:text-base uppercase tracking-wider transition-all shadow-xl hover:scale-[1.005] active:scale-[0.995] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                              className="w-full py-3 rounded-lg bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-sm sm:text-base uppercase tracking-wider transition-all shadow-lg hover:scale-[1.005] active:scale-[0.995] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                             >
                               {loading ? (
                                 <span>Reserving Calendar Slot...</span>
                               ) : (
                                 <>
                                   <span>Confirm 30-Min Consultation</span>
-                                  <ArrowRight className="w-4 h-4 text-[#C11E23]" />
+                                  <ArrowRight className="w-4 h-4 text-white" />
                                 </>
                               )}
                             </button>

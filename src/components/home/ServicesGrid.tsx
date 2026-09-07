@@ -149,7 +149,7 @@ export default function ServicesGrid() {  const [selectedService, setSelectedSer
           <div className="flex-1 space-y-4 max-w-xl">
             <div>
               <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-                <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                   What We Do
                 </span>
               </div>

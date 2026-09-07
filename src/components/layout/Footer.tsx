@@ -136,7 +136,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/careers" className="hover:text-white transition-colors flex items-center justify-between group">
+                  <Link href="/careers" className="hover:text-white transition-colors inline-flex items-center gap-2 group">
                     <span>Careers</span>
                     <span className="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-bold">Hiring</span>
                   </Link>

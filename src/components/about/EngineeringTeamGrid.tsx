@@ -385,8 +385,8 @@ export default function EngineeringTeamGrid() {
         {/* Section Header (Centered) */}
         <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
           <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
-              Developer & Specialist Roster
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
+              Developer &amp; Specialist Roster
             </span>
           </div>
 

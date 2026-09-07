@@ -314,7 +314,7 @@ export default function SeoServicePage() {
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
             <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-4">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#C11E23]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 Proprietary Visibility Matrix
               </span>
             </div>
@@ -380,7 +380,7 @@ export default function SeoServicePage() {
           {/* Top Header matching Image 1 */}
           <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
             <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-4">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#C11E23]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 SEO Growth Framework • Vadodara &amp; Global
               </span>
             </div>

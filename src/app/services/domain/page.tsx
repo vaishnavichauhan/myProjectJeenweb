@@ -289,6 +289,7 @@ export default function DomainServicePage() {
           <SectionHeader
             badge="Why Businesses in Vadodara Choose Jeenweb for Domain Services"
             badgeStyle="underline"
+            badgeColor="blue"
             title="The Jeenweb Advantage for Domain Management"
             subtitle="Enterprise DNS routing, zero-cost WHOIS privacy defense, and transparent renewal pricing backed by local engineers in Vadodara."
             centered={true}
@@ -449,6 +450,7 @@ export default function DomainServicePage() {
           <SectionHeader
             badge="Domain Extension Guide"
             badgeStyle="underline"
+            badgeColor="blue"
             title="Domain Extensions and What Each One Is Used For"
             subtitle="Not all domain extensions work the same way. Here is a simple, structured breakdown of global, regional, and architecture extensions."
             centered={true}

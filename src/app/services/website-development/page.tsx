@@ -362,7 +362,7 @@ export default function WebsiteDevelopmentPage() {
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-14 lg:mb-16 space-y-3">
             <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-2">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 Comprehensive Web Capabilities
               </span>
             </div>

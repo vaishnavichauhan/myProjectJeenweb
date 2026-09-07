@@ -17,8 +17,8 @@ export default function CorporatePurposeSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
           <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
-              Corporate Purpose & Mandate
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
+              Corporate Purpose &amp; Mandate
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-slate-900 leading-[1.08]">

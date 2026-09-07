@@ -50,7 +50,7 @@ export default function TeamCapabilitiesOverview() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl space-y-3">
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 The Teams Doing the Work
               </span>
             </div>

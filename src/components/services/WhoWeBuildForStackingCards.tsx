@@ -200,7 +200,7 @@ export default function WhoWeBuildForStackingCards() {  const [selectedSector, s
         <div className="text-center max-w-4xl mx-auto mb-20 lg:mb-24 space-y-4">
           <div>
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 Domain Specialization
               </span>
             </div>

@@ -218,7 +218,7 @@ export default function TechStack() {
         <div className="max-w-3xl mx-auto text-center mb-12 space-y-3">
           <div>
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 Technology Stack
               </span>
             </div>

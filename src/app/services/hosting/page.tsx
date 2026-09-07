@@ -549,7 +549,7 @@ export default function HostingServicePage() {
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-14 lg:mb-16">
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 Zero-Risk Production Updates
               </span>
             </div>
@@ -633,7 +633,7 @@ export default function HostingServicePage() {
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-14 lg:mb-16">
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 Infrastructure Standards
               </span>
             </div>
@@ -721,7 +721,7 @@ export default function HostingServicePage() {
           {/* Standardized Header */}
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-14 lg:mb-16">
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 Resource Allocation Tiers
               </span>
             </div>
@@ -1105,7 +1105,7 @@ export default function HostingServicePage() {
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-14 lg:mb-16">
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 Virtual Private Server Environment
               </span>
             </div>
@@ -1248,7 +1248,7 @@ export default function HostingServicePage() {
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-14 lg:mb-16">
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#00E5FF]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-400">
                 Bare-Metal Enterprise Power
               </span>
             </div>

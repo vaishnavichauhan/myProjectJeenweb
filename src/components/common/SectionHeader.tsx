@@ -1,9 +1,9 @@
 import React from "react";
-import { Sparkles } from "lucide-react";
 
 interface SectionHeaderProps {
   badge?: string;
   badgeStyle?: "icon" | "underline";
+  badgeColor?: "blue" | "red";
   title: string;
   subtitle?: string;
   centered?: boolean;
@@ -13,7 +13,8 @@ interface SectionHeaderProps {
 
 export default function SectionHeader({
   badge,
-  badgeStyle = "icon",
+  badgeStyle = "underline",
+  badgeColor = "blue",
   title,
   subtitle,
   centered = false,
@@ -21,28 +22,28 @@ export default function SectionHeader({
   className = ""
 }: SectionHeaderProps) {
   const isDark = theme === "dark";
+  const isBlue = badgeColor === "blue";
 
   return (
     <div className={`max-w-3xl ${centered ? "mx-auto text-center" : ""} ${className} mb-12 sm:mb-14 lg:mb-16`}>
       {badge && (
-        badgeStyle === "underline" ? (
-          <div className={`mb-3 ${centered ? "text-center" : ""}`}>
-            <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-              <span className={`text-xs font-mono font-bold uppercase tracking-wider ${isDark ? "text-red-400" : "text-[#C11E23]"}`}>
-                {badge}
-              </span>
-            </div>
+        <div className={`mb-3 ${centered ? "text-center" : ""}`}>
+          <div className="inline-block border-b-2 border-[#C11E23] pb-1">
+            <span
+              className={`text-xs font-mono font-bold uppercase tracking-wider ${
+                isBlue
+                  ? isDark
+                    ? "text-blue-400"
+                    : "text-[#16325B]"
+                  : isDark
+                  ? "text-red-400"
+                  : "text-[#C11E23]"
+              }`}
+            >
+              {badge}
+            </span>
           </div>
-        ) : (
-          <div
-            className={`flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#E11D48] mb-3 ${
-              centered ? "justify-center" : ""
-            }`}
-          >
-            <Sparkles className="w-4 h-4 text-[#E11D48]" />
-            <span>{badge}</span>
-          </div>
-        )
+        </div>
       )}
       <h2
         className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight ${

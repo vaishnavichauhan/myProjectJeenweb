@@ -171,7 +171,7 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
           <div className="text-left max-w-4xl mb-12 lg:mb-16 space-y-3">
             <div>
               <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-                <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                   Who We Build Software For
                 </span>
               </div>
@@ -598,8 +598,8 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
           <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20 space-y-3">
             <div>
               <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-                <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
-                  Steps & Methodology
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
+                  Steps &amp; Methodology
                 </span>
               </div>
             </div>

@@ -89,7 +89,7 @@ export default function MetricsSection() {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div>
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
-              <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#1A3B71]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 Proven Track Record
               </span>
             </div>

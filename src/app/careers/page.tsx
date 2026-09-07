@@ -1,72 +1,24 @@
 import React from "react";
 import { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
 import { 
-  Briefcase, 
-  MapPin, 
-  Clock, 
-  Sparkles, 
-  CheckCircle2, 
+  Search, 
   Users, 
   GraduationCap, 
   HeartHandshake, 
   Laptop, 
-  ArrowRight,
-  TrendingUp,
-  Award,
-  Mail,
-  Phone
+  TrendingUp, 
+  Award, 
+  Mail, 
+  Phone 
 } from "lucide-react";
 import HeroDynamicBg from "@/components/home/HeroDynamicBg";
+import CultureShowcase from "@/components/careers/CultureShowcase";
+import CurrentOpenings from "@/components/careers/CurrentOpenings";
 
 export const metadata: Metadata = {
   title: "Careers at Jeenweb | Join Our Engineering & Digital Team in Vadodara",
   description: "Explore rewarding IT career opportunities at Jeenweb Technologists. 26+ years of technology leadership, cutting-edge projects, and exceptional team culture.",
 };
-
-const openPositions = [
-  {
-    id: "full-stack-engineer",
-    title: "Senior Full Stack Engineer (Next.js & Node.js)",
-    department: "Software Engineering",
-    type: "Full-Time",
-    location: "Vadodara, Gujarat (HQ / Hybrid)",
-    experience: "3 - 6 Years",
-    description: "Architect and build high-performance web applications, enterprise SaaS platforms, and scalable REST/GraphQL APIs.",
-    skills: ["React / Next.js", "TypeScript", "Node.js", "PostgreSQL / MongoDB", "Tailwind CSS", "REST APIs"]
-  },
-  {
-    id: "frontend-react-dev",
-    title: "Frontend UI/UX Developer",
-    department: "Frontend Engineering",
-    type: "Full-Time",
-    location: "Vadodara, Gujarat",
-    experience: "2 - 4 Years",
-    description: "Craft pixel-perfect, responsive, and blazing-fast user interfaces with smooth interactive animations.",
-    skills: ["React.js", "Next.js", "Modern CSS / Tailwind", "Figma / UI Design", "Responsive Layouts"]
-  },
-  {
-    id: "seo-growth-specialist",
-    title: "Technical SEO & Digital Growth Specialist",
-    department: "Digital Marketing & SEO",
-    type: "Full-Time",
-    location: "Vadodara, Gujarat",
-    experience: "2 - 5 Years",
-    description: "Lead on-page/off-page SEO campaigns, core web vitals optimization, technical audits, and organic SERP growth.",
-    skills: ["Technical SEO", "Google Search Console", "Ahrefs / SEMrush", "Core Web Vitals", "Content Strategy"]
-  },
-  {
-    id: "cloud-devops-engineer",
-    title: "Cloud Infrastructure & DevOps Engineer",
-    department: "Cloud & Security",
-    type: "Full-Time",
-    location: "Vadodara, Gujarat",
-    experience: "3 - 5 Years",
-    description: "Manage enterprise cloud server deployments, automated CI/CD pipelines, SSL infrastructure, and 99.9% uptime monitoring.",
-    skills: ["AWS / DigitalOcean", "Linux / Nginx", "Docker / CI-CD", "DNS & SSL Setup", "Server Security"]
-  }
-];
 
 const perks = [
   {
@@ -114,12 +66,15 @@ export default function CareersPage() {
         </div>
       </section>
 
+      {/* Work Hard. JeenWeb! Culture Showcase */}
+      <CultureShowcase />
+
       {/* Why Engineers & Leaders Love Working at Jeenweb (Blue Theme matching reference image) */}
-      <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
+      <section className="pt-12 sm:pt-16 pb-6 sm:pb-8 lg:pb-10 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header (No background color) */}
           <div className="flex flex-col items-center justify-center mb-12 sm:mb-16 text-center">
-            <div className="inline-block border-b-2 border-[#16325B] pb-1 mb-3">
+            <div className="inline-block border-b-2 border-[#C11E23] pb-1 mb-3">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
                 Company Culture &amp; Benefits
               </span>
@@ -200,104 +155,37 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Open Positions Section */}
-      <section id="openings" className="py-20 bg-slate-100/70 scroll-mt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#1A3B71] bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-              Current Openings
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mt-4 tracking-tight">
-              Find Your Next Role
-            </h2>
-            <p className="text-slate-600 mt-3 text-base">
-              Explore open roles in Vadodara, Gujarat. We are continuously looking for skilled problem solvers to join our growing team.
-            </p>
-          </div>
+      {/* Current Openings Interactive Accordion matching user reference UI */}
+      <CurrentOpenings />
 
-          <div className="space-y-6">
-            {openPositions.map((job) => (
-              <div
-                key={job.id}
-                className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:border-[#1A3B71]/40 transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-6"
-              >
-                <div className="space-y-3 flex-1">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="text-xs font-bold uppercase tracking-wider bg-blue-50 text-[#1A3B71] px-3 py-1 rounded-full border border-blue-100">
-                      {job.department}
-                    </span>
-                    <span className="text-xs font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full border border-emerald-100">
-                      {job.type}
-                    </span>
-                  </div>
+      {/* Spontaneous Application Banner */}
+      <section className="py-16 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative overflow-hidden bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-sm group">
+            {/* Background Finding / Search Watermark Icon in Top Right Corner */}
+            <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 text-[#16325B] opacity-[0.08] pointer-events-none group-hover:scale-110 group-hover:opacity-[0.14] transition-all duration-500">
+              <Search className="w-28 h-28 sm:w-36 sm:h-36" strokeWidth={1.5} />
+            </div>
 
-                  <h3 className="text-2xl font-bold text-slate-900">
-                    {job.title}
-                  </h3>
-
-                  <p className="text-slate-600 text-sm max-w-3xl">
-                    {job.description}
-                  </p>
-
-                  <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-500 pt-1">
-                    <span className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-[#E11D48]" />
-                      {job.location}
-                    </span>
-                    <span>•</span>
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-[#1A3B71]" />
-                      Experience: {job.experience}
-                    </span>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {job.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs font-medium bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md border border-slate-200/60"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex-shrink-0 pt-4 lg:pt-0">
-                  <a
-                    href={`mailto:careers@jeenweb.com?subject=Application%20for%20${encodeURIComponent(job.title)}&body=Hi%20Jeenweb%20Team,%0A%0AI%20am%20interested%20in%20applying%20for%20the%20${encodeURIComponent(job.title)}%20position.%20Please%20find%20my%20resume%20attached.%0A%0AThanks,%0A`}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#1A3B71] hover:bg-[#122A52] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-blue-950/20 hover:scale-[1.02] cursor-pointer w-full sm:w-auto"
-                  >
-                    <span>Apply via Email</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Spontaneous Application Banner */}
-          <div className="mt-12 bg-white rounded-2xl p-8 border border-dashed border-[#1A3B71]/40 text-center">
-            <Briefcase className="w-10 h-10 text-[#1A3B71] mx-auto mb-3" />
-            <h3 className="text-xl font-bold text-slate-900">
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 relative z-10">
               Don’t see a role that matches your profile?
             </h3>
-            <p className="text-slate-600 text-sm mt-2 max-w-xl mx-auto">
+            <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-xl mx-auto relative z-10">
               We are always excited to meet talented software engineers, designers, and digital strategists. Send your resume directly to our hiring team.
             </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 relative z-10">
               <a
                 href="mailto:careers@jeenweb.com?subject=Spontaneous%20Application%20-%20Jeenweb"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#E11D48] hover:bg-[#BE123C] text-white text-xs font-bold uppercase tracking-wider shadow-sm transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white text-xs font-bold uppercase tracking-wider shadow-sm hover:scale-[1.02] transition-all"
               >
                 <Mail className="w-4 h-4" />
                 <span>Send Resume to careers@jeenweb.com</span>
               </a>
               <a
                 href="tel:+919824466017"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider transition-colors"
               >
-                <Phone className="w-4 h-4 text-[#1A3B71]" />
+                <Phone className="w-4 h-4 text-[#16325B]" />
                 <span>Call HR: +91 98244 66017</span>
               </a>
             </div>
