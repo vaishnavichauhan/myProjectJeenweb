@@ -40,10 +40,10 @@ export default function AboutSnippet() {
           
           {/* Left Column: Team & Enterprise Image Showcase */}
           <FadeIn direction="left" distance={24} className="lg:col-span-5">
-            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-500">
+            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm overflow-hidden group hover:shadow-md transition-all duration-500">
               
               {/* Integrated Image Showcase */}
-              <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-900">
+              <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-100">
                 <Image
                   src="/images/about-team.jpg"
                   alt="Jeenweb Engineering & Digital Strategy Team"
@@ -51,23 +51,22 @@ export default function AboutSnippet() {
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent" />
                 
                 {/* Floating Badges on Image */}
                 <div className="absolute top-4 left-4">
                   <FloatingElement distance={4} duration={3.5}>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#C11E23] text-white text-[11px] font-mono font-bold shadow-md">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#C11E23] text-white text-[11px] font-mono font-bold shadow-xs">
                       EST. 2000
                     </span>
                   </FloatingElement>
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/60 backdrop-blur-md text-white text-xs font-semibold border border-white/20">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md text-white text-xs font-semibold border border-white/20 shadow-xs">
                     <ShieldCheck className="w-4 h-4 text-[#00E5FF]" />
                     <span>Single-Roof Tech Team</span>
                   </div>
-                  <span className="text-white text-xs font-mono font-bold bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/20">
+                  <span className="text-white text-xs font-mono font-bold bg-slate-900/80 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/20 shadow-xs">
                     26+ Years
                   </span>
                 </div>

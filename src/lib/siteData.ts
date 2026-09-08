@@ -181,91 +181,103 @@ export const CORE_SERVICES_PART1: ServiceItem[] = [
   {
     id: "domain",
     title: "Domain Registration & Management",
-    shortDesc: "Finding the right domain name matters more than people think. Search, register, and secure your brand with instant DNS.",
-    fullDesc: "Finding the right domain name matters more than people think. We help you search for, register, and manage a domain that fits your brand—and we ensure renewals, DNS settings, and transfers are handled properly so you never lose control of your online address.",
+    shortDesc: "Finding the right domain name matters more than people think. We help you search for, register, and manage a domain that fits your brand and makes it easier for customers to find you online. From choosing the right extension to managing DNS, renewals, and transfers, we make sure your domain stays secure and under your control.",
+    fullDesc: "Finding the right domain name matters more than people think. We help you search for, register, and manage a domain that fits your brand and makes it easier for customers to find you online. From choosing the right extension to managing DNS, renewals, and transfers, we make sure your domain stays secure and under your control.",
     iconName: "Globe",
     href: "/services/domain",
     tags: ["Instant DNS", "WHOIS Privacy", "Multi-TLD", "EPP Transfers"],
     features: [
-      "Domain name search & instant availability check",
-      "Zero-delay DNS routing & propagation",
-      "Free WHOIS privacy protection standard",
-      "Registrar-level locking & proactive renewal alerts"
+      "Domain Name Search – Find relevant and available domain names that match your business and brand.",
+      "Domain Registration – Register your preferred domain with a simple and reliable process.",
+      "Domain Extension Selection – Choose from popular extensions such as .com, .in, .org, .net, and more.",
+      "DNS Management – Configure DNS records for your website, email, hosting, and other online services.",
+      "Domain Renewal – Keep your domain active with timely renewal management and reminders.",
+      "Domain Transfer – Easily transfer your existing domain while maintaining control of your domain settings.",
+      "Domain Security – Help protect your domain from unauthorized changes and potential security issues."
     ]
   },
   {
     id: "hosting",
     title: "Web Hosting",
-    shortDesc: "Fast, stable, and secure hosting with on-demand manual backups and isolated CageFS containers.",
-    fullDesc: "Your website needs a home that stays up, loads fast, and keeps your data safe. We offer shared, VPS, dedicated, and cloud hosting options—and we configure the one that best fits your traffic, budget, and security needs. No overselling, no hidden limits.",
+    shortDesc: "Your website needs a home that stays up, loads fast, and keeps your data safe. We provide reliable hosting solutions designed around your website's traffic, performance, budget, and security requirements. Whether you are launching a small business website or running a high-traffic application, we help you choose and configure the right hosting environment.",
+    fullDesc: "Your website needs a home that stays up, loads fast, and keeps your data safe. We provide reliable hosting solutions designed around your website's traffic, performance, budget, and security requirements. Whether you are launching a small business website or running a high-traffic application, we help you choose and configure the right hosting environment.",
     iconName: "Server",
     href: "/services/hosting",
     tags: ["NVMe SSD", "Manual Backups", "CageFS", "Free SSL"],
     features: [
-      "Up to 10x faster read/write speeds with pure NVMe",
-      "One-click On-Demand Manual Backup before updates",
-      "Isolated container resources via CageFS",
-      "Developer-ready: PHP 7.4-8.x, Node.js, SSH, Git"
+      "Shared Hosting – Cost-effective hosting for business websites, portfolios, blogs, and small websites.",
+      "VPS Hosting – Dedicated resources, better performance, and greater control for growing websites and applications.",
+      "Dedicated Hosting – High-performance servers with complete control for demanding websites and business applications.",
+      "Cloud Hosting – Flexible and scalable infrastructure that can adapt to changing traffic and resource requirements.",
+      "Server Configuration – Configure servers, applications, databases, domains, and required services for your website."
     ]
   },
   {
     id: "website-development",
     title: "Website Development",
-    shortDesc: "High-performance websites coded clean from scratch, mobile-first, and engineered for brand authority and lead conversion.",
-    fullDesc: "We design and develop custom websites that actively drive business growth. Every site we deliver is coded clean, mobile-first, ultra-fast, and secure — no pirated themes, no bloated plugins. From custom corporate portals and headless web apps to eCommerce stores, we build digital presences that look exceptional and deliver measurable results.",
+    shortDesc: "We build websites that actually do something for your business. Every website we deliver is designed to be fast, responsive, secure, and easy to manage. From business websites and custom web applications to eCommerce platforms, we use modern technologies and clean development practices to create digital solutions that work the way your business needs.",
+    fullDesc: "We build websites that actually do something for your business. Every website we deliver is designed to be fast, responsive, secure, and easy to manage. From business websites and custom web applications to eCommerce platforms, we use modern technologies and clean development practices to create digital solutions that work the way your business needs.",
     iconName: "Layout",
     href: "/services/website-development",
     tags: ["Next.js / React", "WordPress / WooCommerce", "Mobile First", "Core Web Vitals"],
     features: [
-      "100% licensed clean code with zero bloated templates",
-      "Sub-second load times & 90+ Google Core Web Vitals",
-      "Pixel-perfect responsive UX across all screen sizes",
-      "Custom CMS and headless eCommerce architecture options"
+      "Business Website Development – Professional and responsive websites designed to represent your brand and services.",
+      "Custom Web Development – Build tailored web solutions based on your specific business requirements.",
+      "eCommerce Development – Create secure and scalable online stores with smooth shopping experiences.",
+      "Frontend Development – Develop modern, responsive interfaces using technologies such as React.js and Next.js.",
+      "Backend Development – Build reliable APIs, databases, authentication, and server-side functionality.",
+      "Full-Stack Development – Handle both frontend and backend development for complete web applications."
     ]
   },
   {
     id: "custom-software",
-    title: "Customized Software",
-    shortDesc: "Custom ERPs, CRMs, Visitor & School Management platforms built around your physical workplace workflows.",
-    fullDesc: "When standard software doesn't fit the way your business runs, we build something that does. From custom CRMs and ERP systems to internal tools your team uses every day, we design and develop software around your actual workflow, not a generic template of what a business is supposed to look like.",
+    title: "Customized Software Development",
+    shortDesc: "When standard software doesn't fit the way your business runs, we build something that does. We create custom software solutions around your processes, goals, and team requirements. From business management platforms to internal tools and automated workflows, every solution is designed to improve efficiency, simplify operations, and grow with your business.",
+    fullDesc: "When standard software doesn't fit the way your business runs, we build something that does. We create custom software solutions around your processes, goals, and team requirements. From business management platforms to internal tools and automated workflows, every solution is designed to improve efficiency, simplify operations, and grow with your business.",
     iconName: "Cpu",
     href: "/services/custom-software",
-    tags: ["Custom ERP", "Custom CRM", "Biometric Sync", "No Seat Tax"],
+    tags: ["Custom ERP", "Custom CRM", "Workflow Automation", "No Seat Tax"],
     features: [
-      "On-site workflow observation study before coding",
-      "Modular scalable backend in Laravel, PHP, Node.js",
-      "Biometric attendance & multi-warehouse inventory",
-      "Full IP ownership without recurring SaaS subscription hikes"
+      "Custom Business Software – Build software tailored to your company's specific processes and requirements.",
+      "CRM Development – Develop custom CRM systems to manage customers, leads, communication, and sales.",
+      "ERP Development – Create centralized ERP solutions to manage business operations, resources, and workflows.",
+      "Internal Business Tools – Develop tools that simplify everyday tasks and improve team productivity.",
+      "Workflow Automation – Automate repetitive processes to reduce manual work and improve efficiency.",
+      "Dashboard & Reporting – Build interactive dashboards and reports to help you monitor business performance."
     ]
   },
   {
     id: "seo",
     title: "SEO - Search Engine Optimization",
-    shortDesc: "Dominate Google, Google AI Overviews, ChatGPT, Gemini, and Claude with 4-pillar modern search optimization.",
-    fullDesc: "We help your business show up where your customers are searching—on Google, on AI platforms like Gemini and ChatGPT, and anywhere else people go to find answers. We handle the technical side, the content structure, and the long-term strategy to keep your rankings moving in the right direction.",
+    shortDesc: "We help your business show up where your customers are searching—on Google, AI platforms like Gemini and ChatGPT, and across the search experiences that matter to your audience. We combine technical SEO, high-quality content, structured data, and long-term strategy to improve visibility, attract relevant traffic, and build sustainable organic growth.",
+    fullDesc: "We help your business show up where your customers are searching—on Google, AI platforms like Gemini and ChatGPT, and across the search experiences that matter to your audience. We combine technical SEO, high-quality content, structured data, and long-term strategy to improve visibility, attract relevant traffic, and build sustainable organic growth.",
     iconName: "Search",
     href: "/services/seo",
     tags: ["AEO Answer Engine", "GEO Generative Engine", "JSON-LD Schema", "Local Maps"],
     features: [
-      "Technical audits & Core Web Vitals remediation",
-      "Semantic Q&A structuring for AI Overview position zero",
-      "Entity graph mapping & structured JSON-LD schemas",
-      "Vadodara & Gujarat local SEO and Google Maps optimization"
+      "Technical SEO – Optimize website structure, crawling, indexing, speed, and overall search performance.",
+      "On-Page SEO – Optimize titles, headings, content, URLs, internal links, and other page-level elements.",
+      "Keyword Research – Identify relevant search terms and opportunities based on your business and target audience.",
+      "Content Optimization – Improve website content to make it useful, relevant, and search-engine friendly.",
+      "Local SEO – Improve your visibility in local searches and help customers find your business online.",
+      "AI Search Optimization – Structure content to improve visibility across AI-powered search and answer platforms."
     ]
   },
   {
     id: "social-media",
     title: "Social Media & Performance Marketing",
-    shortDesc: "Data-driven Meta & LinkedIn campaigns, visual reel production, and vetted regional influencer marketing.",
-    fullDesc: "We manage your brand's presence across the platforms that make sense for your business—creating content, running paid campaigns, and building an audience that actually turns into leads and customers over time.",
+    shortDesc: "We manage your brand's presence across the platforms that make sense for your business. From creating engaging content and managing social profiles to running targeted paid campaigns, we help you build a strong online presence, connect with your audience, and turn social media activity into meaningful leads and long-term customers.",
+    fullDesc: "We manage your brand's presence across the platforms that make sense for your business. From creating engaging content and managing social profiles to running targeted paid campaigns, we help you build a strong online presence, connect with your audience, and turn social media activity into meaningful leads and long-term customers.",
     iconName: "TrendingUp",
     href: "/services/social-media",
-    tags: ["Meta Ads", "LinkedIn B2B", "ROAS Tracking", "Influencer PR"],
+    tags: ["Meta Ads", "LinkedIn B2B", "ROAS Tracking", "Lead Generation"],
     features: [
-      "Dedicated multi-platform management (LinkedIn, Instagram, FB, YouTube)",
-      "High-converting visual assets, short-form video reels & graphics",
-      "Performance paid advertising with strict ROAS attribution",
-      "Vetted regional Gujarat influencer campaigns"
+      "Social Media Management – Manage your business profiles and maintain a consistent brand presence across relevant platforms.",
+      "Content Creation – Create engaging posts, graphics, captions, and content aligned with your brand.",
+      "Social Media Strategy – Develop platform-specific strategies based on your business goals and target audience.",
+      "Paid Social Campaigns – Create and manage targeted advertising campaigns to reach potential customers.",
+      "Lead Generation – Use social media campaigns and content strategies to attract qualified leads for your business.",
+      "Audience Engagement – Monitor comments, messages, and interactions to build stronger relationships with your audience."
     ]
   }
 ];
@@ -275,49 +287,86 @@ export const EMAIL_SOLUTIONS_PART2: EmailSolutionItem[] = [
     id: "m365",
     title: "Microsoft 365",
     badge: "Official Enterprise Setup",
-    desc: "Complete enterprise setup with Outlook, Microsoft Teams, OneDrive cloud sync, and seamless Exchange data migration with zero downtime.",
-    features: ["Custom Domain Integration", "Teams & SharePoint Provisioning", "Exchange Online Migration", "Admin Security Policies"],
+    desc: "We help you set up and manage Microsoft 365 for secure communication, collaboration, and business productivity.",
+    features: [
+      "Outlook & Business Email",
+      "Microsoft Teams",
+      "SharePoint",
+      "OneDrive",
+      "User & License Management",
+      "Email Migration"
+    ],
     icon: "Mail"
   },
   {
     id: "gworkspace",
     title: "Google Workspace",
     badge: "Authorized Partner Channel",
-    desc: "Official Google business suite deployment featuring custom domain Gmail, Google Meet, Drive storage, and enterprise admin security controls.",
-    features: ["Gmail on Custom Domain", "30GB - Unlimited Cloud Storage", "Meet & Docs Real-Time Collab", "Zero-Loss Data Migration"],
+    desc: "Business Gmail, Drive, Meet, and other Google Workspace tools configured securely for smooth team communication and collaboration.",
+    features: [
+      "Business Gmail",
+      "Google Drive",
+      "Google Meet",
+      "Calendar & Collaboration",
+      "Admin & Security Controls"
+    ],
     icon: "ShieldCheck"
   },
   {
     id: "rediff",
     title: "Rediff Business Mail",
     badge: "Cost-Effective B2B",
-    desc: "High-volume corporate email hosting with Indian data residency, enterprise spam/virus filters, and dedicated webmail & IMAP support.",
-    features: ["Reliable Webmail & POP/IMAP", "Indian Server Data Residency", "Spam & Virus Filters", "Simple Corporate Management"],
+    desc: "Reliable business email using your own domain, with professional mailboxes configured and ready for everyday communication.",
+    features: [
+      "Custom Domain Email",
+      "Professional Mailboxes",
+      "Email Setup & Configuration",
+      "Spam Protection",
+      "Email Support"
+    ],
     icon: "Send"
   },
   {
     id: "zoho",
-    title: "Zoho Workplace Mail",
+    title: "Zoho Mail",
     badge: "Connected Workplace",
-    desc: "Secure, ad-free corporate business email with native Zoho CRM sync, encrypted inboxes, multi-device access, and centralized admin panel.",
-    features: ["Ad-Free Privacy Guarantee", "Zoho Suite Deep Integration", "Email Retention & eDiscovery", "Dedicated Control Panel"],
+    desc: "Clean, secure, ad-free business email that integrates smoothly with Zoho's suite of business and productivity tools.",
+    features: [
+      "Custom Domain Email",
+      "Ad-Free Business Email",
+      "Mailbox Management",
+      "Zoho App Integration",
+      "Security & Administration"
+    ],
     icon: "Layers"
   },
 
   {
     id: "titan",
-    title: "Titan Business Email",
+    title: "Titan Email",
     badge: "Modern & Intuitive",
-    desc: "Modern, ultra-fast business email equipped with read receipts, scheduled sending, integrated calendar, and cross-platform mobile apps.",
-    features: ["Read Receipts & Send Later", "Integrated Calendar & Contacts", "Rich Web & Mobile Apps", "Smart Follow-Up Reminders"],
+    desc: "Simple and professional business email hosting designed for small businesses, startups, and growing teams.",
+    features: [
+      "Professional Business Email",
+      "Custom Domain",
+      "Mailbox Management",
+      "Spam & Security Protection",
+      "Easy Email Setup"
+    ],
     icon: "Zap"
   },
   {
     id: "enterprise-mail",
-    title: "Dedicated Mail Server",
+    title: "Enterprise Business Email",
     badge: "Full Custom Control",
-    desc: "Fully managed private mail infrastructure with dedicated clean IP reputation, customized storage quotas, strict SPF/DKIM, and daily backups.",
-    features: ["Dedicated Clean IP Addresses", "Custom Storage Allocation", "Strict SPF / DKIM / DMARC", "Automated Daily Mail Backups"],
+    desc: "Advanced email solutions for organizations that need greater control, custom configurations, dedicated infrastructure, and reliable email delivery.",
+    features: [
+      "Dedicated Email Servers",
+      "Custom Mail Configuration",
+      "Advanced Security",
+      "High Deliverability",
+      "Email Administration"
+    ],
     icon: "Server"
   }
 ];

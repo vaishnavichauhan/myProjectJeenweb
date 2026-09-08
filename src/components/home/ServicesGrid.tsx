@@ -206,16 +206,16 @@ export default function ServicesGrid() {  const [selectedService, setSelectedSer
 
               return (
                 <StaggerItem key={service.id}>
-                  <div className="group [perspective:1200px] h-[390px] sm:h-[410px] cursor-pointer">
+                  <div className="group [perspective:1200px] h-[420px] sm:h-[440px] cursor-pointer">
                     {/* 3D Flipping Body */}
                     <div className="relative w-full h-full duration-700 [transform-style:preserve-3d] transition-transform rounded-3xl shadow-xs group-hover:[transform:rotateY(180deg)] group-hover:shadow-2xl">
                       
                       {/* Front Face (0 deg) */}
-                      <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-3xl p-7 bg-white border border-slate-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.07)] flex flex-col justify-between overflow-hidden">
+                      <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-3xl p-6 sm:p-7 bg-white border border-slate-200/90 shadow-[0_8px_30px_rgba(0,0,0,0.07)] flex flex-col justify-between overflow-hidden">
                         {/* Top Accent Line (Slim 2px Depth) */}
                         <div className={`absolute top-0 left-0 right-0 h-[2px] ${getServiceBorderColor(service.id)}`} />
 
-                        <div className="space-y-3.5">
+                        <div className="space-y-3">
                           {/* Header: Icon & Category Tag */}
                           <div className="flex items-center justify-between">
                             <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#1A3B71] flex items-center justify-center shadow-2xs">
@@ -231,24 +231,14 @@ export default function ServicesGrid() {  const [selectedService, setSelectedSer
                             {service.title}
                           </h4>
 
-                          {/* Short Description */}
-                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans line-clamp-3">
+                          {/* Short Description - Full Paragraph on Front */}
+                          <p className="text-xs sm:text-[13.5px] text-slate-600 leading-relaxed font-sans pt-1">
                             {service.shortDesc}
                           </p>
-
-                          {/* Feature Highlights */}
-                          <div className="pt-2.5 space-y-2 border-t border-slate-100">
-                            {service.features.slice(0, 3).map((feat, i) => (
-                              <div key={i} className="flex items-start gap-2 text-xs text-slate-700 font-medium">
-                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                                <span className="line-clamp-1">{feat}</span>
-                              </div>
-                            ))}
-                          </div>
                         </div>
 
                         {/* Front Bottom Interactive Flip Prompt */}
-                        <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#1A3B71]">
+                        <div className="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#1A3B71]">
                           <span>Hover to Flip &amp; Deploy</span>
                           <div className="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center group-hover:translate-x-1 transition-transform">
                             <ArrowRight className="w-3.5 h-3.5 text-[#1A3B71]" />
@@ -256,42 +246,51 @@ export default function ServicesGrid() {  const [selectedService, setSelectedSer
                         </div>
                       </div>
 
-                      {/* Back Face (180 deg - Revealed on 3D Flip) */}
-                      <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl p-7 bg-gradient-to-br from-[#0A2647] via-[#1A3B71] to-[#07192F] text-white border border-[#134B70] flex flex-col justify-between shadow-2xl overflow-hidden">
+                      {/* Back Face (180 deg - Revealed on 3D Flip, Only Bullet Points) */}
+                      <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl p-6 sm:p-7 bg-gradient-to-br from-[#0A2647] via-[#1A3B71] to-[#07192F] text-white border border-[#134B70] flex flex-col justify-between shadow-2xl overflow-hidden">
                         {/* Ambient Glow */}
                         <div className="absolute -top-12 -right-12 w-36 h-36 bg-[#00E5FF]/15 rounded-full blur-2xl pointer-events-none" />
 
-                        <div className="relative z-10 space-y-3">
-                          <div className="flex items-center justify-between">
-                            <span className="text-[10px] font-mono uppercase tracking-widest text-[#00E5FF] font-bold">
+                        <div className="relative z-10 flex flex-col flex-1 min-h-0">
+                          {/* Header */}
+                          <div className="flex items-center justify-between pb-2.5 border-b border-white/15 mb-3 flex-shrink-0">
+                            <div>
+                              <span className="text-[10px] font-mono uppercase tracking-widest text-[#00E5FF] font-bold block">
+                                Services Included
+                              </span>
+                              <h4 className="text-base sm:text-lg font-black uppercase tracking-tight text-white leading-tight mt-0.5">
+                                {service.title}
+                              </h4>
+                            </div>
+                            <span className="text-[10px] font-mono text-slate-300 bg-white/10 px-2 py-0.5 rounded border border-white/10 flex-shrink-0">
                               Enterprise Tier
-                            </span>
-                            <span className="text-[10px] font-mono text-slate-300">
-                              99.9% Uptime SLA
                             </span>
                           </div>
 
-                          <h4 className="text-lg sm:text-xl font-black uppercase tracking-tight text-white leading-tight">
-                            {service.title}
-                          </h4>
-
-                          <p className="text-xs text-slate-200 leading-relaxed font-sans line-clamp-3">
-                            {service.fullDesc}
-                          </p>
-
-                          {/* All Features on Back */}
-                          <div className="pt-2 space-y-1.5 border-t border-white/15">
-                            {service.features.map((feat, i) => (
-                              <div key={i} className="flex items-center gap-2 text-[11px] text-slate-200">
-                                <CheckCircle2 className="w-3 h-3 text-[#00E5FF] flex-shrink-0" />
-                                <span className="line-clamp-1">{feat}</span>
-                              </div>
-                            ))}
+                          {/* Only Bullet Points on Flip */}
+                          <div className="space-y-2 overflow-y-auto pr-1 flex-1 custom-scrollbar py-0.5">
+                            {service.features.map((feat, i) => {
+                              const parts = feat.split(" – ");
+                              return (
+                                <div key={i} className="flex items-start gap-2 text-[11px] sm:text-[12px] text-slate-200">
+                                  <CheckCircle2 className="w-3.5 h-3.5 text-[#00E5FF] flex-shrink-0 mt-0.5" />
+                                  <span className="leading-snug">
+                                    {parts.length > 1 ? (
+                                      <>
+                                        <strong className="text-white font-bold">{parts[0]}</strong> – {parts[1]}
+                                      </>
+                                    ) : (
+                                      feat
+                                    )}
+                                  </span>
+                                </div>
+                              );
+                            })}
                           </div>
                         </div>
 
                         {/* Back Action */}
-                        <div className="relative z-10 pt-4 border-t border-white/15">
+                        <div className="relative z-10 pt-3 border-t border-white/15 mt-3 flex-shrink-0">
                           <Link
                             href={service.href}
                             onClick={(e) => e.stopPropagation()}
@@ -326,7 +325,7 @@ export default function ServicesGrid() {  const [selectedService, setSelectedSer
           <StaggerContainer staggerDelay={0.08} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {EMAIL_SOLUTIONS_PART2.map((item) => (
               <StaggerItem key={item.id}>
-                <div className="group [perspective:1200px] h-[260px] sm:h-[270px] cursor-pointer">
+                <div className="group [perspective:1200px] h-[290px] sm:h-[310px] cursor-pointer">
                   {/* 3D Flipping Body */}
                   <div className="relative w-full h-full duration-700 [transform-style:preserve-3d] transition-transform rounded-3xl shadow-xs group-hover:[transform:rotateY(180deg)] group-hover:shadow-2xl">
                     
@@ -366,26 +365,36 @@ export default function ServicesGrid() {  const [selectedService, setSelectedSer
                       </div>
                     </div>
 
-                    {/* Back Face (180 deg) */}
+                    {/* Back Face (180 deg - Reveals Bullet Points) */}
                     <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl p-6 bg-gradient-to-br from-[#0A2647] via-[#1A3B71] to-[#07192F] text-white border border-[#134B70] flex flex-col justify-between shadow-2xl overflow-hidden">
-                      <div className="relative z-10 space-y-3">
-                        <div className="flex items-center justify-between">
-                          <span className="text-[10px] font-mono uppercase tracking-widest text-[#00E5FF] font-bold">
-                            Cloud Tenant Setup
+                      <div className="relative z-10 flex flex-col flex-1 min-h-0">
+                        <div className="flex items-center justify-between pb-2 border-b border-white/15 mb-2.5 flex-shrink-0">
+                          <div>
+                            <span className="text-[10px] font-mono uppercase tracking-widest text-[#00E5FF] font-bold block">
+                              Services Included
+                            </span>
+                            <h4 className="text-base font-black tracking-tight text-white leading-tight mt-0.5">
+                              {item.title}
+                            </h4>
+                          </div>
+                          <span className="text-[10px] font-mono text-slate-300 bg-white/10 px-2 py-0.5 rounded border border-white/10 flex-shrink-0">
+                            Cloud Setup
                           </span>
                         </div>
 
-                        <h4 className="text-base sm:text-lg font-black tracking-tight text-white leading-tight">
-                          {item.title}
-                        </h4>
-
-                        <p className="text-xs sm:text-[13px] text-slate-200 leading-relaxed font-sans">
-                          Authenticated SPF/DKIM/DMARC records, spam filtering, and zero-downtime cloud mail routing.
-                        </p>
+                        {/* Bullet Points on Flip */}
+                        <div className="space-y-1.5 overflow-y-auto pr-1 flex-1 custom-scrollbar py-0.5">
+                          {item.features.map((feat, i) => (
+                            <div key={i} className="flex items-center gap-2 text-[11px] sm:text-[12px] text-slate-200">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-[#00E5FF] flex-shrink-0" />
+                              <span className="line-clamp-1">{feat}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
 
                       {/* Back Action Button (Navigates to Services) */}
-                      <div className="relative z-10 pt-3 border-t border-white/15">
+                      <div className="relative z-10 pt-2.5 border-t border-white/15 mt-2 flex-shrink-0">
                         <Link
                           href="/services"
                           onClick={(e) => e.stopPropagation()}
