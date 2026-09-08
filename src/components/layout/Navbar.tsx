@@ -22,7 +22,8 @@ import {
   ArrowRight,
   Sparkles,
   MapPin,
-  Layout
+  Layout,
+  Clock
 } from "lucide-react";
 
 export default function Navbar() {
@@ -118,16 +119,86 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Main Sticky Header (Clean White Background) */}
-      <header
-        className={`sticky top-0 z-40 w-full bg-white font-navbar transition-all duration-300 ${
-          isScrolled
-            ? "shadow-md border-b border-slate-200"
-            : "border-b border-slate-200/90"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20 lg:h-[92px]">
+      {/* Main Sticky Header */}
+      <header className="sticky top-0 z-50 w-full font-navbar">
+        {/* Top Header Bar with Company Info */}
+        <div className="bg-gradient-to-r from-[#06172d] via-[#0a2342] to-[#06172d] text-slate-300 border-b border-white/10 text-[12px] sm:text-[13px] relative z-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-9 sm:h-10">
+              {/* Left: Contact Info (Phone, Email) */}
+              <div className="flex items-center gap-3 sm:gap-5">
+                {/* Phone Numbers */}
+                <div className="flex items-center gap-1.5 text-slate-200">
+                  <Phone className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                  <a
+                    href="tel:+919824466017"
+                    className="hover:text-white transition-colors font-medium whitespace-nowrap"
+                  >
+                    +91 98244 66017
+                  </a>
+                  <span className="hidden xl:inline text-slate-500">/</span>
+                  <a
+                    href="tel:+919824061620"
+                    className="hidden xl:inline hover:text-white transition-colors font-medium whitespace-nowrap"
+                  >
+                    +91 98240 61620
+                  </a>
+                </div>
+
+                <span className="text-white/20 hidden sm:inline">|</span>
+
+                {/* Email */}
+                <div className="hidden sm:flex items-center gap-1.5 text-slate-200">
+                  <Mail className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                  <a
+                    href="mailto:info@jeenweb.com"
+                    className="hover:text-white transition-colors font-medium whitespace-nowrap"
+                  >
+                    info@jeenweb.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Right: Trust Indicator & Location */}
+              <div className="flex items-center gap-3 sm:gap-5">
+                {/* Trust Badge */}
+                <div className="hidden md:flex items-center gap-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <span className="text-slate-300 font-medium text-[11px] uppercase tracking-wider whitespace-nowrap">
+                    26+ Years of IT Trust
+                  </span>
+                </div>
+
+                <span className="text-white/20 hidden md:inline">|</span>
+
+                {/* Location */}
+                <div className="flex items-center gap-1.5 text-slate-300">
+                  <MapPin className="w-3.5 h-3.5 text-[#E11D48] shrink-0" />
+                  <Link
+                    href="/contact"
+                    className="hover:text-white transition-colors whitespace-nowrap font-medium"
+                  >
+                    Vadodara, Gujarat, India
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Navigation Bar (Clean White Background) */}
+        <div
+          className={`w-full bg-white transition-all duration-300 ${
+            isScrolled
+              ? "shadow-md border-b border-slate-200"
+              : "border-b border-slate-200/90"
+          }`}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-20 lg:h-[92px]">
             {/* Authentic Company Logo */}
             <Link href="/" className="flex items-center flex-shrink-0 group py-1">
               <Image
@@ -308,6 +379,7 @@ export default function Navbar() {
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
+            </div>
           </div>
         </div>
 
@@ -404,19 +476,80 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Mobile Bottom Contact Actions */}
-            <div className="pt-4 border-t border-slate-200 space-y-2">
-              <a
-                href="tel:+919824466017"
-                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-slate-100 text-slate-900 text-xs font-bold uppercase tracking-wider hover:bg-slate-200 transition-colors"
-              >
-                <Phone className="w-3.5 h-3.5 text-[#E11D48]" />
-                <span>Call: +91 98244 66017</span>
-              </a>
+            {/* Mobile Bottom Contact Actions & Company Info */}
+            <div className="pt-4 border-t border-slate-200 space-y-3">
+              <div className="bg-slate-50 rounded-xl p-3 border border-slate-200 space-y-2 text-xs text-slate-700">
+                <div className="font-bold text-slate-900 flex items-center justify-between pb-1 border-b border-slate-200/80">
+                  <span>Jeenweb Technologists Pvt. Ltd.</span>
+                  <span className="text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">Since 2000</span>
+                </div>
+                <div className="space-y-1.5 pt-1">
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-3.5 h-3.5 text-[#1A3B71] shrink-0" />
+                    <div className="flex items-center gap-2">
+                      <a href="tel:+919824466017" className="font-semibold text-slate-900 hover:text-[#1A3B71]">+91 98244 66017</a>
+                      <span className="text-slate-300">/</span>
+                      <a href="tel:+919824061620" className="font-semibold text-slate-900 hover:text-[#1A3B71]">61620</a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail className="w-3.5 h-3.5 text-[#1A3B71] shrink-0" />
+                    <a href="mailto:info@jeenweb.com" className="font-semibold text-slate-900 hover:text-[#1A3B71]">info@jeenweb.com</a>
+                  </div>
+                  <div className="flex items-start gap-2 text-slate-600">
+                    <MapPin className="w-3.5 h-3.5 text-[#E11D48] shrink-0 mt-0.5" />
+                    <span>Vadodara, Gujarat 390011, India</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-600">
+                    <Clock className="w-3.5 h-3.5 text-[#1A3B71] shrink-0" />
+                    <span>Mon – Sat: 9:30 AM – 7:00 PM</span>
+                  </div>
+                </div>
+
+                {/* Mobile Socials */}
+                <div className="flex items-center gap-2 pt-2 border-t border-slate-200">
+                  <a
+                    href="https://www.facebook.com/Jeenweb.official"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    className="w-7 h-7 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-[#1A3B71]"
+                  >
+                    <svg className="w-3.5 h-3.5 fill-currentColor" viewBox="0 0 24 24">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/jeenweb.official/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="w-7 h-7 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-[#E11D48]"
+                  >
+                    <svg className="w-3.5 h-3.5 fill-none stroke-currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/jeenweb/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="w-7 h-7 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-[#0A66C2]"
+                  >
+                    <svg className="w-3.5 h-3.5 fill-currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
               <Link
                 href="/contact#get-in-touch"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-red-950/20 text-center flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
+                className="w-full py-3 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-red-950/20 text-center flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
               >
                 <span>Schedule a Technical Consultation</span>
                 <ArrowRight className="w-4 h-4" />

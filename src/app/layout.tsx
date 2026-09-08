@@ -161,7 +161,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${jetbrainsMono.variable} ${plusJakartaSans.variable} h-full antialiased scroll-smooth`}
+      className={`${outfit.variable} ${jetbrainsMono.variable} ${plusJakartaSans.variable} min-h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col font-sans bg-[#F8FAFC] text-slate-900 selection:bg-[#16325B] selection:text-white">
         <JsonLd data={organizationSchema} />

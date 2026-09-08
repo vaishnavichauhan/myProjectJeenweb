@@ -23,12 +23,70 @@ import {
 
 export default function DomainServicePage() {
   const domainPartnerLogosRow1 = [
-{ logo: "/images/clientsLogo/Domain/1.png" },
+    { logo: "/images/clientsLogo/website/1.png" },
+    { logo: "/images/clientsLogo/website/2.png" },
+    { logo: "/images/clientsLogo/website/3.png" },
+    { logo: "/images/clientsLogo/website/4.png" },
+    { logo: "/images/clientsLogo/website/5.png" },
+    { logo: "/images/clientsLogo/website/6.png" },
+    { logo: "/images/clientsLogo/website/7.png" },
+    { logo: "/images/clientsLogo/website/8.png" },
+    { logo: "/images/clientsLogo/website/9.png" },
+    { logo: "/images/clientsLogo/website/10.png" },
+    { logo: "/images/clientsLogo/website/11.png" },
+    { logo: "/images/clientsLogo/website/12.png" },
+    { logo: "/images/clientsLogo/website/13.png" },
+    { logo: "/images/clientsLogo/website/14.png" },
+        { logo: "/images/clientsLogo/website/15.png" },
+    { logo: "/images/clientsLogo/website/16.png" },
+      { logo: "/images/clientsLogo/website/17.png" },
+    { logo: "/images/clientsLogo/website/18.png" },
+      { logo: "/images/clientsLogo/website/19.png" },
+    { logo: "/images/clientsLogo/website/20.png" },
+      { logo: "/images/clientsLogo/website/21.png" },
+    { logo: "/images/clientsLogo/website/22.png" },
+      { logo: "/images/clientsLogo/website/23.png" },
+        { logo: "/images/clientsLogo/website/24.png" },
+    { logo: "/images/clientsLogo/website/25.png" },
+    { logo: "/images/clientsLogo/website/26.png" },
+    {logo:"/images/clientsLogo/website/27.png"},
+    {logo:"/images/clientsLogo/website/28.png"},
+    {logo:"/images/clientsLogo/website/29.png"}
   ];
 
+
   const domainPartnerLogosRow2 = [
-   { logo: "/images/clientsLogo/Domain/1.png" },
+    { logo: "/images/clientsLogo/website/1.png" },
+    { logo: "/images/clientsLogo/website/2.png" },
+    { logo: "/images/clientsLogo/website/3.png" },
+    { logo: "/images/clientsLogo/website/4.png" },
+    { logo: "/images/clientsLogo/website/5.png" },
+    { logo: "/images/clientsLogo/website/6.png" },
+    { logo: "/images/clientsLogo/website/7.png" },
+    { logo: "/images/clientsLogo/website/8.png" },
+    { logo: "/images/clientsLogo/website/9.png" },
+    { logo: "/images/clientsLogo/website/10.png" },
+    { logo: "/images/clientsLogo/website/11.png" },
+    { logo: "/images/clientsLogo/website/12.png" },
+    { logo: "/images/clientsLogo/website/13.png" },
+    { logo: "/images/clientsLogo/website/14.png" },
+        { logo: "/images/clientsLogo/website/15.png" },
+    { logo: "/images/clientsLogo/website/16.png" },
+      { logo: "/images/clientsLogo/website/17.png" },
+    { logo: "/images/clientsLogo/website/18.png" },
+      { logo: "/images/clientsLogo/website/19.png" },
+    { logo: "/images/clientsLogo/website/20.png" },
+      { logo: "/images/clientsLogo/website/21.png" },
+    { logo: "/images/clientsLogo/website/22.png" },
+      { logo: "/images/clientsLogo/website/23.png" },
+        { logo: "/images/clientsLogo/website/24.png" },
+    { logo: "/images/clientsLogo/website/25.png" },
+    { logo: "/images/clientsLogo/website/26.png" },
+    {logo:"/images/clientsLogo/website/27.png"},
+    {logo:"/images/clientsLogo/website/28.png"},
+    {logo:"/images/clientsLogo/website/29.png"}
   ];
+
 
   const domainFaqs = [
     {
