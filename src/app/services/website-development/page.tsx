@@ -3,10 +3,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import FaqSection from "@/components/home/FaqSection";
 import CommonCta from "@/components/common/CommonCta";
 import TrustedPartnershipsMarquee from "@/components/common/TrustedPartnershipsMarquee";
+import TechStack from "@/components/home/TechStack";
 import {
   Layout,
   Code2,
@@ -257,15 +259,24 @@ export default function WebsiteDevelopmentPage() {
               High-Performance Website Development &amp; Custom Web Apps
             </h1>
 
-            {/* Standardized Subtitle */}
-            <p className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug">
+            {/* Subtext: Bottom to Top Entrance Animation */}
+            <motion.p
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+              className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug"
+            >
               Next.js portals, enterprise eCommerce, and bespoke web platforms engineered in Vadodara.
-            </p>
+            </motion.p>
 
-            {/* Standardized Description */}
-            <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
+            <motion.p
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+              className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl"
+            >
               We design and engineer bespoke corporate websites, eCommerce stores, and Next.js web applications that look world-class, load in sub-seconds, and actively generate business opportunities.
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
@@ -561,6 +572,13 @@ export default function WebsiteDevelopmentPage() {
 
         </div>
       </section>
+
+      {/* Technology Stack Section */}
+      <TechStack
+        badge="Technology Stack"
+        title="Web Technologies & Frameworks We Use"
+        subtitle="Engineered with modern frontend frameworks, scalable cloud architectures, and hardened backend platforms for peak performance and speed."
+      />
 
       {/* Client Logo Marquee (Trusted Partnerships) */}
       <TrustedPartnershipsMarquee

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
@@ -138,18 +139,32 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
               Engineering Tailor-Made Software Systems Designed Around Your Physical Business Workflows
             </h1>
 
-            {/* Subheading */}
-            <p className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug">
+            {/* Subtext: Bottom to Top Entrance Animation */}
+            <motion.p
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+              className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug"
+            >
               Enterprise software development, custom ERPs, and automated management portals built in Vadodara.
-            </p>
+            </motion.p>
 
-            {/* Body Paragraph */}
-            <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
+            <motion.p
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+              className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl"
+            >
               Most businesses in Gujarat buy software and then spend months trying to make their team work around it. Processes get adjusted, workarounds get created, and half the features never get used. At Jeenweb Technologists, we do it the other way around. We come to your workplace, watch how your team operates, and build software that mirrors those exact physical routines.
-            </p>
+            </motion.p>
 
-            {/* CTAs */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            {/* CTAs: Bottom to Top Entrance Animation */}
+            <motion.div
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+              className="pt-2 flex flex-wrap items-center gap-4"
+            >
               <button
                 onClick={() => window.location.href = "/contact#get-in-touch"}
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl shadow-red-950/40 hover:scale-[1.02] active:scale-95 cursor-pointer"
@@ -157,7 +172,7 @@ export default function CustomSoftwarePage() {  const [selectedSolution, setSele
                 <span>Consult Our Software Engineers</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
-            </div>
+            </motion.div>
 
           </div>
         </div>

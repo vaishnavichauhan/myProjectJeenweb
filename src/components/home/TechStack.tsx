@@ -196,7 +196,21 @@ const TECH_CATALOG: TechItem[] = [
   }
 ];
 
-export default function TechStack() {
+interface TechStackProps {
+  badge?: string;
+  title?: string;
+  subtitle?: string;
+  id?: string;
+  className?: string;
+}
+
+export default function TechStack({
+  badge = "Technology Stack",
+  title = "Technologies We Use",
+  subtitle = "We engineer solutions with battle-tested enterprise frameworks and high-security cloud architectures—never vulnerable templates or unverified scripts.",
+  id = "tech-stack",
+  className = ""
+}: TechStackProps = {}) {
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
   const categories = [
@@ -213,7 +227,7 @@ export default function TechStack() {
       : TECH_CATALOG.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="pt-10 pb-20 lg:pt-14 lg:pb-24 bg-white relative overflow-hidden" id="tech-stack">
+    <section className={`pt-10 pb-20 lg:pt-14 lg:pb-24 bg-white relative overflow-hidden ${className}`} id={id}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header with Red Bottom Border Tag */}
@@ -221,15 +235,15 @@ export default function TechStack() {
           <div>
             <div className="inline-block border-b-2 border-[#C11E23] pb-1">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#16325B]">
-                Technology Stack
+                {badge}
               </span>
             </div>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight text-slate-900">
-          Technologies We Use
+            {title}
           </h2>
           <p className="text-sm sm:text-base text-slate-600 font-sans leading-relaxed">
-            We engineer solutions with battle-tested enterprise frameworks and high-security cloud architectures—never vulnerable templates or unverified scripts.
+            {subtitle}
           </p>
         </FadeIn>
 

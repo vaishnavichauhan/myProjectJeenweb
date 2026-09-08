@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     siteName: "Jeenweb Technologists",
     images: [
       {
-        url: "/images/seo-hero-illustration.png",
-        width: 1024,
-        height: 682,
+        url: "/images/seoimg.png",
+        width: 555,
+        height: 550,
         alt: "SEO and AI Search Optimization"
       }
     ],
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "SEO, GEO & AI Search Optimization Company Vadodara | Jeenweb",
     description:
       "Dominate Google, ChatGPT, and Gemini search results with Jeenweb in Vadodara.",
-    images: ["/images/seo-hero-illustration.png"]
+    images: ["/images/seoimg.png"]
   }
 };
 

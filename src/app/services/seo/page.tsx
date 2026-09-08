@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
@@ -259,32 +260,44 @@ export default function SeoServicePage() {
                 Visibility Is A Choice. The Top Ranked Brands Already Made Theirs.
               </h1>
 
-              {/* Standardized Subtitle */}
-              <p className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug">
+              {/* Subtext: Bottom to Top Entrance Animation */}
+              <motion.p
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug"
+              >
                 Dominate traditional search results and generative AI answer engines with technical SEO &amp; AEO.
-              </p>
+              </motion.p>
 
-              {/* Standardized Description */}
-              <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
+              <motion.p
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+                className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl"
+              >
                 Structured data schemas, technical performance engineering, entity citation modeling, and comprehensive local Google Maps dominance managed from Vadodara.
-              </p>
+              </motion.p>
 
             </div>
 
-            {/* Right Side: SEO & AI Illustration */}
+            {/* Right Side: SEO & AI Illustration (Circle Shape) */}
             <div className="lg:col-span-5 flex justify-center items-center">
-              <div className="relative w-full max-w-[480px] sm:max-w-[540px] lg:max-w-full flex justify-center items-center">
+              <div className="relative flex justify-center items-center">
                 {/* Soft ambient glow */}
-                <div className="absolute inset-4 bg-gradient-to-tr from-sky-400/20 via-cyan-400/15 to-transparent rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#00E5FF]/25 via-blue-500/20 to-transparent rounded-full blur-3xl pointer-events-none" />
                 
-                <Image
-                  src="/images/seo-hero-illustration.png"
-                  alt="Search Engine Optimization and AI Search Ecosystem"
-                  width={1024}
-                  height={682}
-                  priority
-                  className="w-full h-auto object-contain mx-auto drop-shadow-[0_20px_45px_rgba(0,0,0,0.35)] relative z-10"
-                />
+                {/* Circle Shape Container */}
+                <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] rounded-full overflow-hidden border-4 border-white/25 shadow-[0_20px_60px_rgba(0,0,0,0.45)] bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-2 sm:p-3 group z-10">
+                  <Image
+                    src="/images/seoimg.png"
+                    alt="Search Engine Optimization and AI Search Ecosystem"
+                    width={555}
+                    height={550}
+                    priority
+                    className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
               </div>
             </div>
 

@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     siteName: "Jeenweb Technologists",
     images: [
       {
-        url: "/images/domain-tiles-only-transparent.png",
-        width: 1200,
-        height: 896,
+        url: "/images/domaint.png",
+        width: 1280,
+        height: 835,
         alt: "Domain Name Registration"
       }
     ],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Enterprise Domain Registration & DNS Management | Jeenweb Vadodara",
     description:
       "Search, register, and protect your brand identity with lightning-fast DNS routing and complete control.",
-    images: ["/images/domain-tiles-only-transparent.png"]
+    images: ["/images/domaint.png"]
   }
 };
 

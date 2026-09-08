@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
@@ -133,18 +134,23 @@ export default function DomainServicePage() {
         <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#C11E23]/15 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
 
-        {/* Right-Side 3D Domain Extension Blocks (Transparent cutout, no half-half background) */}
+        {/* Right-Side 3D Domain Extension Blocks with Slide-in from Right Animation */}
         <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[48%] xl:w-[50%] pointer-events-none z-0 hidden lg:flex items-center justify-end p-4 lg:p-8 xl:p-12 overflow-hidden">
-          <div className="relative w-full h-full max-h-[540px] flex items-center justify-end">
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="relative w-full h-full max-h-[540px] flex items-center justify-end"
+          >
             <Image
-              src="/images/domain-tiles-only-transparent.png"
-              alt="Domain Extension Boxes: .com, .in, .net, .org, .info"
+              src="/images/domaint.png"
+              alt="Domain Registration and Management"
               fill
               priority
               className="object-contain object-right drop-shadow-[0_25px_50px_rgba(0,0,0,0.5)]"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
@@ -167,19 +173,24 @@ export default function DomainServicePage() {
               <DomainSearchBar onOpenModal={() => window.location.href = '/contact#get-in-touch'} />
             </div>
 
-            {/* Mobile / Tablet View: Inline 3D domain blocks below search tool */}
-            <div className="pt-6 lg:hidden flex justify-center items-center">
-              <div className="relative w-full max-w-[420px] aspect-[1200/896]">
+            {/* Mobile / Tablet View: Inline 3D domain blocks with Slide-in from Right Animation */}
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+              className="pt-6 lg:hidden flex justify-center items-center"
+            >
+              <div className="relative w-full max-w-[420px] aspect-[1280/835]">
                 <Image
-                  src="/images/domain-tiles-only-transparent.png"
-                  alt="Domain Extension Boxes: .com, .in, .net, .org, .info"
+                  src="/images/domaint.png"
+                  alt="Domain Registration and Management"
                   fill
                   priority
                   className="object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.4)]"
                   sizes="100vw"
                 />
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>

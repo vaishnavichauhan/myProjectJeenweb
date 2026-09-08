@@ -10,6 +10,7 @@ import GlobalFootprint from "@/components/home/GlobalFootprint";
 import Testimonials from "@/components/home/Testimonials";
 import FaqSection from "@/components/home/FaqSection";
 import BlogSection from "@/components/home/BlogSection";
+import CustomArchitectureModules from "@/components/home/CustomArchitectureModules";
 import CtaSection from "@/components/home/CtaSection";
 
 export const metadata = {
@@ -72,25 +73,28 @@ export default function HomePage() {
       {/* 5. Why Choose Us (6 Corporate Pillars) */}
       <WhyChooseUs />
 
-      {/* 6. Tools and Technologies We Use */}
+      {/* 6. Custom Architecture & Modules (Tailored Software Solutions Built for Operational Efficiency) */}
+      <CustomArchitectureModules />
+
+      {/* 7. Tools and Technologies We Use */}
       <TechStack />
 
-      {/* 7. Strategic Partnerships & Authorizations */}
+      {/* 8. Strategic Partnerships & Authorizations */}
       <PartnersMarquee />
 
-      {/* 8. Client Experiences (Direct Feedback From Our Long-Term Partners) */}
+      {/* 9. Client Experiences (Direct Feedback From Our Long-Term Partners) */}
       <Testimonials />
 
-      {/* 9. Corporate Operations Across The World (Geographic Footprint) */}
+      {/* 10. Corporate Operations Across The World (Geographic Footprint) */}
       <GlobalFootprint />
 
-      {/* 10. Frequently Asked Questions */}
+      {/* 11. Frequently Asked Questions */}
       <FaqSection />
 
-      {/* 11. Knowledge Base (Blog) */}
+      {/* 12. Knowledge Base (Blog) */}
       <BlogSection />
 
-      {/* 12. High-Voltage Acid Yellow Ribbon CTA Banner */}
+      {/* 13. High-Voltage Acid Yellow Ribbon CTA Banner */}
       <CtaSection />
     </main>
   );

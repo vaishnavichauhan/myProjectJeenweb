@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import SectionHeader from "@/components/common/SectionHeader";
 import FaqSection from "@/components/home/FaqSection";
@@ -418,18 +419,32 @@ export default function SocialMediaServicePage() {
                 Transform Social Channels into Revenue Engines Through Strategic Management and Paid Media
               </h1>
 
-              {/* Standardized Subtitle */}
-              <p className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug">
+              {/* Subtext: Bottom to Top Entrance Animation */}
+              <motion.p
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                className="text-base sm:text-lg text-[#00E5FF] font-semibold leading-snug"
+              >
                 Data-driven performance campaigns, creator partnerships, and brand narrative engineering.
-              </p>
+              </motion.p>
 
-              {/* Standardized Description */}
-              <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
+              <motion.p
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+                className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans max-w-2xl"
+              >
                 Coordinated growth across platform management, high-converting visual production, data-driven paid advertising, and targeted influencer campaigns engineered to maximize your verified ROAS.
-              </p>
+              </motion.p>
 
-              {/* Standardized Button */}
-              <div className="pt-1">
+              {/* Standardized Button: Bottom to Top Entrance Animation */}
+              <motion.div
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+                className="pt-1"
+              >
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#C11E23] hover:bg-[#A3161A] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-xl shadow-red-950/40 hover:scale-[1.02] active:scale-95 cursor-pointer group"
@@ -437,13 +452,18 @@ export default function SocialMediaServicePage() {
                   <span>Launch Your Social Campaign</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
-              </div>
+              </motion.div>
 
             </div>
 
-            {/* Right Side: Transparent Illustration */}
+            {/* Right Side: Transparent Illustration with Slide-in from Right Animation */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end items-end self-end">
-              <div className="relative w-full max-w-[440px] sm:max-w-[480px] lg:max-w-[520px] xl:max-w-[550px] flex justify-center lg:justify-end items-end">
+              <motion.div
+                initial={{ opacity: 0, x: 80 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+                className="relative w-full max-w-[440px] sm:max-w-[480px] lg:max-w-[520px] xl:max-w-[550px] flex justify-center lg:justify-end items-end"
+              >
                 {/* Soft ambient glow */}
                 <div className="absolute inset-4 bg-gradient-to-tr from-sky-400/20 via-amber-400/15 to-transparent rounded-full blur-3xl pointer-events-none" />
                 
@@ -455,7 +475,7 @@ export default function SocialMediaServicePage() {
                   priority
                   className="w-full h-auto object-contain mx-auto drop-shadow-[0_20px_45px_rgba(0,0,0,0.5)] relative z-10 align-bottom block"
                 />
-              </div>
+              </motion.div>
             </div>
 
           </div>
